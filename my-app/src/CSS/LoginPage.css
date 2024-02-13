@@ -1,0 +1,212 @@
+/* YourComponent.css */
+@media (min-width: 769px) {
+body{
+    margin: 80px;
+    padding: 0;
+    color: rgb(218, 218, 218);
+    background-color: #fcfcfc;
+    display: flex;
+    justify-content: center;
+   
+   
+    
+    
+}
+
+
+.container {
+    margin: 50px;
+    border-radius: 7%;
+    margin-bottom: 100px;
+    display: flex;
+    height: 70vh; 
+    width: 150vh;/* 100% of the viewport height */
+    border-radius: 50px;
+  ;
+    box-shadow:  10px 10px 20px #afafaf,
+                 -10px -10px 20px #ffffff;
+    
+  
+  }
+
+  .ant-alert{
+    width: 40%;
+    height: 11%;
+    margin-bottom: 0;
+    position: absolute;
+    top: 100px;
+    right:500px;
+    z-index: 2;
+  }
+  
+  .left {
+    border-top-left-radius: 7%;
+    border-bottom-left-radius: 7%;
+    flex: 1; /* Takes up 50% of the container */
+    padding: 20px;
+    background-color: #f8f8f8; /* Adjust the background color as needed */
+    position: relative;;
+    display: flex;
+    justify-content: center;
+    
+  }
+ 
+
+  .user-input{
+   width: 300px;
+   height: 35px;
+   margin-bottom: 25px;
+   margin-left: 3px;
+  }
+  .submit-button{
+    width: 350px;
+    height: 45px;
+    margin-top: 50px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 800;
+    background-color: rgb(14, 213, 127);
+    cursor: pointer;
+  }
+  .submit-button:hover{
+    background-color: rgb(67, 241, 166);;
+    
+  }
+  h1{
+    margin-top: 80px;
+    color: rgb(255, 255, 255);
+  }
+ 
+  h2{
+   
+    margin-top: 60px;
+    color: rgb(14, 213, 127);
+  }
+  
+  
+  .right {
+    flex: 1; /* Takes up 50% of the container */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    background-color: rgb(14, 213, 127);
+    border-top-right-radius: 7%;
+    border-bottom-right-radius: 7%;
+  
+  
+    
+  }
+  
+  .right img {
+   
+    border-top-right-radius: 7%;
+    border-bottom-right-radius: 7%;
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+  }
+
+  .icon{
+    color: rgb(14, 213, 127);
+  }
+}
+
+
+
+
+
+
+  /* Media query for smaller screens (phones) */
+  @media (max-width: 768px) {
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* Full viewport height */
+      display: flex;
+      justify-content: center;
+      align-items: center; /* This will center your container vertically */
+      background-color: #fcfcfc;
+      color: rgb(218, 218, 218);
+    }
+    .container {
+    
+    flex-direction: column;
+    margin-left: 0;
+    
+    
+    }
+    
+   
+
+    h1{
+      margin-top: 80px;
+      color: rgb(255, 255, 255);
+    }
+   
+    h2{
+     
+      margin-top: 60px;
+      color: rgb(14, 213, 127);
+    }
+    
+    .left {
+     flex: 1;
+     border-top-left-radius: 7%;
+     border-top-right-radius: 7%;
+     border-bottom-left-radius:0%;
+     flex: 1; /* Takes up 50% of the container */
+     padding: 20px;
+     background-color: #ffffff; /* Adjust the background color as needed */
+     position: relative;;
+     display: flex;
+     justify-content: center;
+      
+    }
+    .user-input{
+      width: 300px;
+      height: 35px;
+      margin-bottom: 25px;
+      margin-left: 3px;
+     }
+     .submit-button{
+       width: 350px;
+       height: 45px;
+       margin-top: 50px;
+       border-radius: 10px;
+       color: white;
+       font-weight: 800;
+       background-color: rgb(14, 213, 127);
+       cursor: pointer;
+     }
+     .submit-button:hover{
+      background-color: rgb(67, 241, 166);;
+      
+    }
+
+     .right {
+      flex: 1; /* Takes up 50% of the container */
+      overflow: hidden; /* Ensure the image doesn't overflow */
+      background-color: rgb(14, 213, 127);
+      border-top-right-radius: 0%;
+      border-bottom-right-radius: 0%;
+      
+    
+      
+    }
+    
+    .right img {
+      
+      border-top-right-radius: 7%;
+      border-bottom-right-radius: 0%;
+      width: 80%;
+      height: 90%;
+      object-fit: cover;
+    }
+  
+    .icon{
+      color: rgb(14, 213, 127);
+    }
+  
+    
+    }
+  
+  
+ 
