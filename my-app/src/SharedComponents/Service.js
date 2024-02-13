@@ -1,7 +1,7 @@
 import React from "react";
 import "../FacultyMemberCSS/FmHomePage.css";
 
-function FmService({serviceName, Icon}) {
+function Service({serviceName, Icon}) {
   return (
    <div>
 
@@ -21,4 +21,4 @@ function FmService({serviceName, Icon}) {
   );
 }
 
-export default FmService;
+export default Service;

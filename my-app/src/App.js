@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import LoginPage from "./Components/LoginPage";
+import LoginPage from "./SharedComponents/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createContext, useState, useEffect } from "react";
 import FmHomePage from "./FacultyMamber/FmHomePage";

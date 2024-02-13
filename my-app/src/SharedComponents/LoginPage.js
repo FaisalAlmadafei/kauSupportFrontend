@@ -1,4 +1,4 @@
-import "../CSS/LoginPage.css";
+import "../SharedCSS/LoginPage.css";
 import loginImage from "../images/login_image.png";
 import { AiOutlineUser } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
