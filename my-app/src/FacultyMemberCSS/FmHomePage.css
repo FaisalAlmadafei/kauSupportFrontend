@@ -1,4 +1,22 @@
-.newReport-icon{
-    color: red;
-   font-size: 34px;
+.card-Container{
+    display: grid;
+    grid-template-columns: repeat(3, 300px); /* 3 columns */
+    gap: 50px;
+    margin: 100px;
+    margin-bottom: 400px;
+    border: 1px solid red;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #f7f7f789;
 }

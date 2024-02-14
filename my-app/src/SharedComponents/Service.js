@@ -1,12 +1,13 @@
 import React from "react";
-import "../FacultyMemberCSS/FmHomePage.css";
+import "../SharedCSS/Service.css";
 
 function Service({serviceName, Icon}) {
   return (
-   <div>
+   <div >
 
     <div className="card">
-     <Icon/>
+     <Icon style={{ color: "black" }} />
+     <br />
      <h3>{serviceName}</h3>
 
     </div>

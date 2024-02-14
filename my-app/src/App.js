@@ -6,10 +6,10 @@ import { createContext, useState, useEffect } from "react";
 import FmHomePage from "./FacultyMamber/FmHomePage";
 import TsvHomePage from "./TechnicalSupervisor/TsvHomePage";
 import TsHomePage from "./TehcnicalMember/TsHomePage";
+import LabsPage from "./SharedComponents/LabsPage";
 export const LoginContext = React.createContext();
 // This is my app file
 function App() {
-  
   const [userID, setUserID] = useState(localStorage.getItem("UserID") || "");
   const [userPass, setuserPass] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -23,7 +23,7 @@ function App() {
     localStorage.setItem("isLoggedIn", isLoggedIn);
     localStorage.setItem("userRole", userRole);
     localStorage.setItem("userID", userID);
-      }, [isLoggedIn, userRole, userID]);
+  }, [isLoggedIn, userRole, userID]);
 
   return (
     <div className="App">
@@ -49,12 +49,15 @@ function App() {
                   <FmHomePage />
                 ) : userRole === "Supervisor" ? (
                   <TsvHomePage />
-                ) : userRole === "Technical Member" ?(
+                ) : userRole === "Technical Member" ? (
                   <TsHomePage />
+                ) : (
+                  <LoginPage />
                 )
-                :(<LoginPage />)
               }
             />
+
+            <Route path="/LabsPage" element={<LabsPage />} />
           </Routes>
         </Router>
       </LoginContext.Provider>
