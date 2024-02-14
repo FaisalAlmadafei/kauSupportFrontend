@@ -5,13 +5,32 @@
     top: 0;
     left: 0;
     right: 0;
-  
     height: 80px;
     background-color: #15ca8e;
     margin-bottom: 20px;
     z-index: 1;
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+  }
+  .search-bar{
+    position: absolute;
+    top: 20px;
+    width: 500px;
+    height: 35px;
+    border-radius: 23px;
+ 
+    
+
+  
+  }
+
+  .search-bar::placeholder{
+    text-align: center;
   
   }
   .card-Container{
@@ -24,16 +43,12 @@
       width: 1400px;
       height: 500px;
       padding: 25px;
-      border: 1px solid red;
       margin-left: 50px;
       margin-right: 50px;
       margin-top: 100px;
       
   }
-  .page-container{
-    border: 1px solid red;
-    margin-top: 150px;
-  }
+  
 }
 
 
@@ -43,13 +58,31 @@
     top: 0;
     left: 0;
     right: 0;
-  
     height: 80px;
     background-color: #15ca8e;
     margin-bottom: 20px;
     z-index: 1;
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .search-bar{
+    position: absolute;
+    top: 30px;
+    width: 400px;
+    height: 30px;
+    border-radius: 23px;
+  
+    
+  
+  
+  }
+  
+  .search-bar::placeholder{
+    text-align: center;
   
   }
   .card-Container{
@@ -62,19 +95,13 @@
      width: auto;
      height: auto;
       padding: 25px;
-      border: 1px solid red;
       margin-left: 50px;
       margin-right: 50px;
       margin-top: 600px;
       gap: 30px;
       
   }
-  .page-container{
-    border: 1px solid red;
-   margin-top: 500px;
-  width: auto;height: auto;
-   
-  }
+  
 
 }
 @media (max-width: 600px) {
@@ -83,15 +110,39 @@
     top: 0;
     left: 0;
     right: 0;
-  
     height: 80px;
     background-color: #15ca8e;
     margin-bottom: 20px;
     z-index: 1;
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
   }
+
+
+.search-bar{
+  position: absolute;
+  top: 30px;
+  width: 200px;
+  height: 25px;
+  border-radius: 23px;
+
+  
+
+
+}
+
+.search-bar::placeholder{
+  text-align: center;
+
+}
+
+  
+
+  
   .card-Container{
       display: grid;
       grid-template-columns: repeat(1, 300px); /* 3 columns */
@@ -102,31 +153,15 @@
      width: auto;
      height: auto;
       padding: 25px;
-      border: 1px solid red;
       margin-left: 50px;
       margin-right: 50px;
       margin-top: 900px;
       
   }
-  .page-container{
-    border: 1px solid red;
-   margin-top: 500px;
-  width: auto;height: auto;
-   
-  }
-
-
-}
-
-.search-bar{
-  margin-top: 25px;
-  margin-right: 1150px;
-  width: 250px;
-  height: 35px;
-  border-radius: 10px;
-  border: none;
   
+
 }
+
 
 
 
