@@ -117,24 +117,17 @@
 
 
 }
-.search-box{
+
+.search-bar{
   margin-top: 25px;
   margin-right: 1150px;
-  border: none;
-
-}
-.search-bar{
   width: 250px;
   height: 35px;
   border-radius: 10px;
   border: none;
-}
-.search-btn{
-  border-radius: 10px;
-  height: 35px;
-  
   
 }
+
 
 
 
