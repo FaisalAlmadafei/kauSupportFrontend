@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoReport } from "react-icons/go";
 import { FaHistory } from "react-icons/fa";
@@ -6,7 +6,7 @@ import { MdMiscellaneousServices } from "react-icons/md";
 import { MdHistoryEdu } from "react-icons/md";
 import { TbDeviceDesktopCheck } from "react-icons/tb";
 import Service from "../SharedComponents/Service";
-import "../FacultyMemberCSS/FmHomePage.css";
+import "../SharedCSS/HomePage.css";
 
 function FmHomePage() {
   const navigate = useNavigate();
@@ -25,17 +25,19 @@ function FmHomePage() {
       pageLink: "/LabsPage",
     },
   ];
+  const [search, setSearch] = useState("");
+
+  const filteredServices = services.filter(service => service.serviceName.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div>
     
       <div className='navBar'>
-        
-        <input id="search-input" type="text" placeholder="serach here" className="search-bar" />
-          
+        <input type="text" placeholder="Serach for a service" className="search-bar" onChange={(e) => setSearch(e.target.value)}/>
+
         </div>
        <div className="card-Container">
-         {services.map((service) => (
+         {filteredServices.map((service) => (
            <div
              key={service.serviceName}
              onClick={() => {
