@@ -1,45 +1,121 @@
-.navBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+@media (min-width: 769px) {
 
-  height: 80px;
-  background-color: #15ca8e;
-  margin-bottom: 20px;
-  z-index: 1;
-  border-bottom-left-radius: 2%;
-  border-bottom-right-radius: 2%;
-}
-.card-Container{
-    display: grid;
-    grid-template-columns: repeat(3, 300px); /* 3 columns */
-    margin-top: 150px;
-    margin-bottom: 250px;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 1400px;
-    height: 500px;
-    padding: 25px;
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    height: 80px;
+    background-color: #15ca8e;
+    margin-bottom: 20px;
+    z-index: 1;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  
+  }
+  .card-Container{
+      display: grid;
+      grid-template-columns: repeat(3, 300px); /* 3 columns */
+      margin-top: 150px;
+      margin-bottom: 250px;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 1400px;
+      height: 500px;
+      padding: 25px;
+      border: 1px solid red;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-top: 100px;
+      
+  }
+  .page-container{
     border: 1px solid red;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 150px;
+  }
 }
 
-@media (max-width: 900px) {
-  .card-Container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
-    gap: 50px;
+
+@media (max-width: 768px) {
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    height: 80px;
+    background-color: #15ca8e;
+    margin-bottom: 20px;
+    z-index: 1;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  
+  }
+  .card-Container{
+      display: grid;
+      grid-template-columns: repeat(2, 300px); /* 3 columns */
+      margin-top: 150px;
+      margin-bottom: 250px;
+      align-items: center;
+      justify-content: space-evenly;
+     width: auto;
+     height: auto;
+      padding: 25px;
+      border: 1px solid red;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-top: 600px;
+      gap: 30px;
+      
+  }
+  .page-container{
+    border: 1px solid red;
+   margin-top: 500px;
+  width: auto;height: auto;
    
   }
+
 }
-
 @media (max-width: 600px) {
-  .card-Container {
-    grid-template-columns: 300px; /* 1 column for even smaller screens */
-    gap: 40px;
-
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    height: 80px;
+    background-color: #15ca8e;
+    margin-bottom: 20px;
+    z-index: 1;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  
   }
+  .card-Container{
+      display: grid;
+      grid-template-columns: repeat(1, 300px); /* 3 columns */
+      margin-top: 150px;
+      margin-bottom: 250px;
+      align-items: center;
+      justify-content: space-evenly;
+     width: auto;
+     height: auto;
+      padding: 25px;
+      border: 1px solid red;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-top: 900px;
+      
+  }
+  .page-container{
+    border: 1px solid red;
+   margin-top: 500px;
+  width: auto;height: auto;
+   
+  }
+
+
 }
 
 

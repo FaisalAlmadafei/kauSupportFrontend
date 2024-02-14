@@ -28,22 +28,25 @@ function FmHomePage() {
 
   return (
     <div>
-       <div className='navBar'>
+    
+      <div className='navBar'>
+        
+        </div>
+       <div className="card-Container">
+         {services.map((service) => (
+           <div
+             key={service.serviceName}
+             onClick={() => {
+               navigate(service.pageLink);
+             }}
+           >
+             <Service serviceName={service.serviceName} Icon={service.icon} />
+           </div>
+         ))}
         
        </div>
-      <div className="card-Container">
-        {services.map((service) => (
-          <div
-            key={service.serviceName}
-            onClick={() => {
-              navigate(service.pageLink);
-            }}
-          >
-            <Service serviceName={service.serviceName} Icon={service.icon} />
-          </div>
-        ))}
       </div>
-    </div>
+     
   );
 }
 

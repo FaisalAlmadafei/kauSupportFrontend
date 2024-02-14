@@ -28,3 +28,15 @@ transition: all 0.3s ease; /* Smooth transition for all properties */
     font-size: 70px;
     color: rgb(255, 255, 255);
 }   
+
+@media (max-width: 600px) {
+    .card{
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .card{
+        margin-top: 25px;
+    }
+}
