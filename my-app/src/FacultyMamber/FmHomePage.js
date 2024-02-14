@@ -28,6 +28,9 @@ function FmHomePage() {
 
   return (
     <div>
+       <div className='navBar'>
+        
+       </div>
       <div className="card-Container">
         {services.map((service) => (
           <div

@@ -5,11 +5,22 @@
     padding-bottom: 30px;
     border-radius: 40px ;
     /*background-color: rgb(88, 213, 115);*/
-    background-image: linear-gradient(to right bottom, #00b56d, #2db86e, #42bc6e, #52bf70, #60c271);
+    background-image: linear-gradient(to right bottom, #0bc178, #2db86e, #42bc6e, #52bf70, #60c271);
     color: rgb(254, 254, 254);
     cursor: pointer;
     font-size: 16px;
+-webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+-moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+transition: all 0.3s ease; /* Smooth transition for all properties */
+
 }
+.card:hover{
+    transform: scale(1.1); /* Make the container 10% larger */
+
+}
+
+
 .service-name {
 
 }

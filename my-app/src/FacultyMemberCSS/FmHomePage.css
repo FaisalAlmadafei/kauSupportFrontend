@@ -1,7 +1,19 @@
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 80px;
+  background-color: #15ca8e;
+  margin-bottom: 20px;
+  z-index: 1;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+}
 .card-Container{
     display: grid;
     grid-template-columns: repeat(3, 300px); /* 3 columns */
-    gap: 50px;
     margin-top: 150px;
     margin-bottom: 250px;
     align-items: center;
@@ -9,7 +21,30 @@
     width: 1400px;
     height: 500px;
     padding: 25px;
+    border: 1px solid red;
+    margin-left: 50px;
+    margin-right: 50px;
 }
+
+@media (max-width: 900px) {
+  .card-Container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    gap: 50px;
+   
+  }
+}
+
+@media (max-width: 600px) {
+  .card-Container {
+    grid-template-columns: 300px; /* 1 column for even smaller screens */
+    gap: 40px;
+
+  }
+}
+
+
+
+
 
 body,
 html {
