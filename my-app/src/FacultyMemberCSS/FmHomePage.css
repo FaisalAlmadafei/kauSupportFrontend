@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 300px); /* 3 columns */
     gap: 50px;
-    margin: 100px;
+    margin-top: 200px;
     margin-bottom: 400px;
     border: 1px solid red;
     align-items: center;

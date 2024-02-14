@@ -6,7 +6,7 @@ function Service({serviceName, Icon}) {
    <div >
 
     <div className="card">
-     <Icon style={{ color: "black" }} />
+     <Icon className="react-icons" />
      <br />
      <h3>{serviceName}</h3>
 
