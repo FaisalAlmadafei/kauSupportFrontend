@@ -7,6 +7,7 @@ import { MdHistoryEdu } from "react-icons/md";
 import { TbDeviceDesktopCheck } from "react-icons/tb";
 import Service from "../SharedComponents/Service";
 import "../FacultyMemberCSS/FmHomePage.css";
+import { CiSearch } from "react-icons/ci";
 
 function FmHomePage() {
   const navigate = useNavigate();
@@ -30,7 +31,12 @@ function FmHomePage() {
     <div>
     
       <div className='navBar'>
-        
+        <div className="search-box">
+        <input id="search-input" type="text" placeholder="serach here" className="search-bar" />
+        <button>
+        <CiSearch className="search-btn" />
+        </button>
+          </div>
         </div>
        <div className="card-Container">
          {services.map((service) => (
