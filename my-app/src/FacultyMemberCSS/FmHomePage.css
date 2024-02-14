@@ -2,11 +2,13 @@
     display: grid;
     grid-template-columns: repeat(3, 300px); /* 3 columns */
     gap: 50px;
-    margin-top: 200px;
-    margin-bottom: 400px;
-    border: 1px solid red;
+    margin-top: 150px;
+    margin-bottom: 250px;
     align-items: center;
     justify-content: space-evenly;
+    width: 1400px;
+    height: 500px;
+    padding: 25px;
 }
 
 body,

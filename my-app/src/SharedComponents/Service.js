@@ -8,7 +8,7 @@ function Service({serviceName, Icon}) {
     <div className="card">
      <Icon className="react-icons" />
      <br />
-     <h3>{serviceName}</h3>
+     <h3 className="service-name">{serviceName}</h3>
 
     </div>
 
