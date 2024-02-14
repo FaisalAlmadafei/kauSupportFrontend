@@ -7,7 +7,7 @@ import { MdHistoryEdu } from "react-icons/md";
 import { TbDeviceDesktopCheck } from "react-icons/tb";
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
-
+// this is a comment
 function FmHomePage() {
   const navigate = useNavigate();
   let services = [
