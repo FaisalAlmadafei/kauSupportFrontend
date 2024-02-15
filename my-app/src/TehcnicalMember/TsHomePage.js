@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GrDocumentText } from "react-icons/gr";
-import { MdOutlineAddTask } from "react-icons/md";
 import { TbDeviceDesktopSearch } from "react-icons/tb";
 import { TbDeviceDesktopCheck } from "react-icons/tb";
 import { TbDeviceDesktopCog } from "react-icons/tb";
+import { MdHistoryEdu } from "react-icons/md";
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
 
@@ -12,7 +12,7 @@ function TsHomePage() {
   const navigate = useNavigate();
   let services = [
     { serviceName: "Reports", icon: GrDocumentText, notification: "true" ,pageLink: "/LabsPage" },
-    { serviceName: "Requests", icon: MdOutlineAddTask, notification: "true",pageLink: "/LabsPage" },
+    { serviceName: "Requests", icon: MdHistoryEdu, notification: "true",pageLink: "/LabsPage" },
     {
       serviceName: "Search for a device",
       icon: TbDeviceDesktopSearch,

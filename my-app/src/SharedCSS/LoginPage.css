@@ -68,6 +68,7 @@ body{
     font-weight: 800;
     background-color: rgb(14, 213, 127);
     cursor: pointer;
+    border: none;
   }
   .submit-button:hover{
     background-color: rgb(67, 241, 166);;
