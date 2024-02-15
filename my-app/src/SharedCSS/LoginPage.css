@@ -74,8 +74,9 @@ body{
     
   }
   h1{
-    margin-top: 80px;
+    
     color: rgb(255, 255, 255);
+   
   }
  
   h2{
@@ -91,6 +92,7 @@ body{
     background-color: rgb(14, 213, 127);
     border-top-right-radius: 7%;
     border-bottom-right-radius: 7%;
+    position: relative;
   
   
     
@@ -103,6 +105,9 @@ body{
     width: 80%;
     height: 90%;
     object-fit: cover;
+    position: absolute;
+    bottom: 3px;
+    left: 80px;
   }
 
   .icon{
