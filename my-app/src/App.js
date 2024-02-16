@@ -7,7 +7,10 @@ import FmHomePage from "./FacultyMamber/FmHomePage";
 import TsvHomePage from "./TechnicalSupervisor/TsvHomePage";
 import TsHomePage from "./TehcnicalMember/TsHomePage";
 import LabsPage from "./SharedComponents/LabsPage";
+import LabDevicesPage from "./SharedComponents/LabDevicesPage";
 export const LoginContext = React.createContext();
+export const NewReportContext = React.createContext();
+
 // This is my app file
 function App() {
   const [userID, setUserID] = useState(localStorage.getItem("UserID") || "");
@@ -19,6 +22,8 @@ function App() {
     localStorage.getItem("userRole") || ""
   );
 
+  const [LabNumber, setLabNumber] = useState("0");
+
   useEffect(() => {
     localStorage.setItem("isLoggedIn", isLoggedIn);
     localStorage.setItem("userRole", userRole);
@@ -27,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+                  <NewReportContext.Provider value={{LabNumber , setLabNumber}}>
       <LoginContext.Provider
         value={[
           userID,
@@ -58,9 +64,12 @@ function App() {
             />
 
             <Route path="/LabsPage" element={<LabsPage />} />
+            <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
           </Routes>
         </Router>
       </LoginContext.Provider>
+      </NewReportContext.Provider>
+
     </div>
   );
 }
