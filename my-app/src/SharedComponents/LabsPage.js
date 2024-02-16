@@ -55,6 +55,7 @@ function LabsPage() {
         <input type="text" placeholder="Serach for a service" className="search-bar" onChange={(e) => setSearch(e.target.value)}/>
 
         </div>
+        
        <div className="card-Container">
          {filteredLabs.map((Lab) => (
            <div

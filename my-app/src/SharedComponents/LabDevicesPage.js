@@ -7,6 +7,7 @@ import { NewReportContext } from "../App";
 import DeviceCard from "./DeviceCard";
 import { LoginContext } from "../App";
 import { Alert } from 'antd';
+import { Button, Result } from 'antd';
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
@@ -16,6 +17,7 @@ function LabDevicesPage() {
   const [SerialNumber, setSerialNumber] = useState("");
   const [ProblemDesription, setProblemDesription] = useState("");
   const [ShowAlert, setShowAlert] = useState(false);
+  const [showNoDevices, setShowNoDevices] = useState(false);
   const [userID ] = useContext(LoginContext);
   const navigate = useNavigate();
 
@@ -37,6 +39,7 @@ function LabDevicesPage() {
           alert("Device is reported ... try again later");
         } else if (response.ok) {
           // Handle successful report submission
+          setShowAlert(true) ; 
         } else {
           // Handle other errors
           alert("An error occurred. Please try again.");
@@ -47,7 +50,6 @@ function LabDevicesPage() {
       }
 
       setisDeviceClicked(false);
-      setShowAlert(true) ; 
       setProblemDesription("");
        
     } else {
@@ -70,9 +72,11 @@ function LabDevicesPage() {
 
         if (response.ok) {
           const result = await response.json();
-          console.log(result);
+         
           setDevices(result);
         } else if (response.status === 400) {
+          setShowNoDevices(true) ; 
+
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -99,6 +103,12 @@ function LabDevicesPage() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
+      {showNoDevices && (<Result className="no-device-picture"
+    status="500"
+    title="No devices found in this LAB"
+    subTitle="Sorry, No Devices Found"
+    extra={<Button on onClick= {()=>{navigate("/Home")}}type="primary">Back Home</Button>}
+  />)}
       {ShowAlert &&(  <Alert className="report-alert"
       message="Device Reported Successfully!"
       description="Thank you for reporting"
