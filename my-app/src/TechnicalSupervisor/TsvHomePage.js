@@ -13,6 +13,7 @@ function TsvHomePage() {
   const navigate = useNavigate();
   let services = [
     { serviceName: "Reports", icon: GrDocumentText, notification: "true" ,pageLink: "/LabsPage" },
+    
     { serviceName: "Requests", icon: MdHistoryEdu, notification: "true",pageLink: "/LabsPage" },
     { serviceName: "Team Progress", icon: RiTeamLine, notification: "false" ,pageLink: "/LabsPage" },
     {
@@ -37,9 +38,10 @@ function TsvHomePage() {
     
       <div className='navBar'>
         <input type="text" placeholder="Serach for a service" className="search-bar" onChange={(e) => setSearch(e.target.value)}/>
-
+       
         </div>
-       <div className="card-Container">
+        <div className="pagee-container">
+        <div className="card-Container">
          {filteredServices.map((service) => (
            <div
              key={service.serviceName}
@@ -53,6 +55,9 @@ function TsvHomePage() {
          ))}
         
        </div>
+
+        </div>
+     
       </div>
      
   );
