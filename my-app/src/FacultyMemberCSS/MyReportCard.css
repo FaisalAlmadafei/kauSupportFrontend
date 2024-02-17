@@ -1,0 +1,170 @@
+.report-page{
+   
+    background-color: rgb(172, 253, 192);
+    margin-bottom: 55px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+   border-radius: 20px;
+   padding: 30px;
+   
+   background-image: linear-gradient(to right bottom, #2ecc71, #48d68c, #5fdd9d, #76e4ae, #8debbe);
+   color: rgb(254, 254, 254);
+   cursor: pointer;
+   font-size: 16px;
+-webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+-moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+
+
+}
+.report-container{
+    text-align: left; /* Aligns children to the left */
+    width: 1000px;
+    height: 400px;
+    margin: auto;
+    padding-top: 25px;
+   
+   
+}
+
+.report-id{
+font-size: 22px;
+font-weight: bold;
+margin-left: 15px;
+color: rgb(255, 255, 255);
+
+
+}
+
+.report-date{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-left: 100px;
+    color: rgb(255, 255, 255);
+
+   
+   
+
+
+
+}
+
+.report-device-number{
+  font-size: 18px;
+  margin-right: 80px;
+  margin-left: 40px;
+  margin-top: 30px;
+  color: rgb(255, 255, 255);
+
+}
+.lab-number{
+    font-size: 18px;
+    margin-right: 80px;
+    margin-left: 40px;
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+
+
+}
+
+.problem{
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 50px;
+
+  margin-left: 40px;
+  color: rgb(255, 255, 255);
+
+}
+.action-taken{
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+
+
+ 
+
+}
+.repair-date{
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 60px;
+
+
+    color: rgb(255, 255, 255);
+
+ 
+
+}
+
+.left-part{
+   
+}
+
+.right-part{
+   display: inline-block;
+    margin-left: 200px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    margin-right: 30px;
+    margin-top: 50px;
+   
+ 
+
+  
+ 
+}
+
+.custom-steps{
+    font-size: 50px;
+    color: white;
+}
+
+.custom-steps .ant-steps-item-icon {
+    background-color:rgb(145, 138, 254)!important; /* Color for finished steps *//* This changes the background color of the circles */
+    border-color: white !important;
+    color: white; /* This changes the border color of the circles */
+  }
+  
+  .custom-steps .ant-steps-item-title,
+  .custom-steps .ant-steps-item-description {
+    color: white !important; /* This changes the text color to white */
+  }
+  
+  .custom-steps .ant-steps-item-icon .ant-steps-icon {
+    color: rgb(0, 0, 0) !important; /* This changes the icon color, if there is an icon inside the circle */
+  }
+  
+  /* If you want to target specific steps based on their status, you can use the following: */
+  .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+    background-color:rgb(145, 138, 254)!important; /* Color for finished steps */
+    border-color:rgb(255, 255, 255) !important;
+    border: solid 3px ;
+   
+  }
+  
+  .custom-steps .ant-steps-item-process .ant-steps-item-icon {
+    background-color:rgb(145, 138, 254)!important; /* Color for finished steps */
+    border-color:rgb(255, 255, 255) !important;
+    border: solid 3px ;
+  }
+  
+  .custom-steps .ant-steps-item-wait .ant-steps-item-icon {
+    border-color:rgb(255, 255, 255) !important;
+    border: solid 3px ;
+  }
+  .custom-steps .ant-steps-item-icon .ant-steps-icon {
+    color: white !important; /* This will change the icon color to white */
+  }
+  .custom-steps .ant-steps-item-tail::after {
+    background-color: white !important; /* Sets the line color to white for all steps */
+  }
+    
+
+  p{
+    margin-top: 0px;
+  }

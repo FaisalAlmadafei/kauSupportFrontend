@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { LoginContext } from "../App";
 import MyReportCard from "./MyReportCard";
-
 function PreviousReportsPage() {
   const [userID] = useContext(LoginContext);
   const [myReports, setmyReports] = useState([]);
@@ -16,7 +15,7 @@ function PreviousReportsPage() {
 
       try {
         const response = await fetch(
-          `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetMyReports?User_Id=${userID}`,
+          `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetMyReports?User_Id=1111111`,
           requestOptions
         );
 
@@ -46,7 +45,9 @@ function PreviousReportsPage() {
             problemDescription={Report.problemDescription}
             actionTaken={Report.actionTaken}
             reportDate={Report.reportDate}
-            repairDate={Report.repairDate}
+            repairDate={Report.repairDate} 
+            reportStatus={Report.reportStatus}
+          
           />
         ))}
       </div>
