@@ -8,6 +8,7 @@ import TsvHomePage from "./TechnicalSupervisor/TsvHomePage";
 import TsHomePage from "./TehcnicalMember/TsHomePage";
 import LabsPage from "./SharedComponents/LabsPage";
 import LabDevicesPage from "./SharedComponents/LabDevicesPage";
+import PreviousReportsPage from "./FacultyMamber/PreviousReportsPage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 
@@ -65,6 +66,8 @@ function App() {
 
             <Route path="/LabsPage" element={<LabsPage />} />
             <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
+            <Route path="/PreviousReportsPage" element={<PreviousReportsPage />} />
+
           </Routes>
         </Router>
       </LoginContext.Provider>

@@ -6,8 +6,8 @@ import { useContext } from "react";
 import { NewReportContext } from "../App";
 import DeviceCard from "./DeviceCard";
 import { LoginContext } from "../App";
-import { Alert } from 'antd';
-import { Button, Result } from 'antd';
+import { Alert } from "antd";
+import { Button, Result } from "antd";
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
@@ -16,49 +16,60 @@ function LabDevicesPage() {
   const [ReportedDeviceNumber, setReportedDeviceNumber] = useState("");
   const [SerialNumber, setSerialNumber] = useState("");
   const [ProblemDesription, setProblemDesription] = useState("");
-  const [ShowAlert, setShowAlert] = useState(false);
+  const [DeviceStatus, setDeviceStatus] = useState("");
+  const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   const [showNoDevices, setShowNoDevices] = useState(false);
-  const [userID ] = useContext(LoginContext);
+  const [userID] = useContext(LoginContext);
   const navigate = useNavigate();
 
   async function addReport() {
     if (ProblemDesription.length > 0) {
-      var requestOptions = {
-        method: "POST",
-        redirect: "follow",
-      };
-
-      try {
-        const response = await fetch(
-          `https://kausupportapi.azurewebsites.net/api/FacultyMember_/AddReport?Device_Number=${ReportedDeviceNumber}&Serial_Number=${SerialNumber}&Device_LocatedLab=${LabNumber}&Problem_Description=${ProblemDesription}&Reported_By=${userID}`,
-          requestOptions
-        );
-
-        if (response.status === 400) {
-          // Handle the case where the device has already been reported
-          alert("Device is reported ... try again later");
-        } else if (response.ok) {
-          // Handle successful report submission
-          setShowAlert(true) ; 
-        } else {
-          // Handle other errors
-          alert("An error occurred. Please try again.");
+      if (DeviceStatus !== "reported") {
+        var requestOptions = {
+          method: "POST",
+          redirect: "follow",
+        };
+  
+        try {
+          const response = await fetch(
+            `https://kausupportapi.azurewebsites.net/api/FacultyMember_/AddReport?Device_Number=${ReportedDeviceNumber}&Serial_Number=${SerialNumber}&Device_LocatedLab=${LabNumber}&Problem_Description=${ProblemDesription}&Reported_By=${userID}`,
+            requestOptions
+          );
+  
+          if (response.status === 400) {
+            // Handle the case where the device has already been reported
+            alert("Device is reported ... try again later");
+          } else if (response.ok) {
+            // Handle successful report submission
+            setShowSuccessAlert(true);
+          } else {
+            // Handle other errors
+            alert("An error occurred. Please try again.");
+          }
+        } catch (error) {
+          console.log("error", error);
+          alert("An error occurred. Please check your connection and try again.");
         }
-      } catch (error) {
-        console.log("error", error);
-        alert("An error occurred. Please check your connection and try again.");
+  
+        setisDeviceClicked(false);
+        setProblemDesription("");
+
       }
 
-      setisDeviceClicked(false);
-      setProblemDesription("");
-       
+      else{
+        setisDeviceClicked(false);
+        setProblemDesription("");
+        setShowWarningAlert(true) ; 
+      }
+    
     } else {
       alert("Please Enter problem description ..");
     }
   }
 
   useEffect(() => {
-    async function handel() {
+    async function getLabs() {
       var requestOptions = {
         method: "GET",
         redirect: "follow",
@@ -72,11 +83,10 @@ function LabDevicesPage() {
 
         if (response.ok) {
           const result = await response.json();
-         
+
           setDevices(result);
         } else if (response.status === 400) {
-          setShowNoDevices(true) ; 
-
+          setShowNoDevices(true);
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -85,8 +95,8 @@ function LabDevicesPage() {
         alert("An error occurred. Please check your connection and try again.");
       }
     }
-    handel();
-  }, []);
+    getLabs();
+  }, [LabNumber]);
 
   const [search, setSearch] = useState("");
   const filteredDevices = Devices.filter((Device) =>
@@ -103,25 +113,55 @@ function LabDevicesPage() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      {showNoDevices && (<Result className="no-device-picture"
-    status="500"
-    title="No devices found in this LAB"
-    subTitle="Sorry, No Devices Found"
-    extra={<Button on onClick= {()=>{navigate("/Home")}}type="primary">Back Home</Button>}
-  />)}
-      {ShowAlert &&(  <Alert className="report-alert"
-      message="Device Reported Successfully!"
-      description="Thank you for reporting"
-      type="success"
-      showIcon 
-      closable
-      onClose={() => setShowAlert(false)}
-      
-    />)}
+      {showNoDevices && (
+        <Result
+          className="no-device-picture"
+          status="500"
+          title="No devices found in this LAB"
+          subTitle="Sorry, No Devices Found"
+          extra={
+            <Button
+              on
+              onClick={() => {
+                navigate("/Home");
+              }}
+              type="primary"
+            >
+              Back Home
+            </Button>
+          }
+        />
+      )}
+      {ShowSuccessAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Device Reported Successfully!"
+          description="Thank you for reporting"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setShowSuccessAlert(false)}
+        />
+      )}
+        {ShowWarningAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="This Device is reported !"
+          description="Please try again later."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setShowWarningAlert(false)}
+        />
+      )}
+
+
       {isDeviceClicked && (
         <div className="report-form">
-<div onClick={() => setisDeviceClicked(false)} className="x-icon">x</div>    
-      <h2 className="reported-device-number">
+          <div onClick={() => setisDeviceClicked(false)} className="x-icon">
+            x
+          </div>
+          <h2 className="reported-device-number">
             Devcie {ReportedDeviceNumber}
           </h2>
           <h3 style={{ color: "white" }}>
@@ -145,6 +185,7 @@ function LabDevicesPage() {
             onClick={() => {
               setReportedDeviceNumber(Device.deviceNumber);
               setSerialNumber(Device.serialNumber);
+              setDeviceStatus(Device.deviceStatus.toLowerCase())
               setisDeviceClicked(true);
             }}
           >

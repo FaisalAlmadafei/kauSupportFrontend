@@ -45,7 +45,7 @@
 
   .reported-device-number {
     color: rgb(255, 255, 255);
-        font-weight: bold;
+    font-weight: bold;
   }
 
   .report-input {
@@ -77,12 +77,22 @@
     background-color: rgb(155, 144, 254);
   }
 
-  .report-alert {
+  .report-alert-success {
     height: 100px;
     margin-top: 55px;
     position: fixed;
+    left: 455px;
+    padding-bottom: 35px;
     border: 3px solid rgb(0, 208, 0);
+  }
 
+  .report-alert-warning {
+    height: 100px;
+    margin-top: 55px;
+    position: fixed;
+    left: 455px;
+    padding-bottom: 35px;
+    border: 3px solid rgb(218, 65, 0);
   }
 
   .search-bar {
@@ -98,7 +108,6 @@
   .search-bar::placeholder {
     text-align: center;
   }
-
 
   .devices-card-container {
     display: grid;
@@ -148,7 +157,7 @@
     background-color: red;
     z-index: 2;
     top: 150px;
-    left:150px;
+    left: 150px;
     right: 100px;
     border-radius: 10%;
     background: rgba(23, 210, 97, 0.75);
@@ -201,14 +210,26 @@
     background-color: rgb(155, 144, 254);
   }
 
-  .report-alert {
+  .report-alert-success {
     height: 100px;
+    z-index: 3;
     margin-top: 55px;
     position: fixed;
+    left: 150px;
+    right: 150px;
     border: 3px solid rgb(0, 208, 0);
-
   }
 
+  .report-alert-warning {
+    height: 100px;
+    z-index: 3;
+    margin-top: 55px;
+    position: fixed;
+    left: 150px;
+    right: 150px;
+
+    border: 3px solid rgb(218, 65, 0);
+  }
 
   .search-bar::placeholder {
     text-align: center;
@@ -254,7 +275,8 @@
     background-color: red;
     z-index: 2;
     top: 150px;
-    left: 15px;right: 15px;
+    left: 15px;
+    right: 15px;
     border-radius: 10%;
     background: rgba(23, 210, 97, 0.75);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -274,7 +296,7 @@
 
   .reported-device-number {
     color: rgb(255, 255, 255);
-        font-weight: bold;
+    font-weight: bold;
   }
 
   .report-input {
@@ -305,14 +327,23 @@
   .form-button:active {
     background-color: rgb(155, 144, 254);
   }
-   .report-alert{
+  .report-alert-success {
     position: fixed;
     left: 25px;
     right: 25px;
     z-index: 3;
     margin-top: 25px;
-   border: 3px solid rgb(0, 208, 0);
-   }
+    border: 3px solid rgb(0, 208, 0);
+  }
+
+  .report-alert-warning {
+    position: fixed;
+    left: 25px;
+    right: 25px;
+    z-index: 3;
+    margin-top: 25px;
+    border: 3px solid rgb(218, 65, 0);
+  }
   .search-bar {
     position: absolute;
     top: 30px;
@@ -330,7 +361,7 @@
     grid-template-columns: repeat(1, 250px); /* 3 columns */
     margin-top: 80px;
   }
-  .no-device-picture{
+  .no-device-picture {
     margin-top: 55px;
   }
 }

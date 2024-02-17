@@ -12,7 +12,7 @@ function FmHomePage() {
   const navigate = useNavigate();
   let services = [
     { serviceName: "New Report", icon: GoReport, pageLink: "/LabsPage" },
-    { serviceName: "Previous Reports", icon: FaHistory, pageLink: "/LabsPage" },
+    { serviceName: "Previous Reports", icon: FaHistory, pageLink: "/PreviousReportsPage"},
     {
       serviceName: "Request a Service",
       icon: MdMiscellaneousServices,
