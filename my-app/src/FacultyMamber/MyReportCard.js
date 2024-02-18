@@ -49,33 +49,33 @@ function MyReportCard({
   const step = getStepNumber() ; 
   return (
     <div>
-      <div className="report-page">
+      <div className="my-report-page">
       
-          <div className="report-container">
-            <span className="report-id">Report ID: {reportID}</span>
-            <span className="report-date">Report Date: {Date}</span>
+          <div className="my-report-container">
+            <span className="my-report-id">Report ID: {reportID}</span>
+            <span className="my-report-date">Date: {Date}</span>
 
-            <div className="report-device-number">
+            <div className="my-report-device-number">
               <span>Device Number: {deviceNumber}</span>
             </div>
 
-            <div className="lab-number">
+            <div className="my-lab-number">
               <span>LAB Number: {deviceLocatedLab}</span>
             </div>
-            <div className="problem">
+            <div className="my-problem">
               <span>Problem Description: {problemDescription}</span>
             </div>
-            <div className="action-taken">
-              <span>Action Taken: {actionTaken}</span>
+            <div className="my-action-taken">
+              <span>Action Taken:  {actionTaken}</span>
             </div>
-            <div className="repair-date">
+            <div className="my-repair-date">
               <span>Repair Date: {repair_Date}</span>
             </div>
             
         
         </div>
 
-        <div className="right-part">
+        <div className="my-right-part">
         <Steps className="custom-steps"
     direction="vertical"
     current={step}
