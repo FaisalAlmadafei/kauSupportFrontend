@@ -8,7 +8,7 @@ function LabCard({ labNumber , Icon }) {
     <div className="lab-card">
     <Icon className="react-icons" />
     <br />
-    <h3 className="lab-number">Lab {labNumber}</h3>
+    <h3 className="lab-card-number">Lab {labNumber}</h3>
 
    </div>
   

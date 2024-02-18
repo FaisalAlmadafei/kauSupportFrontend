@@ -32,72 +32,70 @@ function LabDevicesPage() {
           method: "POST",
           redirect: "follow",
         };
-  
+
         try {
           const response = await fetch(
             `https://kausupportapi.azurewebsites.net/api/FacultyMember_/AddReport?Device_Number=${ReportedDeviceNumber}&Serial_Number=${SerialNumber}&Device_LocatedLab=${LabNumber}&Problem_Description=${ProblemDesription}&Reported_By=${userID}`,
             requestOptions
           );
-  
+
           if (response.status === 400) {
             // Handle the case where the device has already been reported
             alert("Device is reported ... try again later");
           } else if (response.ok) {
             // Handle successful report submission
+
             setShowSuccessAlert(true);
+            getLabDevices();
           } else {
             // Handle other errors
             alert("An error occurred. Please try again.");
           }
         } catch (error) {
           console.log("error", error);
-          alert("An error occurred. Please check your connection and try again.");
+          alert(
+            "An error occurred. Please check your connection and try again."
+          );
         }
-  
+
         setisDeviceClicked(false);
         setProblemDesription("");
-
-      }
-
-      else{
+      } else {
         setisDeviceClicked(false);
         setProblemDesription("");
-        setShowWarningAlert(true) ; 
+        setShowWarningAlert(true);
       }
-    
     } else {
       alert("Please Enter problem description ..");
     }
   }
+  async function getLabDevices() {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
 
-  useEffect(() => {
-    async function getLabs() {
-      var requestOptions = {
-        method: "GET",
-        redirect: "follow",
-      };
+    try {
+      const response = await fetch(
+        `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetLabDevices/ID=${LabNumber}`,
+        requestOptions
+      );
 
-      try {
-        const response = await fetch(
-          `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetLabDevices/ID=${LabNumber}`,
-          requestOptions
-        );
-
-        if (response.ok) {
-          const result = await response.json();
-
-          setDevices(result);
-        } else if (response.status === 400) {
-          setShowNoDevices(true);
-        } else {
-          alert("An error occurred. Please try again.");
-        }
-      } catch (error) {
-        console.log("error", error);
-        alert("An error occurred. Please check your connection and try again.");
+      if (response.ok) {
+        const result = await response.json();
+        setDevices(result);
+      } else if (response.status === 400) {
+        setShowNoDevices(true);
+      } else {
+        alert("An error occurred. Please try again.");
       }
+    } catch (error) {
+      console.log("error", error);
+      alert("An error occurred. Please check your connection and try again.");
     }
-    getLabs();
+  }
+  useEffect(() => {
+    getLabDevices();
   }, [LabNumber]);
 
   const [search, setSearch] = useState("");
@@ -107,15 +105,8 @@ function LabDevicesPage() {
 
   return (
     <div>
-      <div className="navBar">
-        <input
-          type="text"
-          placeholder="Serach for a service"
-          className="search-bar"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <FmNavigationBar/>
-      </div>
+      <FmNavigationBar setSearch={setSearch} />
+
       {showNoDevices && (
         <Result
           className="no-device-picture"
@@ -146,7 +137,7 @@ function LabDevicesPage() {
           onClose={() => setShowSuccessAlert(false)}
         />
       )}
-        {ShowWarningAlert && (
+      {ShowWarningAlert && (
         <Alert
           className="report-alert-warning"
           message="This Device is reported !"
@@ -157,7 +148,6 @@ function LabDevicesPage() {
           onClose={() => setShowWarningAlert(false)}
         />
       )}
-
 
       {isDeviceClicked && (
         <div className="report-form">
@@ -186,10 +176,14 @@ function LabDevicesPage() {
           <div
             key={Device.deviceNumber}
             onClick={() => {
-              setReportedDeviceNumber(Device.deviceNumber);
-              setSerialNumber(Device.serialNumber);
-              setDeviceStatus(Device.deviceStatus.toLowerCase())
-              setisDeviceClicked(true);
+              if (Device.deviceStatus.toLowerCase() !== "reported") {
+                setReportedDeviceNumber(Device.deviceNumber);
+                setSerialNumber(Device.serialNumber);
+                setDeviceStatus(Device.deviceStatus.toLowerCase());
+                setisDeviceClicked(true);
+              } else {
+                setShowWarningAlert(true);
+              }
             }}
           >
             <DeviceCard deviceNumber={Device.deviceNumber} />

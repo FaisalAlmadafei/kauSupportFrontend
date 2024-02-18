@@ -18,6 +18,7 @@
     
   
   }
+  
   .search-bar {
     margin-left: 1100px;
     top: 20px;
@@ -33,6 +34,7 @@
   
   }
 
+  
   .search-bar::placeholder{
     text-align: center;
   
