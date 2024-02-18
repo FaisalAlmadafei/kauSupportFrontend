@@ -9,6 +9,8 @@ import { LoginContext } from "../App";
 import { Alert } from "antd";
 import { Button, Result } from "antd";
 
+import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
   const [Devices, setDevices] = useState([]);
@@ -112,6 +114,7 @@ function LabDevicesPage() {
           className="search-bar"
           onChange={(e) => setSearch(e.target.value)}
         />
+        <FmNavigationBar/>
       </div>
       {showNoDevices && (
         <Result

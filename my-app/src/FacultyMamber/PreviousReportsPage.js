@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { LoginContext } from "../App";
 import MyReportCard from "./MyReportCard";
+import FmNavigationBar from "./FmNavigationBar";
+import "../SharedCSS/HomePage.css";
+
 function PreviousReportsPage() {
   const [userID] = useContext(LoginContext);
   const [myReports, setmyReports] = useState([]);
@@ -36,6 +39,11 @@ function PreviousReportsPage() {
   }, []);
   return (
     <div>
+      <div className="navBar">
+        <input type="text" placeholder="Serach for a service" className="search-bar"/>
+        <FmNavigationBar/>
+        </div>
+      
       <div className="reports-card-container">
         {myReports.map((Report) => (
           <MyReportCard

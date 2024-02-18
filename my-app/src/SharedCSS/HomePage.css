@@ -18,14 +18,15 @@
     
   
   }
-  .search-bar{
-    position: absolute;
+  .search-bar {
+    margin-left: 1100px;
     top: 20px;
-    width: 500px;
+    width: 250px !important;
     height: 35px;
     border-radius: 23px;
     padding-left: 10px;
     border: none;
+    
  
     
 
@@ -79,7 +80,7 @@
   .search-bar{
     position: absolute;
     top: 30px;
-    width: 400px;
+    width: 200px;
     height: 30px;
     border-radius: 23px;
   
@@ -132,7 +133,7 @@
 .search-bar{
   position: absolute;
   top: 30px;
-  width: 200px;
+  width: 100px;
   height: 25px;
   border-radius: 23px;
 

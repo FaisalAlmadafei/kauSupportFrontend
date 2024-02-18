@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { BsDoorOpen } from "react-icons/bs";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
-
+import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+import "../SharedCSS/HomePage.css";
 
 
 
@@ -53,7 +54,7 @@ function LabsPage() {
     
       <div className='navBar'>
         <input type="text" placeholder="Serach for a service" className="search-bar" onChange={(e) => setSearch(e.target.value)}/>
-
+        <FmNavigationBar/>
         </div>
         
        <div className="card-Container">

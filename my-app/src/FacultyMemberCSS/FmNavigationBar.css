@@ -1,0 +1,25 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-right: 350px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+li {
+  margin-right: 5px;
+  color: aliceblue ;
+  padding: 0;
+ 
+}
+li:last-child {
+  margin-right: 0;
+}
+.nav-service {
+  cursor: pointer;
+}
+.nav-service:hover {
+  background-color: rgb(191, 224, 213);
+}
+

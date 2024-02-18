@@ -32,9 +32,8 @@ function FmHomePage() {
   return (
     <div>
     
-      <div className='navBar'>
+      <div className="navBar">
         <input type="text" placeholder="Serach for a service" className="search-bar" onChange={(e) => setSearch(e.target.value)}/>
-
         </div>
        <div className="card-Container">
          {filteredServices.map((service) => (
