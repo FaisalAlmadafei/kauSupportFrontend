@@ -53,7 +53,7 @@ function MyReportCard({
       
           <div className="my-report-container">
             <span className="my-report-id">Report ID: {reportID}</span>
-            <span className="my-report-date">Date: {Date}</span>
+            <span className="my-report-date">Report Date: {Date}</span>
 
             <div className="my-report-device-number">
               <span>Device Number: {deviceNumber}</span>

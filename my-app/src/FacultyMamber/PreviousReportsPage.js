@@ -37,15 +37,20 @@ function PreviousReportsPage() {
     }
     getMyReports();
   }, []);
+  const [search, setSearch] = useState("");
+  const filteredReports = myReports.filter((Report) =>
+    Report.reportID.toString().toLowerCase().includes(search.toLowerCase())
+  );
+  
   return (
     <div>
       <div className="navBar">
         <input type="text" placeholder="Serach for a service" className="search-bar"/>
-        <FmNavigationBar/>
+        <FmNavigationBar setSearch={setSearch}/>
         </div>
       
       <div className="reports-card-container">
-        {myReports.map((Report) => (
+        {filteredReports.map((Report) => (
           <MyReportCard
             reportID={Report.reportID}
             deviceNumber={Report.deviceNumber}
