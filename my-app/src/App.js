@@ -76,6 +76,10 @@ function App() {
             <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
             <Route path="/PreviousReportsPage" element={<PreviousReportsPage />} />
             <Route path="/NewServiceRequest" element={<NewServiceRequest />} />
+            <Route
+                path="/DevicesAvailabilityPage"
+                element={<DevicesAvailabilityPage />}
+              />
 
           </Routes>
         </Router>
