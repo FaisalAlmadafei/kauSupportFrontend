@@ -186,7 +186,7 @@ function LabDevicesPage() {
               }
             }}
           >
-            <DeviceCard deviceNumber={Device.deviceNumber} />
+            <DeviceCard deviceNumber={Device.deviceNumber} type = {Device.type} deviceStatus={Device.deviceStatus} />
           </div>
         ))}
       </div>

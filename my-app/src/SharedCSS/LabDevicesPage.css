@@ -24,7 +24,7 @@
     background-color: red;
     z-index: 2;
     top: 150px;
-    left: 550px;
+    left: 490px;
     right: 550px;
     border-radius: 10%;
     background: rgba(23, 210, 97, 0.75);
@@ -34,7 +34,9 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 25px;
+    
   }
+ 
   .x-icon {
     position: absolute;
     top: 3px;

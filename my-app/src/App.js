@@ -9,8 +9,10 @@ import TsHomePage from "./TehcnicalMember/TsHomePage";
 import LabsPage from "./SharedComponents/LabsPage";
 import LabDevicesPage from "./SharedComponents/LabDevicesPage";
 import PreviousReportsPage from "./FacultyMamber/PreviousReportsPage";
+import DevicesAvailabilityPage from "./SharedComponents/DevicesAvailabilityPage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
+export const ServicesContext = React.createContext();
 
 // This is my app file
 function App() {
@@ -24,7 +26,10 @@ function App() {
   );
 
   const [LabNumber, setLabNumber] = useState("0");
-  
+  const [FmServices, setFmServices] = useState([]);
+  const [TsServices, setTsServices] = useState([]);
+  const [TsvServices, setTsvmServices] = useState([]);
+
 
   useEffect(() => {
     localStorage.setItem("isLoggedIn", isLoggedIn);
@@ -34,46 +39,53 @@ function App() {
 
   return (
     <div className="App">
-                  <NewReportContext.Provider value={{LabNumber , setLabNumber}}>
-      <LoginContext.Provider
-        value={[
-          userID,
-          setUserID,
-          userPass,
-          setuserPass,
-          isLoggedIn,
-          setIsLoggedIn,
-          setUserRole,
-          userRole,
-        ]}
-      >
-        <Router>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route
-              path="/Home"
-              element={
-                userRole === "Faculty Member" ? (
-                  <FmHomePage />
-                ) : userRole === "Supervisor" ? (
-                  <TsvHomePage />
-                ) : userRole === "Technical Member" ? (
-                  <TsHomePage />
-                ) : (
-                  <LoginPage />
-                )
-              }
-            />
+       <ServicesContext.Provider value={{ FmServices , setFmServices , TsServices , setTsServices , TsvServices , setTsvmServices}}>
+      <NewReportContext.Provider value={{ LabNumber, setLabNumber }}>
+        <LoginContext.Provider
+          value={[
+            userID,
+            setUserID,
+            userPass,
+            setuserPass,
+            isLoggedIn,
+            setIsLoggedIn,
+            setUserRole,
+            userRole,
+          ]}
+        >
+          <Router>
+            <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route
+                path="/Home"
+                element={
+                  userRole === "Faculty Member" ? (
+                    <FmHomePage />
+                  ) : userRole === "Supervisor" ? (
+                    <TsvHomePage />
+                  ) : userRole === "Technical Member" ? (
+                    <TsHomePage />
+                  ) : (
+                    <LoginPage />
+                  )
+                }
+              />
 
-            <Route path="/LabsPage" element={<LabsPage />} />
-            <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
-            <Route path="/PreviousReportsPage" element={<PreviousReportsPage />} />
-
-          </Routes>
-        </Router>
-      </LoginContext.Provider>
+              <Route path="/LabsPage" element={<LabsPage />} />
+              <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
+              <Route
+                path="/PreviousReportsPage"
+                element={<PreviousReportsPage />}
+              />
+              <Route
+                path="/DevicesAvailabilityPage"
+                element={<DevicesAvailabilityPage />}
+              />
+            </Routes>
+          </Router>
+        </LoginContext.Provider>
       </NewReportContext.Provider>
-
+      </ServicesContext.Provider>
     </div>
   );
 }

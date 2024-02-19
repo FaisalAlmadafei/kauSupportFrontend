@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
-
+import { ServicesContext } from "../App";
 import { GoReport } from "react-icons/go";
 import { FaHistory } from "react-icons/fa";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { MdHistoryEdu } from "react-icons/md";
 import { TbDeviceDesktopCheck } from "react-icons/tb";
+import DevicesAvailabilityPage from "../SharedComponents/DevicesAvailabilityPage";
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
 // this is a comment
@@ -17,6 +18,7 @@ function FmHomePage() {
  
 
   let services = [
+   
     { serviceName: "New Report", icon: GoReport, pageLink: "/LabsPage" },
     { serviceName: "Previous Reports", icon: FaHistory, pageLink: "/PreviousReportsPage"},
     {
@@ -28,9 +30,10 @@ function FmHomePage() {
     {
       serviceName: "Devices Availability",
       icon: TbDeviceDesktopCheck,
-      pageLink: "/LabsPage",
+      pageLink: "/DevicesAvailabilityPage",
     },
   ];
+
   
 
 
