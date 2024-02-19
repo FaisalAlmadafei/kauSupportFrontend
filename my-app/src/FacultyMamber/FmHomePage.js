@@ -22,7 +22,7 @@ function FmHomePage() {
     {
       serviceName: "Request a Service",
       icon: MdMiscellaneousServices,
-      pageLink: "/LabsPage",
+      pageLink: "/NewServiceRequest",
     },
     { serviceName: "My Requests", icon: MdHistoryEdu, pageLink: "/LabsPage" },
     {

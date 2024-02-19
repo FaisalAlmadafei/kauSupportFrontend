@@ -51,13 +51,8 @@ function LabsPage() {
 
   return (
     <div>
-    
-   
         <FmNavigationBar setSearch={setSearch}/>
-        
-    
-        
-       <div className="card-Container">
+         <div className="card-Container">
          {filteredLabs.map((Lab) => (
            <div
              key={Lab.labNumber}
