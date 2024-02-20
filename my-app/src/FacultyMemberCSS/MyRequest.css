@@ -1,0 +1,64 @@
+@media (min-width: 1000px) {
+
+   
+
+  .my-request-page{
+  
+     margin-top: 50px;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+  
+  
+     box-sizing: border-box; /* Ensure padding is included in the width */
+      background-color: rgb(172, 253, 192);
+  
+      
+      position: relative;
+     border-radius: 20px;
+     
+  
+     
+     background-image: linear-gradient(to right bottom, #2ecc71, #48d68c, #5fdd9d, #76e4ae, #8debbe);
+     color: rgb(254, 254, 254);
+     cursor: pointer;
+     font-size: 16px;
+  -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  
+  
+  
+  }
+  .my-request-container{
+    flex: 1;
+    margin-top: 10px;
+    width: 750px;
+    height: 300px;
+    margin-bottom: 35px;    
+  }
+  .my-request-id{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: rgb(255, 255, 255);
+      
+}
+.my-request-description{
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 50px;
+
+margin-left: 40px;
+color: rgb(255, 255, 255);
+
+}
+.ts-reply{
+  font-size: 18px;
+  margin-left: 40px;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+}
+
+} 

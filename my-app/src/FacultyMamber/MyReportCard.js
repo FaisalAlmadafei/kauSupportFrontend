@@ -74,7 +74,7 @@ function MyReportCard({
             
         
         </div>
-
+        
         <div className="my-right-part">
         <Steps className="custom-steps"
     direction="vertical"

@@ -26,7 +26,7 @@ function FmHomePage() {
       icon: MdMiscellaneousServices,
       pageLink: "/NewServiceRequest",
     },
-    { serviceName: "My Requests", icon: MdHistoryEdu, pageLink: "/LabsPage" },
+    { serviceName: "My Requests", icon: MdHistoryEdu, pageLink: "/MyRequestsPage" },
     {
       serviceName: "Devices Availability",
       icon: TbDeviceDesktopCheck,

@@ -11,6 +11,7 @@ import LabDevicesPage from "./SharedComponents/LabDevicesPage";
 import PreviousReportsPage from "./FacultyMamber/PreviousReportsPage";
 import NewServiceRequest from "./SharedComponents/NewServiceRequest";
 import DevicesAvailabilityPage from "./SharedComponents/DevicesAvailabilityPage";
+import MyRequestsPage from "./FacultyMamber/MyRequestsPage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -80,7 +81,7 @@ function App() {
                 path="/DevicesAvailabilityPage"
                 element={<DevicesAvailabilityPage />}
               />
-
+             <Route path="/MyRequestsPage" element={<MyRequestsPage />} />
           </Routes>
         </Router>
       </LoginContext.Provider>
