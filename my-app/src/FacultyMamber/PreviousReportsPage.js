@@ -24,7 +24,7 @@ function PreviousReportsPage() {
 
       try {
         const response = await fetch(
-          `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetMyReports?User_Id=1111111`,
+          `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetMyReports?User_Id=${userID}`,
           requestOptions
         );
 

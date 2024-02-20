@@ -48,25 +48,34 @@ function MyRequest() {
   return (
     <div>
       <div className="navBar">
-        <input type="text" placeholder="Serach for a service" className="search-bar"/>
-        <FmNavigationBar setSearch={setSearch}/>
-        </div>
-        <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
-        </div>
-      <div className="my-request-container">
+        <input
+          type="text"
+          placeholder="Serach for a service"
+          className="search-bar"
+        />
+        <FmNavigationBar setSearch={setSearch} />
+      </div>
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
+        <IoIosArrowBack />
+      </div>
+     
+      <div className="my-request-container"> 
         {filteredRequests.map((Request) => (
-          <MyRequestsCard 
-          requestID={Request.requestID}
-          requestStatus={Request.requestStatus}
-          technicalSupportReply={Request.technicalSupportReply}
-          request={Request.request}
+          <MyRequestsCard
+            requestID={Request.requestID}
+            requestStatus={Request.requestStatus}
+            technicalSupportReply={Request.technicalSupportReply}
+            request={Request.request}
           />
         ))}
-       
       </div>
     </div>
-  )
+  );
 }
 
-export default MyRequest
+export default MyRequest;
