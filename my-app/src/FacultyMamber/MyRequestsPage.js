@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import MyRequestsCard from "./MyRequestsCard";
 import FmNavigationBar from "./FmNavigationBar";
+import "../FacultyMemberCSS/MyRequest.css";
+
+
 
 function MyRequest() {
   const [userID] = useContext(LoginContext);
@@ -47,21 +50,16 @@ function MyRequest() {
 
   return (
     <div>
-      <div className="navBar">
-        <input
-          type="text"
-          placeholder="Serach for a service"
-          className="search-bar"
-        />
+      
         <FmNavigationBar setSearch={setSearch} />
-      </div>
+      
       <div
         onClick={() => {
           navigate("/Home");
         }}
         className="back-icon"
       >
-        <IoIosArrowBack />
+        <IoIosArrowBack  />
       </div>
      
       <div className="my-request-container"> 

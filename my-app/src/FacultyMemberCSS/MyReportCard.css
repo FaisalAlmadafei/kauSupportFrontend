@@ -1,175 +1,151 @@
-
 @media (min-width: 1000px) {
+  .my-report-page {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-   
-
-.my-report-page{
-
-   margin-top: 50px;
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-
-
-   box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box; /* Ensure padding is included in the width */
     background-color: rgb(172, 253, 192);
 
-    
     position: relative;
-   border-radius: 20px;
-   
+    border-radius: 20px;
 
-   
-   background-image: linear-gradient(to right bottom, #2ecc71, #48d68c, #5fdd9d, #76e4ae, #8debbe);
-   color: rgb(254, 254, 254);
-   cursor: pointer;
-   font-size: 16px;
--webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
--moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    background-image: linear-gradient(
+      to right bottom,
+      #2ecc71,
+      #48d68c,
+      #5fdd9d,
+      #76e4ae,
+      #8debbe
+    );
+    color: rgb(254, 254, 254);
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  }
+  .my-report-container {
+    flex: 1;
+    margin-top: -15px;
+    margin-bottom: 35px;
+  }
 
+  .my-right-part {
+    flex: 1;
+    margin-top: 50px;
+    margin-bottom: 35px;
+  }
 
+  .my-report-id {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: rgb(255, 255, 255);
+  }
 
-}
-.my-report-container{
-  flex: 1;
-  margin-top: -15px;
-  margin-bottom: 35px;
-
- 
- 
-   
-   
-}
-
-.my-right-part{
- flex: 1;
- margin-top: 50px;
- margin-bottom: 35px;
-
-
- 
-
-}
-
-.my-report-id{
-font-size: 22px;
-font-weight: bold;
-margin-left: 15px;
-color: rgb(255, 255, 255);
-
-
-
-}
-
-.my-report-date{
+  .my-report-date {
     font-size: 22px;
     font-weight: bold;
     margin-left: 25px;
     margin-left: 100px;
     color: rgb(255, 255, 255);
+  }
+  .custom-steps {
+    margin-left: 200px;
+  }
 
-   
-   
-
-
-
-}
-.custom-steps{
-  margin-left: 200px;
-}
-
-.my-report-device-number{
-  font-size: 18px;
-  margin-left: 40px;
-  margin-top: 30px;
-  color: rgb(255, 255, 255);
-  display: inline-block;
-
-}
-.my-lab-number{
+  .my-report-device-number {
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+  }
+  .my-lab-number {
     font-size: 18px;
     margin-right: 80px;
     margin-left: 25px;
     margin-top: 5px;
     color: rgb(255, 255, 255);
     display: inline-block;
+  }
 
-
-}
-
-.my-problem{
+  .my-problem {
     font-size: 18px;
     margin-left: 40px;
     margin-top: 50px;
 
-  margin-left: 40px;
-  color: rgb(255, 255, 255);
-
-}
-.my-action-taken{
+    margin-left: 40px;
+    color: rgb(255, 255, 255);
+  }
+  .my-action-taken {
     font-size: 18px;
     margin-left: 40px;
     margin-top: 10px;
     color: rgb(255, 255, 255);
-
-
- 
-
-}
-.my-repair-date{
+  }
+  .my-repair-date {
     font-size: 18px;
     margin-left: 40px;
     margin-top: 60px;
 
-
     color: rgb(255, 255, 255);
+  }
 
- 
-
-}
-
-
-
-
-
-.custom-steps{
+  .custom-steps {
     font-size: 50px;
     color: white;
-}
+  }
 
-.custom-steps .ant-steps-item-icon {
-    background-color:rgb(145, 138, 254)!important; /* Color for finished steps *//* This changes the background color of the circles */
+  .custom-steps .ant-steps-item-icon {
+    background-color: rgb(
+      145,
+      138,
+      254
+    ) !important; /* Color for finished steps */ /* This changes the background color of the circles */
     border-color: white !important;
     color: white; /* This changes the border color of the circles */
   }
-  
+
   .custom-steps .ant-steps-item-title,
   .custom-steps .ant-steps-item-description {
     color: white !important; /* This changes the text color to white */
   }
-  
+
   .custom-steps .ant-steps-item-icon .ant-steps-icon {
-    color: rgb(0, 0, 0) !important; /* This changes the icon color, if there is an icon inside the circle */
+    color: rgb(
+      0,
+      0,
+      0
+    ) !important; /* This changes the icon color, if there is an icon inside the circle */
   }
-  
+
   /* If you want to target specific steps based on their status, you can use the following: */
   .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
-    background-color:rgb(145, 138, 254)!important; /* Color for finished steps */
-    border-color:rgb(255, 255, 255) !important;
-    border: solid 3px ;
-   
+    background-color: rgb(
+      145,
+      138,
+      254
+    ) !important; /* Color for finished steps */
+    border-color: rgb(255, 255, 255) !important;
+    border: solid 3px;
   }
-  
+
   .custom-steps .ant-steps-item-process .ant-steps-item-icon {
-    background-color:rgb(145, 138, 254)!important; /* Color for finished steps */
-    border-color:rgb(255, 255, 255) !important;
-    border: solid 3px ;
+    background-color: rgb(
+      145,
+      138,
+      254
+    ) !important; /* Color for finished steps */
+    border-color: rgb(255, 255, 255) !important;
+    border: solid 3px;
   }
-  
+
   .custom-steps .ant-steps-item-wait .ant-steps-item-icon {
-    border-color:rgb(255, 255, 255) !important;
-    border: solid 3px ;
+    border-color: rgb(255, 255, 255) !important;
+    border: solid 3px;
   }
   .custom-steps .ant-steps-item-icon .ant-steps-icon {
     color: white !important; /* This will change the icon color to white */
@@ -177,12 +153,10 @@ color: rgb(255, 255, 255);
   .custom-steps .ant-steps-item-tail::after {
     background-color: white !important; /* Sets the line color to white for all steps */
   }
-    
 
-  p{
+  p {
     margin-top: 0px;
   }
-
 }
 
 @media (max-width: 999px) {
@@ -195,15 +169,13 @@ color: rgb(255, 255, 255);
     padding: 10px;
     box-sizing: border-box; /* Ensure padding is included in the width */
     width: 100%; /* Full width */
-    
-    
   }
 
   .my-report-container {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
- 
-    width: 100%; 
+
+    width: 100%;
     box-sizing: border-box; /* Include padding and border in the width calculation */
     padding: 20px;
     word-break: break-word; /* Break long words */
@@ -214,11 +186,11 @@ color: rgb(255, 255, 255);
 
   .my-right-part {
     width: 100%; /* Full width */
-    box-sizing: border-box; 
+    box-sizing: border-box;
     background-color: rgb(249, 249, 249);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-     padding: 50px;
+    padding: 50px;
   }
 
   .my-report-id,
@@ -232,28 +204,24 @@ color: rgb(255, 255, 255);
   .my-report-id {
     top: 20px;
     left: 10px;
-    
-  }
-    
-  .my-report-date {
-    top: 20px;
-    right:10px;
   }
 
-  .my-report-device-number{
+  .my-report-date {
+    top: 20px;
+    right: 10px;
+  }
+
+  .my-report-device-number {
     display: inline-block;
     font-size: 16px;
     margin-right: 15px;
     margin-top: 40px;
     color: rgb(255, 255, 255);
-
   }
   .my-lab-number {
-   display: block;
-   font-size: 16px;
-   color: rgb(255, 255, 255);
-
-   
+    display: block;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
   }
 
   .my-problem {
@@ -262,24 +230,16 @@ color: rgb(255, 255, 255);
     margin-left: 0px;
     font-size: 16px;
     color: rgb(255, 255, 255);
-   
-
-   
   }
 
-  .my-action-taken{
-   
-    
+  .my-action-taken {
     color: rgb(255, 255, 255);
     display: inline-block;
-  
-
   }
-  .my-repair-date{
+  .my-repair-date {
     margin-top: 100px;
     font-size: 19px;
     color: rgb(255, 255, 255);
-
   }
   .my-progress,
   .my-resolved {
@@ -291,6 +251,5 @@ color: rgb(255, 255, 255);
     font-size: 14px; /* Increase font size for readability */
     line-height: 1.5; /* Improve line spacing */
     color: #4c4c4c; /* Darker text for better contrast */
-    
   }
 }

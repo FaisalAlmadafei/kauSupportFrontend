@@ -7,7 +7,7 @@ import FmNavigationBar from "./FmNavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-import "../SharedCSS/HomePage.css";
+
 
 function PreviousReportsPage() {
   const [userID] = useContext(LoginContext);
@@ -50,10 +50,9 @@ function PreviousReportsPage() {
   
   return (
     <div>
-      <div className="navBar">
-        <input type="text" placeholder="Serach for a service" className="search-bar"/>
+     
         <FmNavigationBar setSearch={setSearch}/>
-        </div>
+      
 
         <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
@@ -62,7 +61,7 @@ function PreviousReportsPage() {
         </div>
         
       
-      <div className="reports-card-container">
+      
         {filteredReports.map((Report) => (
           <MyReportCard
             reportID={Report.reportID}
@@ -76,7 +75,7 @@ function PreviousReportsPage() {
           
           />
         ))}
-      </div>
+    
     </div>
   );
 }

@@ -23,7 +23,7 @@ function MyRequestsCard({
   const statusClass = getClassName();
 
   return (
-    <div>
+    <div >
       <div className="my-request-card">
         <span className={statusClass}> {requestStatus}</span>
         <br />
