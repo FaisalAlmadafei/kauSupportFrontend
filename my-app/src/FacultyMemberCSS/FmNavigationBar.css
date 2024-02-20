@@ -81,14 +81,14 @@
 }
 
 .fm-nav-right{
-  margin-right: 30px;
+  margin-right: 0px;
   vertical-align: middle;
 
 }
 
 
 .fm-nav-left{
-  margin-left: 100px;
+  margin-left: 300px;
   vertical-align: middle;
 
 }
@@ -251,13 +251,13 @@
     display: flex;
     align-items: center;
     position: absolute;
-    right: 10px; /* Adjust as needed for padding */
+    right: 30px; /* Adjust as needed for padding */
     top: 20px; /* Adjust as needed for vertical alignment */
   }
 
   /* Adjust search bar specifics */
   .fm-serach-bar {
-    margin-right: 15px; /* Space between search bar and user icon */
+    margin-right: 25px; /* Space between search bar and user icon */
     width: 200px;
   }
 

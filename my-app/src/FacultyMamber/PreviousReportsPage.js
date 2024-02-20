@@ -4,11 +4,17 @@ import { useContext } from "react";
 import { LoginContext } from "../App";
 import MyReportCard from "./MyReportCard";
 import FmNavigationBar from "./FmNavigationBar";
+import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
 import "../SharedCSS/HomePage.css";
 
 function PreviousReportsPage() {
   const [userID] = useContext(LoginContext);
   const [myReports, setmyReports] = useState([]);
+  const navigate = useNavigate();
+
+  
   useEffect(() => {
     async function getMyReports() {
       var requestOptions = {
@@ -48,6 +54,13 @@ function PreviousReportsPage() {
         <input type="text" placeholder="Serach for a service" className="search-bar"/>
         <FmNavigationBar setSearch={setSearch}/>
         </div>
+
+        <div onClick={()=>{navigate("/Home")}} className="back-icon">
+        <IoIosArrowBack/>
+
+
+        </div>
+        
       
       <div className="reports-card-container">
         {filteredReports.map((Report) => (

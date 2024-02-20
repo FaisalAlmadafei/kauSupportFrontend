@@ -13,14 +13,21 @@ function NavigationBar({ setSearch }) {
 
 
   let services = [
-    { serviceName: "Home", pageLink: "/Home" },
-    { serviceName: "New Report" },
-    { serviceName: "Previous Reports" },
-    { serviceName: "Request a Service" },
-    { serviceName: "My Requests" },
-    { serviceName: "Devices Availability" },
+    { serviceName: "Home",  pageLink: "/Home" },
+    { serviceName: "New Report",  pageLink: "/LabsPage" },
+    { serviceName: "Previous Reports",  pageLink: "/PreviousReportsPage"},
+    {
+      serviceName: "Request a Service",
+     
+      pageLink: "/NewServiceRequest",
+    },
+    { serviceName: "My Requests", pageLink: "/LabsPage" },
+    {
+      serviceName: "Devices Availability",
+      
+      pageLink: "/DevicesAvailabilityPage",
+    },
   ];
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -61,7 +68,8 @@ function NavigationBar({ setSearch }) {
             <span
               className="fm-nav-items-overlay"
               key={service.serviceName}
-              onClick={toggleMenu}
+              onClick={()=> navigate(service.pageLink)}
+             
             >
               {service.serviceName}
             </span>

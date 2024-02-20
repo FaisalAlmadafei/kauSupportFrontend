@@ -3,6 +3,9 @@ import { useContext } from "react";
 import { LoginContext } from "../App";
 import { Alert } from "antd";
 import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
 import "../SharedCSS/NewServiceRequest.css";
 
 function NewServiceRequest() {
@@ -10,6 +13,8 @@ const [search, setSearch] = useState("");
 const [ReqDescription, setReqDescription] = useState(""); 
 const [userID] = useContext(LoginContext);
 const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
+const navigate = useNavigate();
+
 async function addRequest () {
   if (ReqDescription.length > 0){
     var requestOptions = {
@@ -44,6 +49,12 @@ async function addRequest () {
 
     <div>
       <FmNavigationBar setSearch={setSearch}/>
+      <div onClick={()=>{navigate("/Home")}} className="back-icon">
+        <IoIosArrowBack/>
+
+
+        </div>
+
       {ShowSuccessAlert && (
         <Alert
           className="request-alert-success"

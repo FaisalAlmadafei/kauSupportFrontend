@@ -7,6 +7,7 @@ import { BsDoorOpen } from "react-icons/bs";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
 import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
 
 
@@ -52,6 +53,11 @@ function LabsPage() {
   return (
     <div>
         <FmNavigationBar setSearch={setSearch}/>
+        <div onClick={()=>{navigate("/Home")}} className="back-icon">
+        <IoIosArrowBack/>
+
+
+        </div>
          <div className="card-Container">
          {filteredLabs.map((Lab) => (
            <div

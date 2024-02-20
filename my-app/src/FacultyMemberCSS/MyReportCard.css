@@ -209,6 +209,7 @@ color: rgb(255, 255, 255);
     word-break: break-word; /* Break long words */
     position: relative;
     background-color: #48d68c;
+    margin-top: 30px;
   }
 
   .my-right-part {

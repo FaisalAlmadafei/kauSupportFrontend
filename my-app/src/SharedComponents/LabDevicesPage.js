@@ -8,6 +8,8 @@ import DeviceCard from "./DeviceCard";
 import { LoginContext } from "../App";
 import { Alert } from "antd";
 import { Button, Result } from "antd";
+import { IoIosArrowBack } from "react-icons/io";
+
 
 import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
 
@@ -106,6 +108,11 @@ function LabDevicesPage() {
   return (
     <div>
       <FmNavigationBar setSearch={setSearch} />
+      <div onClick={()=>{navigate("/Home")}} className="back-icon">
+        <IoIosArrowBack/>
+
+
+        </div>
 
       {showNoDevices && (
         <Result
