@@ -1,6 +1,4 @@
-
-@media (min-width: 769px) {
-   
+@media (min-width: 769px) { 
     .card-Container{
         display: grid;
         grid-template-columns: repeat(3, 300px); /* 3 columns */
@@ -15,8 +13,6 @@
         margin-right: 50px;
         gap: 40px;
         position: relative;
-      
-        
     }
 
     .back-icon{
@@ -30,8 +26,6 @@
     }
     
   }
-  
-  
   @media (max-width: 768px) {
     .card-Container{
         display: grid;
@@ -57,18 +51,12 @@
       top: 90px;
       cursor: pointer;
       }
-  
-    
-    
-  
   }
   @media (max-width: 600px) {
     .card-Container{
       display: grid;
       grid-template-columns: repeat(1, 300px); /* 3 columns */
-      margin-top: 80px;
-       
-        
+      margin-top: 80px; 
     }
     .back-icon{
       color: rgb(2, 185, 106);
@@ -79,15 +67,7 @@
       top: 90px;
       cursor: pointer;
       }
-  
-   
   }
-  
-  
-  
-  
-  
-  
   body {
     background-color: #f7f7f789;
   }

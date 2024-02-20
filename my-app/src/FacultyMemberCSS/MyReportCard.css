@@ -4,13 +4,10 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box;
     background-color: rgb(172, 253, 192);
-
     position: relative;
     border-radius: 20px;
-
     background-image: linear-gradient(
       to right bottom,
       #2ecc71,
@@ -31,20 +28,17 @@
     margin-top: -15px;
     margin-bottom: 35px;
   }
-
   .my-right-part {
     flex: 1;
     margin-top: 50px;
     margin-bottom: 35px;
   }
-
   .my-report-id {
     font-size: 22px;
     font-weight: bold;
     margin-left: 15px;
     color: rgb(255, 255, 255);
   }
-
   .my-report-date {
     font-size: 22px;
     font-weight: bold;
@@ -55,7 +49,6 @@
   .custom-steps {
     margin-left: 200px;
   }
-
   .my-report-device-number {
     font-size: 18px;
     margin-left: 40px;
@@ -71,7 +64,6 @@
     color: rgb(255, 255, 255);
     display: inline-block;
   }
-
   .my-problem {
     font-size: 18px;
     margin-left: 40px;
@@ -90,70 +82,60 @@
     font-size: 18px;
     margin-left: 40px;
     margin-top: 60px;
-
     color: rgb(255, 255, 255);
   }
-
   .custom-steps {
     font-size: 50px;
     color: white;
   }
-
   .custom-steps .ant-steps-item-icon {
     background-color: rgb(
       145,
       138,
       254
-    ) !important; /* Color for finished steps */ /* This changes the background color of the circles */
+    ) !important; 
     border-color: white !important;
-    color: white; /* This changes the border color of the circles */
+    color: white; 
   }
-
   .custom-steps .ant-steps-item-title,
   .custom-steps .ant-steps-item-description {
-    color: white !important; /* This changes the text color to white */
+    color: white !important; 
   }
-
   .custom-steps .ant-steps-item-icon .ant-steps-icon {
     color: rgb(
       0,
       0,
       0
-    ) !important; /* This changes the icon color, if there is an icon inside the circle */
+    ) !important; 
   }
-
-  /* If you want to target specific steps based on their status, you can use the following: */
   .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
     background-color: rgb(
       145,
       138,
       254
-    ) !important; /* Color for finished steps */
+    ) !important;
     border-color: rgb(255, 255, 255) !important;
     border: solid 3px;
   }
-
   .custom-steps .ant-steps-item-process .ant-steps-item-icon {
     background-color: rgb(
       145,
       138,
       254
-    ) !important; /* Color for finished steps */
+    ) !important;
     border-color: rgb(255, 255, 255) !important;
     border: solid 3px;
   }
-
   .custom-steps .ant-steps-item-wait .ant-steps-item-icon {
     border-color: rgb(255, 255, 255) !important;
     border: solid 3px;
   }
   .custom-steps .ant-steps-item-icon .ant-steps-icon {
-    color: white !important; /* This will change the icon color to white */
+    color: white !important;
   }
   .custom-steps .ant-steps-item-tail::after {
-    background-color: white !important; /* Sets the line color to white for all steps */
+    background-color: white !important;
   }
-
   p {
     margin-top: 0px;
   }
@@ -167,32 +149,28 @@
     align-items: center;
     margin-top: 100px;
     padding: 10px;
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    width: 100%; /* Full width */
+    box-sizing: border-box;
+    width: 100%; 
   }
-
   .my-report-container {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the width calculation */
+    box-sizing: border-box;
     padding: 20px;
-    word-break: break-word; /* Break long words */
+    word-break: break-word; 
     position: relative;
     background-color: #48d68c;
     margin-top: 30px;
   }
-
   .my-right-part {
-    width: 100%; /* Full width */
+    width: 100%; 
     box-sizing: border-box;
     background-color: rgb(249, 249, 249);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 50px;
   }
-
   .my-report-id,
   .my-report-date {
     font-size: 16px;
@@ -200,17 +178,14 @@
     font-weight: bold;
     color: rgb(255, 255, 255);
   }
-
   .my-report-id {
     top: 20px;
     left: 10px;
   }
-
   .my-report-date {
     top: 20px;
     right: 10px;
   }
-
   .my-report-device-number {
     display: inline-block;
     font-size: 16px;
@@ -223,7 +198,6 @@
     font-size: 16px;
     color: rgb(255, 255, 255);
   }
-
   .my-problem {
     margin-top: 30px;
     display: block;
@@ -231,7 +205,6 @@
     font-size: 16px;
     color: rgb(255, 255, 255);
   }
-
   .my-action-taken {
     color: rgb(255, 255, 255);
     display: inline-block;
@@ -243,13 +216,14 @@
   }
   .my-progress,
   .my-resolved {
-    margin-top: 20px; /* Spacing between sections */
+    margin-top: 20px;
   }
-
-  /* Additional styles to ensure visibility and readability */
+  .no-report-picture {
+    margin-top: 55px;
+  }
   p {
-    font-size: 14px; /* Increase font size for readability */
-    line-height: 1.5; /* Improve line spacing */
-    color: #4c4c4c; /* Darker text for better contrast */
+    font-size: 14px; 
+    line-height: 1.5; 
+    color: #4c4c4c; 
   }
 }

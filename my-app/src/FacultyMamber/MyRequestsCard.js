@@ -12,8 +12,6 @@ function MyRequestsCard({
     if (requestStatus.toLowerCase() === "pending") {
       return "my-request-status-pending" ; 
     }
-    // TODO:
-    // complete based on the datebase
     else if (requestStatus.toLowerCase() === "approved") {
       return "my-request-status-approved" ;
     } else {

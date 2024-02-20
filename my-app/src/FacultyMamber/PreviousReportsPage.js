@@ -6,6 +6,8 @@ import MyReportCard from "./MyReportCard";
 import FmNavigationBar from "./FmNavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { Button, Result } from "antd";
+import "../FacultyMemberCSS/MyReportCard.css";
 
 
 
@@ -32,7 +34,23 @@ function PreviousReportsPage() {
           const result = await response.json();
           setmyReports(result);
         } else if (response.status === 400) {
-          alert("Problem happend");
+          <Result
+          className="no-report-picture"
+          status="500"
+          title="No report found"
+          subTitle="Sorry, No Report Found"
+          extra={
+            <Button
+              on
+              onClick={() => {
+                navigate("/Home");
+              }}
+              type="primary"
+            >
+              Back Home
+            </Button>
+          }
+        />
         } else {
           alert("An error occurred. Please try again.");
         }

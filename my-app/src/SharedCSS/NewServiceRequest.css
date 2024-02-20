@@ -19,9 +19,9 @@
   }
   .request-input {
     margin-top: 10px;
-    width: 90%; /* Full width of the container */
-    height: 280px; /* Fixed height */
-    resize: none; /* Optional: disables resizing */
+    width: 85%;
+    height: 250px; 
+    resize: none; 
     border-radius: 3%;
     border: none;
     text-align: center;
@@ -77,9 +77,9 @@
   }
   .request-input {
     margin-top: 10px;
-    width: 80%; /* Full width of the container */
-    height: 330px; /* Fixed height */
-    resize: none; /* Optional: disables resizing */
+    width: 80%; 
+    height: 330px; 
+    resize: none; 
     border-radius: 3%;
     border: none;
     text-align: center;
@@ -140,9 +140,9 @@
   }
   .request-input {
     margin-top: 10px;
-    width: 90%; /* Full width of the container */
-    height: 330px; /* Fixed height */
-    resize: none; /* Optional: disables resizing */
+    width: 90%; 
+    height: 330px;
+    resize: none; 
     border-radius: 3%;
     border: none;
     text-align: center;

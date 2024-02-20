@@ -5,35 +5,24 @@
     right: 0;
     height: 80px;
     background-color: #15ca8e;
-   
     z-index: 1;
     border-bottom-left-radius: 2%;
-    border-bottom-right-radius: 2%;
-    
-    
+    border-bottom-right-radius: 2%;    
 }
-
 .fm-nav-bar-container{
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   margin: 20px;
-
   margin-top: 25px;
-
 }
-
 .react-icons-user-icon{
   font-size: 24px;
   color: white;
   margin-left: 25px;
   cursor: pointer;
-  vertical-align: middle;
-  
-  
+  vertical-align: middle;  
 }
-
 .fm-serach-bar{
   vertical-align: middle;
   width: 200px;
@@ -44,9 +33,7 @@
   text-align: center;
   border: none;
   font-size: medium;
-
 }
-
 .fm-nav-items{
   margin-right: 40px;
   font-size: 14px;
@@ -57,48 +44,27 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
-  transition: background-color 0.3s ease; /* Add this line */
-
-
+  transition: background-color 0.3s ease; 
 }
-
 .fm-nav-items:hover{
   background-color: rgb(137, 234, 187);
- 
 }
-
-  
-
-
-
 .nav-logo{
   color: white;
   font-size: 30px;
   font-weight: bold;
   vertical-align: middle;
-
-
 }
-
 .fm-nav-right{
   margin-right: 0px;
   vertical-align: middle;
-
 }
-
-
 .fm-nav-left{
   margin-left: 300px;
   vertical-align: middle;
-
 }
-
-
-/* Existing styles */
-
-/* Hamburger Icon Style */
 .hamburger-icon {
-  display: none; /* Hide by default */
+  display: none;
   font-size: 24px;
   color: white;
   cursor: pointer;
@@ -107,12 +73,9 @@
   margin-left: 5px;
 }
 
-/* Responsive Menu Items */
 .menu-items.active {
   display: block;
 }
-
-/* Overlay for Menu Items when Active */
 .overlay {
   position: fixed;
   top: 0;
@@ -126,7 +89,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .fm-nav-items-overlay {
   margin: 10px;
   color: white;
@@ -135,12 +97,11 @@
 }
 
 @media (max-width: 1400px) {
-  /* Position the hamburger icon on the left */
   .hamburger-icon {
     display: block;
     position: absolute;
-    left: 10px; /* Adjust as needed for padding */
-    top: 20px; /* Adjust as needed for vertical alignment */
+    left: 10px;
+    top: 20px; 
   }
   .fm-menu-close-icon{
     cursor: pointer;
@@ -149,78 +110,49 @@
     right: 20px;
     font-size: 24px;
   }
-
   .overlay{
     display:  flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
-   
-   
   }
-
-  
-  /* Align items horizontally and allow space between them */
   .fm-nav-bar-container {
-    flex-direction: row; /* Maintain row for left-right layout */
+    flex-direction: row; 
     justify-content: space-between;
   }
-
-  /* Ensure the search bar and user icon are tight on the right */
-  .fm-nav-right {
+    .fm-nav-right {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 10px; /* Adjust as needed for padding */
-    top: 20px; /* Adjust as needed for vertical alignment */
+    right: 10px; 
+    top: 20px; 
   }
-
-  /* Adjust search bar specifics */
   .fm-serach-bar {
     margin-right: 15px; 
     width: 200px;
-    
-  
   }
-
-  /* Adjust the display of menu items */
   .menu-items {
     display: none;
     position: absolute;
     left: 0;
-    top: 60px; /* Adjust based on your nav bar's height */
+    top: 60px; 
     background-color: #15ca8e;
     width: 100%;
     text-align: left;
   }
-
-  /* Show menu items when active */
   .menu-items.active {
     display: block;
   }
-
-  /* Hide full navigation items when in mobile view */
   .fm-nav-left span {
     display: none;
   }
 }
-
-
-/* Media Queries */
-/* Existing styles... */
-
-/* Adjustments for responsiveness */
-/* Existing styles... */
-
-/* Adjustments for responsiveness */
 @media (max-width: 600px) {
-  /* Position the hamburger icon on the left */
   .hamburger-icon {
     display: block;
     position: absolute;
-    left: 10px; /* Adjust as needed for padding */
-    top: 20px; /* Adjust as needed for vertical alignment */
+    left: 10px; 
+    top: 20px; 
   }
   .fm-menu-close-icon{
     cursor: pointer;
@@ -229,57 +161,40 @@
     right: 20px;
     font-size: 24px;
   }
-  
-  /* Align items horizontally and allow space between them */
-  .fm-nav-bar-container {
-    flex-direction: row; /* Maintain row for left-right layout */
+    .fm-nav-bar-container {
+    flex-direction: row; 
     justify-content: space-between;
   }
-
   .overlay{
     display:  flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
-   
-   
   }
-
-  /* Ensure the search bar and user icon are tight on the right */
   .fm-nav-right {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 30px; /* Adjust as needed for padding */
-    top: 20px; /* Adjust as needed for vertical alignment */
+    right: 30px; 
+    top: 20px; 
   }
-
-  /* Adjust search bar specifics */
   .fm-serach-bar {
-    margin-right: 25px; /* Space between search bar and user icon */
+    margin-right: 25px; 
     width: 200px;
   }
-
-  /* Adjust the display of menu items */
   .menu-items {
     display: none;
     position: absolute;
     left: 0;
-    top: 60px; /* Adjust based on your nav bar's height */
+    top: 60px; 
     background-color: #15ca8e;
     width: 100%;
     text-align: left;
   }
-
-  /* Show menu items when active */
   .menu-items.active {
     display: block;
   }
-
-  /* Hide full navigation items when in mobile view */
   .fm-nav-left span {
     display: none;
   }
-
 }

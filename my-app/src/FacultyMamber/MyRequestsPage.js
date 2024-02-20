@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { LoginContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { Button, Result } from "antd";
 import MyRequestsCard from "./MyRequestsCard";
 import FmNavigationBar from "./FmNavigationBar";
 import "../FacultyMemberCSS/MyRequest.css";
@@ -22,7 +23,7 @@ function MyRequest() {
         redirect: "follow",
       };
 
-      try {
+      try {  
         const response = await fetch(
           `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetMyRequests?User_Id=${userID}`,
           requestOptions
@@ -32,7 +33,23 @@ function MyRequest() {
           const result = await response.json();
           setmyRequests(result);
         } else if (response.status === 400) {
-          alert("Problem happend");
+          <Result
+          className="no-request-picture"
+          status="500"
+          title="No requests found"
+          subTitle="Sorry, No Requests Found"
+          extra={
+            <Button
+              on
+              onClick={() => {
+                navigate("/Home");
+              }}
+              type="primary"
+            >
+              Back Home
+            </Button>
+          }
+        />
         } else {
           alert("An error occurred. Please try again.");
         }

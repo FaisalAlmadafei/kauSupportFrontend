@@ -52,9 +52,9 @@
 
   .report-input {
     margin-top: 10px;
-    width: 90%; /* Full width of the container */
-    height: 200px; /* Fixed height */
-    resize: none; /* Optional: disables resizing */
+    width: 90%; 
+    height: 200px;
+    resize: none; 
     border-radius: 3%;
     border: none;
     text-align: center;
@@ -113,7 +113,7 @@
 
   .devices-card-container {
     display: grid;
-    grid-template-columns: repeat(3, 250px); /* 3 columns */
+    grid-template-columns: repeat(3, 250px);
     margin-top: 30px;
     margin-bottom: 250px;
     align-items: center;
@@ -126,7 +126,6 @@
     gap: 40px;
   }
 }
-
 @media (max-width: 768px) {
   .navBar {
     position: fixed;
@@ -177,12 +176,10 @@
     font-size: 25px;
     cursor: pointer;
   }
-
-  .reported-device-number {
+ .reported-device-number {
     color: rgb(255, 255, 255);
     font-weight: bold;
   }
-
   .report-input {
     margin-top: 10px;
     width: 90%; /* Full width of the container */
@@ -303,9 +300,9 @@
 
   .report-input {
     margin-top: 10px;
-    width: 90%; /* Full width of the container */
-    height: 200px; /* Fixed height */
-    resize: none; /* Optional: disables resizing */
+    width: 90%; 
+    height: 200px; 
+    resize: none; 
     border-radius: 3%;
     border: none;
     text-align: center;
@@ -360,7 +357,7 @@
 
   .devices-card-container {
     display: grid;
-    grid-template-columns: repeat(1, 250px); /* 3 columns */
+    grid-template-columns: repeat(1, 250px); 
     margin-top: 80px;
   }
   .no-device-picture {

@@ -7,20 +7,15 @@
     border-radius: 40px ;
     background-color: rgb(0, 187, 81);
     opacity: 0.5;
-
-    
     cursor: pointer;
     font-size: 16px;
 -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
 -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
 box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-transition: all 0.3s ease; /* Smooth transition for all properties */
+transition: all 0.3s ease; 
 gap: 100px;
 box-shadow: inset 0px 0px 40px 7px rgba(0,0,0,0.1);
-
-
 }
-
 .device-card-reported{
     position: relative;
     padding-left: 25px;
@@ -35,35 +30,24 @@ box-shadow: inset 0px 0px 40px 7px rgba(0,0,0,0.1);
 -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
 -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
 box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-transition: all 0.3s ease; /* Smooth transition for all properties */
+transition: all 0.3s ease; 
 gap: 100px;
 box-shadow: inset 0px 0px 40px 7px rgba(0,0,0,0.1);
-
-
 }
 body{background-color: rgb(255, 255, 255);}
-
-
-
 .device-card-wroking:hover{
-    transform: scale(1.1); /* Make the container 10% larger */
-
+    transform: scale(1.1); 
 }
 .device-card-reported:hover{
-    transform: scale(1.1); /* Make the container 10% larger */
-
+    transform: scale(1.1); 
 }
-
 .device-number{
     color: rgb(255, 255, 255);
 }
-
-
 .react-icons-devices{
     font-size: 80px;
     color: rgb(255, 253, 253);
 }   
-
 @media (max-width: 600px) {
     .device-card-wroking{
         margin-top: 25px;
@@ -72,7 +56,6 @@ body{background-color: rgb(255, 255, 255);}
         margin-top: 25px;
     }
 }
-
 @media (max-width: 900px) {
     .device-card-wroking{
         margin-top: 25px;

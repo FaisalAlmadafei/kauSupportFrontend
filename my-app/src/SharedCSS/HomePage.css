@@ -1,6 +1,4 @@
-
 @media (min-width: 769px) {
-
   .navBar {
     position: fixed;
     top: 0;
@@ -15,10 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
-  
   }
-  
   .search-bar {
     margin-left: 1100px;
     top: 20px;
@@ -27,21 +22,10 @@
     border-radius: 23px;
     padding-left: 10px;
     border: none;
-    
- 
-    
-
-  
   }
-
-  
   .search-bar::placeholder{
     text-align: center;
-  
-  }
-
-  
-    
+  } 
   .card-Container{
       display: grid;
       grid-template-columns: repeat(3, 300px); /* 3 columns */
@@ -54,14 +38,9 @@
       padding: 25px;
       margin-left: 50px;
       margin-right: 50px;
-      gap: 50px;
-    
-      
+      gap: 50px;   
   }
-  
 }
-
-
 @media (max-width: 768px) {
   .navBar {
     position: fixed;
@@ -76,8 +55,7 @@
     border-bottom-right-radius: 2%;
     display: flex;
     justify-content: center;
-    align-items: center;
-  
+    align-items: center; 
   }
   .search-bar{
     position: absolute;
@@ -85,15 +63,9 @@
     width: 200px;
     height: 30px;
     border-radius: 23px;
-  
-    
-  
-  
   }
-  
   .search-bar::placeholder{
     text-align: center;
-  
   }
   .card-Container{
       display: grid;
@@ -102,16 +74,13 @@
       margin-bottom: 250px;
       align-items: center;
       justify-content: space-evenly;
-     width: auto;
-     height: auto;
+      width: auto;
+      height: auto;
       padding: 25px;
       margin-left: 50px;
       margin-right: 50px;
-      gap: 30px;
-      
+      gap: 30px;   
   }
-  
-
 }
 @media (max-width: 600px) {
   .navBar {
@@ -128,46 +97,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
   }
-
-
 .search-bar{
   position: absolute;
   top: 30px;
   width: 100px;
   height: 25px;
   border-radius: 23px;
-
-  
-
-
 }
 
 .search-bar::placeholder{
   text-align: center;
-
 }
-
-
-
-  
   .card-Container{
     display: grid;
     grid-template-columns: repeat(1, 300px); /* 3 columns */
     margin-top: 80px;
-     
-      
-  }
-
- 
+   }
 }
-
-
-
-
-
-
 body {
   background-color: #f7f7f789;
 }
