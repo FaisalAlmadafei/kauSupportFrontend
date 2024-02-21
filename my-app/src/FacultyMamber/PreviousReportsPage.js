@@ -14,6 +14,7 @@ import "../FacultyMemberCSS/MyReportCard.css";
 function PreviousReportsPage() {
   const [userID] = useContext(LoginContext);
   const [myReports, setmyReports] = useState([]);
+  const [ShowNoReports, setShowNoReports] = useState(false);
   const navigate = useNavigate();
 
   
@@ -34,23 +35,8 @@ function PreviousReportsPage() {
           const result = await response.json();
           setmyReports(result);
         } else if (response.status === 400) {
-          <Result
-          className="no-report-picture"
-          status="500"
-          title="No report found"
-          subTitle="Sorry, No Report Found"
-          extra={
-            <Button
-              on
-              onClick={() => {
-                navigate("/Home");
-              }}
-              type="primary"
-            >
-              Back Home
-            </Button>
-          }
-        />
+         setShowNoReports(true) ; 
+
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -77,6 +63,26 @@ function PreviousReportsPage() {
 
 
         </div>
+           
+      {ShowNoReports && (
+        <Result
+          className="no-reports-picture"
+          status="500"
+          title="No Reports found"
+          subTitle="Sorry, You have not report any device yet..."
+          extra={
+            <Button
+              on
+              onClick={() => {
+                navigate("/Home");
+              }}
+              type="primary"
+            >
+              Back Home
+            </Button>
+          }
+        />
+      )}
         
       
       

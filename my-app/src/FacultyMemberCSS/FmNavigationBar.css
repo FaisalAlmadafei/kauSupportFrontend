@@ -56,11 +56,11 @@
   vertical-align: middle;
 }
 .fm-nav-right{
-  margin-right: 0px;
+  margin-right: 25px;
   vertical-align: middle;
 }
 .fm-nav-left{
-  margin-left: 300px;
+  margin-left: 150px;
   vertical-align: middle;
 }
 .hamburger-icon {
@@ -71,6 +71,15 @@
   vertical-align: middle;
   margin-top: 3px;
   margin-left: 5px;
+}
+.logo-image{
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  margin-top: 0px;
+  width: 150px;
+  display: inline-block;
+  padding: 0;
 }
 
 .menu-items.active {
@@ -97,6 +106,9 @@
 }
 
 @media (max-width: 1400px) {
+  .logo-image{
+    display: none;
+  }
   .hamburger-icon {
     display: block;
     position: absolute;
@@ -148,6 +160,10 @@
   }
 }
 @media (max-width: 600px) {
+
+  .logo-image{
+    display: none;
+  }
   .hamburger-icon {
     display: block;
     position: absolute;
@@ -177,6 +193,7 @@
     position: absolute;
     right: 30px; 
     top: 20px; 
+    margin-right: 5px;
   }
   .fm-serach-bar {
     margin-right: 25px; 

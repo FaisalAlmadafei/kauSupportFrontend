@@ -3,6 +3,8 @@ import "../FacultyMemberCSS/FmNavigationBar.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ServicesContext } from "../App";
+import logoImage from "../images/kauSupportLogo.png";
+
 
 import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa"; // FaBars for the menu icon
 import { Link } from "react-router-dom";
@@ -36,6 +38,11 @@ function NavigationBar({ setSearch }) {
     <div>
       <div className="fm-nav-bar">
         <div className="fm-nav-bar-container">
+         <div>
+         <img className="logo-image" src={logoImage} alt="" />
+
+         </div>
+
           <div className="fm-nav-left">
             <FaBars className="hamburger-icon" onClick={toggleMenu} />
             <div className={`menu-items ${isMenuOpen ? "active" : ""}`}>
@@ -45,6 +52,7 @@ function NavigationBar({ setSearch }) {
                 </span>
               ))}
             </div>
+            
           </div>
           <div className="fm-nav-right">
             <input
@@ -57,6 +65,10 @@ function NavigationBar({ setSearch }) {
             />
             <FaRegUserCircle className="react-icons-user-icon" />
           </div>
+
+         
+
+          
         </div>
       </div>
       {isMenuOpen && (

@@ -4,6 +4,8 @@ import { AiOutlineUser } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
 import { useContext, useState, useEffect } from "react";
 import { LoginContext } from "../App";
+import logoImage from "../images/kauSupportLogo.png";
+
 import { Alert, Space } from "antd";
 import { useNavigate } from "react-router-dom";
 // this is the login page

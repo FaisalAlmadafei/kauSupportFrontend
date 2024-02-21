@@ -14,6 +14,7 @@ import "../FacultyMemberCSS/MyRequest.css";
 function MyRequest() {
   const [userID] = useContext(LoginContext);
   const [myRequests, setmyRequests] = useState([]);
+  const [ShowNoRequests, setShowNoRequests] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,23 +34,7 @@ function MyRequest() {
           const result = await response.json();
           setmyRequests(result);
         } else if (response.status === 400) {
-          <Result
-          className="no-request-picture"
-          status="500"
-          title="No requests found"
-          subTitle="Sorry, No Requests Found"
-          extra={
-            <Button
-              on
-              onClick={() => {
-                navigate("/Home");
-              }}
-              type="primary"
-            >
-              Back Home
-            </Button>
-          }
-        />
+         setShowNoRequests(true)
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -67,8 +52,30 @@ function MyRequest() {
 
   return (
     <div>
+
       
         <FmNavigationBar setSearch={setSearch} />
+        
+      {ShowNoRequests && (
+        <Result
+          className="no-requests-picture"
+          status="500"
+          title="No Requests found"
+          subTitle="Sorry, You have not sent any requests yet..."
+          extra={
+            <Button
+              on
+              onClick={() => {
+                navigate("/Home");
+              }}
+              type="primary"
+            >
+              Back Home
+            </Button>
+          }
+        />
+      )}
+        
       
       <div
         onClick={() => {
