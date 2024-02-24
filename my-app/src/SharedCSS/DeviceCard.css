@@ -1,10 +1,86 @@
 
-.technical-role-device-card{
-    background-color: green;
+.technical-role-device-card {
+    background-color: rgb(245, 245, 245);
     width: 600px;
-    height: 300px;
+    height: auto;
     margin-top: 100px;
-}
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 25px;
+   position: relative;
+   color: rgb(102, 102, 102);
+   border-radius: 20px;
+   padding-bottom: 30px;
+   -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+   -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+   box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  }
+  .continer-close-icon{
+    position: absolute;
+    top: 5;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .react-icons-devicess{
+    color: rgb(0, 181, 69);
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+  .react-icons-technical-devices{
+    font-size: 80px;
+  }
+  .technical-role-serial-number{
+    font-size: 20px;
+ 
+    
+  }
+  .flex-row{
+  display: flex;
+  justify-content: space-evenly;
+  
+  
+  }
+
+  .technical-role-device-type{
+    font-size: 20px;
+
+
+  }
+
+  
+  .technical-role-lab-number{
+    font-size: 20px;
+  
+  }
+  .technical-role-device-number{
+    font-size: 20px;
+    margin-bottom: 10px;
+ 
+  }
+  .device-arrival-date{
+    font-size: 20px;
+
+  }
+
+  .technical-role-device-status{
+    font-size: 20px;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 25px;
+
+  }
+
+  .device-next-periodic-date {
+    font-size: 20px;
+font-weight: bold;
+margin-top: 20px;
+   
+  }
+  
+  /* Add additional styles for specific layout adjustments if needed */
+  
+
 .device-card-wroking{
     position: relative;
     padding-left: 25px;
@@ -62,6 +138,79 @@ body{background-color: rgb(255, 255, 255);}
     .device-card-reported{
         margin-top: 25px;
     }
+    .technical-role-device-card {
+        background-color: rgb(245, 245, 245);
+        width: auto;
+        height: auto;
+        padding: 2 px;
+        box-sizing: border-box;
+        padding: 25px;
+       position: relative;
+       color: rgb(102, 102, 102);
+       border-radius: 20px;
+       padding-bottom: 30px;
+       -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+       -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+       box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+       margin: 15px;
+      }
+      .react-icons-devicess{
+        color: rgb(0, 181, 69);
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+      .react-icons-technical-devices{
+        font-size: 80px;
+      }
+      .technical-role-serial-number{
+        font-size: 16px;
+        margin-right: 25px;
+
+     
+        
+      }
+      .flex-row{
+      display: flex;
+      justify-content: space-evenly;
+      
+      
+      }
+    
+      .technical-role-device-type{
+        font-size: 16px;
+    
+    
+      }
+    
+      
+      .technical-role-lab-number{
+        font-size: 16px;
+      
+      }
+      .technical-role-device-number{
+        font-size: 16px;
+        margin-bottom: 10px;
+     
+      }
+      .device-arrival-date{
+        font-size: 16px;
+    
+      }
+    
+      .technical-role-device-status{
+        font-size: 16px;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    
+      }
+    
+      .device-next-periodic-date {
+        font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+       
+      }
 }
 @media (max-width: 900px) {
     .device-card-wroking{

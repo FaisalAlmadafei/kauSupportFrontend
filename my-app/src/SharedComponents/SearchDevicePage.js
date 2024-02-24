@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import FmNavigationBar from "./FmNavigationBar";
 import "../SharedCSS/SearchDevicePage.css";
 import DeviceCard from "./DeviceCard";
-import { useState  } from "react";
+import { useState } from "react";
+import MyReportCard from "../FacultyMamber/MyReportCard";
 
 function SearchDevicePage() {
   const [SerialNumber, setSerialNumber] = useState("");
@@ -24,10 +25,10 @@ function SearchDevicePage() {
 
       if (response.ok) {
         const result = await response.json();
-        setdevice(result["device"])
+        setdevice(result["device"]);
         setReports(result["reports"]);
-       
-        setButtonisClicked(false)
+
+        setButtonisClicked(false);
       } else if (response.status === 400) {
         alert("No device found");
       } else {
@@ -38,47 +39,58 @@ function SearchDevicePage() {
       alert("An error occurred. Please check your connection and try again.");
     }
   }
-  
 
   return (
     <div>
       <FmNavigationBar />
 
-      {
-
-        ButtonisClicked && (
-          <div className="serach-form-container">
-          <lable className="serial-number-lable">
-            Enter deivce serial number:
-          </lable>
-          <input
-            onChange={(e) => {
-              setSerialNumber(e.target.value);
-            }}
-            type="text"
-            className="serial-number-input"
-          />
-          <button onClick={searchDevice} className="search-button">
-            Search Device
-          </button>
-        </div>
-
-        )
-      }
-
-      {
-        ButtonisClicked == false ? (
+      {ButtonisClicked == false ? (
         <>
-      <DeviceCard deviceNumber={device.deviceNumber } type= {device.type} deviceStatus= {device.deviceStatus} serialNumber= {device.serialNumber} deviceLocatedLab= {device.deviceLocatedLab} arrivalDate= {device.arrivalDate} nextPeriodicDate= {device.nextPeriodicDate}/>
-        
+          <div className="result-container">
+            <DeviceCard
+              deviceNumber={device.deviceNumber}
+              type={device.type}
+              deviceStatus={device.deviceStatus}
+              serialNumber={device.serialNumber}
+              deviceLocatedLab={device.deviceLocatedLab}
+              arrivalDate={device.arrivalDate}
+              nextPeriodicDate={device.nextPeriodicDate}
+              setButtonisClicked={setButtonisClicked}
+            />
+            {Reports.map((Report) => (
+              <MyReportCard
+                reportID={Report.reportID}
+                deviceNumber={Report.deviceNumber}
+                deviceLocatedLab={Report.deviceLocatedLab}
+                problemDescription={Report.problemDescription}
+                actionTaken={Report.actionTaken}
+                reportDate={Report.reportDate}
+                repairDate={Report.repairDate}
+                reportStatus={Report.reportStatus}
+                problemType={Report.problemType}
+              />
+            ))}
+          </div>
         </>
-        
-        ) : (<></>)
-      }
-
-
-
-
+      ) : (
+        <>
+          <div className="serach-form-container">
+            <lable className="serial-number-lable">
+              Enter deivce serial number:
+            </lable>
+            <input
+              onChange={(e) => {
+                setSerialNumber(e.target.value);
+              }}
+              type="text"
+              className="serial-number-input"
+            />
+            <button onClick={searchDevice} className="search-button">
+              Search Device
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
