@@ -10,12 +10,12 @@ import { Alert } from "antd";
 import { Button, Result } from "antd";
 import { IoIosArrowBack } from "react-icons/io";
 
-
-import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+import FmNavigationBar from "./FmNavigationBar";
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
   const [Devices, setDevices] = useState([]);
+  const [ProblemType, setProblemType] = useState("");
   const [isDeviceClicked, setisDeviceClicked] = useState(false);
   const [ReportedDeviceNumber, setReportedDeviceNumber] = useState("");
   const [SerialNumber, setSerialNumber] = useState("");
@@ -28,47 +28,52 @@ function LabDevicesPage() {
   const navigate = useNavigate();
 
   async function addReport() {
-    if (ProblemDesription.length > 0) {
-      if (DeviceStatus !== "reported") {
-        var requestOptions = {
-          method: "POST",
-          redirect: "follow",
-        };
+    if (ProblemType !== "") {
+      if (ProblemDesription.length > 0) {
+        if (DeviceStatus !== "reported") {
+          var requestOptions = {
+            method: "POST",
+            redirect: "follow",
+          };
 
-        try {
-          const response = await fetch(
-            `https://kausupportapi.azurewebsites.net/api/FacultyMember_/AddReport?Device_Number=${ReportedDeviceNumber}&Serial_Number=${SerialNumber}&Device_LocatedLab=${LabNumber}&Problem_Description=${ProblemDesription}&Reported_By=${userID}`,
-            requestOptions
-          );
+          try {
+            const response = await fetch(
+              `https://kausupportapi.azurewebsites.net/api/FacultyMember_/AddReport?Device_Number=${ReportedDeviceNumber}&Serial_Number=${SerialNumber}&Device_LocatedLab=${LabNumber}&Problem_Description=${ProblemDesription}&Reported_By=${userID}&Problem_Type=${ProblemType}`,
+              requestOptions
+            );
 
-          if (response.status === 400) {
-            // Handle the case where the device has already been reported
-            alert("Device is reported ... try again later");
-          } else if (response.ok) {
-            // Handle successful report submission
+            if (response.status === 400) {
+              // Handle the case where the device has already been reported
+              alert("Device is reported ... try again later");
+            } else if (response.ok) {
+              // Handle successful report submission
 
-            setShowSuccessAlert(true);
-            getLabDevices();
-          } else {
-            // Handle other errors
-            alert("An error occurred. Please try again.");
+              setShowSuccessAlert(true);
+              setProblemType("");
+              getLabDevices();
+            } else {
+              // Handle other errors
+              alert("An error occurred. Please try again.");
+            }
+          } catch (error) {
+            console.log("error", error);
+            alert(
+              "An error occurred. Please check your connection and try again."
+            );
           }
-        } catch (error) {
-          console.log("error", error);
-          alert(
-            "An error occurred. Please check your connection and try again."
-          );
-        }
 
-        setisDeviceClicked(false);
-        setProblemDesription("");
+          setisDeviceClicked(false);
+          setProblemDesription("");
+        } else {
+          setisDeviceClicked(false);
+          setProblemDesription("");
+          setShowWarningAlert(true);
+        }
       } else {
-        setisDeviceClicked(false);
-        setProblemDesription("");
-        setShowWarningAlert(true);
+        alert("Please Enter problem description ..");
       }
     } else {
-      alert("Please Enter problem description ..");
+      alert("Please chose problem");
     }
   }
   async function getLabDevices() {
@@ -105,14 +110,21 @@ function LabDevicesPage() {
     Device.deviceNumber.toString().toLowerCase().includes(search.toLowerCase())
   );
 
+  function handelProblemChoice(e) {
+    setProblemType(e.target.value);
+  }
+
   return (
     <div>
       <FmNavigationBar setSearch={setSearch} />
-      <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
-
-
-        </div>
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
+        <IoIosArrowBack />
+      </div>
 
       {showNoDevices && (
         <Result
@@ -164,9 +176,77 @@ function LabDevicesPage() {
           <h2 className="reported-device-number">
             Devcie {ReportedDeviceNumber}
           </h2>
-          <h3 style={{ color: "white" }}>
+          <h4 className="chose-lable" style={{ color: "white" }}>
+            Chose problem type:
+          </h4>
+          <label className="problem-lable" htmlFor="problemType">
+            Hardware
+          </label>
+          <input
+            name="problemType"
+            className="problem-lable"
+            value="Hardware"
+            type="radio"
+            onChange={handelProblemChoice}
+          />
+
+          <label className="problem-lable" htmlFor="problemType">
+            Software
+          </label>
+          <input
+            name="problemType"
+            className="problem-input"
+            value="Software"
+            type="radio"
+            onChange={handelProblemChoice}
+          />
+
+          <label className="problem-lable" htmlFor="problemType">
+            Connectivity
+          </label>
+          <input
+            name="problemType"
+            className="problem-input"
+            value="Connectivity"
+            type="radio"
+            onChange={handelProblemChoice}
+          />
+          <br />
+          <label className="problem-lable" htmlFor="problemType">
+            Audio
+          </label>
+          <input
+            name="problemType"
+            className="problem-input"
+            value="Audio"
+            type="radio"
+            onChange={handelProblemChoice}
+          />
+
+          <label className="problem-lable" htmlFor="problemType">
+            Power
+          </label>
+          <input
+            name="problemType"
+            className="problem-lable"
+            value="Power"
+            type="radio"
+            onChange={handelProblemChoice}
+          />
+
+          <label className="problem-lable" htmlFor="problemType">
+            Graphics
+          </label>
+          <input
+            name="problemType"
+            className="problem-input"
+            value="Graphics"
+            type="radio"
+            onChange={handelProblemChoice}
+          />
+          <h4 style={{ color: "white" }}>
             Please Enter a brief description of the problem
-          </h3>
+          </h4>
           <textarea
             required
             className="report-input"
@@ -193,7 +273,11 @@ function LabDevicesPage() {
               }
             }}
           >
-            <DeviceCard deviceNumber={Device.deviceNumber} type = {Device.type} deviceStatus={Device.deviceStatus} />
+            <DeviceCard
+              deviceNumber={Device.deviceNumber}
+              type={Device.type}
+              deviceStatus={Device.deviceStatus}
+            />
           </div>
         ))}
       </div>

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { BsDoorOpen } from "react-icons/bs";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
-import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+import FmNavigationBar from "./FmNavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
 

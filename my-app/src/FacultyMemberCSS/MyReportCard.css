@@ -64,6 +64,11 @@
     color: rgb(255, 255, 255);
     display: inline-block;
   }
+  .my-problem-type{
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+  }
   .my-problem {
     font-size: 18px;
     margin-left: 40px;
@@ -197,6 +202,12 @@
     display: block;
     font-size: 16px;
     color: rgb(255, 255, 255);
+  }
+  .my-problem-type{
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
   }
   .my-problem {
     margin-top: 30px;

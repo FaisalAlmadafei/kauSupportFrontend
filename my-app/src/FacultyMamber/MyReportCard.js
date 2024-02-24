@@ -12,6 +12,7 @@ function MyReportCard({
   reportDate,
   repairDate,
   reportStatus,
+  problemType,
 }) {
 
   const description = 'This is a description.';
@@ -61,6 +62,9 @@ function MyReportCard({
 
             <div className="my-lab-number">
               <span>LAB Number: {deviceLocatedLab}</span>
+            </div>
+            <div className="my-problem-type">
+              <span>Problem Type: {problemType}</span>
             </div>
             <div className="my-problem">
               <span>Problem Description: {problemDescription}</span>

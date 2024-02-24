@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useContext } from "react";
 import { LoginContext } from "../App";
 import { Alert } from "antd";
-import FmNavigationBar from "../FacultyMamber/FmNavigationBar";
+import FmNavigationBar from "./FmNavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 

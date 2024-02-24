@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { LoginContext } from "../App";
 import MyReportCard from "./MyReportCard";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "../SharedComponents/FmNavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Button, Result } from "antd";
@@ -96,6 +96,7 @@ function PreviousReportsPage() {
             reportDate={Report.reportDate}
             repairDate={Report.repairDate} 
             reportStatus={Report.reportStatus}
+            problemType={Report.problemType}
           
           />
         ))}

@@ -12,6 +12,7 @@ import PreviousReportsPage from "./FacultyMamber/PreviousReportsPage";
 import NewServiceRequest from "./SharedComponents/NewServiceRequest";
 import DevicesAvailabilityPage from "./SharedComponents/DevicesAvailabilityPage";
 import MyRequestsPage from "./FacultyMamber/MyRequestsPage";
+import SearchDevicePage from "./SharedComponents/SearchDevicePage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -28,12 +29,72 @@ function App() {
   );
 
   const [LabNumber, setLabNumber] = useState("0");
-  const [FmServices, setFmServices] = useState([]);
-  const [TsServices, setTsServices] = useState([]);
-  const [TsvServices, setTsvmServices] = useState([]);
-
+  const [services, setServices] = useState([]);
 
   useEffect(() => {
+    const servicesByRole = {
+      "Faculty Member": [
+        { serviceName: "Home", pageLink: "/Home" },
+        { serviceName: "New Report", pageLink: "/LabsPage" },
+        { serviceName: "Previous Reports", pageLink: "/PreviousReportsPage" },
+        {
+          serviceName: "Request a Service",
+
+          pageLink: "/NewServiceRequest",
+        },
+        { serviceName: "My Requests", pageLink: "/LabsPage" },
+        {
+          serviceName: "Devices Availability",
+
+          pageLink: "/DevicesAvailabilityPage",
+        },
+      ],
+      "Technical Member": [
+        // ...services for technical member
+      ],
+      Supervisor: [
+        { serviceName: "Home", pageLink: "/Home" },
+        {
+          serviceName: "Reports",
+
+          notification: "true",
+          pageLink: "/LabsPage",
+        },
+
+        {
+          serviceName: "Requests",
+
+          notification: "true",
+          pageLink: "/LabsPage",
+        },
+        {
+          serviceName: "Team Progress",
+
+          notification: "false",
+          pageLink: "/LabsPage",
+        },
+        {
+          serviceName: "Search for a device",
+
+          notification: "false",
+          pageLink: "/SearchDevicePage",
+        },
+        {
+          serviceName: "Manage Devices",
+
+          notification: "false",
+          pageLink: "/LabsPage",
+        },
+        {
+          serviceName: "Devices Availability",
+
+          notification: "false",
+          pageLink: "/DevicesAvailabilityPage",
+        },
+      ],
+      // ...other roles
+    };
+    setServices(servicesByRole[userRole] || []);
     localStorage.setItem("isLoggedIn", isLoggedIn);
     localStorage.setItem("userRole", userRole);
     localStorage.setItem("userID", userID);
@@ -41,51 +102,58 @@ function App() {
 
   return (
     <div className="App">
-       <ServicesContext.Provider value={{ FmServices , setFmServices , TsServices , setTsServices , TsvServices , setTsvmServices}}>
-      <NewReportContext.Provider value={{ LabNumber, setLabNumber }}>
-        <LoginContext.Provider
-          value={[
-            userID,
-            setUserID,
-            userPass,
-            setuserPass,
-            isLoggedIn,
-            setIsLoggedIn,
-            setUserRole,
-            userRole,
-          ]}
-        >
-          <Router>
-            <Routes>
-              <Route path="/" element={<LoginPage />} />
-              <Route
-                path="/Home"
-                element={
-                  userRole === "Faculty Member" ? (
-                    <FmHomePage />
-                  ) : userRole === "Supervisor" ? (
-                    <TsvHomePage />
-                  ) : userRole === "Technical Member" ? (
-                    <TsHomePage />
-                  ) : (
-                    <LoginPage />
-                  )
-                }
-              />
+      <ServicesContext.Provider value={{ services }}>
+        <NewReportContext.Provider value={{ LabNumber, setLabNumber }}>
+          <LoginContext.Provider
+            value={[
+              userID,
+              setUserID,
+              userPass,
+              setuserPass,
+              isLoggedIn,
+              setIsLoggedIn,
+              setUserRole,
+              userRole,
+            ]}
+          >
+            <Router>
+              <Routes>
+                <Route path="/" element={<LoginPage />} />
+                <Route
+                  path="/Home"
+                  element={
+                    userRole === "Faculty Member" ? (
+                      <FmHomePage />
+                    ) : userRole === "Supervisor" ? (
+                      <TsvHomePage />
+                    ) : userRole === "Technical Member" ? (
+                      <TsHomePage />
+                    ) : (
+                      <LoginPage />
+                    )
+                  }
+                />
 
-            <Route path="/LabsPage" element={<LabsPage />} />
-            <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
-            <Route path="/PreviousReportsPage" element={<PreviousReportsPage />} />
-            <Route path="/NewServiceRequest" element={<NewServiceRequest />} />
-            <Route
-                path="/DevicesAvailabilityPage"
-                element={<DevicesAvailabilityPage />}
-              />
-             <Route path="/MyRequestsPage" element={<MyRequestsPage />} />
-          </Routes>
-        </Router>
-      </LoginContext.Provider>
-      </NewReportContext.Provider>
+                <Route path="/LabsPage" element={<LabsPage />} />
+                <Route path="/LabDevicesPage" element={<LabDevicesPage />} />
+                <Route
+                  path="/PreviousReportsPage"
+                  element={<PreviousReportsPage />}
+                />
+                <Route
+                  path="/NewServiceRequest"
+                  element={<NewServiceRequest />}
+                />
+                <Route
+                  path="/DevicesAvailabilityPage"
+                  element={<DevicesAvailabilityPage />}
+                />
+                <Route path="/MyRequestsPage" element={<MyRequestsPage />} />
+                <Route path="/SearchDevicePage" element={<SearchDevicePage />} />
+              </Routes>
+            </Router>
+          </LoginContext.Provider>
+        </NewReportContext.Provider>
       </ServicesContext.Provider>
     </div>
   );
