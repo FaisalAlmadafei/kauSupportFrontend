@@ -24,7 +24,7 @@ function DeviceCard({
   function getIcon() {
     if (type.toLowerCase() == "pc") {
       return PiDesktopTowerLight;
-    } else if (type.toLowerCase() == "board screen") {
+    } else if (type.toLowerCase() == "smart board") {
       return PiScreencastLight;
     } else {
       return BsProjector;

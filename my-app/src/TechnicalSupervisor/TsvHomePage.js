@@ -41,7 +41,7 @@ function TsvHomePage() {
       serviceName: "Manage Devices",
       icon: TbDeviceDesktopCog,
       notification: "false",
-      pageLink: "/LabsPage",
+      pageLink: "/MangeDevicesPage",
     },
     {
       serviceName: "Devices Availability",

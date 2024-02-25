@@ -13,6 +13,8 @@ import NewServiceRequest from "./SharedComponents/NewServiceRequest";
 import DevicesAvailabilityPage from "./SharedComponents/DevicesAvailabilityPage";
 import MyRequestsPage from "./FacultyMamber/MyRequestsPage";
 import SearchDevicePage from "./SharedComponents/SearchDevicePage";
+import MangeDevicesPage from "./SharedComponents/MangeDevicesPage";
+import AddDevicePage from "./SharedComponents/AddDevicePage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -83,7 +85,7 @@ function App() {
           serviceName: "Manage Devices",
 
           notification: "false",
-          pageLink: "/LabsPage",
+          pageLink: "/MangeDevicesPage",
         },
         {
           serviceName: "Devices Availability",
@@ -150,6 +152,10 @@ function App() {
                 />
                 <Route path="/MyRequestsPage" element={<MyRequestsPage />} />
                 <Route path="/SearchDevicePage" element={<SearchDevicePage />} />
+                <Route path="/MangeDevicesPage" element={<MangeDevicesPage />} />
+                <Route path="/AddDevicePage" element={<AddDevicePage />} />
+
+
               </Routes>
             </Router>
           </LoginContext.Provider>

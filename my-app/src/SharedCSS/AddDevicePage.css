@@ -1,0 +1,96 @@
+
+.new-device-form{
+    width: 600px;
+    height: 400px;
+    background-color: rgb(245, 245, 245);
+    margin-top: 80px;
+    border-radius: 20px;
+    padding-top: 40px;
+    -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    color: rgb(81, 81, 81);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.serial-number-section{
+    margin-top: 30px;
+  
+
+}
+
+.serial-number-section-label{
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.serial-number-section-input{
+  width: 200px;
+  height: 25px;
+}
+
+.device-type-section{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.device-section-label{
+    font-size: 22px;
+
+
+}
+
+
+.lab-section-label{
+    font-size: 22px;
+
+
+}
+.add-device-button{
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 14px;
+    border: white;
+   
+    cursor: pointer;
+    display: block;
+    width: 200px;
+   
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(2, 183, 110);
+}
+
+.add-device-button:hover{
+    background-color: rgb(0, 219, 131);
+
+}
+.add-device-button:active{
+    background-color: rgb(0, 227, 136);
+
+}
+
+@media (max-width: 600px) {
+    
+.new-device-form{
+    width: auto;
+    height: 400px;
+    background-color: rgb(245, 245, 245);
+    margin-top: 80px;
+    border-radius: 20px;
+    padding-top: 40px;
+    -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    color: rgb(81, 81, 81);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+    
+}
+}
+
