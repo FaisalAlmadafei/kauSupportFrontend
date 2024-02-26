@@ -46,7 +46,7 @@ function SearchDevicePage() {
       <FmNavigationBar />
       {ShowWarningAlert && (
         <Alert
-          className=".no-device-alert"
+          className="no-device-alert"
           message="No device found"
           description="Please try again."
           type="warning"
