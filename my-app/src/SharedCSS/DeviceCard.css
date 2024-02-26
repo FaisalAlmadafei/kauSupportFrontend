@@ -1,5 +1,22 @@
+.delete-alert-success{
+  position: fixed;
+  left: 450px;
+  z-index: 3;
+  margin-top: 25px;
+  border: 3px solid rgb(0, 208, 0);
+
+}
+
 .technical-role-device-card {
-  background-color: rgb(245, 245, 245);
+  background-image: linear-gradient(
+    to right bottom,
+    #2ecc71,
+    #48d68c,
+    #5fdd9d,
+    #76e4ae,
+    #8debbe
+  );
+  color: rgb(254, 254, 254);
   width: 600px;
   height: auto;
   margin-top: 100px;
@@ -7,7 +24,7 @@
   box-sizing: border-box;
   padding: 25px;
   position: relative;
-  color: rgb(102, 102, 102);
+
   border-radius: 20px;
   padding-bottom: 30px;
   -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
@@ -22,7 +39,7 @@
   cursor: pointer;
 }
 .react-icons-devicess {
-  color: rgb(0, 181, 69);
+  color: rgb(255, 255, 255);
   font-size: 80px;
   margin-bottom: 20px;
 }
@@ -43,10 +60,14 @@
 
 .technical-role-lab-number {
   font-size: 20px;
+  margin-left: 25px;
+ 
 }
 .technical-role-device-number {
   font-size: 20px;
   margin-bottom: 10px;
+  margin-left: 25px;
+  
 }
 .device-arrival-date {
   font-size: 20px;
@@ -63,6 +84,39 @@
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+}
+.delete-device-card-inputs{
+  border: none;
+  background-color: #025c3e;
+  border-radius: 20px;
+  width: 150px;
+  height: 25px;
+  color: white;
+  text-align: center;
+}
+
+.delete-button{
+  border: none;
+  background-color: red;
+  color: white;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover{
+  border: none;
+  background-color: rgb(253, 57, 57);
+ 
+}
+
+.delete-button:active{
+  border: none;
+  background-color: rgb(253, 99, 99);
+ 
 }
 
 .device-card-wroking {
@@ -118,6 +172,17 @@ body {
   color: rgb(255, 253, 253);
 }
 @media (max-width: 600px) {
+  .delete-alert-success{
+    position: fixed;
+    left: 25px;
+    right: 25px;
+    top: 60px;
+    
+    z-index: 3;
+    margin-top: 25px;
+    border: 3px solid rgb(0, 208, 0);
+  
+  }
   .device-card-wroking {
     margin-top: 25px;
   }
@@ -125,14 +190,21 @@ body {
     margin-top: 25px;
   }
   .technical-role-device-card {
-    background-color: rgb(245, 245, 245);
+    background-image: linear-gradient(
+      to right bottom,
+      #2ecc71,
+      #48d68c,
+      #5fdd9d,
+      #76e4ae,
+      #8debbe
+    );
+    color: rgb(254, 254, 254);
     width: auto;
     height: auto;
     padding: 2 px;
     box-sizing: border-box;
     padding: 25px;
     position: relative;
-    color: rgb(102, 102, 102);
     border-radius: 20px;
     padding-bottom: 30px;
     -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
@@ -141,7 +213,7 @@ body {
     margin: 15px;
   }
   .react-icons-devicess {
-    color: rgb(0, 181, 69);
+    color: rgb(255, 255, 255);
     font-size: 80px;
     margin-bottom: 20px;
   }
@@ -191,5 +263,16 @@ body {
   }
   .device-card-reported {
     margin-top: 25px;
+  }
+  .delete-alert-success{
+    position: fixed;
+    left: 25px;
+    right: 25px;
+    top: 60px;
+    
+    z-index: 3;
+    margin-top: 25px;
+    border: 3px solid rgb(0, 208, 0);
+  
   }
 }

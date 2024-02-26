@@ -273,7 +273,7 @@ function LabDevicesPage() {
               }
             }}
           >
-                   <DeviceCard deviceNumber={Device.deviceNumber } type= {Device.type} deviceStatus= {Device.deviceStatus} serialNumber= {Device.serialNumber} deviceLocatedLab= {Device.deviceLocatedLab} arrivalDate= {Device.arrivalDate} nextPeriodicDate= {Device.nextPeriodicDate}/>
+                   <DeviceCard deviceNumber={Device.deviceNumber } type= {Device.type} deviceStatus= {Device.deviceStatus} serialNumber= {Device.serialNumber} deviceLocatedLab= {Device.deviceLocatedLab} arrivalDate= {Device.arrivalDate} nextPeriodicDate= {Device.nextPeriodicDate} serviceType={"newReport"}/>
 
           </div>
         ))}

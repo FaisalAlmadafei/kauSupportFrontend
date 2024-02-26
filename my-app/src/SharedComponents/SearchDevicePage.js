@@ -68,6 +68,7 @@ function SearchDevicePage() {
               arrivalDate={device.arrivalDate}
               nextPeriodicDate={device.nextPeriodicDate}
               setButtonisClicked={setButtonisClicked}
+              serviceType={"searchDevice"}
             />
             {Reports.map((Report) => (
               <MyReportCard

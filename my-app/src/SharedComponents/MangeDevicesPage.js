@@ -18,9 +18,9 @@ function MangeDevicesPage() {
     },
 
     {
-      serviceName: "Update/Delete Device",
+      serviceName: "Delete Device",
       icon: TbDeviceImacExclamation,
-      pageLink: "/LabsPage",
+      pageLink: "/DeleteDevicePage",
     },
   ];
   return (

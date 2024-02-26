@@ -15,6 +15,7 @@ import MyRequestsPage from "./FacultyMamber/MyRequestsPage";
 import SearchDevicePage from "./SharedComponents/SearchDevicePage";
 import MangeDevicesPage from "./SharedComponents/MangeDevicesPage";
 import AddDevicePage from "./SharedComponents/AddDevicePage";
+import DeleteDevicePage from "./SharedComponents/DeleteDevicePage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -154,6 +155,7 @@ function App() {
                 <Route path="/SearchDevicePage" element={<SearchDevicePage />} />
                 <Route path="/MangeDevicesPage" element={<MangeDevicesPage />} />
                 <Route path="/AddDevicePage" element={<AddDevicePage />} />
+                <Route path="/DeleteDevicePage" element={<DeleteDevicePage />} />
 
 
               </Routes>
