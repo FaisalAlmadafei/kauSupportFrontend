@@ -4,13 +4,14 @@ import "../SharedCSS/SearchDevicePage.css";
 import DeviceCard from "./DeviceCard";
 import { useState } from "react";
 import MyReportCard from "../FacultyMamber/MyReportCard";
+import { Alert } from "antd";
 
 function SearchDevicePage() {
   const [SerialNumber, setSerialNumber] = useState("");
   const [device, setdevice] = useState("");
   const [Reports, setReports] = useState([]);
   const [ButtonisClicked, setButtonisClicked] = useState(true);
-
+  const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   async function searchDevice() {
     var requestOptions = {
       method: "GET",
@@ -30,7 +31,7 @@ function SearchDevicePage() {
 
         setButtonisClicked(false);
       } else if (response.status === 400) {
-        alert("No device found");
+      setShowWarningAlert(true);
       } else {
         alert("An error occurred. Please try again.");
       }
@@ -43,6 +44,17 @@ function SearchDevicePage() {
   return (
     <div>
       <FmNavigationBar />
+      {ShowWarningAlert && (
+        <Alert
+          className=".no-device-alert"
+          message="No device found"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setShowWarningAlert(false)}
+        />
+      )}
 
       {ButtonisClicked == false ? (
         <>
