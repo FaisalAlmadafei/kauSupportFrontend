@@ -1,5 +1,6 @@
 @media (min-width: 1000px) {
   .my-report-page {
+    padding-top: 50px;
     margin-top: 50px;
     display: flex;
     justify-content: flex-start;
@@ -144,6 +145,54 @@
   p {
     margin-top: 0px;
   }
+  .assign-part{
+    margin-top: 15px;
+    
+  }
+  .assign-button{
+    width: 110px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(140, 9, 226);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-right: 15px;
+  }
+
+  .assign-button:hover{
+    background-color: rgb(162, 59, 231);
+
+  }
+
+  .assign-button:active{
+    background-color: rgb(178, 93, 236);
+
+  }
+
+  .handle-button{
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(226, 9, 16);
+    color: white;
+    border: none;
+    border-radius: 20px;
+   margin-top: 15px;
+  }
+
+  .handle-button:hover{
+    background-color: rgb(223, 55, 61);
+
+  }
+
+  .handle-button:active{
+    background-color: rgb(224, 88, 93);
+
+  }
+
+ 
+  
 }
 
 @media (max-width: 999px) {
@@ -238,4 +287,50 @@
     line-height: 1.5; 
     color: #4c4c4c; 
   }
+  .assign-part{
+    margin-top: 15px;
+    
+  }
+  .assign-button{
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(140, 9, 226);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-right: 15px;
+  }
+  .assign-button:hover{
+    background-color: rgb(162, 59, 231);
+
+  }
+
+  .assign-button:active{
+    background-color: rgb(178, 93, 236);
+
+  }
+
+  .handle-button{
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(226, 9, 16);
+    color: white;
+    border: none;
+    border-radius: 20px;
+   margin-top: 15px;
+  }
+
+  .handle-button:hover{
+    background-color: rgb(223, 55, 61);
+
+  }
+
+  .handle-button:active{
+    background-color: rgb(224, 88, 93);
+
+  }
+
+
 }

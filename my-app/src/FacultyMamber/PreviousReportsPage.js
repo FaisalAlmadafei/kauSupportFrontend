@@ -2,12 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { LoginContext } from "../App";
-import MyReportCard from "./MyReportCard";
-import FmNavigationBar from "../SharedComponents/FmNavigationBar";
+import MyReportCard from "../SharedComponents/MyReportCard";
+import NavigationBar from "../SharedComponents/NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Button, Result } from "antd";
-import "../FacultyMemberCSS/MyReportCard.css";
+import "../SharedCSS/MyReportCard.css";
 
 
 
@@ -55,7 +55,7 @@ function PreviousReportsPage() {
   return (
     <div>
      
-        <FmNavigationBar setSearch={setSearch}/>
+        <NavigationBar setSearch={setSearch}/>
       
 
         <div onClick={()=>{navigate("/Home")}} className="back-icon">

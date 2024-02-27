@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { Button, Result } from "antd";
 import MyRequestsCard from "./MyRequestsCard";
-import FmNavigationBar from "../SharedComponents/FmNavigationBar";
+import FmNavigationBar from "../SharedComponents/NavigationBar";
 import "../FacultyMemberCSS/MyRequest.css";
 
 

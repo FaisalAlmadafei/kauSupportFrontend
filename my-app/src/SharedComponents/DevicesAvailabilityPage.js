@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import LabCountsCard from "./LabCountsCard";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 
 import "../SharedCSS/HomePage.css";

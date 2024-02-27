@@ -16,7 +16,7 @@ function TsvHomePage() {
       serviceName: "Reports",
       icon: GrDocumentText,
       notification: "true",
-      pageLink: "/LabsPage",
+      pageLink: "/SupervisorReportsPage",
     },
 
     {

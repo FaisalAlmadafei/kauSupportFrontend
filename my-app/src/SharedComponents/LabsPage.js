@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { BsDoorOpen } from "react-icons/bs";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
 
@@ -18,7 +18,7 @@ function LabsPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function handel() {
+    async function getLabs() {
       var requestOptions = {
         method: "GET",
         redirect: "follow",
@@ -43,7 +43,7 @@ function LabsPage() {
         alert("An error occurred. Please check your connection and try again.");
       }
     }
-    handel();
+    getLabs();
   }, []);
 
   const [search, setSearch] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 import "../SharedCSS/AddDevicePage.css";
 import { Select } from "antd";
 import { Alert } from "antd";

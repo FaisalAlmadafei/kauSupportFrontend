@@ -10,7 +10,7 @@ import { Alert } from "antd";
 import { Button, Result } from "antd";
 import { IoIosArrowBack } from "react-icons/io";
 
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);

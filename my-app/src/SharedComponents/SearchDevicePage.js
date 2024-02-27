@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 import "../SharedCSS/SearchDevicePage.css";
 import DeviceCard from "./DeviceCard";
 import { useState } from "react";
-import MyReportCard from "../FacultyMamber/MyReportCard";
+import MyReportCard from "./MyReportCard";
 import { Alert } from "antd";
 
 function SearchDevicePage() {

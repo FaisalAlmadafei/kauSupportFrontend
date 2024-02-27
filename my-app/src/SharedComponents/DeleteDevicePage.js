@@ -1,5 +1,5 @@
 import React from "react";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 import { useState ,useEffect } from "react";
 import DeviceCard from "./DeviceCard";
 import "../SharedCSS/DeleteDevicePage.css";

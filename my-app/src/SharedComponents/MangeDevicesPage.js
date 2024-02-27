@@ -1,5 +1,5 @@
 import React from "react";
-import FmNavigationBar from "./FmNavigationBar";
+import FmNavigationBar from "./NavigationBar";
 import { TbDeviceDesktopPlus } from "react-icons/tb";
 import { TbDeviceImacExclamation } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
