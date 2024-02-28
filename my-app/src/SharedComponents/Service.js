@@ -40,10 +40,8 @@ function Service({ serviceName, notification, Icon }) {
   
 
   let requsetsNotifications = 2;
-  let Notifications ; 
-  if (notification === "true") {
-    Notifications = serviceName === "Reports" ? reportsNotifications : requsetsNotifications; 
-  }
+  let Notifications=  serviceName === "Reports" ? reportsNotifications : requsetsNotifications; ; 
+
   return (
     <div>
       {notification == "true" ? (
