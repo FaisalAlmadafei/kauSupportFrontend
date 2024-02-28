@@ -14,13 +14,7 @@ function SupervisorReportsPage() {
     const [userID] = useContext(LoginContext);
     const [myReports, setmyReports] = useState([]);
     const [ShowNoReports, setShowNoReports] = useState(false);
-    const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
     const navigate = useNavigate();
-
-    function closeForm(){
-      setHandleButtonisClicked(false) ; 
-    }
-  
     
     useEffect(() => {
      
@@ -87,12 +81,7 @@ function SupervisorReportsPage() {
               </Button>
             }
           />
-        )}
-          
-          {HandleButtonisClicked &&(
-            <HandleReportForm closeForm={closeForm} />
-          )}
-        
+        )} 
         
           {filteredReports.map((Report) => (
             <MyReportCard
@@ -108,7 +97,7 @@ function SupervisorReportsPage() {
               serviceType={"Supervisor reports"}
               setmyReports={setmyReports}
               myReports={myReports}
-              setHandleButtonisClicked={setHandleButtonisClicked}
+            
              
             
             />

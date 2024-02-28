@@ -4,6 +4,7 @@ import { Steps } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { useState } from "react";
 import { Select } from "antd";
+import HandleReportForm from "../SharedComponents/HandleReportForm";
 
 function MyReportCard({
   reportID,
@@ -17,8 +18,7 @@ function MyReportCard({
   problemType,
   serviceType,
   setmyReports,
-  myReports,
-  setHandleButtonisClicked
+  myReports
   
 }) {
   const [userRole, setUserRole] = useState(
@@ -26,7 +26,10 @@ function MyReportCard({
   );
   const [Team, setTeam] = useState([]);
   const [AssignedToId, setAssignedToId] = useState("");
-
+  const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
+  function closeForm(){
+    setHandleButtonisClicked(false) ; 
+  }
   if (serviceType == "Supervisor reports") {
     getTeamMembers();
   }
@@ -53,7 +56,7 @@ function MyReportCard({
       }
     } catch (error) {
       console.log("error", error);
-      alert("An error occurred. Please check your connection and try again.");
+    //  alert("An error occurred. Please check your connection and try again.");
     }
   }
   function getDate(DateAndTime) {
@@ -164,7 +167,12 @@ function MyReportCard({
               />
             </div>
             <button onClick={()=>{setHandleButtonisClicked(true)}} className="handle-button" >Handle Report</button>
-
+            {HandleButtonisClicked &&(
+            <HandleReportForm 
+            closeForm={closeForm}
+            reportID={reportID} />
+          )}
+       
             
               
             </>
