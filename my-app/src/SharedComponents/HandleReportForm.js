@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Alert } from "antd";
 import "../SharedCSS/HandleReportForm.css";
 
-function HandleReportForm({closeForm}, reportID) {
+function HandleReportForm({closeForm, reportID} ) {
 const [actionTaken, setActionTaken] = useState("");
 const [ShowEmptyFieldAlert, setShowEmptyFieldAlert] = useState(false);
 const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
@@ -10,7 +10,7 @@ const [ShowWarningAlert, setShowWarningAlert] = useState(false);
 
 async function addActionTaken(){
   var requestOptions = {
-      method: "POST",
+      method: "PUT",
       redirect: "follow",
     };
 
@@ -48,7 +48,7 @@ function checkEmptyFields() {
             <h4 className="handle-report-lable">Please enter a brief description of the action taken: </h4>
             <textarea
             required
-            onChange={(e) => setActionTaken(e.target.value)}
+            onChange={(e) => {setActionTaken(e.target.value)}}
             className="handel-report-input"           
           ></textarea>
           <button 
