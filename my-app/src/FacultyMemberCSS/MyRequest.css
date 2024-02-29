@@ -63,6 +63,9 @@
 @media (max-width: 799px) {
   .my-request-container{
     margin-top: 150px;
+    margin-bottom: 150px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .my-request-card {
     width: auto;

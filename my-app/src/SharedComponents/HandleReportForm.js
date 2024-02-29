@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Alert } from "antd";
 import "../SharedCSS/HandleReportForm.css";
+import { Spin } from 'antd';
 
-function HandleReportForm({closeForm, reportID} ) {
-const [actionTaken, setActionTaken] = useState("");
-const [ShowEmptyFieldAlert, setShowEmptyFieldAlert] = useState(false);
-const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
-const [ShowWarningAlert, setShowWarningAlert] = useState(false);
 
-async function addActionTaken(){
-  var requestOptions = {
+function HandleReportForm({ closeForm, reportID, setmyReports, myReports }) {
+  const [actionTaken, setActionTaken] = useState("");
+  const [ShowSpinner, setShowSpinner] = useState(false);
+
+
+  async function addActionTaken() {
+    setShowSpinner(true) ; 
+    var requestOptions = {
       method: "PUT",
       redirect: "follow",
     };
@@ -20,9 +22,16 @@ async function addActionTaken(){
         requestOptions
       );
       if (response.ok) {
-        setShowSuccessAlert(true);
+        setShowSpinner(false) ; 
+        alert("Action Taked Added Successfully!");
+        closeForm();
+        const filteredReports = myReports.filter(
+          (report) => report.reportID !== reportID
+        );
+        setmyReports(filteredReports);
+
       } else if (response.status === 400) {
-        setShowWarningAlert(true); 
+        alert("Action Taked Could not be updated!");
       } else {
         console.log(response);
         alert("An error occurred. Please try again.");
@@ -30,68 +39,42 @@ async function addActionTaken(){
     } catch (error) {
       console.log("error", error);
       alert("An error occurred. Please check your connection and try again.");
-    }   
-}
-function checkEmptyFields() {
-    if (actionTaken.length > 0){
-      addActionTaken();
-    }else {
-      setShowEmptyFieldAlert(true);
     }
   }
-  
+  function checkEmptyFields() {
+    if (actionTaken.length > 0) {
+      addActionTaken();
+    } else {
+      alert("Please add action taken...");
+    }
+  }
+
   return (
-
     <div>
-        <div className="report-handle-form">
-            <div onClick={closeForm} className="close-icon">x</div>
-            <h4 className="handle-report-lable">Please enter a brief description of the action taken: </h4>
-            <textarea
-            required
-            onChange={(e) => {setActionTaken(e.target.value)}}
-            className="handel-report-input"           
-          ></textarea>
-          <button 
-          onClick={checkEmptyFields}
-          
-          className="handle-report-button">
-            Submit
-            </button>
-          
-{ShowSuccessAlert && (
-        <Alert
-          className="handle-report-alert"
-          message="The Action Taken added Successfully!"
-          type="success"
-          showIcon
-          closable
-          onClose={() => setShowSuccessAlert(false)}
-        />
-      )}
-      {ShowWarningAlert && (
-        <Alert
-          className="handle-report-alert"
-          message="An error occured"
-          description="Please try again."
-          type="warning"
-          showIcon
-          closable
-          onClose={() => setShowWarningAlert(false)}
-        />
-      )}
-       {ShowEmptyFieldAlert && (
-        <Alert
-          className="handle-report-alert"
-          message="Please fill the action taken field"
-          type="warning"
-          showIcon
-          closable
-          onClose={() => setShowEmptyFieldAlert(false)}
-        />
-      )}
+      {" "}
     
-         </div>
+      <div className="report-handle-form">
+      {ShowSpinner &&(
+          <Spin className="handle-spin" size="large"/>
+        )}
 
+        <div onClick={closeForm} className="close-icon">
+          x
+        </div>
+        <h4 className="handle-report-lable">
+          Please enter a brief description of the action taken:{" "}
+        </h4>
+        <textarea
+          required
+          onChange={(e) => {
+            setActionTaken(e.target.value);
+          }}
+          className="handel-report-input"
+        ></textarea>
+        <button onClick={checkEmptyFields} className="handle-report-button">
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

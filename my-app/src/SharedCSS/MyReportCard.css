@@ -1,3 +1,10 @@
+.spin{
+  position: fixed;
+  top: 180px;
+  left: 100px;
+  right: 100px;
+}
+
 @media (min-width: 1000px) {
   .my-report-page {
     padding-top: 50px;
@@ -190,7 +197,14 @@
     background-color: rgb(224, 88, 93);
 
   }
-
+  .report-action-taken-alert-success {
+    position: fixed;
+    left: 25px;
+    right: 25px;
+    z-index: 5;
+    margin-top: 25px;
+    border: 3px solid rgb(0, 208, 0);
+  }
  
   
 }

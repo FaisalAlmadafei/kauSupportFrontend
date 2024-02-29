@@ -1,23 +1,27 @@
 import React from "react";
 import NavigationBar from "../SharedComponents/NavigationBar";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 import { useContext } from "react";
 import { LoginContext } from "../App";
-import MyReportCard from "../SharedComponents/MyReportCard";
-import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { Button, Result } from "antd";
-import "../SharedCSS/MyReportCard.css";
+import MyRequest from "../FacultyMamber/MyRequestsPage";
+import MyRequestsCard from "../SharedComponents/MyRequestsCard";
+import { GoContainer } from "react-icons/go";
+import "../SharedCSS/SupervisorRequestsPage.css";
 
-function SupervisorReportsPage() {
-  const [myReports, setmyReports] = useState([]);
-  const [ShowNoReports, setShowNoReports] = useState(false);
+
+function SupervisorRequestsPage() {
+  const [userID] = useContext(LoginContext);
+  const [myRequests, setmyRequests] = useState([]);
+  const [ShowNoRequests, setShowNoRequests] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    getReports();
+    getRequests();
   }, []);
-  async function getReports() {
+  async function getRequests() {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -25,15 +29,15 @@ function SupervisorReportsPage() {
 
     try {
       const response = await fetch(
-        `https://kausupportapi.azurewebsites.net/api/TechnicalSupervisor_/GetNewReportsForSupervisor`,
+        `https://kausupportapi.azurewebsites.net/api/TechnicalSupervisor_/GetNewRequestByUserId?User_Id=${userID}`,
         requestOptions
       );
 
       if (response.ok) {
         const result = await response.json();
-        setmyReports(result);
+        setmyRequests(result);
       } else if (response.status === 400) {
-        setShowNoReports(true);
+        setShowNoRequests(true);
       } else {
         alert("An error occurred. Please try again.");
       }
@@ -43,14 +47,12 @@ function SupervisorReportsPage() {
     }
   }
   const [search, setSearch] = useState("");
-  const filteredReports = myReports.filter((Report) =>
-    Report.reportID.toString().toLowerCase().includes(search.toLowerCase())
+  const filteredRequests = myRequests.filter((Request) =>
+    Request.requestID.toString().toLowerCase().includes(search.toLowerCase())
   );
-
   return (
     <div>
       <NavigationBar setSearch={setSearch} />
-
       <div
         onClick={() => {
           navigate("/Home");
@@ -59,13 +61,13 @@ function SupervisorReportsPage() {
       >
         <IoIosArrowBack />
       </div>
-
-      {ShowNoReports && (
+      {ShowNoRequests && (
         <Result
-          className="no-reports-picture"
+          
+          className="no-reports"
           status="500"
-          title="No Reports found"
-          subTitle="Sorry, You have not report any device yet..."
+          title="No Requests Found"
+          subTitle="There are no new requests yet..."
           extra={
             <Button
               on
@@ -78,19 +80,24 @@ function SupervisorReportsPage() {
             </Button>
           }
         />
+      
+
       )}
 
-      {filteredReports.map((Report) => (
-        <MyReportCard
-          key={Report.reportID}
-          {...Report}
-          serviceType={"Supervisor reports"}
-          setmyReports={setmyReports}
-          myReports={myReports}
+<div className="my-request-container"> 
+      {filteredRequests.map((Request) => (
+        <MyRequestsCard
+          key={Request.requestID}
+          {...Request}
+          serviceType={"Supervisor Requests"}
+          setmyRequests={setmyRequests}
+          myRequests={myRequests}
+          
         />
       ))}
+      </div>
     </div>
   );
 }
 
-export default SupervisorReportsPage;
+export default SupervisorRequestsPage;

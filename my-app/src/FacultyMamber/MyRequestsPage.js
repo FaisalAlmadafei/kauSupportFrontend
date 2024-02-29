@@ -5,7 +5,7 @@ import { LoginContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { Button, Result } from "antd";
-import MyRequestsCard from "./MyRequestsCard";
+import MyRequestsCard from "../SharedComponents/MyRequestsCard";
 import FmNavigationBar from "../SharedComponents/NavigationBar";
 import "../FacultyMemberCSS/MyRequest.css";
 

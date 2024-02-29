@@ -5,6 +5,8 @@ import Sider from "antd/es/layout/Sider";
 import { useState } from "react";
 import { Select } from "antd";
 import HandleReportForm from "../SharedComponents/HandleReportForm";
+import { Spin } from 'antd';
+
 
 function MyReportCard({
   reportID,
@@ -18,8 +20,7 @@ function MyReportCard({
   problemType,
   serviceType,
   setmyReports,
-  myReports
-  
+  myReports,
 }) {
   const [userRole, setUserRole] = useState(
     localStorage.getItem("userRole") || ""
@@ -27,9 +28,12 @@ function MyReportCard({
   const [Team, setTeam] = useState([]);
   const [AssignedToId, setAssignedToId] = useState("");
   const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
-  function closeForm(){
-    setHandleButtonisClicked(false) ; 
+  const [ShowSpinner, setShowSpinner] = useState(false);
+
+  function closeForm() {
+    setHandleButtonisClicked(false);
   }
+  
   if (serviceType == "Supervisor reports") {
     getTeamMembers();
   }
@@ -56,7 +60,7 @@ function MyReportCard({
       }
     } catch (error) {
       console.log("error", error);
-    //  alert("An error occurred. Please check your connection and try again.");
+      //  alert("An error occurred. Please check your connection and try again.");
     }
   }
   function getDate(DateAndTime) {
@@ -77,39 +81,44 @@ function MyReportCard({
     }
   }
 
-    async function assignReport() {
-   
-    
-    var requestOptions = {
-      method: "PUT",
-      redirect: "follow",
-    };
-
-    try {
-      const response = await fetch(
-        `https://kausupportapi.azurewebsites.net/api/TechnicalSupervisor_/AssignReport?User_Id=${AssignedToId}&Report_Id=${reportID}`,
-        requestOptions
-      );
-
-      if (response.ok) {
-
-       
-        alert('Report assigned')
-        const filteredReports = myReports.filter(report => report.reportID !== reportID);
-        setmyReports(filteredReports);
-
-      
-
-      } else if (response.status === 400) {
-        alert("Could not assign report")
-      } else {
-        alert("An error occurred. Please try again.");
-      }
-    } catch (error) {
-      console.log("error", error);
-      alert("An error occurred. Please check your connection and try again.");
-    }
+  async function assignReport() {
+    if(AssignedToId !==""){
+      setShowSpinner(true) ; 
+      var requestOptions = {
+        method: "PUT",
+        redirect: "follow",
+      };
   
+      try {
+        const response = await fetch(
+          `https://kausupportapi.azurewebsites.net/api/TechnicalSupervisor_/AssignReport?User_Id=${AssignedToId}&Report_Id=${reportID}`,
+          requestOptions
+        );
+  
+        if (response.ok) {
+          setShowSpinner(false) ; 
+          alert("Report assigned successfully");
+  
+          const filteredReports = myReports.filter(
+            (report) => report.reportID !== reportID
+          );
+          setmyReports(filteredReports);
+          setAssignedToId("");
+        } else if (response.status === 400) {
+          alert("Could not assign report");
+        } else {
+          alert("An error occurred. Please try again.");
+        }
+      } catch (error) {
+        console.log("error", error);
+        alert("An error occurred. Please check your connection and try again.");
+      }
+
+    }
+    else{
+      alert("Please chose a team member to assign report")
+    }
+   
   }
 
   const Date = getDate(reportDate);
@@ -119,7 +128,11 @@ function MyReportCard({
   return (
     <div>
       <div className="my-report-page">
+       
         <div className="my-report-container">
+        {ShowSpinner &&(
+          <Spin className="spin" size="large"/>
+        )}
           <span className="my-report-id">Report ID: {reportID}</span>
           <span className="my-report-date">Report Date: {Date}</span>
 
@@ -149,32 +162,36 @@ function MyReportCard({
           </div>
           {serviceType == "Supervisor reports" ? (
             <>
-            <div className="assign-part">
-            <button className="assign-button" onClick={assignReport}>Assign Report</button>
-              <Select
-                style={{
-                  width: 140,
-                  height: 25,
-                  margin: 10,
+              <div className="assign-part">
+                <button className="assign-button" onClick={assignReport}>
+                  Assign Report
+                </button>
+                <Select
+                  style={{
+                    width: 140,
+                    height: 25,
+                    margin: 10,
+                  }}
+                  onChange={(value) => {
+                    setAssignedToId(value);
+                  }}
+                  options={Team.map((TeamMember) => ({
+                    label: `${TeamMember.firstName} ${TeamMember.lastName}`,
+                    value: TeamMember.userId,
+                  }))}
+                />
+              </div>
+              <button
+                onClick={() => {
+                  setHandleButtonisClicked(true);
                 }}
-                onChange={(value) => {
-                  setAssignedToId(value) ; 
-                }}
-                options={Team.map((TeamMember) => ({
-                  label: `${TeamMember.firstName} ${TeamMember.lastName}`,
-                  value: TeamMember.userId,
-                }))}
-              />
-            </div>
-            <button onClick={()=>{setHandleButtonisClicked(true)}} className="handle-button" >Handle Report</button>
-            {HandleButtonisClicked &&(
-            <HandleReportForm 
-            closeForm={closeForm}
-            reportID={reportID} />
-          )}
-       
-            
-              
+                className="handle-button"
+              >
+                Handle Report
+              </button>
+              {HandleButtonisClicked && (
+                <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} />
+              )}
             </>
           ) : (
             <></>

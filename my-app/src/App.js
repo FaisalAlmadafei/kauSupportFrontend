@@ -17,6 +17,7 @@ import MangeDevicesPage from "./SharedComponents/MangeDevicesPage";
 import AddDevicePage from "./SharedComponents/AddDevicePage";
 import DeleteDevicePage from "./SharedComponents/DeleteDevicePage";
 import SupervisorReportsPage from "./TechnicalSupervisor/SupervisorReportsPage";
+import SupervisorRequestsPage from "./TechnicalSupervisor/SupervisorRequestsPage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -69,7 +70,7 @@ function App() {
           serviceName: "Requests",
 
           notification: "true",
-          pageLink: "/LabsPage",
+          pageLink: "/SupervisorRequestsPage",
         },
         {
           serviceName: "Team Progress",
@@ -158,6 +159,8 @@ function App() {
                 <Route path="/AddDevicePage" element={<AddDevicePage />} />
                 <Route path="/DeleteDevicePage" element={<DeleteDevicePage />} />
                 <Route path="/SupervisorReportsPage" element={<SupervisorReportsPage />} />
+                <Route path="/SupervisorRequestsPage" element={<SupervisorRequestsPage />} />
+
 
 
               </Routes>

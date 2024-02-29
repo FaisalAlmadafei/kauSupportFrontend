@@ -88,6 +88,7 @@ function PreviousReportsPage() {
       
         {filteredReports.map((Report) => (
           <MyReportCard
+          key={Report.reportID}
             reportID={Report.reportID}
             deviceNumber={Report.deviceNumber}
             deviceLocatedLab={Report.deviceLocatedLab}

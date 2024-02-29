@@ -8,8 +8,15 @@ import { MdHistoryEdu } from "react-icons/md";
 import { RiTeamLine } from "react-icons/ri";
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
+import { useContext ,useEffect } from "react";
+import { LoginContext } from "../App";
+import Notifications from "../SharedComponents/Notifications";
 
 function TsvHomePage() {
+  const [reportsNotifications, setreportsNotifications] = useState("");
+  const [requestsNotifications, setrequestsNotifications] = useState("");
+ 
+
   const navigate = useNavigate();
   let services = [
     {
@@ -23,13 +30,13 @@ function TsvHomePage() {
       serviceName: "Requests",
       icon: MdHistoryEdu,
       notification: "true",
-      pageLink: "/LabsPage",
+      pageLink: "/SupervisorRequestsPage",
     },
     {
       serviceName: "Team Progress",
       icon: RiTeamLine,
       notification: "false",
-      pageLink: "/LabsPage",
+      pageLink: "/SupervisorRequestsPage",
     },
     {
       serviceName: "Search for a device",
@@ -58,6 +65,8 @@ function TsvHomePage() {
 
   return (
     <div>
+      <Notifications reportsNotifications={reportsNotifications} setreportsNotifications={setreportsNotifications} requestsNotifications={requestsNotifications} setrequestsNotifications = {setrequestsNotifications}/>
+      
       <div className="navBar">
         <input
           type="text"
@@ -78,6 +87,9 @@ function TsvHomePage() {
               <Service
                 serviceName={service.serviceName}
                 notification={service.notification}
+                reportsNotifications={reportsNotifications}
+                requestsNotifications={requestsNotifications}
+               
                 Icon={service.icon}
               />
             </div>

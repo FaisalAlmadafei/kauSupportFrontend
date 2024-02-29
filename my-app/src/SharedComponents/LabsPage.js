@@ -58,7 +58,8 @@ function LabsPage() {
 
 
         </div>
-         <div className="card-Container">
+        <div className="Labs-cards-container">
+        <div className="card-Container">
          {filteredLabs.map((Lab) => (
            <div
              key={Lab.labNumber}
@@ -72,6 +73,9 @@ function LabsPage() {
          ))}
         
        </div>
+
+        </div>
+       
       </div>
   );
 }
