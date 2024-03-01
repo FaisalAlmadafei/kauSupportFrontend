@@ -10,7 +10,7 @@ import { TbDeviceDesktopCheck } from "react-icons/tb";
 import DevicesAvailabilityPage from "../SharedComponents/DevicesAvailabilityPage";
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
-// this is a comment
+// this is a comment for testing
 function FmHomePage() {
   const navigate = useNavigate();
 
