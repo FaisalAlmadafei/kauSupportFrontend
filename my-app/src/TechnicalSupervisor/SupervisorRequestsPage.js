@@ -6,7 +6,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useContext } from "react";
 import { LoginContext } from "../App";
 import { Button, Result } from "antd";
-import MyRequest from "../FacultyMamber/MyRequestsPage";
+import MyRequest from "../FacultyMember/MyRequestsPage";
 import MyRequestsCard from "../SharedComponents/MyRequestsCard";
 import { GoContainer } from "react-icons/go";
 import "../SharedCSS/SupervisorRequestsPage.css";
