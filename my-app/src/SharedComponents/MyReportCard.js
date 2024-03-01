@@ -2,7 +2,7 @@ import React from "react";
 import "../SharedCSS/MyReportCard.css";
 import { Steps } from "antd";
 import Sider from "antd/es/layout/Sider";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { Select } from "antd";
 import HandleReportForm from "../SharedComponents/HandleReportForm";
 import { Spin } from 'antd';
@@ -33,10 +33,9 @@ function MyReportCard({
   function closeForm() {
     setHandleButtonisClicked(false);
   }
-  
-  if (serviceType == "Supervisor reports") {
-    getTeamMembers();
-  }
+useEffect(() => {
+  getTeamMembers() ;
+}, []);
 
   async function getTeamMembers() {
     var requestOptions = {

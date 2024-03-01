@@ -89,6 +89,8 @@
     -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
     box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
     padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .my-request-id {
     display: block;
