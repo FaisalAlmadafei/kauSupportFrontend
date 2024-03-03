@@ -1,0 +1,11 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #15ca8e;
+  z-index: 1;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;    
+}
