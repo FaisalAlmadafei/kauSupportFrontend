@@ -6,7 +6,7 @@ import { Alert } from "antd";
 import { useState , useEffect } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-
+import Footer from "./Footer";
 function AddDevicePage() {
   const types = ["PC", "Smart Board", "Projector"];
   const [Labs, setLabs] = useState([]);
@@ -179,6 +179,8 @@ function AddDevicePage() {
         />
       )}
       </div>
+      <Footer/>
+
     </div>
   );
 }

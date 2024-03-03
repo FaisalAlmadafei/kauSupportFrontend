@@ -5,7 +5,7 @@ import { Alert } from "antd";
 import FmNavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-
+import Footer from "./Footer";
 import "../SharedCSS/NewServiceRequest.css";
 
 function NewServiceRequest() {
@@ -80,6 +80,7 @@ async function addRequest () {
           </button>
           </div>                
       </div>
+      <Footer/>
     </div>
   )
 }

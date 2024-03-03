@@ -5,7 +5,7 @@ import DeviceCard from "./DeviceCard";
 import "../SharedCSS/DeleteDevicePage.css";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-
+import Footer from "./Footer";
 
 
 function DeleteDevicePage()  {
@@ -61,8 +61,12 @@ function DeleteDevicePage()  {
         <IoIosArrowBack/>
         </div>
 <div className="delete-devices-cards-container">
+  <div className="delete-devcie-card">
+    
+  </div>
 {filteredDevices.map((device) => (
-              <DeviceCard
+              <>
+                <DeviceCard
               deviceNumber={device.deviceNumber}
               type={device.type}
               deviceStatus={device.deviceStatus}
@@ -71,14 +75,18 @@ function DeleteDevicePage()  {
               arrivalDate={device.arrivalDate}
               nextPeriodicDate={device.nextPeriodicDate}
               serviceType={"edit-device"}
+
              
              
             
             />
+            <br />
+            </>
+            
             ))}
 
 </div>
-
+<Footer/>
 
 
     </div>

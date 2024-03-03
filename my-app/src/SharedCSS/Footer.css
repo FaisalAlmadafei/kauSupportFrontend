@@ -1,4 +1,10 @@
 
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden; /* This can be used to prevent horizontal scrolling */
+}
 
 footer {
   position: absolute;
@@ -10,4 +16,29 @@ footer {
   z-index: 1;
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;    
+}
+
+@media (max-width: 600px) {
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    overflow-x: hidden; /* This can be used to prevent horizontal scrolling */
+  }
+      
+  footer {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    right: 0; /* Adjusted this line */
+    height: 120px;
+    background-color: #15ca8e;
+    z-index: 1;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;    
+  }
 }

@@ -8,6 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Button, Result } from "antd";
 import "../SharedCSS/MyReportCard.css";
+import Footer from "../SharedComponents/Footer";
 
 
 
@@ -100,6 +101,7 @@ function PreviousReportsPage() {
           
           />
         ))}
+           <Footer/>
     
     </div>
   );

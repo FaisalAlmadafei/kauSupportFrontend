@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { NewReportContext } from "../App";
 import FmNavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
-
+import Footer from "./Footer";
 import "../SharedCSS/HomePage.css";
 function DevicesAvailabilityPage() {
     const {LabNumber , setLabNumber} = useContext(NewReportContext);
@@ -73,6 +73,7 @@ function DevicesAvailabilityPage() {
            ))}
           
          </div>
+         <Footer/>
         </div>
     );
   }

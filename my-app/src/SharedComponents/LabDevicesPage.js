@@ -9,7 +9,7 @@ import { LoginContext } from "../App";
 import { Alert } from "antd";
 import { Button, Result } from "antd";
 import { IoIosArrowBack } from "react-icons/io";
-
+import Footer from "./Footer";
 import FmNavigationBar from "./NavigationBar";
 
 function LabDevicesPage() {
@@ -278,6 +278,8 @@ function LabDevicesPage() {
           </div>
         ))}
       </div>
+   
+      <Footer/>
     </div>
   );
 }

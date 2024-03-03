@@ -1,19 +1,22 @@
+
 .delete-devices-cards-container{
     display: grid;
         grid-template-columns: repeat(2, 600px);
         gap: 80px;
+        justify-content: center;
+        align-items: center;
        
 }
 
 @media (max-width: 600px) {
     
     .delete-devices-cards-container{
-        display: grid;
-            grid-template-columns: repeat(1, 100%); 
-            gap: 40px;
+        display: inline-block;
+       
+            width: 400px;
+            
             margin-top: 120px;
-            padding: 25px;
-            width: auto;
            
     }
+   
 }

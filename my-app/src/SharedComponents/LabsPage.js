@@ -9,7 +9,7 @@ import { NewReportContext } from "../App";
 import FmNavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
-
+import Footer from "./Footer";
 
 
 function LabsPage() {
@@ -75,7 +75,7 @@ function LabsPage() {
        </div>
 
         </div>
-       
+        <Footer/>
       </div>
   );
 }

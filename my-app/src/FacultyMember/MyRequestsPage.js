@@ -8,6 +8,7 @@ import { Button, Result } from "antd";
 import MyRequestsCard from "../SharedComponents/MyRequestsCard";
 import FmNavigationBar from "../SharedComponents/NavigationBar";
 import "../FacultyMemberCSS/MyRequest.css";
+import Footer from "../SharedComponents/Footer";
 
 
 
@@ -96,6 +97,7 @@ function MyRequest() {
           />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }

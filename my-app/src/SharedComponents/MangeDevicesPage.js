@@ -26,7 +26,7 @@ function MangeDevicesPage() {
     },
   ];
   return (
-    <div>
+    <>
       <FmNavigationBar />
     
       <div onClick={()=>{navigate("/Home")}} className="back-icon">
@@ -44,7 +44,8 @@ function MangeDevicesPage() {
           </div>
         ))}
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 }
 
