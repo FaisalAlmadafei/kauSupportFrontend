@@ -1,0 +1,115 @@
+
+    .charts-container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 120px;
+        gap: 40px;
+        margin-left: 35px;
+        margin-right: 35px;
+        
+        
+        
+      
+      
+       
+      }
+      
+      .team-progress-chart-container {
+        position: relative;
+        width: 700px;
+      
+        display: inline-block;
+        flex: 1;
+      
+      }
+      
+      .bar-chart {
+        position: absolute;
+        display: inline-block;
+       
+        width: 100%;
+      }
+
+
+@media (max-width: 1200px) {
+   
+    .charts-container {
+      
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
+        gap: 40px;
+       margin-left: 25px;
+       margin-left: 10px;
+       padding-left: 25px;
+       padding-right: 10px;
+     
+        
+        
+      
+      
+       
+      }
+      
+      .team-progress-chart-container {
+        position: relative;
+        width: 600px;
+      
+        display: inline-block;
+        flex: 1;
+      
+      }
+      
+      .bar-chart {
+        position: absolute;
+        display: inline-block;
+       
+        width: 100%;
+      }
+      
+  
+}
+
+
+@media (max-width: 1199px) {
+   
+    .charts-container {
+      
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
+        gap: 40px;
+      
+        
+        
+      
+      
+       
+      }
+      
+      .team-progress-chart-container {
+        position: relative;
+        width: 400px;
+        left: 25px;
+        right: 25px;
+        display: inline-block;
+        flex: 1;
+      
+      }
+      
+      .bar-chart {
+        position: absolute;
+        display: inline-block;
+       
+        width: 100%;
+      }
+      
+  
+}

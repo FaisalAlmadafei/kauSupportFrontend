@@ -18,6 +18,7 @@ import AddDevicePage from "./SharedComponents/AddDevicePage";
 import DeleteDevicePage from "./SharedComponents/DeleteDevicePage";
 import SupervisorReportsPage from "./TechnicalSupervisor/SupervisorReportsPage";
 import SupervisorRequestsPage from "./TechnicalSupervisor/SupervisorRequestsPage";
+import DashBoardPage from "./TechnicalSupervisor/DashBoardPage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -76,7 +77,7 @@ function App() {
           serviceName: "Team Progress",
 
           notification: "false",
-          pageLink: "/LabsPage",
+          pageLink: "/DashBoardPage",
         },
         {
           serviceName: "Search for a device",
@@ -160,6 +161,8 @@ function App() {
                 <Route path="/DeleteDevicePage" element={<DeleteDevicePage />} />
                 <Route path="/SupervisorReportsPage" element={<SupervisorReportsPage />} />
                 <Route path="/SupervisorRequestsPage" element={<SupervisorRequestsPage />} />
+                <Route path="/DashBoardPage" element={<DashBoardPage />} />
+
 
 
 

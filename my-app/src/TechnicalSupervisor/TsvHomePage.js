@@ -36,7 +36,7 @@ function TsvHomePage() {
       serviceName: "Team Progress",
       icon: RiTeamLine,
       notification: "false",
-      pageLink: "/SupervisorRequestsPage",
+      pageLink: "/DashBoardPage",
     },
     {
       serviceName: "Search for a device",
