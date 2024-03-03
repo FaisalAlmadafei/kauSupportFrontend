@@ -14,13 +14,14 @@
     }
 
     @media (max-width: 600px) {
-       
+      
      
        .cards-Container{
           display: grid;
           grid-template-columns: repeat(1, 300px); /* 3 columns */
           margin-top: 120px;
           gap: 10px;  
+        
          }
       }
     

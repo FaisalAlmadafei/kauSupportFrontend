@@ -1,8 +1,27 @@
+
 .spin{
   position: fixed;
   top: 180px;
   left: 100px;
   right: 100px;
+}
+.assigned-to-info{
+  font-size: 18px;
+    margin-left: 20px;
+    margin-top: 50px;
+
+    
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+
+.done-icon{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 @media (min-width: 1000px) {
@@ -25,7 +44,7 @@
       #8debbe
     );
     color: rgb(254, 254, 254);
-    cursor: pointer;
+    
     font-size: 16px;
     -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
     -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
@@ -211,6 +230,17 @@
 }
 
 @media (max-width: 999px) {
+
+  .done-icon{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  
+
   .my-report-page {
     display: flex;
     flex-direction: column;
@@ -232,6 +262,7 @@
     position: relative;
     background-color: #48d68c;
     margin-top: 30px;
+    padding-top: 35px;
   }
   .my-right-part {
     width: 100%; 
@@ -247,14 +278,19 @@
     position: absolute;
     font-weight: bold;
     color: rgb(255, 255, 255);
+  
+  
   }
   .my-report-id {
-    top: 20px;
+    top: 45px;
     left: 10px;
+  
   }
   .my-report-date {
-    top: 20px;
+    top: 45px;
     right: 10px;
+
+
   }
   .my-report-device-number {
     display: inline-block;

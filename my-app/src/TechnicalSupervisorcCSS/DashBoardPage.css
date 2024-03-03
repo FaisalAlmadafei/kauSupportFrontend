@@ -16,6 +16,10 @@
       
        
       }
+
+      .monitor-reports-container{
+        margin: 25px;
+      }
       
       .team-progress-chart-container {
         position: relative;
@@ -31,6 +35,14 @@
         display: inline-block;
        
         width: 100%;
+      }
+
+      .pie-chart-container{
+        position: relative;
+       margin-top: 30px;
+        display: inline-block;
+        flex: 1;
+        width: 400px;
       }
 
 
@@ -77,8 +89,12 @@
 
 
 @media (max-width: 1199px) {
+  .monitor-reports-container{
+   
+  }
    
     .charts-container {
+    
       
         display: flex;
         flex-direction: column;
@@ -96,9 +112,8 @@
       
       .team-progress-chart-container {
         position: relative;
-        width: 400px;
-        left: 25px;
-        right: 25px;
+        width: 300px;
+       
         display: inline-block;
         flex: 1;
       
@@ -109,6 +124,13 @@
         display: inline-block;
        
         width: 100%;
+      }
+      .pie-chart-container{
+        position: relative;
+       margin-top: 30px;
+        display: inline-block;
+        flex: 1;
+        width: 300px;
       }
       
   

@@ -21,6 +21,10 @@ function MyReportCard({
   serviceType,
   setmyReports,
   myReports,
+  assignedToFirstName,
+  assignedToLastName,
+  reportedByFirstName,
+  reportedByLastName
 }) {
   const [userRole, setUserRole] = useState(
     localStorage.getItem("userRole") || ""
@@ -50,6 +54,7 @@ useEffect(() => {
       );
 
       if (response.ok) {
+        
         const result = await response.json();
         setTeam(result);
       } else if (response.status === 400) {
@@ -97,11 +102,15 @@ useEffect(() => {
         if (response.ok) {
           setShowSpinner(false) ; 
           alert("Report assigned successfully");
+          if(serviceType !== "Reports monitoring"){
+            const filteredReports = myReports.filter(
+              (report) => report.reportID !== reportID
+            );
+            setmyReports(filteredReports);
+            
+          }
   
-          const filteredReports = myReports.filter(
-            (report) => report.reportID !== reportID
-          );
-          setmyReports(filteredReports);
+         
           setAssignedToId("");
         } else if (response.status === 400) {
           alert("Could not assign report");
@@ -120,6 +129,47 @@ useEffect(() => {
    
   }
 
+  async function checkReport() {
+  
+    
+      var requestOptions = {
+        method: "PUT",
+        redirect: "follow",
+      };
+  
+      try {
+        const response = await fetch(
+          `https://kausupportapi.azurewebsites.net/api/TechnicalSupervisor_/CheckReport?Report_ID=${reportID}`,
+          requestOptions
+        );
+  
+        if (response.ok) {
+          alert("Report is checked!")
+         
+          const filteredReports = myReports.filter(
+            (report) => report.reportID !== reportID
+          );
+
+          setmyReports(filteredReports);
+        
+  
+         
+          
+        } else if (response.status === 400) {
+          alert("Could not check report");
+        } else {
+          alert("An error occurred. Please try again.");
+        }
+      } catch (error) {
+        console.log("error", error);
+        alert("Annnnnn error occurred. Please check your connection and try again.");
+      }
+
+    
+   
+   
+  }
+
   const Date = getDate(reportDate);
   const repair_Date = getDate(repairDate);
   const step = getStepNumber();
@@ -132,6 +182,11 @@ useEffect(() => {
         {ShowSpinner &&(
           <Spin className="spin" size="large"/>
         )}
+        {serviceType == "Reports monitoring" ? (<>
+        <div onClick={checkReport} className="done-icon">✔</div>
+           
+          
+          </>) : (<></>)}
           <span className="my-report-id">Report ID: {reportID}</span>
           <span className="my-report-date">Report Date: {Date}</span>
 
@@ -155,11 +210,24 @@ useEffect(() => {
               <strong>Action Taken:</strong> {actionTaken}
             </span>
           </div>
+          {serviceType == "Reports monitoring" ? (<>
+            <div className="assigned-to-info">
+            <span>
+              <strong>Assigned To:</strong> {`${assignedToFirstName} ${assignedToLastName}`}
+            </span>
+            <br />
+            <span>
+              <strong>Reported By:</strong> {`${reportedByFirstName} ${reportedByLastName}`}
+            </span>
+          </div>
+          
+          </>) : (<></>)}
+         
 
           <div className="my-repair-date">
             <span>Repair Date: {repair_Date}</span>
           </div>
-          {serviceType == "Supervisor reports" ? (
+          {serviceType == "Supervisor reports" || serviceType == "Reports monitoring" ? (
             <>
               <div className="assign-part">
                 <button className="assign-button" onClick={assignReport}>
@@ -180,7 +248,9 @@ useEffect(() => {
                   }))}
                 />
               </div>
-              <button
+              {serviceType == "Supervisor reports" ? (<>
+              
+                <button
                 onClick={() => {
                   setHandleButtonisClicked(true);
                 }}
@@ -188,9 +258,15 @@ useEffect(() => {
               >
                 Handle Report
               </button>
+            
               {HandleButtonisClicked && (
                 <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} />
               )}
+            
+          
+          </>) : (<></>)}
+             
+
             </>
           ) : (
             <></>

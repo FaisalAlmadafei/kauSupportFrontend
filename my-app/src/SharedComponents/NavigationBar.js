@@ -6,14 +6,12 @@ import { ServicesContext } from "../App";
 import logoImage from "../images/kauSupportLogo.png";
 import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa"; // FaBars for the menu icon
 import { Link } from "react-router-dom";
+
 function NavigationBar({ setSearch }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { services } = useContext(ServicesContext);
 
-
   const navigate = useNavigate();
-
- 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

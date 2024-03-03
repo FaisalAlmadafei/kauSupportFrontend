@@ -47,6 +47,7 @@ function PreviousReportsPage() {
     }
     getMyReports();
   }, []);
+  
   const [search, setSearch] = useState("");
   const filteredReports = myReports.filter((Report) =>
     Report.reportID.toString().toLowerCase().includes(search.toLowerCase())
