@@ -116,10 +116,10 @@ function LabDevicesPage() {
 
   return (
     <div>
-      <FmNavigationBar setSearch={setSearch} />
+      <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a device"}/>
       <div
         onClick={() => {
-          navigate("/Home");
+          navigate("/LabsPage");
         }}
         className="back-icon"
       >

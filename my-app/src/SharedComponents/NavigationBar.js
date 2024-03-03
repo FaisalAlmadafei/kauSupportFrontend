@@ -6,7 +6,7 @@ import { ServicesContext } from "../App";
 import logoImage from "../images/kauSupportLogo.png";
 import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa"; // FaBars for the menu icon
 import { Link } from "react-router-dom";
-function NavigationBar({ setSearch }) {
+function NavigationBar({ setSearch , placeholderValue}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { services } = useContext(ServicesContext);
 
@@ -45,7 +45,7 @@ function NavigationBar({ setSearch }) {
             <input
               type="text"
               className="fm-serach-bar"
-              placeholder="Search"
+              placeholder={placeholderValue}
               onChange={(e) => {
                 setSearch(e.target.value);
               }}

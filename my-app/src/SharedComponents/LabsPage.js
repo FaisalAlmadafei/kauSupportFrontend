@@ -52,7 +52,7 @@ function LabsPage() {
 
   return (
     <div>
-        <FmNavigationBar setSearch={setSearch}/>
+        <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a lab"}/>
         <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
 

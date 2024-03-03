@@ -4,6 +4,8 @@ import "../SharedCSS/AddDevicePage.css";
 import { Select } from "antd";
 import { Alert } from "antd";
 import { useState , useEffect } from "react";
+import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 function AddDevicePage() {
   const types = ["PC", "Smart Board", "Projector"];
@@ -15,6 +17,8 @@ function AddDevicePage() {
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   const [ShowEmptyFieldAlert, setShowEmptyFieldAlert] = useState(false);
   const [ShowNoCapacityAlert, setShowNoCapacityAlert] = useState(false);
+  const navigate = useNavigate();
+
   const default_Lab = "1" ;
 
   useEffect(() => {
@@ -89,6 +93,10 @@ function AddDevicePage() {
   return (
     <div>
       <FmNavigationBar />
+      
+      <div onClick={()=>{navigate("/MangeDevicesPage")}} className="back-icon">
+        <IoIosArrowBack/>
+        </div>
       {ShowSuccessAlert && (
         <Alert
           className="add-device-alert"

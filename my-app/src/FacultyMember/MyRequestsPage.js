@@ -54,7 +54,7 @@ function MyRequest() {
     <div>
 
       
-        <FmNavigationBar setSearch={setSearch} />
+        <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"}/>
         
       {ShowNoRequests && (
         <Result

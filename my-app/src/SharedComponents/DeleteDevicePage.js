@@ -3,12 +3,15 @@ import FmNavigationBar from "./NavigationBar";
 import { useState ,useEffect } from "react";
 import DeviceCard from "./DeviceCard";
 import "../SharedCSS/DeleteDevicePage.css";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 
 function DeleteDevicePage()  {
     const [Devices, setDevices] = useState([]);
     const [search, setSearch] = useState("");
+    const navigate = useNavigate();
     
 
 
@@ -53,8 +56,10 @@ function DeleteDevicePage()  {
   return (
     <div>
 
-<FmNavigationBar setSearch={setSearch} />
-
+<FmNavigationBar setSearch={setSearch} placeholderValue={"search for a device by ID"} />
+<div onClick={()=>{navigate("/MangeDevicesPage")}} className="back-icon">
+        <IoIosArrowBack/>
+        </div>
 <div className="delete-devices-cards-container">
 {filteredDevices.map((device) => (
               <DeviceCard
