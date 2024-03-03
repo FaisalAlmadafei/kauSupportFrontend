@@ -1,9 +1,11 @@
+
+
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  right: -80px;
+  height: 120px;
   background-color: #15ca8e;
   z-index: 1;
   border-bottom-left-radius: 2%;
