@@ -7,6 +7,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import Service from "./Service";
 import "../SharedCSS/MangeDevicesPage.css";
 import "../SharedCSS/Service.css";
+import Footer from "./Footer";
 
 
 function MangeDevicesPage() {

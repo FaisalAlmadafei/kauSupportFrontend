@@ -10,7 +10,7 @@ import MyRequest from "../FacultyMember/MyRequestsPage";
 import MyRequestsCard from "../SharedComponents/MyRequestsCard";
 import { GoContainer } from "react-icons/go";
 import "../SharedCSS/SupervisorRequestsPage.css";
-
+import Footer from "../SharedComponents/Footer";
 
 function SupervisorRequestsPage() {
   const [userID] = useContext(LoginContext);
@@ -96,6 +96,9 @@ function SupervisorRequestsPage() {
         />
       ))}
       </div>
+
+      <Footer/>
+     
     </div>
   );
 }

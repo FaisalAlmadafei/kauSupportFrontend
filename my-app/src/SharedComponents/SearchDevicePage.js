@@ -7,6 +7,7 @@ import MyReportCard from "./MyReportCard";
 import { Alert } from "antd";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import Footer from "./Footer";
 
 function SearchDevicePage() {
   const [SerialNumber, setSerialNumber] = useState("");
@@ -111,6 +112,7 @@ function SearchDevicePage() {
           </div>
         </>
       )}
+       <Footer/>
     </div>
   );
 }

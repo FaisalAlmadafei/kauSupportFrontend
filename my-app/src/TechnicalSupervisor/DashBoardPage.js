@@ -7,6 +7,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import MyReportCard from "../SharedComponents/MyReportCard";
 import PieChart from "./PieChart";
+import Footer from "../SharedComponents/Footer";
 
 
 
@@ -223,6 +224,8 @@ const [Reports, setReports] = useState([]);
           
           />
         ))}
+
+<Footer/>
     
 
 

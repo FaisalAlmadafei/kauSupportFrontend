@@ -8,6 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Button, Result } from "antd";
 import "../SharedCSS/MyReportCard.css";
+import Footer from "../SharedComponents/Footer";
 
 function SupervisorReportsPage() {
   const [myReports, setmyReports] = useState([]);
@@ -48,7 +49,7 @@ function SupervisorReportsPage() {
   );
 
   return (
-    <div>
+    <>
       <NavigationBar setSearch={setSearch} placeholderValue={"search for a report by ID"}/>
 
       <div
@@ -79,7 +80,7 @@ function SupervisorReportsPage() {
           }
         />
       )}
-
+       <div className="supervisor-reports-container"> 
       {filteredReports.map((Report) => (
         <MyReportCard
           key={Report.reportID}
@@ -89,7 +90,11 @@ function SupervisorReportsPage() {
           myReports={myReports}
         />
       ))}
-    </div>
+        </div>
+<Footer/>
+
+    </>
+    
   );
 }
 
