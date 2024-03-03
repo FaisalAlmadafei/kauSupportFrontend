@@ -49,7 +49,7 @@ function SupervisorReportsPage() {
 
   return (
     <div>
-      <NavigationBar setSearch={setSearch} />
+      <NavigationBar setSearch={setSearch} placeholderValue={"search for a report by ID"}/>
 
       <div
         onClick={() => {

@@ -11,6 +11,7 @@ import "../SharedCSS/HomePage.css";
 import { useContext ,useEffect } from "react";
 import { LoginContext } from "../App";
 import Notifications from "../SharedComponents/Notifications";
+import Footer from "../SharedComponents/Footer";
 
 function TsvHomePage() {
   const [reportsNotifications, setreportsNotifications] = useState("");
@@ -95,6 +96,7 @@ function TsvHomePage() {
             </div>
           ))}
         </div>
+        <Footer />
       </div>
     </div>
   );

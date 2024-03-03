@@ -5,6 +5,8 @@ import DeviceCard from "./DeviceCard";
 import { useState } from "react";
 import MyReportCard from "./MyReportCard";
 import { Alert } from "antd";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 function SearchDevicePage() {
   const [SerialNumber, setSerialNumber] = useState("");
@@ -12,6 +14,7 @@ function SearchDevicePage() {
   const [Reports, setReports] = useState([]);
   const [ButtonisClicked, setButtonisClicked] = useState(true);
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
+  const navigate = useNavigate();
   async function searchDevice() {
     var requestOptions = {
       method: "GET",
@@ -44,6 +47,10 @@ function SearchDevicePage() {
   return (
     <div>
       <FmNavigationBar />
+      
+      <div onClick={()=>{navigate("/Home")}} className="back-icon">
+        <IoIosArrowBack/>
+        </div>
       {ShowWarningAlert && (
         <Alert
           className="no-device-alert"

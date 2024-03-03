@@ -52,7 +52,7 @@ function SupervisorRequestsPage() {
   );
   return (
     <div>
-      <NavigationBar setSearch={setSearch} />
+      <NavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"}/>
       <div
         onClick={() => {
           navigate("/Home");

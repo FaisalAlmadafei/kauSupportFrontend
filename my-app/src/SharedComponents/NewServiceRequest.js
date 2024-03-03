@@ -48,7 +48,7 @@ async function addRequest () {
   return (
 
     <div>
-      <FmNavigationBar setSearch={setSearch}/>
+      <FmNavigationBar setSearch={setSearch} placeholderValue={"search"}/>
       <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
 
