@@ -3,12 +3,18 @@ import NavigationBar from "../SharedComponents/NavigationBar";
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import "../TechnicalSupervisorcCSS/DashBoardPage.css";
+import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 
 function DashBoardPage() {
   const [ProgressChartData, setProgressChartData] = useState(null);
   const [StatisticsChartData, setStatisticsChartData] = useState(null);
+  const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -96,6 +102,11 @@ function DashBoardPage() {
   return (
  <>
   <NavigationBar />
+  <div onClick={()=>{navigate("/Home")}} className="back-icon">
+        <IoIosArrowBack/>
+
+
+        </div>
   <div className="charts-container">
   <div  className="team-progress-chart-container">\
       {ProgressChartData !== null ? (<BarChart className="bar-chart" ChartData={ProgressChartData} />) : (<></>)}
