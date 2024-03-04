@@ -6,7 +6,7 @@ import { ServicesContext } from "../App";
 import logoImage from "../images/kauSupportLogo.png";
 import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa"; // FaBars for the menu icon
 import { Link } from "react-router-dom";
-function NavigationBar({ setSearch , placeholderValue}) {
+function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { services } = useContext(ServicesContext);
 
@@ -20,7 +20,7 @@ function NavigationBar({ setSearch , placeholderValue}) {
     <div>
       <div className="fm-nav-bar">
         <div className="fm-nav-bar-container">
-          <div>
+          <div onClick={()=> {navigate("/Home")}}>
             <img className="logo-image" src={logoImage} alt="" />
           </div>
 
@@ -39,14 +39,16 @@ function NavigationBar({ setSearch , placeholderValue}) {
             </div>
           </div>
           <div className="fm-nav-right">
-            <input
+            {showSearchBar !== "No" ?(<>
+             <input
               type="text"
               className="fm-serach-bar"
               placeholder={placeholderValue}
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
-            />
+            /></>) : (<></>)}
+           
             <FaRegUserCircle className="react-icons-user-icon" />
           </div>
         </div>

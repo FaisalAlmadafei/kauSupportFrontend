@@ -22,6 +22,7 @@
   right: 20px;
   font-size: 24px;
   cursor: pointer;
+  color: white;
 }
 
 @media (min-width: 1000px) {
@@ -72,6 +73,7 @@
     margin-left: 25px;
     margin-left: 100px;
     color: rgb(255, 255, 255);
+   
   }
   .custom-steps {
     margin-left: 200px;
@@ -237,6 +239,7 @@
     right: 15px;
     font-size: 18px;
     cursor: pointer;
+    color: white;
   }
   
   

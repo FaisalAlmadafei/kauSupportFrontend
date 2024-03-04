@@ -1,22 +1,19 @@
 
-.delete-devices-cards-container{
+.delete-devices-cards-container {
+    width: 100%;
     display: grid;
-        grid-template-columns: repeat(2, 600px);
-        gap: 80px;
-        justify-content: center;
-        align-items: center;
-       
+    grid-template-columns: repeat(2, 1fr); /* Using 1fr instead of fixed width for columns */
+    gap: 80px; /* Reduced gap for better visibility */
+    justify-content: center;
+    align-items: center;
 }
+
 
 @media (max-width: 600px) {
     
-    .delete-devices-cards-container{
-        display: inline-block;
-       
-            width: 400px;
-            
-            margin-top: 120px;
-           
+    .delete-devices-cards-container {
+        margin-top: 120px;
+        grid-template-columns: 1fr; /* Set it to a single column on smaller screens */
+        gap: 20px; /* Adjust gap for better visibility */
     }
-   
 }

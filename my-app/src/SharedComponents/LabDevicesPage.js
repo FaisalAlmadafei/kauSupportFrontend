@@ -10,7 +10,7 @@ import { Alert } from "antd";
 import { Button, Result } from "antd";
 import { IoIosArrowBack } from "react-icons/io";
 import Footer from "./Footer";
-import FmNavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar";
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
@@ -116,7 +116,7 @@ function LabDevicesPage() {
 
   return (
     <div>
-      <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a device"}/>
+      <NavigationBar setSearch={setSearch} placeholderValue={"search for a device"}/>
       <div
         onClick={() => {
           navigate("/LabsPage");

@@ -16,6 +16,9 @@ function SupervisorRequestsPage() {
   const [userID] = useContext(LoginContext);
   const [myRequests, setmyRequests] = useState([]);
   const [ShowNoRequests, setShowNoRequests] = useState(false);
+  const [userRole, setUserRole] = useState(
+    localStorage.getItem("userRole") || ""
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,7 +55,7 @@ function SupervisorRequestsPage() {
   );
   return (
     <div>
-      <NavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"}/>
+      <NavigationBar setSearch={setSearch} placeholderValue={"Search a request by ID"}/>
       <div
         onClick={() => {
           navigate("/Home");
@@ -89,7 +92,7 @@ function SupervisorRequestsPage() {
         <MyRequestsCard
           key={Request.requestID}
           {...Request}
-          serviceType={"Supervisor Requests"}
+          serviceType={ userRole.toLowerCase() == "supervisor"  ? "Supervisor Requests" : "Technical member requests"}
           setmyRequests={setmyRequests}
           myRequests={myRequests}
           

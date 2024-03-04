@@ -168,10 +168,13 @@ const [Reports, setReports] = useState([]);
       alert("An error occurred. Please check your connection and try again.");
     }
   }
-
+  const [search, setSearch] = useState("");
+  const filteredReports = Reports.filter((Report) =>
+    Report.reportID.toString().toLowerCase().includes(search.toLowerCase())
+  );
   return (
  <>
-  <NavigationBar />
+  <NavigationBar  setSearch={setSearch} placeholderValue={"Search a report by ID"} />
           <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
         </div>
@@ -198,9 +201,9 @@ const [Reports, setReports] = useState([]);
 
    
     </div>
-
     
-  {Reports.map((Report) => (
+    <div className="monitor-reports-container">
+    {filteredReports.map((Report) => (
           <MyReportCard
           key={Report.reportID}
             reportID={Report.reportID}
@@ -224,6 +227,9 @@ const [Reports, setReports] = useState([]);
           
           />
         ))}
+    </div>
+    
+ 
 
 <Footer/>
     

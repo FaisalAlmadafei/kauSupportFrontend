@@ -27,7 +27,7 @@ function MangeDevicesPage() {
   ];
   return (
     <>
-      <FmNavigationBar />
+       <FmNavigationBar showSearchBar={"No"} />
     
       <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>

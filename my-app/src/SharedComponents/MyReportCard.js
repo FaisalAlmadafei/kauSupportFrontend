@@ -189,6 +189,7 @@ useEffect(() => {
           </>) : (<></>)}
           <span className="my-report-id">Report ID: {reportID}</span>
           <span className="my-report-date">Report Date: {Date}</span>
+         
 
           <div className="my-report-device-number">
             <span>Device Number: {deviceNumber}</span>
@@ -210,7 +211,7 @@ useEffect(() => {
               <strong>Action Taken:</strong> {actionTaken}
             </span>
           </div>
-          {serviceType == "Reports monitoring" ? (<>
+          {serviceType == "Reports monitoring" || serviceType == "Search device"?  (<>
             <div className="assigned-to-info">
             <span>
               <strong>Assigned To:</strong> {`${assignedToFirstName} ${assignedToLastName}`}
@@ -222,6 +223,8 @@ useEffect(() => {
           </div>
           
           </>) : (<></>)}
+
+          
          
 
           <div className="my-repair-date">
@@ -248,29 +251,31 @@ useEffect(() => {
                   }))}
                 />
               </div>
-              {serviceType == "Supervisor reports" ? (<>
               
-                <button
-                onClick={() => {
-                  setHandleButtonisClicked(true);
-                }}
-                className="handle-button"
-              >
-                Handle Report
-              </button>
-            
-              {HandleButtonisClicked && (
-                <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} />
-              )}
-            
-          
-          </>) : (<></>)}
-             
 
             </>
           ) : (
             <></>
           )}
+
+{serviceType == "Supervisor reports" || serviceType == "Technical member reports" ? (<>
+              
+              <button
+              onClick={() => {
+                setHandleButtonisClicked(true);
+              }}
+              className="handle-button"
+            >
+              Handle Report
+            </button>
+          
+            {HandleButtonisClicked && (
+              <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} />
+            )}
+          
+        
+        </>) : (<></>)}
+           
         </div>
 
         <div className="my-right-part">

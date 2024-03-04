@@ -11,6 +11,7 @@ import DevicesAvailabilityPage from "../SharedComponents/DevicesAvailabilityPage
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
 import Footer from "../SharedComponents/Footer";
+import NavigationBar from "../SharedComponents/NavigationBar";
 // this is a comment for testing
 function FmHomePage() {
   const navigate = useNavigate();
@@ -47,14 +48,8 @@ function FmHomePage() {
 
   return (
     <div>
-      <div className="navBar">
-        <input
-          type="text"
-          placeholder="Serach for a service"
-          className="search-bar"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+           <NavigationBar  setSearch={setSearch} placeholderValue={"Search for a service"} />
+
       <div className="card-Container">
         {filteredServices.map((service) => (
           <div

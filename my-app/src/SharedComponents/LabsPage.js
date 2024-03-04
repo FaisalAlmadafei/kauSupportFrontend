@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { BsDoorOpen } from "react-icons/bs";
 import { useContext } from "react";
 import { NewReportContext } from "../App";
-import FmNavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
 import Footer from "./Footer";
@@ -52,7 +52,7 @@ function LabsPage() {
 
   return (
     <div>
-        <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a lab"}/>
+        <NavigationBar setSearch={setSearch} placeholderValue={"search for a lab"}/>
         <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
 

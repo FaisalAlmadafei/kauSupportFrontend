@@ -19,6 +19,7 @@ import DeleteDevicePage from "./SharedComponents/DeleteDevicePage";
 import SupervisorReportsPage from "./TechnicalSupervisor/SupervisorReportsPage";
 import SupervisorRequestsPage from "./TechnicalSupervisor/SupervisorRequestsPage";
 import DashBoardPage from "./TechnicalSupervisor/DashBoardPage";
+import TechnicalMemberReportsPage from "./TehcnicalMember/TechnicalMemberReportsPage";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -48,7 +49,7 @@ function App() {
 
           pageLink: "/NewServiceRequest",
         },
-        { serviceName: "My Requests", pageLink: "/LabsPage" },
+        { serviceName: "My Requests", pageLink: "/MyRequestsPage" },
         {
           serviceName: "Devices Availability",
 
@@ -56,9 +57,41 @@ function App() {
         },
       ],
       "Technical Member": [
-        // ...services for technical member
+        { serviceName: "Home", pageLink: "/Home" },
+        {
+          serviceName: "Reports",
+
+          notification: "true",
+          pageLink: "/TechnicalMemberReportsPage",
+        },
+
+        {
+          serviceName: "Requests",
+
+          notification: "true",
+          pageLink: "/SupervisorRequestsPage",
+        },
+       
+        {
+          serviceName: "Search for a device",
+
+          notification: "false",
+          pageLink: "/SearchDevicePage",
+        },
+        {
+          serviceName: "Manage Devices",
+
+          notification: "false",
+          pageLink: "/MangeDevicesPage",
+        },
+        {
+          serviceName: "Devices Availability",
+
+          notification: "false",
+          pageLink: "/DevicesAvailabilityPage",
+        },
       ],
-      Supervisor: [
+      "Supervisor": [
         { serviceName: "Home", pageLink: "/Home" },
         {
           serviceName: "Reports",
@@ -162,6 +195,8 @@ function App() {
                 <Route path="/SupervisorReportsPage" element={<SupervisorReportsPage />} />
                 <Route path="/SupervisorRequestsPage" element={<SupervisorRequestsPage />} />
                 <Route path="/DashBoardPage" element={<DashBoardPage />} />
+                <Route path="/TechnicalMemberReportsPage" element={<TechnicalMemberReportsPage />} />
+
 
 
 

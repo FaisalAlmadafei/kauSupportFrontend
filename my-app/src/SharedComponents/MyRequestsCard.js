@@ -149,7 +149,15 @@ function MyRequestsCard({
                   }))}
                 />
               </div>
-              <button
+            
+          </>
+        ) : (
+          <></>
+        )}
+
+{serviceType == "Supervisor Requests" || serviceType == "Technical member requests" ? (
+          <>
+             <button
                onClick={() => {
                 setHandleButtonisClicked(true);
               }}
@@ -165,6 +173,7 @@ function MyRequestsCard({
         ) : (
           <></>
         )}
+
       </div>
     </div>
   );

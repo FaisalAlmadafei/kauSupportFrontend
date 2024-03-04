@@ -12,6 +12,7 @@ import { useContext ,useEffect } from "react";
 import { LoginContext } from "../App";
 import Notifications from "../SharedComponents/Notifications";
 import Footer from "../SharedComponents/Footer";
+import NavigationBar from "../SharedComponents/NavigationBar";
 
 function TsvHomePage() {
   const [reportsNotifications, setreportsNotifications] = useState("");
@@ -67,15 +68,8 @@ function TsvHomePage() {
   return (
     <div>
       <Notifications reportsNotifications={reportsNotifications} setreportsNotifications={setreportsNotifications} requestsNotifications={requestsNotifications} setrequestsNotifications = {setrequestsNotifications}/>
+      <NavigationBar  setSearch={setSearch} placeholderValue={"Search for a service"} />
       
-      <div className="navBar">
-        <input
-          type="text"
-          placeholder="Serach for a service"
-          className="search-bar"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
       <div className="pagee-container">
         <div className="card-Container">
           {filteredServices.map((service) => (

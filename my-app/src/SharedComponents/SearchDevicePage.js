@@ -47,7 +47,7 @@ function SearchDevicePage() {
 
   return (
     <div>
-      <FmNavigationBar />
+      <FmNavigationBar showSearchBar={"No"} />
       
       <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
@@ -89,6 +89,11 @@ function SearchDevicePage() {
                 repairDate={Report.repairDate}
                 reportStatus={Report.reportStatus}
                 problemType={Report.problemType}
+                serviceType={"Search device"}
+                assignedToFirstName={Report.assignedToFirstName}
+                assignedToLastName={Report.assignedToLastName}
+                reportedByFirstName={Report.reportedByFirstName}
+                reportedByLastName={Report.reportedByLastName}
               />
             ))}
           </div>
