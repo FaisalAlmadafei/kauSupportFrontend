@@ -9,6 +9,7 @@
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;    
 }
+
 .fm-nav-bar-container{
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,67 @@
   margin-left: 25px;
   cursor: pointer;
   vertical-align: middle;  
+  position: relative;
+}
+
+.avatar-list {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 50px;
+  right: 35px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+}
+
+.avatar-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.avatar-list li {
+ 
+  
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+ margin-top: 50px;
+  padding: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+}
+.avatar-list li:hover{
+  background-color: #24db9e;
+  color: white;
+  border-radius: 10px;
+}
+
+.avatar-list li :active{
+  background-color: #4ed8aa;
+  
+
+
+}
+
+
+.list-close-icon{
+  position: absolute;
+  display: inline;
+  top: 55px;
+  right: 45px;
+  z-index: 5;
+  font-size: 20px;
+  color: rgb(61, 60, 60);
+  cursor: pointer;
 }
 .fm-serach-bar{
   vertical-align: middle;
@@ -107,6 +169,65 @@
 }
 
 @media (max-width: 1400px) {
+  .avatar-list {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+  }
+  .list-close-icon{
+    position: absolute;
+    display: inline;
+    top: 30px;
+    right: 20px;
+    z-index: 5;
+    font-size: 20px;
+    color: rgb(61, 60, 60);
+    cursor: pointer;
+  }
+  
+  .avatar-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .avatar-list li {
+   
+    
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+   margin-top: 50px;
+    padding: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+  
+  }
+  .avatar-list li:hover{
+    background-color: #24db9e;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .avatar-list li :active{
+    background-color: #4ed8aa;
+    
+  
+  
+  }
+  
+
   .logo-image{
     display: none;
   }
@@ -161,6 +282,64 @@
   }
 }
 @media (max-width: 600px) {
+  .avatar-list {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+  }
+  .list-close-icon{
+    position: absolute;
+    display: inline;
+    top: 30px;
+    right: 20px;
+    z-index: 5;
+    font-size: 20px;
+    color: rgb(61, 60, 60);
+    cursor: pointer;
+  }
+  
+  .avatar-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .avatar-list li {
+   
+    
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+   margin-top: 50px;
+    padding: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+  
+  }
+  .avatar-list li:hover{
+    background-color: #24db9e;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .avatar-list li :active{
+    background-color: #4ed8aa;
+    
+  
+  
+  }
+  
 
   .logo-image{
     display: none;

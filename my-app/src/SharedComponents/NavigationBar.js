@@ -5,16 +5,41 @@ import { useContext } from "react";
 import { ServicesContext } from "../App";
 import logoImage from "../images/kauSupportLogo.png";
 import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa"; // FaBars for the menu icon
-import { Link } from "react-router-dom";
+import { LoginContext } from "../App";
 function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { services } = useContext(ServicesContext);
+  const [isAvatarClicked, setisAvatarClicked] = useState(false);
+  const [
+    userID,
+    setUserID,
+    userPass,
+    setuserPass,
+    isLoggedIn,
+    setIsLoggedIn,
+    setUserRole,
+    userRole,
+  ] = useContext(LoginContext);
 
   const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  function handelLogout(){
+    localStorage.removeItem('isLoggedIn'); 
+    localStorage.removeItem('userID'); 
+    localStorage.removeItem('userRole'); 
+    setUserID("") ; 
+    setuserPass("") ; 
+    setUserRole("") ;
+    setIsLoggedIn(false) ;
+
+
+    navigate("/") ;
+
+  }
 
   return (
     <div>
@@ -48,8 +73,27 @@ function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
                 setSearch(e.target.value);
               }}
             /></>) : (<></>)}
+         
+            <FaRegUserCircle onClick={()=>{setisAvatarClicked(true)}} className="react-icons-user-icon" /> 
+
+
            
-            <FaRegUserCircle className="react-icons-user-icon" />
+            {isAvatarClicked && (
+  <>
+    <div onClick={() => { setisAvatarClicked(false) }} className="list-close-icon">x</div>
+    <div className="avatar-list">
+      <ul>
+        
+        <li onClick={handelLogout}>
+         Logout
+        </li>
+       
+      </ul>
+    </div>
+  </>
+)}
+
+           
           </div>
         </div>
       </div>

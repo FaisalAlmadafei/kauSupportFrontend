@@ -27,6 +27,7 @@ function LoginPage() {
   
 
   async function handleLogin() {
+    
     console.log("inside handel login") ;
     var requestOptions = {
       method: "POST",
@@ -53,6 +54,16 @@ function LoginPage() {
     } catch (error) {
       console.log("error", error);
       alert("An error occurred. Please check your connection and try again.");
+    }
+  }
+
+  function checkUserData(){
+    if(userPass !== "" && userID !==""){
+      handleLogin();
+    }
+
+    else{
+      alert("Please add your userId and password") ;
     }
   }
 
@@ -103,7 +114,7 @@ function LoginPage() {
             <br />
             <a href="">forget password?</a>
             <br />
-            <button className="submit-button" onClick={handleLogin}>
+            <button className="submit-button" onClick={checkUserData}>
               Login
             </button>
           </div>
