@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import FmNavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar";
 import "../SharedCSS/SearchDevicePage.css";
 import DeviceCard from "./DeviceCard";
 import { useState } from "react";
@@ -47,7 +47,7 @@ function SearchDevicePage() {
 
   return (
     <div>
-      <FmNavigationBar showSearchBar={"No"} />
+      <NavigationBar showSearchBar={"No"} />
       
       <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>

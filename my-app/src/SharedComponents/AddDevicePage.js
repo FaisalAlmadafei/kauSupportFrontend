@@ -1,5 +1,5 @@
 import React from "react";
-import FmNavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar";
 import "../SharedCSS/AddDevicePage.css";
 import { Select } from "antd";
 import { Alert } from "antd";
@@ -92,7 +92,7 @@ function AddDevicePage() {
   }
   return (
     <div>
-      <FmNavigationBar />
+      <NavigationBar showSearchBar={"No"} />
       
       <div onClick={()=>{navigate("/MangeDevicesPage")}} className="back-icon">
         <IoIosArrowBack/>

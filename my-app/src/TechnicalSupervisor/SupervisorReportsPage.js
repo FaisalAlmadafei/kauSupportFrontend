@@ -1,8 +1,7 @@
 import React from "react";
 import NavigationBar from "../SharedComponents/NavigationBar";
 import { useEffect, useState } from "react";
-import { useContext } from "react";
-import { LoginContext } from "../App";
+import { Alert } from "antd";
 import MyReportCard from "../SharedComponents/MyReportCard";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +12,11 @@ import Footer from "../SharedComponents/Footer";
 function SupervisorReportsPage() {
   const [myReports, setmyReports] = useState([]);
   const [ShowNoReports, setShowNoReports] = useState(false);
+  const [showAssignedAlert, setshowAssignedAlert] = useState(false);
+  const [showNoTeamMemberAlert, setshowNoTeamMemberAlert] = useState(false);
+  const [showReportHandledAlert, setshowReportHandledAlert] = useState(false);
+  const [showNoActionTakenAlert, setshowNoActionTakenAlert] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,7 +54,10 @@ function SupervisorReportsPage() {
 
   return (
     <>
-      <NavigationBar setSearch={setSearch} placeholderValue={"Search a report by ID"}/>
+      <NavigationBar
+        setSearch={setSearch}
+        placeholderValue={"Search a report by ID"}
+      />
 
       <div
         onClick={() => {
@@ -60,6 +67,54 @@ function SupervisorReportsPage() {
       >
         <IoIosArrowBack />
       </div>
+
+      {showAssignedAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Report Assigned Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showReportHandledAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Report Handled Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showNoTeamMemberAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please chose a team member to assign report"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoTeamMemberAlert(false)}
+        />
+      )}
+
+{showNoActionTakenAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please add action taken on this report"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoActionTakenAlert(false)}
+        />
+      )}
+
+     
 
       {ShowNoReports && (
         <Result
@@ -80,21 +135,23 @@ function SupervisorReportsPage() {
           }
         />
       )}
-       <div className="supervisor-reports-container"> 
-      {filteredReports.map((Report) => (
-        <MyReportCard
-          key={Report.reportID}
-          {...Report}
-          serviceType={"Supervisor reports"}
-          setmyReports={setmyReports}
-          myReports={myReports}
-        />
-      ))}
-        </div>
-<Footer/>
-
+      <div className="supervisor-reports-container">
+        {filteredReports.map((Report) => (
+          <MyReportCard
+            key={Report.reportID}
+            {...Report}
+            serviceType={"Supervisor reports"}
+            setmyReports={setmyReports}
+            myReports={myReports}
+            setshowAssignedAlert={setshowAssignedAlert}
+            setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
+            setshowReportHandledAlert={setshowReportHandledAlert}
+            setshowNoActionTakenAlert={setshowNoActionTakenAlert}
+          />
+        ))}
+      </div>
+      <Footer />
     </>
-    
   );
 }
 

@@ -24,7 +24,11 @@ function MyReportCard({
   assignedToFirstName,
   assignedToLastName,
   reportedByFirstName,
-  reportedByLastName
+  reportedByLastName,
+  setshowAssignedAlert,
+  setshowNoTeamMemberAlert,
+  setshowReportHandledAlert,
+  setshowNoActionTakenAlert
 }) {
   const [userRole, setUserRole] = useState(
     localStorage.getItem("userRole") || ""
@@ -101,7 +105,7 @@ useEffect(() => {
   
         if (response.ok) {
           setShowSpinner(false) ; 
-          alert("Report assigned successfully");
+          setshowAssignedAlert(true)
           if(serviceType !== "Reports monitoring"){
             const filteredReports = myReports.filter(
               (report) => report.reportID !== reportID
@@ -124,7 +128,7 @@ useEffect(() => {
 
     }
     else{
-      alert("Please chose a team member to assign report")
+      setshowNoTeamMemberAlert(true) ;
     }
    
   }
@@ -270,7 +274,7 @@ useEffect(() => {
             </button>
           
             {HandleButtonisClicked && (
-              <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} />
+              <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} setshowReportHandledAlert={setshowReportHandledAlert}  setshowNoActionTakenAlert={setshowNoActionTakenAlert} />
             )}
           
         

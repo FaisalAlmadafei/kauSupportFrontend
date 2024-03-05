@@ -242,6 +242,7 @@
     left: 150px;
     right: 150px;
 
+
     border: 3px solid rgb(218, 65, 0);
   }
 
@@ -371,6 +372,8 @@
     z-index: 3;
     margin-top: 25px;
     border: 3px solid rgb(218, 65, 0);
+    padding-bottom: 80px;
+    
   }
   .search-bar {
     position: absolute;

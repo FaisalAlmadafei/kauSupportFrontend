@@ -16,6 +16,7 @@ footer {
   z-index: 1;
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;    
+  color: white;
 }
 .logo-image-footer{
   position: absolute;
@@ -69,6 +70,7 @@ background-color: rgb(255, 255, 255);
   margin-top: -25px;
   width: 170px;
   margin-left: 40px;
+  color: white;
 }
 
 
@@ -100,9 +102,10 @@ background-color: rgb(255, 255, 255);
     margin-top: -30px;
     width: 185px; 
     margin-left: 40px;
+    color: white;
   }
   
-@media (max-width: 600px) {
+@media (max-width: 1300px) {
   body, html {
     margin: 0;
     padding: 0;
@@ -129,5 +132,62 @@ background-color: rgb(255, 255, 255);
   .logo-image{
     display: none;
   }
+  .copy {
+    display: none;
+
+  }
+  
+  .link-of-interset {
+    display: none;
+
+  }
+  .link-of-interset h5 {
+    display: none;
+
+  }
+  .link-of-interset ul {
+    display: none;
+
+  }
+  .link-of-interset li {
+    display: none;
+  
+  }
+  .link-of-interset a {
+    display: none;
+
+  }
+  .link-of-interset a:hover {
+    display: none;
+
+  }
+  .line-style {
+    display: none;
+
+  }
+  
+  
+  .contact-kau {
+    display: none;
+
+    }
+    .contact-kau h5 {
+      display: none;
+
+    }
+    .contact-kau ul {
+      display: none;
+
+    
+    }
+    .contact-kau li {
+      display: none;
+
+    }
+    .line-style-2 {
+      display: none;
+
+    }
+    
 
 }

@@ -4,9 +4,10 @@ import "../SharedCSS/HandleReportForm.css";
 import { Spin } from 'antd';
 
 
-function HandleReportForm({ closeForm, reportID, setmyReports, myReports }) {
+function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setshowReportHandledAlert , setshowNoActionTakenAlert }) {
   const [actionTaken, setActionTaken] = useState("");
   const [ShowSpinner, setShowSpinner] = useState(false);
+
 
 
   async function addActionTaken() {
@@ -23,7 +24,7 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports }) {
       );
       if (response.ok) {
         setShowSpinner(false) ; 
-        alert("Action Taked Added Successfully!");
+        setshowReportHandledAlert(true);
         closeForm();
         const filteredReports = myReports.filter(
           (report) => report.reportID !== reportID
@@ -45,15 +46,19 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports }) {
     if (actionTaken.length > 0) {
       addActionTaken();
     } else {
-      alert("Please add action taken...");
+      setshowNoActionTakenAlert(true) ;
     }
   }
 
   return (
     <div>
       {" "}
-    
+
+     
+
+     
       <div className="report-handle-form">
+     
       {ShowSpinner &&(
           <Spin className="handle-spin" size="large"/>
         )}

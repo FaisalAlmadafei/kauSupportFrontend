@@ -2,6 +2,7 @@
 body{
     margin-top: 1000px;
 }
+
 @media (max-width: 600px) {
     .supervisor-reports-container {
        
