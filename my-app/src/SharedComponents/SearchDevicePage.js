@@ -15,34 +15,43 @@ function SearchDevicePage() {
   const [Reports, setReports] = useState([]);
   const [ButtonisClicked, setButtonisClicked] = useState(true);
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
+  const [ShowEnterSerialNumberAlert, setShowEnterSerialNumberAlert] = useState(false);
   const navigate = useNavigate();
   async function searchDevice() {
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
+    if(SerialNumber.length >0){
 
-    try {
-      const response = await fetch(
-        `https://kausupportapi.azurewebsites.net/api/TechnicalMember_/SearchForDevice?Serial_Number=${SerialNumber}`,
-        requestOptions
-      );
-
-      if (response.ok) {
-        const result = await response.json();
-        setdevice(result["device"]);
-        setReports(result["reports"]);
-
-        setButtonisClicked(false);
-      } else if (response.status === 400) {
-      setShowWarningAlert(true);
-      } else {
-        alert("An error occurred. Please try again.");
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+  
+      try {
+        const response = await fetch(
+          `https://kausupportapi.azurewebsites.net/api/TechnicalMember_/SearchForDevice?Serial_Number=${SerialNumber}`,
+          requestOptions
+        );
+  
+        if (response.ok) {
+          const result = await response.json();
+          setdevice(result["device"]);
+          setReports(result["reports"]);
+  
+          setButtonisClicked(false);
+        } else if (response.status === 400) {
+        setShowWarningAlert(true);
+        } else {
+          alert("An error occurred. Please try again.");
+        }
+      } catch (error) {
+        console.log("error", error);
+        alert("An error occurred. Please check your connection and try again.");
       }
-    } catch (error) {
-      console.log("error", error);
-      alert("An error occurred. Please check your connection and try again.");
     }
+
+    else{
+      setShowEnterSerialNumberAlert(true) ; 
+    }
+   
   }
 
   return (
@@ -54,13 +63,25 @@ function SearchDevicePage() {
         </div>
       {ShowWarningAlert && (
         <Alert
-          className="no-device-alert"
+          className="warning-alert"
           message="No device found"
-          description="Please try again."
+          description="Please make sure serial number is correct."
           type="warning"
           showIcon
           closable
           onClose={() => setShowWarningAlert(false)}
+        />
+      )}
+
+{ShowEnterSerialNumberAlert && (
+        <Alert
+          className="warning-alert"
+          message="Please enter device serial number..."
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setShowEnterSerialNumberAlert(false)}
         />
       )}
 

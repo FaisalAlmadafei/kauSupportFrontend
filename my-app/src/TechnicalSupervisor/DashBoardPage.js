@@ -17,6 +17,8 @@ function DashBoardPage() {
   const [ProgressChartData, setProgressChartData] = useState(null);
   const [StatisticsChartData, setStatisticsChartData] = useState(null);
   const [DevicesStatisticsChartData, setDevicesStatisticsChartData] = useState(null);
+  const [totalDevicesCount, setTotalDevicesCount] = useState("");
+  const [reportsTotalCount, setreportsTotalCount] = useState("");
 
   const navigate = useNavigate();
 const [Reports, setReports] = useState([]);
@@ -49,7 +51,7 @@ const [Reports, setReports] = useState([]);
           ),
           datasets: [
             {
-              label: "Remaining Reports",
+              label: "Assigned Reports",
               data: result.map((member) => member.numberOfReports),
               backgroundColor: ["rgb(8, 136, 211)"]
             },
@@ -80,7 +82,7 @@ const [Reports, setReports] = useState([]);
 
       if (response.ok) {
         const result = await response.json();
-      
+        setreportsTotalCount(result.reportsTotalCount) ;
         setStatisticsChartData({
           labels: result.details.map(
             (type) => type.problemType
@@ -120,9 +122,10 @@ const [Reports, setReports] = useState([]);
 
       if (response.ok) {
         const result = await response.json();
+        setTotalDevicesCount(result.totalDevicesCount)
       
         setDevicesStatisticsChartData({
-          labels: ["Working Devices" , "Reported Devices"],
+          labels: [`Working Devices ${result.workingDevicesCount}` , `Reported Devices ${result.notWorkingDevicesCount}`],
           datasets: [
             {
            
@@ -178,15 +181,17 @@ const [Reports, setReports] = useState([]);
           <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
         </div>
+        
   <div className="charts-container">
+ 
   <div  className="team-progress-chart-container">\
-      {ProgressChartData !== null ? (<BarChart className="bar-chart" ChartData={ProgressChartData} />) : (<></>)}
+      {ProgressChartData !== null ? (<BarChart className="bar-chart" ChartData={ProgressChartData} showTotalNumber={"false"} />) : (<></>)}
 
 
    
     </div>
     <div  className="team-progress-chart-container">\
-      {StatisticsChartData !== null ? (<BarChart className="bar-chart" ChartData={StatisticsChartData} />) : (<></>)}
+      {StatisticsChartData !== null ? (<BarChart className="bar-chart" ChartData={StatisticsChartData} reportsTotalCount={reportsTotalCount} showTotalNumber={"true"} />) : (<></>)}
 
 
    
@@ -196,7 +201,7 @@ const [Reports, setReports] = useState([]);
   </div>
 
   <div  className="pie-chart-container">\
-      {DevicesStatisticsChartData !== null ? (<PieChart className="bar-chart" ChartData={DevicesStatisticsChartData} />) : (<></>)}
+      {DevicesStatisticsChartData !== null ? (<PieChart className="bar-chart" ChartData={DevicesStatisticsChartData} totalDevicesCount={totalDevicesCount}/>) : (<></>)}
 
 
    

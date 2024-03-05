@@ -29,6 +29,7 @@ body{
     top: 100px;
     right:500px;
     z-index: 2;
+    border: 3px solid red;
   }
   
   .left {
@@ -94,6 +95,7 @@ body{
   .icon{
     color: rgb(14, 213, 127);
   }
+
 }
   @media (max-width: 768px) {
     body {

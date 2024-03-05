@@ -84,7 +84,7 @@ function LoginPage() {
       )}
         {ShowEmptyFieldAlert && (
         <Alert
-          className="empty-field-alert"
+        className="alert"
           message="Please add your userID and password"
           type="warning"
           showIcon

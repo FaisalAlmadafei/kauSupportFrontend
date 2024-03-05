@@ -30,7 +30,8 @@ async function addRequest () {
       if (response.status === 400) {
         alert("Somehting happened, try again")
       } else if (response.ok) {
-        setShowSuccessAlert(true);      
+        setShowSuccessAlert(true);  
+        setReqDescription("") ;    
       } else {
         alert("An error occurred. Please try again.");
       }
@@ -70,13 +71,14 @@ async function addRequest () {
         <div className="request-form">
           <h3 style={{color: "white"}}>Please enter a brief description of the request</h3> 
           <textarea
+          value={ReqDescription}
           required
           className="request-input"
           onChange={(e) => {setReqDescription(e.target.value)}}
           ></textarea>
           <br></br>
           <button className="request-button" onClick={addRequest}> 
-            Request a service
+           Send Request
           </button>
           </div>                
       </div>

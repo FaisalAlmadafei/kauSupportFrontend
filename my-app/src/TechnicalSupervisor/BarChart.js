@@ -4,12 +4,14 @@ import {Chart as ChartJS} from "chart.js/auto"
 
 
 
-function BarChart({ ChartData }) {
+function BarChart({ ChartData ,reportsTotalCount ,showTotalNumber }) {
  
 
   return (
     <div>
-      <div className="team-progress-chart">
+      {showTotalNumber =="true" ? ( <div style={{color:"grey"}}>Total Number of reports: {reportsTotalCount}</div>) :(<></>)}
+     
+      <div  className="team-progress-chart">
         <Bar data={ChartData}  />
       </div>
     </div>
