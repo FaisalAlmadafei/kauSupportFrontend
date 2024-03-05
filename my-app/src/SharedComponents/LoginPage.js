@@ -22,6 +22,8 @@ function LoginPage() {
   ] = useContext(LoginContext);
 
   const [showAlert, setShowAlert] = useState(false);
+  const [ShowEmptyFieldAlert, setShowEmptyFieldAlert] = useState(false);
+
   const navigate = useNavigate();
   
   
@@ -63,7 +65,7 @@ function LoginPage() {
     }
 
     else{
-      alert("Please add your userId and password") ;
+      setShowEmptyFieldAlert(true);
     }
   }
 
@@ -73,13 +75,24 @@ function LoginPage() {
         <Alert
           className="alert"
           message="Error"
-          description="UserID or password is icorrect!"
+          description="UserID or password is incorrect!"
           type="error"
           showIcon
           closable
           onClose={() => setShowAlert(false)}
         />
       )}
+        {ShowEmptyFieldAlert && (
+        <Alert
+          className="empty-field-alert"
+          message="Please add your userID and password"
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setShowEmptyFieldAlert(false)}
+        />
+      )}
+
       <div className="container">
         <div className="left">
           <div className="from">

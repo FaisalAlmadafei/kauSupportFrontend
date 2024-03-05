@@ -107,7 +107,7 @@ function App() {
           pageLink: "/SupervisorRequestsPage",
         },
         {
-          serviceName: "Team Progress",
+          serviceName: "DashBoard",
 
           notification: "false",
           pageLink: "/DashBoardPage",

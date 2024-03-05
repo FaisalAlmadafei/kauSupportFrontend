@@ -6,6 +6,8 @@ import { TbDeviceDesktopCheck } from "react-icons/tb";
 import { TbDeviceDesktopCog } from "react-icons/tb";
 import { MdHistoryEdu } from "react-icons/md";
 import { RiTeamLine } from "react-icons/ri";
+import { IoStatsChart } from "react-icons/io5";
+
 import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
 import { useContext ,useEffect } from "react";
@@ -35,8 +37,8 @@ function TsvHomePage() {
       pageLink: "/SupervisorRequestsPage",
     },
     {
-      serviceName: "Team Progress",
-      icon: RiTeamLine,
+      serviceName: "DashBoard",
+      icon: IoStatsChart,
       notification: "false",
       pageLink: "/DashBoardPage",
     },
