@@ -75,7 +75,7 @@ function LoginPage() {
         <Alert
           className="alert"
           message="Error"
-          description="UserID or password is icorrect!"
+          description="UserID or password is incorrect!"
           type="error"
           showIcon
           closable
