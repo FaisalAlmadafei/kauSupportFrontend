@@ -11,13 +11,97 @@ footer {
   bottom: -80px;
   left: -80px;
   right: -80px;
-  height: 120px;
+  height: 140px;
   background-color: #15ca8e;
   z-index: 1;
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;    
 }
+.logo-image-footer{
+  position: absolute;
+  top: -15px;
+  left: 300px;
+  margin-top: 30px;
+  width: 150px;
+  display: inline-block;
+  padding: 0;
+ 
+}
+.copy {
+  margin-left: 1000px;
+  margin-top: -30px;
+  color:white ;
+}
 
+.link-of-interset {
+max-width: 300px;
+margin-left: 500px;
+margin-top: -30px;
+}
+.link-of-interset h5 {
+  font-size: 20px;
+  padding-top: 10px;
+  margin-right:40px ;
+}
+.link-of-interset ul {
+  list-style: none;
+  margin-top: 4pX;
+
+}
+.link-of-interset li {
+  margin-bottom: 8px; 
+
+}
+.link-of-interset a {
+  padding: 4px 8px;
+  border-radius: 7px;
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: aliceblue;
+  transition: color 0.3s ease-in-out;
+}
+.link-of-interset a:hover {
+  color: rgb(190, 188, 188);
+background-color: rgb(255, 255, 255);
+}
+.line-style {
+  margin-top: -25px;
+  width: 170px;
+  margin-left: 40px;
+}
+
+
+.contact-kau {
+  max-width: 300px;
+  margin-left: 750px;
+  margin-top: -150px;
+  }
+  .contact-kau h5 {
+    font-size: 20px;
+    padding-top: 10px;
+    margin-right:40px ;
+  }
+  .contact-kau ul {
+    list-style: none;
+    margin-top: 4pX;
+  
+  }
+  .contact-kau li {
+    margin-bottom: 8px; 
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 4px 8px;
+  
+  }
+  .line-style-2 {
+    margin-top: -30px;
+    width: 185px; 
+    margin-left: 40px;
+  }
+  
 @media (max-width: 600px) {
   body, html {
     margin: 0;
@@ -41,4 +125,9 @@ footer {
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;    
   }
+
+  .logo-image{
+    display: none;
+  }
+
 }

@@ -28,8 +28,8 @@
 
 .avatar-list {
   display: inline-block;
-  width: 150px;
-  height: 100px;
+  width: 130px;
+  height: 70px;
   background-color: red;
   position: absolute;
   top: 50px;
@@ -50,12 +50,10 @@
 }
 
 .avatar-list li {
- 
-  
   text-decoration: none;
   color: black;
   cursor: pointer;
- margin-top: 50px;
+ margin-top: 25px;
   padding: 6px;
   margin-left: 0px;
   margin-right: 0px;

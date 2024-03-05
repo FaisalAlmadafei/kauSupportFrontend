@@ -99,7 +99,7 @@ function AddDevicePage() {
         </div>
       {ShowSuccessAlert && (
         <Alert
-          className="add-device-alert"
+          className="success-alert"
           message="The device added Successfully!"
           type="success"
           showIcon
@@ -109,7 +109,7 @@ function AddDevicePage() {
       )}
       {ShowWarningAlert && (
         <Alert
-          className="add-device-alert"
+          className="warning-alert"
           message="The device already exist"
           description="Please try again."
           type="warning"
@@ -120,7 +120,7 @@ function AddDevicePage() {
       )}
       {ShowNoCapacityAlert && (
         <Alert
-          className="add-device-alert"
+          className="capacity-alert"
           message="No enough capacity for the new device"
           description="Please try again."
           type="warning"
@@ -170,7 +170,7 @@ function AddDevicePage() {
             </button>
             {ShowEmptyFieldAlert && (
         <Alert
-          className="add-device-alert"
+          className="empty-field-alert"
           message="Please fill the required fields"
           type="warning"
           showIcon
