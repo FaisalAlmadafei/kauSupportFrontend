@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -15,45 +14,37 @@ footer {
   background-color: #15ca8e;
   z-index: 1;
   border-bottom-left-radius: 2%;
-  border-bottom-right-radius: 2%;    
+  border-bottom-right-radius: 2%;
+  color: white;
+  align-items: center;
+}
+.footer-items-container {
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-headers {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.footer-left-part {
+  margin-top: 15px;
+}
+
+.footer-right-part {
+  margin-top: 15px;
+}
+
+.footer-middle-part p {
   color: white;
 }
-.logo-image-footer{
-  position: absolute;
-  top: -15px;
-  left: 300px;
-  margin-top: 30px;
-  width: 150px;
-  display: inline-block;
-  padding: 0;
- 
-}
-.copy {
-  margin-left: 1000px;
-  margin-top: -30px;
-  color:white ;
-}
 
-.link-of-interset {
-max-width: 300px;
-margin-left: 500px;
-margin-top: -30px;
-}
-.link-of-interset h5 {
-  font-size: 20px;
-  padding-top: 10px;
-  margin-right:40px ;
-}
-.link-of-interset ul {
-  list-style: none;
-  margin-top: 4pX;
-
-}
-.link-of-interset li {
-  margin-bottom: 8px; 
-
-}
-.link-of-interset a {
+.e-services,
+.website {
   padding: 4px 8px;
   border-radius: 7px;
   display: block;
@@ -61,52 +52,42 @@ margin-top: -30px;
   text-decoration: none;
   color: aliceblue;
   transition: color 0.3s ease-in-out;
+  display: inline;
 }
-.link-of-interset a:hover {
+.call-left-part {
+  display: none;
+}
+
+.e-services:hover {
   color: rgb(190, 188, 188);
-background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
-.line-style {
-  margin-top: -25px;
-  width: 170px;
-  margin-left: 40px;
+.website:hover {
+  color: rgb(190, 188, 188);
+  background-color: rgb(255, 255, 255);
+}
+
+.footer-middle-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-middle-part p {
+  display: block;
   color: white;
+  margin-top: -14px;
 }
 
+.logo-image-footer {
+  width: 150px;
+  display: inline-block;
+  padding: 0;
+}
 
-.contact-kau {
-  max-width: 300px;
-  margin-left: 750px;
-  margin-top: -150px;
-  }
-  .contact-kau h5 {
-    font-size: 20px;
-    padding-top: 10px;
-    margin-right:40px ;
-  }
-  .contact-kau ul {
-    list-style: none;
-    margin-top: 4pX;
-  
-  }
-  .contact-kau li {
-    margin-bottom: 8px; 
-    display: block;
-    width: fit-content;
-    text-decoration: none;
-    color: aliceblue;
-    padding: 4px 8px;
-  
-  }
-  .line-style-2 {
-    margin-top: -30px;
-    width: 185px; 
-    margin-left: 40px;
-    color: white;
-  }
-  
-@media (max-width: 1300px) {
-  body, html {
+@media (max-width: 700px) {
+  body,
+  html {
     margin: 0;
     padding: 0;
   }
@@ -116,78 +97,56 @@ background-color: rgb(255, 255, 255);
   body {
     overflow-x: hidden; /* This can be used to prevent horizontal scrolling */
   }
-      
+
   footer {
     position: absolute;
     bottom: -80px;
     left: -80px;
     right: 0; /* Adjusted this line */
-    height: 120px;
+    height: 180px;
     background-color: #15ca8e;
     z-index: 1;
     border-bottom-left-radius: 2%;
-    border-bottom-right-radius: 2%;    
+    border-bottom-right-radius: 2%;
+  }
+  .footer-items-container {
+    display: block;
+    position: relative;
   }
 
-  .logo-image{
+  .footer-headers {
     display: none;
   }
-  .copy {
-    display: none;
 
+  .call-left-part {
+    margin-top: 10px;
+    position: absolute;
+    left: 10px;
   }
-  
-  .link-of-interset {
+  .call-right-part {
     display: none;
-
   }
-  .link-of-interset h5 {
-    display: none;
 
+  .footer-items-container a {
+    display: block;
+    margin-left: 15px;
+    font-weight: bold;
   }
-  .link-of-interset ul {
-    display: none;
 
+  .footer-middle-part {
   }
-  .link-of-interset li {
-    display: none;
-  
+  .footer-middle-part p {
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    color: white;
   }
-  .link-of-interset a {
-    display: none;
 
+  .logo-image-footer {
+    position: absolute;
+    top: -30px;
+    left: 250px;
+    width: 150px;
   }
-  .link-of-interset a:hover {
-    display: none;
-
-  }
-  .line-style {
-    display: none;
-
-  }
-  
-  
-  .contact-kau {
-    display: none;
-
-    }
-    .contact-kau h5 {
-      display: none;
-
-    }
-    .contact-kau ul {
-      display: none;
-
-    
-    }
-    .contact-kau li {
-      display: none;
-
-    }
-    .line-style-2 {
-      display: none;
-
-    }
-    
-
 }

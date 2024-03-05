@@ -121,7 +121,7 @@ function SupervisorReportsPage() {
           className="no-reports-picture"
           status="500"
           title="No Reports found"
-          subTitle="Sorry, You have not report any device yet..."
+          subTitle="There are no new reports yet..."
           extra={
             <Button
               on

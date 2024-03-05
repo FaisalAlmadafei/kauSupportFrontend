@@ -6,7 +6,7 @@
         display: grid;
         grid-template-columns: repeat(3, 300px); /* 3 columns */
         margin-top: 300px;
-        margin-bottom: 250px;
+        margin-bottom: 150px;
         align-items: center;
         justify-content: space-evenly;
         width: 1400px;
