@@ -20,6 +20,15 @@ import SupervisorReportsPage from "./TechnicalSupervisor/SupervisorReportsPage";
 import SupervisorRequestsPage from "./TechnicalSupervisor/SupervisorRequestsPage";
 import DashBoardPage from "./TechnicalSupervisor/DashBoardPage";
 import TechnicalMemberReportsPage from "./TehcnicalMember/TechnicalMemberReportsPage";
+import { GrDocumentText } from "react-icons/gr";
+import { TbDeviceDesktopSearch } from "react-icons/tb";
+import { TbDeviceDesktopCheck } from "react-icons/tb";
+import { TbDeviceDesktopCog } from "react-icons/tb";
+import { MdHistoryEdu } from "react-icons/md";
+import { GoReport } from "react-icons/go";
+import { FaHistory } from "react-icons/fa";
+import { IoStatsChart } from "react-icons/io5";
+import { MdMiscellaneousServices } from "react-icons/md";
 export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
@@ -42,51 +51,57 @@ function App() {
     const servicesByRole = {
       "Faculty Member": [
         { serviceName: "Home", pageLink: "/Home" },
-        { serviceName: "New Report", pageLink: "/LabsPage" },
-        { serviceName: "Previous Reports", pageLink: "/PreviousReportsPage" },
-        {
-          serviceName: "Request a Service",
-
-          pageLink: "/NewServiceRequest",
-        },
-        { serviceName: "My Requests", pageLink: "/MyRequestsPage" },
-        {
-          serviceName: "Devices Availability",
-
-          pageLink: "/DevicesAvailabilityPage",
-        },
+        { serviceName: "New Report", icon: GoReport, pageLink: "/LabsPage" },
+    {
+      serviceName: "Previous Reports",
+      icon: FaHistory,
+      pageLink: "/PreviousReportsPage",
+    },
+    {
+      serviceName: "Request a Service",
+      icon: MdMiscellaneousServices,
+      pageLink: "/NewServiceRequest",
+    },
+    {
+      serviceName: "My Requests",
+      icon: MdHistoryEdu,
+      pageLink: "/MyRequestsPage",
+    },
+    {
+      serviceName: "Devices Availability",
+      icon: TbDeviceDesktopCheck,
+      pageLink: "/DevicesAvailabilityPage",
+    },
       ],
       "Technical Member": [
         { serviceName: "Home", pageLink: "/Home" },
         {
           serviceName: "Reports",
-
+          icon: GrDocumentText,
           notification: "true",
           pageLink: "/TechnicalMemberReportsPage",
         },
-
         {
           serviceName: "Requests",
-
+          icon: MdHistoryEdu,
           notification: "true",
           pageLink: "/SupervisorRequestsPage",
         },
-       
         {
           serviceName: "Search for a device",
-
+          icon: TbDeviceDesktopSearch,
           notification: "false",
           pageLink: "/SearchDevicePage",
         },
         {
           serviceName: "Manage Devices",
-
+          icon: TbDeviceDesktopCog,
           notification: "false",
           pageLink: "/MangeDevicesPage",
         },
         {
           serviceName: "Devices Availability",
-
+          icon: TbDeviceDesktopCheck,
           notification: "false",
           pageLink: "/DevicesAvailabilityPage",
         },
@@ -95,38 +110,38 @@ function App() {
         { serviceName: "Home", pageLink: "/Home" },
         {
           serviceName: "Reports",
-
+          icon: GrDocumentText,
           notification: "true",
           pageLink: "/SupervisorReportsPage",
         },
-
+    
         {
           serviceName: "Requests",
-
+          icon: MdHistoryEdu,
           notification: "true",
           pageLink: "/SupervisorRequestsPage",
         },
         {
           serviceName: "DashBoard",
-
+          icon: IoStatsChart,
           notification: "false",
           pageLink: "/DashBoardPage",
         },
         {
           serviceName: "Search for a device",
-
+          icon: TbDeviceDesktopSearch,
           notification: "false",
           pageLink: "/SearchDevicePage",
         },
         {
           serviceName: "Manage Devices",
-
+          icon: TbDeviceDesktopCog,
           notification: "false",
           pageLink: "/MangeDevicesPage",
         },
         {
           serviceName: "Devices Availability",
-
+          icon: TbDeviceDesktopCheck,
           notification: "false",
           pageLink: "/DevicesAvailabilityPage",
         },

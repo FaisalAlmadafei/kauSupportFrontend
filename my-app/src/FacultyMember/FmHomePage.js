@@ -12,33 +12,12 @@ import Service from "../SharedComponents/Service";
 import "../SharedCSS/HomePage.css";
 import Footer from "../SharedComponents/Footer";
 import NavigationBar from "../SharedComponents/NavigationBar";
+import { ServicesContext } from "../App";
 // this is a comment for testing
 function FmHomePage() {
-  const navigate = useNavigate();
+  const { services } = useContext(ServicesContext);
 
-  let services = [
-    { serviceName: "New Report", icon: GoReport, pageLink: "/LabsPage" },
-    {
-      serviceName: "Previous Reports",
-      icon: FaHistory,
-      pageLink: "/PreviousReportsPage",
-    },
-    {
-      serviceName: "Request a Service",
-      icon: MdMiscellaneousServices,
-      pageLink: "/NewServiceRequest",
-    },
-    {
-      serviceName: "My Requests",
-      icon: MdHistoryEdu,
-      pageLink: "/MyRequestsPage",
-    },
-    {
-      serviceName: "Devices Availability",
-      icon: TbDeviceDesktopCheck,
-      pageLink: "/DevicesAvailabilityPage",
-    },
-  ];
+  const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
 
@@ -52,14 +31,15 @@ function FmHomePage() {
 
       <div className="card-Container">
         {filteredServices.map((service) => (
-          <div
+           service.serviceName !== "Home" ? (<div
             key={service.serviceName}
             onClick={() => {
               navigate(service.pageLink);
             }}
           >
             <Service serviceName={service.serviceName} Icon={service.icon} />
-          </div>
+          </div>) :(<></>)
+          
         ))}
       </div>
   <Footer/>

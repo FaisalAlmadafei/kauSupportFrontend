@@ -13,45 +13,16 @@ import { LoginContext } from "../App";
 import Notifications from "../SharedComponents/Notifications";
 import Footer from "../SharedComponents/Footer";
 import NavigationBar from "../SharedComponents/NavigationBar";
+import { ServicesContext } from "../App";
 
 function TsHomePage() {
+  const { services } = useContext(ServicesContext);
   const [reportsNotifications, setreportsNotifications] = useState("");
   const [requestsNotifications, setrequestsNotifications] = useState("");
  
 
   const navigate = useNavigate();
-  let services = [
-    {
-      serviceName: "Reports",
-      icon: GrDocumentText,
-      notification: "true",
-      pageLink: "/TechnicalMemberReportsPage",
-    },
-    {
-      serviceName: "Requests",
-      icon: MdHistoryEdu,
-      notification: "true",
-      pageLink: "/SupervisorRequestsPage",
-    },
-    {
-      serviceName: "Search for a device",
-      icon: TbDeviceDesktopSearch,
-      notification: "false",
-      pageLink: "/SearchDevicePage",
-    },
-    {
-      serviceName: "Manage Devices",
-      icon: TbDeviceDesktopCog,
-      notification: "false",
-      pageLink: "/MangeDevicesPage",
-    },
-    {
-      serviceName: "Devices Availability",
-      icon: TbDeviceDesktopCheck,
-      notification: "false",
-      pageLink: "/DevicesAvailabilityPage",
-    },
-  ];
+
 
    
   const [search, setSearch] = useState("");
@@ -67,8 +38,8 @@ function TsHomePage() {
       
       <div className="pagee-container">
         <div className="card-Container">
-          {filteredServices.map((service) => (
-            <div
+        {filteredServices.map((service) => (
+             service.serviceName !== "Home" ? ( <div
               key={service.serviceName}
               onClick={() => {
                 navigate(service.pageLink);
@@ -82,7 +53,8 @@ function TsHomePage() {
                
                 Icon={service.icon}
               />
-            </div>
+            </div>):(<></>)
+           
           ))}
         </div>
         <Footer />
