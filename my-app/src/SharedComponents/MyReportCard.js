@@ -276,6 +276,8 @@ useEffect(() => {
             {HandleButtonisClicked && (
               <HandleReportForm closeForm={closeForm} reportID={reportID} setmyReports={setmyReports} myReports={myReports} setshowReportHandledAlert={setshowReportHandledAlert}  setshowNoActionTakenAlert={setshowNoActionTakenAlert} />
             )}
+
+          
           
         
         </>) : (<></>)}

@@ -58,11 +58,13 @@ function MyRequest() {
         <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"}/>
         
       {ShowNoRequests && (
+        <>
+        <div className="no-reports-container">
         <Result
-          className="no-requests-picture"
+          className="no-reports-picture"
           status="500"
           title="No Requests found"
-          subTitle="Sorry, You have not sent any requests yet..."
+          subTitle="Sorry, You have not requestd any service yet..."
           extra={
             <Button
               on
@@ -75,6 +77,10 @@ function MyRequest() {
             </Button>
           }
         />
+
+        </div>
+        
+        </>
       )}
         
       

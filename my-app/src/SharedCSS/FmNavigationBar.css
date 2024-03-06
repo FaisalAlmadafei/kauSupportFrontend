@@ -93,6 +93,12 @@
   text-align: center;
   border: none;
   font-size: medium;
+ 
+}
+
+.fm-serach-bar::placeholder{
+  
+  font-size: 14px;
 }
 .fm-nav-items{
   margin-right: 40px;

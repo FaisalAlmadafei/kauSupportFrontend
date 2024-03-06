@@ -50,7 +50,7 @@ function DeleteDevicePage() {
     <div>
       <FmNavigationBar
         setSearch={setSearch}
-        placeholderValue={"search for a device by ID"}
+        placeholderValue={"Search by serial number"}
       />
       <div
         onClick={() => {

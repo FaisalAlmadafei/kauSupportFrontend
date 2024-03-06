@@ -13,7 +13,10 @@
     
     .delete-devices-cards-container {
         margin-top: 120px;
-        grid-template-columns: 1fr; /* Set it to a single column on smaller screens */
+        
+        grid-template-columns: repeat(1, 400px); /* Using 1fr instead of fixed width for columns */
         gap: 20px; /* Adjust gap for better visibility */
+        margin-left: 0px;
+      
     }
 }

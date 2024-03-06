@@ -70,6 +70,7 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setsh
           Please enter a brief description of the action taken:{" "}
         </h4>
         <textarea
+       
           required
           onChange={(e) => {
             setActionTaken(e.target.value);

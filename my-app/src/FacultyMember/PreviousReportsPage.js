@@ -65,6 +65,8 @@ function PreviousReportsPage() {
         </div>
            
       {ShowNoReports && (
+        <>
+        <div className="no-reports-container">
         <Result
           className="no-reports-picture"
           status="500"
@@ -82,6 +84,11 @@ function PreviousReportsPage() {
             </Button>
           }
         />
+
+        </div>
+        
+        </>
+        
       )}
         
       

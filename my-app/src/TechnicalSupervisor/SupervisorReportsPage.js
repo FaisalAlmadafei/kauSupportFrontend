@@ -117,6 +117,8 @@ function SupervisorReportsPage() {
      
 
       {ShowNoReports && (
+        <>
+        <div className="no-reports-container">
         <Result
           className="no-reports-picture"
           status="500"
@@ -134,6 +136,20 @@ function SupervisorReportsPage() {
             </Button>
           }
         />
+        
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </>
+       
       )}
       <div className="supervisor-reports-container">
         {filteredReports.map((Report) => (

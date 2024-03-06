@@ -59,7 +59,7 @@ async function addRequest () {
       {ShowSuccessAlert && (
         <Alert
           className="request-alert-success"
-          message="The service requested Successfully!"
+          message="Service requested Successfully!"
           description="Thank you!"
           type="success"
           showIcon

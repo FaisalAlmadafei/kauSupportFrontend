@@ -76,7 +76,7 @@ function SearchDevicePage() {
 {ShowEnterSerialNumberAlert && (
         <Alert
           className="warning-alert"
-          message="Please enter device serial number..."
+          message="Please enter serial number..."
           description="Please try again."
           type="warning"
           showIcon

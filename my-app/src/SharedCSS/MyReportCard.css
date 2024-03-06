@@ -375,7 +375,9 @@
     border-radius: 20px;
    margin-top: 15px;
   }
-
+  .no-reports-container{
+    margin-top: 100px;
+  }
   .handle-button:hover{
     background-color: rgb(68, 157, 209);
 

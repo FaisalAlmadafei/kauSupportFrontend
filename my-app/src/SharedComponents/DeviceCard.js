@@ -129,7 +129,7 @@ function DeviceCard({
 
             <div className="technical-role-flex-row">
               <div className="device-next-periodic-date">
-                Next Periodic Maintenance Date: {nextPeriodic_Date}
+                Next Periodic Maintenance Date:  <br />{nextPeriodic_Date}
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ function DeviceCard({
 
             <div className="technical-role-flex-row">
               <div className="device-next-periodic-date">
-                Next Periodic Maintenance Date: {nextPeriodic_Date}
+                Next Periodic Maintenance Date: <br /> {nextPeriodic_Date}
               </div>
               <button onClick={deleteDevice} className="delete-button">Delete Device</button>
               {ShowSuccessAlert && (
