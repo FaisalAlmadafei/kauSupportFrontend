@@ -25,6 +25,10 @@ function LabDevicesPage() {
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   const [showNoDevices, setShowNoDevices] = useState(false);
   const [userID] = useContext(LoginContext);
+  const [userRole, setUserRole] = useState(
+    localStorage.getItem("userRole") || ""
+  );
+
   const navigate = useNavigate();
 
   async function addReport() {
@@ -119,7 +123,15 @@ function LabDevicesPage() {
       <NavigationBar setSearch={setSearch} placeholderValue={"search for a device"}/>
       <div
         onClick={() => {
+         if(userRole.toLowerCase() == "faculty member"){
           navigate("/LabsPage");
+
+         }
+
+         else{
+          navigate("/DevicesAvailabilityPage");
+         }
+         
         }}
         className="back-icon"
       >

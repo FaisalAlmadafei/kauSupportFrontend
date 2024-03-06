@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import MyReportCard from "../SharedComponents/MyReportCard";
 import PieChart from "./PieChart";
 import Footer from "../SharedComponents/Footer";
+import { Alert } from "antd";
+
 
 
 
@@ -19,6 +21,9 @@ function DashBoardPage() {
   const [DevicesStatisticsChartData, setDevicesStatisticsChartData] = useState(null);
   const [totalDevicesCount, setTotalDevicesCount] = useState("");
   const [reportsTotalCount, setreportsTotalCount] = useState("");
+  const [showAssignedAlert, setshowAssignedAlert] = useState(false);
+  const [showNoTeamMemberAlert, setshowNoTeamMemberAlert] = useState(false);
+  const [showNoActionTakenAlert, setshowNoActionTakenAlert] = useState(false);
 
   const navigate = useNavigate();
 const [Reports, setReports] = useState([]);
@@ -181,6 +186,39 @@ const [Reports, setReports] = useState([]);
           <div onClick={()=>{navigate("/Home")}} className="back-icon">
         <IoIosArrowBack/>
         </div>
+        {showAssignedAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Report Assigned Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showReportHandledAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Report Handled Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showNoTeamMemberAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please chose a team member to assign report"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoTeamMemberAlert(false)}
+        />
+      )}
         
   <div className="charts-container">
  
@@ -222,11 +260,15 @@ const [Reports, setReports] = useState([]);
             problemType={Report.problemType}
             serviceType={"Reports monitoring"}
             myReports={Reports}
+            setshowAssignedAlert={setshowAssignedAlert}
+            setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
+            setshowNoActionTakenAlert={setshowNoActionTakenAlert}
             setmyReports={setReports}
             assignedToFirstName={Report.assignedToFirstName}
             assignedToLastName={Report.assignedToLastName}
             reportedByFirstName={Report.reportedByFirstName}
             reportedByLastName={Report.reportedByLastName}
+          
          
 
           

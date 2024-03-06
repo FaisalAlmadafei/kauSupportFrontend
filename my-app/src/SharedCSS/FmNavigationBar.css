@@ -380,8 +380,8 @@
     margin-right: 5px;
   }
   .fm-serach-bar {
-    margin-right: 25px; 
-    width: 200px;
+    margin-right: 20px; 
+    width:100%;
   }
   .menu-items {
     display: none;
@@ -397,5 +397,13 @@
   }
   .fm-nav-left span {
     display: none;
+  }
+  .react-icons-user-icon{
+    font-size: 28px;
+    color: white;
+    margin-left: 25px;
+    cursor: pointer;
+    vertical-align: middle;  
+    position: relative;
   }
 }
