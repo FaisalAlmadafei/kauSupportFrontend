@@ -10,29 +10,25 @@ import PieChart from "./PieChart";
 import Footer from "../SharedComponents/Footer";
 import { Alert } from "antd";
 
-
-
-
-
-
 function DashBoardPage() {
   const [ProgressChartData, setProgressChartData] = useState(null);
   const [StatisticsChartData, setStatisticsChartData] = useState(null);
-  const [DevicesStatisticsChartData, setDevicesStatisticsChartData] = useState(null);
+  const [DevicesStatisticsChartData, setDevicesStatisticsChartData] =
+    useState(null);
   const [totalDevicesCount, setTotalDevicesCount] = useState("");
   const [reportsTotalCount, setreportsTotalCount] = useState("");
   const [showAssignedAlert, setshowAssignedAlert] = useState(false);
   const [showNoTeamMemberAlert, setshowNoTeamMemberAlert] = useState(false);
+  const [showReportHandledAlert, setshowReportHandledAlert] = useState(false);
   const [showNoActionTakenAlert, setshowNoActionTakenAlert] = useState(false);
 
   const navigate = useNavigate();
-const [Reports, setReports] = useState([]);
-
+  const [Reports, setReports] = useState([]);
 
   useEffect(() => {
     getTeamProgress();
-    getReportsStatistics() ;
-    getReports() ;
+    getReportsStatistics();
+    getReports();
     getDevicesStatistics();
   }, []);
 
@@ -58,7 +54,7 @@ const [Reports, setReports] = useState([]);
             {
               label: "Assigned Reports",
               data: result.map((member) => member.numberOfReports),
-              backgroundColor: ["rgb(8, 136, 211)"]
+              backgroundColor: ["rgb(8, 136, 211)"],
             },
           ],
         });
@@ -87,18 +83,16 @@ const [Reports, setReports] = useState([]);
 
       if (response.ok) {
         const result = await response.json();
-        setreportsTotalCount(result.reportsTotalCount) ;
+        setreportsTotalCount(result.reportsTotalCount);
         setStatisticsChartData({
-          labels: result.details.map(
-            (type) => type.problemType
-          ),
-         
+          labels: result.details.map((type) => type.problemType),
+
           datasets: [
             {
               label: "Total Number Of Reports",
-            
+
               data: result.details.map((type) => type.count),
-              backgroundColor: ["rgb(166, 152, 218)"]
+              backgroundColor: ["rgb(166, 152, 218)"],
             },
           ],
         });
@@ -127,16 +121,17 @@ const [Reports, setReports] = useState([]);
 
       if (response.ok) {
         const result = await response.json();
-        setTotalDevicesCount(result.totalDevicesCount)
-      
+        setTotalDevicesCount(result.totalDevicesCount);
+
         setDevicesStatisticsChartData({
-          labels: [`Working Devices ${result.workingDevicesCount}` , `Reported Devices ${result.notWorkingDevicesCount}`],
+          labels: [
+            `Working Devices ${result.workingDevicesCount}`,
+            `Reported Devices ${result.notWorkingDevicesCount}`,
+          ],
           datasets: [
             {
-           
-            
-              data: [result.workingDevicesCount , result.notWorkingDevicesCount],
-              backgroundColor: ["rgb(9, 215, 119)" , "red"]
+              data: [result.workingDevicesCount, result.notWorkingDevicesCount],
+              backgroundColor: ["rgb(9, 215, 119)", "red"],
             },
           ],
         });
@@ -167,7 +162,6 @@ const [Reports, setReports] = useState([]);
         const result = await response.json();
         setReports(result);
       } else if (response.status === 400) {
-      
       } else {
         alert("An error occurred. Please try again.");
       }
@@ -181,12 +175,20 @@ const [Reports, setReports] = useState([]);
     Report.reportID.toString().toLowerCase().includes(search.toLowerCase())
   );
   return (
- <>
-  <NavigationBar  setSearch={setSearch} placeholderValue={"Search a report by ID"} />
-          <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
-        </div>
-        {showAssignedAlert && (
+    <>
+      <NavigationBar
+        setSearch={setSearch}
+        placeholderValue={"Search a report by ID"}
+      />
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
+        <IoIosArrowBack />
+      </div>
+      {showAssignedAlert && (
         <Alert
           className="report-alert-success"
           message="Report Assigned Successfully!"
@@ -219,72 +221,92 @@ const [Reports, setReports] = useState([]);
           onClose={() => setshowNoTeamMemberAlert(false)}
         />
       )}
-        
-  <div className="charts-container">
- 
-  <div  className="team-progress-chart-container">\
-      {ProgressChartData !== null ? (<BarChart className="bar-chart" ChartData={ProgressChartData} showTotalNumber={"false"} />) : (<></>)}
 
+{showNoActionTakenAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please add action taken on this report"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoActionTakenAlert(false)}
+        />
+      )}
 
-   
-    </div>
-    <div  className="team-progress-chart-container">\
-      {StatisticsChartData !== null ? (<BarChart className="bar-chart" ChartData={StatisticsChartData} reportsTotalCount={reportsTotalCount} showTotalNumber={"true"} />) : (<></>)}
+     
 
+      <div className="charts-container">
+        <div className="team-progress-chart-container">
+          \
+          {ProgressChartData !== null ? (
+            <BarChart
+              className="bar-chart"
+              ChartData={ProgressChartData}
+              showTotalNumber={"false"}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="team-progress-chart-container">
+          \
+          {StatisticsChartData !== null ? (
+            <BarChart
+              className="bar-chart"
+              ChartData={StatisticsChartData}
+              reportsTotalCount={reportsTotalCount}
+              showTotalNumber={"true"}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
+      </div>
 
-   
-    </div>
-  
+      <div className="pie-chart-container">
+        \
+        {DevicesStatisticsChartData !== null ? (
+          <PieChart
+            className="bar-chart"
+            ChartData={DevicesStatisticsChartData}
+            totalDevicesCount={totalDevicesCount}
+          />
+        ) : (
+          <></>
+        )}
+      </div>
 
-  </div>
-
-  <div  className="pie-chart-container">\
-      {DevicesStatisticsChartData !== null ? (<PieChart className="bar-chart" ChartData={DevicesStatisticsChartData} totalDevicesCount={totalDevicesCount}/>) : (<></>)}
-
-
-   
-    </div>
-    
-    <div className="monitor-reports-container">
-    {filteredReports.map((Report) => (
+      <div className="monitor-reports-container">
+        {filteredReports.map((Report) => (
           <MyReportCard
-          key={Report.reportID}
+            key={Report.reportID}
             reportID={Report.reportID}
             deviceNumber={Report.deviceNumber}
             deviceLocatedLab={Report.deviceLocatedLab}
             problemDescription={Report.problemDescription}
             actionTaken={Report.actionTaken}
             reportDate={Report.reportDate}
-            repairDate={Report.repairDate} 
+            repairDate={Report.repairDate}
             reportStatus={Report.reportStatus}
             problemType={Report.problemType}
             serviceType={"Reports monitoring"}
             myReports={Reports}
             setshowAssignedAlert={setshowAssignedAlert}
             setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
+            setshowReportHandledAlert={setshowReportHandledAlert}
             setshowNoActionTakenAlert={setshowNoActionTakenAlert}
             setmyReports={setReports}
             assignedToFirstName={Report.assignedToFirstName}
             assignedToLastName={Report.assignedToLastName}
             reportedByFirstName={Report.reportedByFirstName}
             reportedByLastName={Report.reportedByLastName}
-          
-         
-
-          
           />
         ))}
-    </div>
-    
- 
+      </div>
 
-<Footer/>
-    
-
-
-    
- </>
-     
+      <Footer />
+    </>
   );
 }
 

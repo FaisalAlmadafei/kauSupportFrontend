@@ -104,6 +104,8 @@ function MyReportCard({
         if (response.ok) {
           setShowSpinner(false);
           setshowAssignedAlert(true);
+        
+         
           if (serviceType !== "Reports monitoring") {
             const filteredReports = myReports.filter(
               (report) => report.reportID !== reportID
