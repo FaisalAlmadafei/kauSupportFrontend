@@ -13,7 +13,7 @@ import "../SharedCSS/HomePage.css";
 import Footer from "../SharedComponents/Footer";
 import NavigationBar from "../SharedComponents/NavigationBar";
 import { ServicesContext } from "../App";
-// this is a comment for testing
+
 function FmHomePage() {
   const { services } = useContext(ServicesContext);
 
