@@ -9,11 +9,17 @@ import { useNavigate } from "react-router-dom";
 import { Button, Result } from "antd";
 import "../SharedCSS/MyReportCard.css";
 import Footer from "../SharedComponents/Footer";
+import { Alert } from "antd";
+
 
 function TechnicalMemberReportsPage(){
     const [myReports, setmyReports] = useState([]);
     const [ShowNoReports, setShowNoReports] = useState(false);
     const [userID] = useContext(LoginContext);
+  const [showAssignedAlert, setshowAssignedAlert] = useState(false);
+  const [showNoTeamMemberAlert, setshowNoTeamMemberAlert] = useState(false);
+  const [showReportHandledAlert, setshowReportHandledAlert] = useState(false);
+  const [showNoActionTakenAlert, setshowNoActionTakenAlert] = useState(false);
 
     const navigate = useNavigate();
   
@@ -62,6 +68,54 @@ function TechnicalMemberReportsPage(){
         >
           <IoIosArrowBack />
         </div>
+        {showAssignedAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Report Assigned Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showReportHandledAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Report Handled Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showNoTeamMemberAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please chose a team member to assign report"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoTeamMemberAlert(false)}
+        />
+      )}
+
+{showNoActionTakenAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please add action taken on this report"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoActionTakenAlert(false)}
+        />
+      )}
+
+     
+
   
         {ShowNoReports && (
           <Result
@@ -84,13 +138,18 @@ function TechnicalMemberReportsPage(){
         )}
          <div className="supervisor-reports-container"> 
         {filteredReports.map((Report) => (
-          <MyReportCard
-            key={Report.reportID}
-            {...Report}
-            serviceType={"Technical member reports"}
-            setmyReports={setmyReports}
-            myReports={myReports}
-          />
+           <MyReportCard
+           key={Report.reportID}
+           {...Report}
+           serviceType={"Technical member reports"}
+           setmyReports={setmyReports}
+           myReports={myReports}
+           setshowAssignedAlert={setshowAssignedAlert}
+           setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
+           setshowReportHandledAlert={setshowReportHandledAlert}
+           setshowNoActionTakenAlert={setshowNoActionTakenAlert}
+         />
+      
         ))}
           </div>
   <Footer/>
