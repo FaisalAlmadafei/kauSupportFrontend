@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Select } from "antd";
 import HandleReportForm from "../SharedComponents/HandleReportForm";
 import { Spin } from "antd";
-
+import SuggestedSolution from "../SharedComponents/SuggestedSolution";
 function MyReportCard({
   reportID,
   deviceNumber,
@@ -36,9 +36,10 @@ function MyReportCard({
   const [AssignedToId, setAssignedToId] = useState("");
   const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
   const [ShowSpinner, setShowSpinner] = useState(false);
-
+  const [SuggestedSolutionButtonisClicked, setSuggestedSolutionButtonisClicked] = useState(false);
   function closeForm() {
     setHandleButtonisClicked(false);
+    setSuggestedSolutionButtonisClicked(false);
   }
   useEffect(() => {
     getTeamMembers();
@@ -263,6 +264,14 @@ function MyReportCard({
                 Handle Report
               </button>
 
+                <button
+                 onClick={() => {
+                  setSuggestedSolutionButtonisClicked(true);
+                 }}
+                 className="suggested-button"
+                 >
+                  Suggested Solution
+                </button>
               {HandleButtonisClicked && (
                 <HandleReportForm
                   closeForm={closeForm}
@@ -273,6 +282,13 @@ function MyReportCard({
                   setshowNoActionTakenAlert={setshowNoActionTakenAlert}
                 />
               )}
+               {SuggestedSolutionButtonisClicked && (
+                <SuggestedSolution
+                  closeForm={closeForm}
+                  problemDescription={problemDescription}
+                />
+              )}
+
             </>
           ) : (
             <></>

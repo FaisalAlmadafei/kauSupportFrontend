@@ -5,7 +5,14 @@ import "../SharedCSS/HandleRequestForm.css";
 import { Spin } from 'antd';
 
 
-function HandleRequestForm({closeForm , requestID, setmyRequests,myRequests}) {
+function HandleRequestForm({
+  closeForm , 
+   requestID,
+   setmyRequests,
+   myRequests, 
+  setshowRequestHandledAlert,
+    setshowNoResponseAlert
+    }) {
     const [Comment, setComment] = useState("");
     const [ShowSpinner, setShowSpinner] = useState(false);
     const [RequestStatus, setRequestStatus] = useState("");
@@ -25,7 +32,8 @@ function HandleRequestForm({closeForm , requestID, setmyRequests,myRequests}) {
         );
         if (response.ok) {
           setShowSpinner(false) ; 
-          alert("Request Handled Successfully!");
+          setshowRequestHandledAlert(true);
+        //  alert("Request Handled Successfully!");
           closeForm();
           const filteredRequests = myRequests.filter(
             (request) => request.requestID !== requestID
@@ -53,7 +61,8 @@ function HandleRequestForm({closeForm , requestID, setmyRequests,myRequests}) {
             handleRequest() ; 
             
         } else{
-          alert("Please fill required fields..");
+          setshowNoResponseAlert(true);
+          //alert("Please fill required fields..");
         }
 
        

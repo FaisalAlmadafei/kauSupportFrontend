@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { useContext } from "react";
 import { LoginContext } from "../App";
-import { Button, Result } from "antd";
+import { Button, Result, Alert } from "antd";
 import MyRequest from "../FacultyMember/MyRequestsPage";
 import MyRequestsCard from "../SharedComponents/MyRequestsCard";
 import { GoContainer } from "react-icons/go";
@@ -16,6 +16,11 @@ function SupervisorRequestsPage() {
   const [userID] = useContext(LoginContext);
   const [myRequests, setmyRequests] = useState([]);
   const [ShowNoRequests, setShowNoRequests] = useState(false);
+  const [showAssignedAlert, setshowAssignedAlert] = useState(false);
+  const [showNoTeamMemberAlert, setshowNoTeamMemberAlert] = useState(false);
+  const [showRequestHandledAlert, setshowRequestHandledAlert] = useState(false);
+  const [showNoResponseAlert, setshowNoResponseAlert] = useState(false);
+
   const [userRole, setUserRole] = useState(
     localStorage.getItem("userRole") || ""
   );
@@ -64,6 +69,54 @@ function SupervisorRequestsPage() {
       >
         <IoIosArrowBack />
       </div>
+
+      {showAssignedAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Request Assigned Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowAssignedAlert(false)}
+        />
+      )}
+
+      {showRequestHandledAlert && (
+        <Alert
+          className="report-alert-success"
+          message="Request Handled Successfully!"
+          type="success"
+          showIcon
+          closable
+          onClose={() => setshowRequestHandledAlert(false)}
+        />
+      )}
+
+      {showNoTeamMemberAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please choose a team member to assign request"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoTeamMemberAlert(false)}
+        />
+      )}
+
+{showNoResponseAlert && (
+        <Alert
+          className="report-alert-warning"
+          message="Please add response on this request"
+          description="Please try again."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowNoResponseAlert(false)}
+        />
+      )}
+
+
       {ShowNoRequests && (
         <Result
           
@@ -95,7 +148,10 @@ function SupervisorRequestsPage() {
           serviceType={ userRole.toLowerCase() == "supervisor"  ? "Supervisor Requests" : "Technical member requests"}
           setmyRequests={setmyRequests}
           myRequests={myRequests}
-          
+          setshowAssignedAlert={setshowAssignedAlert}
+          setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
+          setshowRequestHandledAlert={setshowRequestHandledAlert}
+          setshowNoResponseAlert={setshowNoResponseAlert}       
         />
       ))}
       </div>

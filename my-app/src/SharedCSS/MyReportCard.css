@@ -219,6 +219,27 @@
 
   }
 
+  .suggested-button{
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(78, 66, 155);
+    color: white;
+    border: none;
+    border-radius: 20px;
+   margin-top: 15px;
+   margin-right: -20px;
+   margin-left: 15px;
+  }
+  .suggested-button:hover{
+    background-color: rgb(68, 157, 209);
+
+  }
+
+  .suggested-button:active{
+    background-color: rgb(93, 184, 237);
+
+  }
   .report-action-taken-alert-success {
     position: fixed;
     left: 25px;
@@ -374,6 +395,27 @@
     border: none;
     border-radius: 20px;
    margin-top: 15px;
+  }
+  .suggested-button{
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(78, 66, 155);
+    color: white;
+    border: none;
+    border-radius: 20px;
+   margin-top: 15px;
+   margin-right: -20px;
+   margin-left: 15px;
+  }
+  .suggested-button:hover{
+    background-color: rgb(68, 157, 209);
+
+  }
+
+  .suggested-button:active{
+    background-color: rgb(93, 184, 237);
+
   }
   .no-reports-container{
     margin-top: 100px;

@@ -12,7 +12,11 @@ function MyRequestsCard({
   request,
   serviceType,
   setmyRequests,
-  myRequests
+  myRequests,
+  setshowAssignedAlert,
+  setshowNoTeamMemberAlert,
+  setshowRequestHandledAlert,
+  setshowNoResponseAlert,
 }) {
 
   const [Team, setTeam] = useState([]);
@@ -70,8 +74,8 @@ function MyRequestsCard({
         );
   
         if (response.ok) {
-          
-          alert("Request assigned successfully");
+          setshowAssignedAlert(true);
+          //alert("Request assigned successfully");
   
          const filteredRequests = myRequests.filter(
             (request) => request.requestID !== requestID
@@ -90,7 +94,8 @@ function MyRequestsCard({
 
     }
     else{
-      alert("Please chose a team member to assign request")
+      setshowNoTeamMemberAlert(true);
+      // alert("Please chose a team member to assign request")
     }
    
   }
@@ -167,7 +172,7 @@ function MyRequestsCard({
                 Handle Request
               </button>
               {HandleButtonisClicked && (
-                <HandleRequestForm closeForm={closeForm} requestID={requestID} setmyRequests={setmyRequests} myRequests={myRequests} />
+                <HandleRequestForm closeForm={closeForm} requestID={requestID} setmyRequests={setmyRequests} myRequests={myRequests} setshowRequestHandledAlert={setshowRequestHandledAlert} setshowNoResponseAlert={setshowNoResponseAlert} />
               )}
           </>
         ) : (
