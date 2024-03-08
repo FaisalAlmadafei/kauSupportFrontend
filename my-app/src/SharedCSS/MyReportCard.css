@@ -1,22 +1,22 @@
-
-.spin{
+.spin {
   position: fixed;
   top: 180px;
   left: 100px;
   right: 100px;
 }
-.assigned-to-info{
-  font-size: 18px;
-    margin-left: 20px;
-    margin-top: 50px;
 
-    
-    color: rgb(255, 255, 255);
-    text-align: center;
+.assigned-to-info {
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 50px;
+
+
+  color: rgb(255, 255, 255);
+  text-align: center;
 
 }
 
-.done-icon{
+.done-icon {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -36,48 +36,52 @@
     background-color: rgb(172, 253, 192);
     position: relative;
     border-radius: 20px;
-    background-image: linear-gradient(
-      to right bottom,
-      #2ecc71,
-      #48d68c,
-      #5fdd9d,
-      #76e4ae,
-      #8debbe
-    );
+    background-image: linear-gradient(to right bottom,
+        #2ecc71,
+        #48d68c,
+        #5fdd9d,
+        #76e4ae,
+        #8debbe);
     color: rgb(254, 254, 254);
-    
+
     font-size: 16px;
     -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
     -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
     box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
   }
+
   .my-report-container {
     flex: 1;
     margin-top: -15px;
     margin-bottom: 35px;
   }
+
   .my-right-part {
     flex: 1;
     margin-top: 50px;
     margin-bottom: 35px;
   }
+
   .my-report-id {
     font-size: 22px;
     font-weight: bold;
     margin-left: 15px;
     color: rgb(255, 255, 255);
   }
+
   .my-report-date {
     font-size: 22px;
     font-weight: bold;
     margin-left: 25px;
     margin-left: 100px;
     color: rgb(255, 255, 255);
-   
+
   }
+
   .custom-steps {
     margin-left: 200px;
   }
+
   .my-report-device-number {
     font-size: 18px;
     margin-left: 40px;
@@ -85,6 +89,7 @@
     color: rgb(255, 255, 255);
     display: inline-block;
   }
+
   .my-lab-number {
     font-size: 18px;
     margin-right: 80px;
@@ -93,11 +98,13 @@
     color: rgb(255, 255, 255);
     display: inline-block;
   }
-  .my-problem-type{
+
+  .my-problem-type {
     margin-top: 30px;
     font-size: 18px;
     font-weight: bold;
   }
+
   .my-problem {
     font-size: 18px;
     margin-left: 40px;
@@ -106,78 +113,84 @@
     margin-left: 40px;
     color: rgb(255, 255, 255);
   }
+
   .my-action-taken {
     font-size: 18px;
     margin-left: 40px;
     margin-top: 10px;
     color: rgb(255, 255, 255);
   }
+
   .my-repair-date {
     font-size: 18px;
     margin-left: 40px;
     margin-top: 60px;
     color: rgb(255, 255, 255);
   }
+
   .custom-steps {
     font-size: 50px;
     color: white;
   }
+
   .custom-steps .ant-steps-item-icon {
-    background-color: rgb(
-      145,
-      138,
-      254
-    ) !important; 
+    background-color: rgb(145,
+        138,
+        254) !important;
     border-color: white !important;
-    color: white; 
+    color: white;
   }
+
   .custom-steps .ant-steps-item-title,
   .custom-steps .ant-steps-item-description {
-    color: white !important; 
+    color: white !important;
   }
+
   .custom-steps .ant-steps-item-icon .ant-steps-icon {
-    color: rgb(
-      0,
-      0,
-      0
-    ) !important; 
+    color: rgb(0,
+        0,
+        0) !important;
   }
+
   .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
-    background-color: rgb(
-      145,
-      138,
-      254
-    ) !important;
+    background-color: rgb(145,
+        138,
+        254) !important;
     border-color: rgb(255, 255, 255) !important;
     border: solid 3px;
   }
+
   .custom-steps .ant-steps-item-process .ant-steps-item-icon {
-    background-color: rgb(
-      145,
-      138,
-      254
-    ) !important;
+    background-color: rgb(145,
+        138,
+        254) !important;
     border-color: rgb(255, 255, 255) !important;
     border: solid 3px;
   }
+
   .custom-steps .ant-steps-item-wait .ant-steps-item-icon {
     border-color: rgb(255, 255, 255) !important;
     border: solid 3px;
   }
+
   .custom-steps .ant-steps-item-icon .ant-steps-icon {
     color: white !important;
   }
+
   .custom-steps .ant-steps-item-tail::after {
     background-color: white !important;
   }
+
   p {
     margin-top: 0px;
   }
-  .assign-part{
+
+  .assign-part {
     margin-top: 15px;
-    
+
   }
-  .assign-button{
+
+  .assign-button {
     width: 110px;
     height: 30px;
     cursor: pointer;
@@ -188,17 +201,17 @@
     margin-right: 15px;
   }
 
-  .assign-button:hover{
+  .assign-button:hover {
     background-color: rgb(124, 104, 237);
 
   }
 
-  .assign-button:active{
+  .assign-button:active {
     background-color: rgb(147, 130, 238);
 
   }
 
-  .handle-button{
+  .handle-button {
     width: 180px;
     height: 30px;
     cursor: pointer;
@@ -206,20 +219,20 @@
     color: white;
     border: none;
     border-radius: 20px;
-   margin-top: 15px;
+    margin-top: 15px;
   }
 
-  .handle-button:hover{
+  .handle-button:hover {
     background-color: rgb(68, 157, 209);
 
   }
 
-  .handle-button:active{
+  .handle-button:active {
     background-color: rgb(93, 184, 237);
 
   }
 
-  .suggested-button{
+  .suggested-button {
     width: 180px;
     height: 30px;
     cursor: pointer;
@@ -227,18 +240,20 @@
     color: white;
     border: none;
     border-radius: 20px;
-   margin-top: 15px;
- 
+    margin-top: 15px;
+
   }
-  .suggested-button:hover{
+
+  .suggested-button:hover {
     background-color: rgb(68, 157, 209);
 
   }
 
-  .suggested-button:active{
+  .suggested-button:active {
     background-color: rgb(93, 184, 237);
 
   }
+
   .report-action-taken-alert-success {
     position: fixed;
     left: 25px;
@@ -247,13 +262,13 @@
     margin-top: 25px;
     border: 3px solid rgb(0, 208, 0);
   }
- 
-  
+
+
 }
 
 @media (max-width: 999px) {
 
-  .done-icon{
+  .done-icon {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -261,8 +276,8 @@
     cursor: pointer;
     color: white;
   }
-  
-  
+
+
 
   .my-report-page {
     display: flex;
@@ -272,49 +287,55 @@
     margin-top: 100px;
     padding: 10px;
     box-sizing: border-box;
-    width: 100%; 
-   
+    width: 100%;
+
   }
+
   .my-report-container {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
-    word-break: break-word; 
+    word-break: break-word;
     position: relative;
     background-color: #48d68c;
     margin-top: 30px;
     padding-top: 35px;
   }
+
   .my-right-part {
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
     background-color: rgb(249, 249, 249);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 50px;
   }
+
   .my-report-id,
   .my-report-date {
     font-size: 16px;
     position: absolute;
     font-weight: bold;
     color: rgb(255, 255, 255);
-  
-  
+
+
   }
+
   .my-report-id {
     top: 45px;
     left: 10px;
-  
+
   }
+
   .my-report-date {
     top: 45px;
     right: 10px;
 
 
   }
+
   .my-report-device-number {
     display: inline-block;
     font-size: 16px;
@@ -322,17 +343,20 @@
     margin-top: 40px;
     color: rgb(255, 255, 255);
   }
+
   .my-lab-number {
     display: block;
     font-size: 16px;
     color: rgb(255, 255, 255);
   }
-  .my-problem-type{
+
+  .my-problem-type {
     margin-top: 30px;
     font-size: 14px;
     font-weight: bold;
     color: white;
   }
+
   .my-problem {
     margin-top: 30px;
     display: block;
@@ -340,32 +364,39 @@
     font-size: 16px;
     color: rgb(255, 255, 255);
   }
+
   .my-action-taken {
     color: rgb(255, 255, 255);
     display: inline-block;
   }
+
   .my-repair-date {
     margin-top: 100px;
     font-size: 19px;
     color: rgb(255, 255, 255);
   }
+
   .my-progress,
   .my-resolved {
     margin-top: 20px;
   }
+
   .no-report-picture {
     margin-top: 55px;
   }
+
   p {
-    font-size: 14px; 
-    line-height: 1.5; 
-    color: #4c4c4c; 
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4c4c4c;
   }
-  .assign-part{
+
+  .assign-part {
     margin-top: 15px;
-    
+
   }
-  .assign-button{
+
+  .assign-button {
     width: 120px;
     height: 30px;
     cursor: pointer;
@@ -375,17 +406,18 @@
     border-radius: 20px;
     margin-right: 15px;
   }
-  .assign-button:hover{
+
+  .assign-button:hover {
     background-color: rgb(109, 92, 233);
 
   }
 
-  .assign-button:active{
+  .assign-button:active {
     background-color: rgb(169, 159, 240);
 
   }
 
-  .handle-button{
+  .handle-button {
     width: 150px;
     height: 30px;
     cursor: pointer;
@@ -393,9 +425,10 @@
     color: white;
     border: none;
     border-radius: 20px;
-   margin-top: 15px;
+    margin-top: 15px;
   }
-  .suggested-button{
+
+  .suggested-button {
     width: 150px;
     height: 30px;
     cursor: pointer;
@@ -403,27 +436,30 @@
     color: white;
     border: none;
     border-radius: 20px;
-   margin-top: 15px;
+    margin-top: 15px;
 
   }
-  .suggested-button:hover{
+
+  .suggested-button:hover {
     background-color: rgb(68, 157, 209);
 
   }
 
-  .suggested-button:active{
+  .suggested-button:active {
     background-color: rgb(93, 184, 237);
 
   }
-  .no-reports-container{
+
+  .no-reports-container {
     margin-top: 100px;
   }
-  .handle-button:hover{
+
+  .handle-button:hover {
     background-color: rgb(68, 157, 209);
 
   }
 
-  .handle-button:active{
+  .handle-button:active {
     background-color: rgb(93, 184, 237);
 
   }

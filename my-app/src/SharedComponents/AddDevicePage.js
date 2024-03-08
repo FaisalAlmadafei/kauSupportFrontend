@@ -3,7 +3,7 @@ import NavigationBar from "./NavigationBar";
 import "../SharedCSS/AddDevicePage.css";
 import { Select } from "antd";
 import { Alert } from "antd";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
@@ -19,7 +19,7 @@ function AddDevicePage() {
   const [ShowNoCapacityAlert, setShowNoCapacityAlert] = useState(false);
   const navigate = useNavigate();
 
-  const default_Lab = "1" ;
+  const default_Lab = "1";
 
   useEffect(() => {
     getLabs();
@@ -39,10 +39,10 @@ function AddDevicePage() {
 
       if (response.ok) {
         const result = await response.json();
-       setLabs(result);
+        setLabs(result);
       } else if (response.status === 400) {
         alert("An error occurred. Please try again.");
-      } 
+      }
       else {
         alert("An error occurred. Please try again.");
       }
@@ -52,51 +52,51 @@ function AddDevicePage() {
     }
   }
 
-  async function addDevice(){
+  async function addDevice() {
     var requestOptions = {
-        method: "POST",
-        redirect: "follow",
-      };
+      method: "POST",
+      redirect: "follow",
+    };
 
-      try {
-        const response = await fetch(
-          `https://kausupportapi.azurewebsites.net/api/TechnicalMember_/AddDevice?Serial_Number=${SerialNumber}&Device_Type=${DeviceType}&Device_LocatedLab=${LabNumber}`,
-          requestOptions
-        );
-  
-        if (response.ok) {
-          setShowSuccessAlert(true);
-       
-        
-      
-        } else if (response.status === 400) {
-          setShowWarningAlert(true); 
-        } 
-        
-        else if (response.status === 409) {
-          setShowNoCapacityAlert(true);
-        }else {
-          alert("An error occurred. Please try again.");
-        }
-      } catch (error) {
-        console.log("error", error);
-        alert("An error occurred. Please check your connection and try again.");
-      }   
+    try {
+      const response = await fetch(
+        `https://kausupportapi.azurewebsites.net/api/TechnicalMember_/AddDevice?Serial_Number=${SerialNumber}&Device_Type=${DeviceType}&Device_LocatedLab=${LabNumber}`,
+        requestOptions
+      );
+
+      if (response.ok) {
+        setShowSuccessAlert(true);
+
+
+
+      } else if (response.status === 400) {
+        setShowWarningAlert(true);
+      }
+
+      else if (response.status === 409) {
+        setShowNoCapacityAlert(true);
+      } else {
+        alert("An error occurred. Please try again.");
+      }
+    } catch (error) {
+      console.log("error", error);
+      alert("An error occurred. Please check your connection and try again.");
+    }
   }
   function checkEmptyFields() {
-    if ((LabNumber.length > 0) && (DeviceType.length > 0) && (SerialNumber.length > 0)){
+    if ((LabNumber.length > 0) && (DeviceType.length > 0) && (SerialNumber.length > 0)) {
       addDevice();
-    }else {
+    } else {
       setShowEmptyFieldAlert(true);
     }
   }
   return (
     <div>
       <NavigationBar showSearchBar={"No"} />
-      
-      <div onClick={()=>{navigate("/MangeDevicesPage")}} className="back-icon">
-        <IoIosArrowBack/>
-        </div>
+
+      <div onClick={() => { navigate("/MangeDevicesPage") }} className="back-icon">
+        <IoIosArrowBack />
+      </div>
       {ShowSuccessAlert && (
         <Alert
           className="success-alert"
@@ -132,13 +132,13 @@ function AddDevicePage() {
       <div className="new-device-form">
         <div className="serial-number-section">
           <label className="serial-number-section-label" >Enter Device Serial Number:</label>
-          <input  onChange={(e)=>{setSerialNumber(e.target.value)}} className="serial-number-section-input" type="text" />
+          <input onChange={(e) => { setSerialNumber(e.target.value) }} className="serial-number-section-input" type="text" />
         </div>
         <div className="device-type-section">
           <label className="device-section-label">Chose Device Type:</label>
           <Select
-            
-            onChange={(value)=>{setDeviceType(value)}}
+
+            onChange={(value) => { setDeviceType(value) }}
             style={{
               width: 140,
               height: 25,
@@ -153,8 +153,8 @@ function AddDevicePage() {
         <div className="Labs-section">
           <label className="lab-section-label">Chose Lab Number:</label>
           <Select
-            
-            onChange={(value)=>{setLabNumber(value)}}
+
+            onChange={(value) => { setLabNumber(value) }}
             style={{
               width: 140,
               height: 25,
@@ -165,21 +165,21 @@ function AddDevicePage() {
             }))}
           />
         </div>
-        <button onClick={checkEmptyFields}  className="add-device-button">
-             Add Device
-            </button>
-            {ShowEmptyFieldAlert && (
-        <Alert
-          className="empty-field-alert"
-          message="Please fill the required fields"
-          type="warning"
-          showIcon
-          closable
-          onClose={() => setShowEmptyFieldAlert(false)}
-        />
-      )}
+        <button onClick={checkEmptyFields} className="add-device-button">
+          Add Device
+        </button>
+        {ShowEmptyFieldAlert && (
+          <Alert
+            className="empty-field-alert"
+            message="Please fill the required fields"
+            type="warning"
+            showIcon
+            closable
+            onClose={() => setShowEmptyFieldAlert(false)}
+          />
+        )}
       </div>
-      <Footer/>
+      <Footer />
 
     </div>
   );

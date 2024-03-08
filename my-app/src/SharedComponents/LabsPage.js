@@ -13,7 +13,7 @@ import Footer from "./Footer";
 
 
 function LabsPage() {
-  const {LabNumber , setLabNumber} = useContext(NewReportContext);
+  const { LabNumber, setLabNumber } = useContext(NewReportContext);
   const [Labs, setLabs] = useState([]);
   const navigate = useNavigate();
 
@@ -52,31 +52,31 @@ function LabsPage() {
 
   return (
     <div>
-        <NavigationBar setSearch={setSearch} placeholderValue={"Search for a lab"}/>
-        <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
+      <NavigationBar setSearch={setSearch} placeholderValue={"Search for a lab"} />
+      <div onClick={() => { navigate("/Home") }} className="back-icon">
+        <IoIosArrowBack />
 
 
-        </div>
-        <div className="Labs-cards-container">
-        <div className="card-Container">
-         {filteredLabs.map((Lab) => (
-           <div
-             key={Lab.labNumber}
-             onClick={() => {
-              setLabNumber(Lab.labNumber)
-               navigate("/LabDevicesPage");
-             }}
-           >
-             <LabCard labNumber={Lab.labNumber} Icon={BsDoorOpen} />
-           </div>
-         ))}
-        
-       </div>
-
-        </div>
-        <Footer/>
       </div>
+      <div className="Labs-cards-container">
+        <div className="card-Container">
+          {filteredLabs.map((Lab) => (
+            <div
+              key={Lab.labNumber}
+              onClick={() => {
+                setLabNumber(Lab.labNumber)
+                navigate("/LabDevicesPage");
+              }}
+            >
+              <LabCard labNumber={Lab.labNumber} Icon={BsDoorOpen} />
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+      <Footer />
+    </div>
   );
 }
 

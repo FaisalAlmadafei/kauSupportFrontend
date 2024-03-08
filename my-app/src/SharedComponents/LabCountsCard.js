@@ -6,34 +6,34 @@ import { TbDeviceImacCheck } from "react-icons/tb";
 
 
 
-function LabCountsCard({labNumber , reportedDevicesCount, workingDevicesCount , capacity}) {
-    
-    return (<div>
-    
-      <div className="counts-card">
-        <div className="top-part">
-        <BsDoorOpen className="react-icons"/>
+function LabCountsCard({ labNumber, reportedDevicesCount, workingDevicesCount, capacity }) {
+
+  return (<div>
+
+    <div className="counts-card">
+      <div className="top-part">
+        <BsDoorOpen className="react-icons" />
         <h3 className="counts-card-lab-number">Lab {labNumber}</h3>
 
 
-        </div>
-      
+      </div>
+
       <br />
 
       <div className="bottom-part">
-      <span className="devices-capacity">Capacity: {capacity}</span>
-      <span className="working-devices-count"><TbDeviceImacCheck className="react-icons-working"/>{workingDevicesCount}</span>
-      <span className="reported-devices-count"><TbDeviceImacX className="react-icons-reported"/> {reportedDevicesCount}</span>
-     
+        <span className="devices-capacity">Capacity: {capacity}</span>
+        <span className="working-devices-count"><TbDeviceImacCheck className="react-icons-working" />{workingDevicesCount}</span>
+        <span className="reported-devices-count"><TbDeviceImacX className="react-icons-reported" /> {reportedDevicesCount}</span>
+
 
       </div>
-      
 
-  
-     </div>
-    
+
+
+    </div>
+
   </div>);
-  }
-  
+}
+
 
 export default LabCountsCard;

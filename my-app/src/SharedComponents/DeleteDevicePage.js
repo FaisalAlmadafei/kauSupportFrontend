@@ -61,22 +61,22 @@ function DeleteDevicePage() {
         <IoIosArrowBack />
       </div>
       <div className="delete-devices-cards-container">
-      
-          {filteredDevices.map((device) => (
-            <>
-              <DeviceCard
-                deviceNumber={device.deviceNumber}
-                type={device.type}
-                deviceStatus={device.deviceStatus}
-                serialNumber={device.serialNumber}
-                deviceLocatedLab={device.deviceLocatedLab}
-                arrivalDate={device.arrivalDate}
-                nextPeriodicDate={device.nextPeriodicDate}
-                serviceType={"edit-device"}
-              />
-            
-            </>
-          ))}
+
+        {filteredDevices.map((device) => (
+          <>
+            <DeviceCard
+              deviceNumber={device.deviceNumber}
+              type={device.type}
+              deviceStatus={device.deviceStatus}
+              serialNumber={device.serialNumber}
+              deviceLocatedLab={device.deviceLocatedLab}
+              arrivalDate={device.arrivalDate}
+              nextPeriodicDate={device.nextPeriodicDate}
+              serviceType={"edit-device"}
+            />
+
+          </>
+        ))}
       </div>
       <Footer />
     </div>

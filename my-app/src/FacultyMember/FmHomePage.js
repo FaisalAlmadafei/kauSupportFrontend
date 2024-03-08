@@ -27,22 +27,22 @@ function FmHomePage() {
 
   return (
     <div>
-           <NavigationBar  setSearch={setSearch} placeholderValue={"Search for a service"} />
+      <NavigationBar setSearch={setSearch} placeholderValue={"Search for a service"} />
 
       <div className="card-Container">
         {filteredServices.map((service) => (
-           service.serviceName !== "Home" ? (<div
+          service.serviceName !== "Home" ? (<div
             key={service.serviceName}
             onClick={() => {
               navigate(service.pageLink);
             }}
           >
             <Service serviceName={service.serviceName} Icon={service.icon} />
-          </div>) :(<></>)
-          
+          </div>) : (<></>)
+
         ))}
       </div>
-  <Footer/>
+      <Footer />
     </div>
   );
 }

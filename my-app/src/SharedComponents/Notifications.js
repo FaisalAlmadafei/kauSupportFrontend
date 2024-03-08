@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../App";
 
-function Notifications({ setreportsNotifications, reportsNotifications , requestsNotifications , setrequestsNotifications }) {
+function Notifications({ setreportsNotifications, reportsNotifications, requestsNotifications, setrequestsNotifications }) {
   const [userID] = useContext(LoginContext);
 
   useEffect(() => {

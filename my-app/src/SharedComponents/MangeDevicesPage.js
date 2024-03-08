@@ -27,11 +27,11 @@ function MangeDevicesPage() {
   ];
   return (
     <>
-       <FmNavigationBar showSearchBar={"No"} />
-    
-      <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
-        </div>
+      <FmNavigationBar showSearchBar={"No"} />
+
+      <div onClick={() => { navigate("/Home") }} className="back-icon">
+        <IoIosArrowBack />
+      </div>
       <div className="cards-Container">
         {services.map((service) => (
           <div
@@ -44,7 +44,7 @@ function MangeDevicesPage() {
           </div>
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

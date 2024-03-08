@@ -1,28 +1,29 @@
-.fm-nav-bar{
+.fm-nav-bar {
   position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background-color: #15ca8e;
-    z-index: 1;
-    border-bottom-left-radius: 2%;
-    border-bottom-right-radius: 2%;    
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #15ca8e;
+  z-index: 1;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
 }
 
-.fm-nav-bar-container{
+.fm-nav-bar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px;
   margin-top: 25px;
 }
-.react-icons-user-icon{
+
+.react-icons-user-icon {
   font-size: 24px;
   color: white;
   margin-left: 25px;
   cursor: pointer;
-  vertical-align: middle;  
+  vertical-align: middle;
   position: relative;
 }
 
@@ -53,27 +54,28 @@
   text-decoration: none;
   color: black;
   cursor: pointer;
- margin-top: 50px;
+  margin-top: 50px;
   padding: 6px;
   margin-left: 0px;
   margin-right: 0px;
 
 }
-.avatar-list li:hover{
+
+.avatar-list li:hover {
   background-color: #24db9e;
   color: white;
   border-radius: 10px;
 }
 
-.avatar-list li :active{
+.avatar-list li :active {
   background-color: #4ed8aa;
-  
+
 
 
 }
 
 
-.list-close-icon{
+.list-close-icon {
   position: absolute;
   display: inline;
   top: 55px;
@@ -83,7 +85,8 @@
   color: rgb(61, 60, 60);
   cursor: pointer;
 }
-.fm-serach-bar{
+
+.fm-serach-bar {
   vertical-align: middle;
   width: 220px;
   height: 30px;
@@ -93,14 +96,15 @@
   text-align: center;
   border: none;
   font-size: medium;
- 
+
 }
 
-.fm-serach-bar::placeholder{
-  
+.fm-serach-bar::placeholder {
+
   font-size: 14px;
 }
-.fm-nav-items{
+
+.fm-nav-items {
   margin-right: 40px;
   font-size: 14px;
   vertical-align: middle;
@@ -110,25 +114,30 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
-.fm-nav-items:hover{
+
+.fm-nav-items:hover {
   background-color: rgb(137, 234, 187);
 }
-.nav-logo{
+
+.nav-logo {
   color: white;
   font-size: 30px;
   font-weight: bold;
   vertical-align: middle;
 }
-.fm-nav-right{
+
+.fm-nav-right {
   margin-right: 25px;
   vertical-align: middle;
 }
-.fm-nav-left{
+
+.fm-nav-left {
   margin-left: 150px;
   vertical-align: middle;
 }
+
 .hamburger-icon {
   display: none;
   font-size: 24px;
@@ -138,7 +147,8 @@
   margin-top: 3px;
   margin-left: 5px;
 }
-.logo-image{
+
+.logo-image {
   position: absolute;
   top: -15px;
   left: 10px;
@@ -152,6 +162,7 @@
 .menu-items.active {
   display: block;
 }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -165,6 +176,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .fm-nav-items-overlay {
   margin: 10px;
   color: white;
@@ -189,7 +201,8 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px;
   }
-  .list-close-icon{
+
+  .list-close-icon {
     position: absolute;
     display: inline;
     top: 30px;
@@ -199,92 +212,103 @@
     color: rgb(61, 60, 60);
     cursor: pointer;
   }
-  
+
   .avatar-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
+
   .avatar-list li {
-   
-    
+
+
     text-decoration: none;
     color: black;
     cursor: pointer;
-   margin-top: 50px;
+    margin-top: 50px;
     padding: 6px;
     margin-left: 0px;
     margin-right: 0px;
-  
+
   }
-  .avatar-list li:hover{
+
+  .avatar-list li:hover {
     background-color: #24db9e;
     color: white;
     border-radius: 10px;
   }
-  
-  .avatar-list li :active{
-    background-color: #4ed8aa;
-    
-  
-  
-  }
-  
 
-  .logo-image{
+  .avatar-list li :active {
+    background-color: #4ed8aa;
+
+
+
+  }
+
+
+  .logo-image {
     display: none;
   }
+
   .hamburger-icon {
     display: block;
     position: absolute;
     left: 10px;
-    top: 20px; 
+    top: 20px;
   }
-  .fm-menu-close-icon{
+
+  .fm-menu-close-icon {
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 20px;
     font-size: 24px;
   }
-  .overlay{
-    display:  flex;
+
+  .overlay {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
   }
+
   .fm-nav-bar-container {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
   }
-    .fm-nav-right {
+
+  .fm-nav-right {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 10px; 
-    top: 20px; 
+    right: 10px;
+    top: 20px;
   }
+
   .fm-serach-bar {
-    margin-right: 15px; 
+    margin-right: 15px;
     width: 200px;
   }
+
   .menu-items {
     display: none;
     position: absolute;
     left: 0;
-    top: 60px; 
+    top: 60px;
     background-color: #15ca8e;
     width: 100%;
     text-align: left;
   }
+
   .menu-items.active {
     display: block;
   }
+
   .fm-nav-left span {
     display: none;
   }
 }
+
 @media (max-width: 600px) {
   .avatar-list {
     display: inline-block;
@@ -302,7 +326,8 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px;
   }
-  .list-close-icon{
+
+  .list-close-icon {
     position: absolute;
     display: inline;
     top: 30px;
@@ -312,98 +337,109 @@
     color: rgb(61, 60, 60);
     cursor: pointer;
   }
-  
+
   .avatar-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
+
   .avatar-list li {
-   
-    
+
+
     text-decoration: none;
     color: black;
     cursor: pointer;
-   margin-top: 50px;
+    margin-top: 50px;
     padding: 6px;
     margin-left: 0px;
     margin-right: 0px;
-  
+
   }
-  .avatar-list li:hover{
+
+  .avatar-list li:hover {
     background-color: #24db9e;
     color: white;
     border-radius: 10px;
   }
-  
-  .avatar-list li :active{
-    background-color: #4ed8aa;
-    
-  
-  
-  }
-  
 
-  .logo-image{
+  .avatar-list li :active {
+    background-color: #4ed8aa;
+
+
+
+  }
+
+
+  .logo-image {
     display: none;
   }
+
   .hamburger-icon {
     display: block;
     position: absolute;
-    left: 10px; 
-    top: 20px; 
+    left: 10px;
+    top: 20px;
   }
-  .fm-menu-close-icon{
+
+  .fm-menu-close-icon {
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 20px;
     font-size: 24px;
   }
-    .fm-nav-bar-container {
-    flex-direction: row; 
+
+  .fm-nav-bar-container {
+    flex-direction: row;
     justify-content: space-between;
   }
-  .overlay{
-    display:  flex;
+
+  .overlay {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
   }
+
   .fm-nav-right {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 30px; 
-    top: 20px; 
+    right: 30px;
+    top: 20px;
     margin-right: 5px;
   }
+
   .fm-serach-bar {
-    margin-right: 20px; 
-    width:100%;
+    margin-right: 20px;
+    width: 100%;
   }
+
   .menu-items {
     display: none;
     position: absolute;
     left: 0;
-    top: 60px; 
+    top: 60px;
     background-color: #15ca8e;
     width: 100%;
     text-align: left;
   }
+
   .menu-items.active {
     display: block;
   }
+
   .fm-nav-left span {
     display: none;
   }
-  .react-icons-user-icon{
+
+  .react-icons-user-icon {
     font-size: 28px;
     color: white;
     margin-left: 25px;
     cursor: pointer;
-    vertical-align: middle;  
+    vertical-align: middle;
     position: relative;
   }
 }

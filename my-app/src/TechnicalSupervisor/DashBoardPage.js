@@ -222,7 +222,7 @@ function DashBoardPage() {
         />
       )}
 
-{showNoActionTakenAlert && (
+      {showNoActionTakenAlert && (
         <Alert
           className="report-alert-warning"
           message="Please add action taken on this report"
@@ -234,7 +234,7 @@ function DashBoardPage() {
         />
       )}
 
-     
+
 
       <div className="charts-container">
         <div className="team-progress-chart-container">

@@ -1,115 +1,118 @@
-
-.new-device-form{
-    width: 600px;
-    height: 400px;
-    background-color: rgb(245, 245, 245);
-    margin-top: 80px;
-    border-radius: 20px;
-    padding-top: 40px;
-    -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-    -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-    box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-    color: rgb(81, 81, 81);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.serial-number-section{
-    margin-top: 30px;
-  
+.new-device-form {
+  width: 600px;
+  height: 400px;
+  background-color: rgb(245, 245, 245);
+  margin-top: 80px;
+  border-radius: 20px;
+  padding-top: 40px;
+  -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+  color: rgb(81, 81, 81);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
-.serial-number-section-label{
-    margin-right: 10px;
-    font-size: 22px;
+.serial-number-section {
+  margin-top: 30px;
+
+
 }
 
-.serial-number-section-input{
+.serial-number-section-label {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.serial-number-section-input {
   width: 200px;
   height: 25px;
 }
 
-.device-type-section{
-    margin-top: 50px;
-    margin-bottom: 20px;
+.device-type-section {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
-.device-section-label{
-    font-size: 22px;
-
-
-}
-
-
-.lab-section-label{
-    font-size: 22px;
+.device-section-label {
+  font-size: 22px;
 
 
 }
-.add-device-button{
-    margin-top: 50px;
-    padding: 10px;
-    font-size: 14px;
-    border: white;
-   
-    cursor: pointer;
-    display: block;
-    width: 200px;
-   
-    border-radius: 20px;
-    color: white;
-    background-color: rgb(2, 183, 110);
-}
 
-.add-device-button:hover{
-    background-color: rgb(0, 219, 131);
+
+.lab-section-label {
+  font-size: 22px;
+
 
 }
-.add-device-button:active{
-    background-color: rgb(0, 227, 136);
+
+.add-device-button {
+  margin-top: 50px;
+  padding: 10px;
+  font-size: 14px;
+  border: white;
+
+  cursor: pointer;
+  display: block;
+  width: 200px;
+
+  border-radius: 20px;
+  color: white;
+  background-color: rgb(2, 183, 110);
+}
+
+.add-device-button:hover {
+  background-color: rgb(0, 219, 131);
 
 }
+
+.add-device-button:active {
+  background-color: rgb(0, 227, 136);
+
+}
+
 .success-alert {
-    height: 100px;
-    margin-top: 55px;
-    position: fixed;
-    left: 455px;
-    padding-bottom: 35px;
-    border: 3px solid rgb(0, 208, 0);
-  }
+  height: 100px;
+  margin-top: 55px;
+  position: fixed;
+  left: 455px;
+  padding-bottom: 35px;
+  border: 3px solid rgb(0, 208, 0);
+}
 
-  .warning-alert {
-    height: 100px;
-    margin-top: 55px;
-    position: fixed;
-    left: 455px;
-    padding-bottom: 35px;
-    border: 3px solid rgb(218, 65, 0);
-  }
-  
+.warning-alert {
+  height: 100px;
+  margin-top: 55px;
+  position: fixed;
+  left: 455px;
+  padding-bottom: 35px;
+  border: 3px solid rgb(218, 65, 0);
+}
+
 .capacity-alert {
-    height: 100px;
-    margin-top: 55px;
-    position: fixed;
-    left: 455px;
-    padding-bottom: 35px;
-    border: 3px solid rgb(236, 160, 7);
-  }
+  height: 100px;
+  margin-top: 55px;
+  position: fixed;
+  left: 455px;
+  padding-bottom: 35px;
+  border: 3px solid rgb(236, 160, 7);
+}
 
-  .empty-field-alert {
-    height: 100px;
-    margin-top: 55px;
-    position: fixed;
-    left: 455px;
-    padding-bottom: 35px;
-    border: 3px solid rgb(218, 65, 0);
-  }
+.empty-field-alert {
+  height: 100px;
+  margin-top: 55px;
+  position: fixed;
+  left: 455px;
+  padding-bottom: 35px;
+  border: 3px solid rgb(218, 65, 0);
+}
+
 @media (max-width: 600px) {
-    
-.new-device-form{
+
+  .new-device-form {
     width: auto;
     height: 400px;
     background-color: rgb(245, 245, 245);
@@ -125,9 +128,10 @@
     align-items: center;
     margin-left: 15px;
     margin-right: 15px;
-    
-    
-}
+
+
+  }
+
   .success-alert {
     position: fixed;
     left: 25px;
@@ -145,8 +149,8 @@
     margin-top: 25px;
     border: 3px solid rgb(218, 65, 0);
   }
-  
-.capacity-alert {
+
+  .capacity-alert {
     position: fixed;
     left: 25px;
     right: 25px;
@@ -166,4 +170,3 @@
 
 
 }
-

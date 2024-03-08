@@ -18,7 +18,7 @@ function PreviousReportsPage() {
   const [ShowNoReports, setShowNoReports] = useState(false);
   const navigate = useNavigate();
 
-  
+
   useEffect(() => {
     async function getMyReports() {
       var requestOptions = {
@@ -36,7 +36,7 @@ function PreviousReportsPage() {
           const result = await response.json();
           setmyReports(result);
         } else if (response.status === 400) {
-         setShowNoReports(true) ; 
+          setShowNoReports(true);
 
         } else {
           alert("An error occurred. Please try again.");
@@ -48,68 +48,68 @@ function PreviousReportsPage() {
     }
     getMyReports();
   }, []);
-  
+
   const [search, setSearch] = useState("");
   const filteredReports = myReports.filter((Report) =>
     Report.reportID.toString().toLowerCase().includes(search.toLowerCase())
   );
-  
+
   return (
     <div>
-     
-        <NavigationBar setSearch={setSearch} placeholderValue={"search for a report by ID"}/>
-      
 
-        <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
-        </div>
-           
+      <NavigationBar setSearch={setSearch} placeholderValue={"search for a report by ID"} />
+
+
+      <div onClick={() => { navigate("/Home") }} className="back-icon">
+        <IoIosArrowBack />
+      </div>
+
       {ShowNoReports && (
         <>
-        <div className="no-reports-container">
-        <Result
-          className="no-reports-picture"
-          status="500"
-          title="No Reports found"
-          subTitle="Sorry, You have not report any device yet..."
-          extra={
-            <Button
-              on
-              onClick={() => {
-                navigate("/Home");
-              }}
-              type="primary"
-            >
-              Back Home
-            </Button>
-          }
-        />
+          <div className="no-reports-container">
+            <Result
+              className="no-reports-picture"
+              status="500"
+              title="No Reports found"
+              subTitle="Sorry, You have not report any device yet..."
+              extra={
+                <Button
+                  on
+                  onClick={() => {
+                    navigate("/Home");
+                  }}
+                  type="primary"
+                >
+                  Back Home
+                </Button>
+              }
+            />
 
-        </div>
-        
+          </div>
+
         </>
-        
+
       )}
-        
-      
-      
-        {filteredReports.map((Report) => (
-          <MyReportCard
+
+
+
+      {filteredReports.map((Report) => (
+        <MyReportCard
           key={Report.reportID}
-            reportID={Report.reportID}
-            deviceNumber={Report.deviceNumber}
-            deviceLocatedLab={Report.deviceLocatedLab}
-            problemDescription={Report.problemDescription}
-            actionTaken={Report.actionTaken}
-            reportDate={Report.reportDate}
-            repairDate={Report.repairDate} 
-            reportStatus={Report.reportStatus}
-            problemType={Report.problemType}
-          
-          />
-        ))}
-           <Footer/>
-    
+          reportID={Report.reportID}
+          deviceNumber={Report.deviceNumber}
+          deviceLocatedLab={Report.deviceLocatedLab}
+          problemDescription={Report.problemDescription}
+          actionTaken={Report.actionTaken}
+          reportDate={Report.reportDate}
+          repairDate={Report.repairDate}
+          reportStatus={Report.reportStatus}
+          problemType={Report.problemType}
+
+        />
+      ))}
+      <Footer />
+
     </div>
   );
 }

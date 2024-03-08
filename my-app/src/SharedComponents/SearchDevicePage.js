@@ -18,27 +18,27 @@ function SearchDevicePage() {
   const [ShowEnterSerialNumberAlert, setShowEnterSerialNumberAlert] = useState(false);
   const navigate = useNavigate();
   async function searchDevice() {
-    if(SerialNumber.length >0){
+    if (SerialNumber.length > 0) {
 
       var requestOptions = {
         method: "GET",
         redirect: "follow",
       };
-  
+
       try {
         const response = await fetch(
           `https://kausupportapi.azurewebsites.net/api/TechnicalMember_/SearchForDevice?Serial_Number=${SerialNumber}`,
           requestOptions
         );
-  
+
         if (response.ok) {
           const result = await response.json();
           setdevice(result["device"]);
           setReports(result["reports"]);
-  
+
           setButtonisClicked(false);
         } else if (response.status === 400) {
-        setShowWarningAlert(true);
+          setShowWarningAlert(true);
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -48,19 +48,19 @@ function SearchDevicePage() {
       }
     }
 
-    else{
-      setShowEnterSerialNumberAlert(true) ; 
+    else {
+      setShowEnterSerialNumberAlert(true);
     }
-   
+
   }
 
   return (
     <div>
       <NavigationBar showSearchBar={"No"} />
-      
-      <div onClick={()=>{navigate("/Home")}} className="back-icon">
-        <IoIosArrowBack/>
-        </div>
+
+      <div onClick={() => { navigate("/Home") }} className="back-icon">
+        <IoIosArrowBack />
+      </div>
       {ShowWarningAlert && (
         <Alert
           className="warning-alert"
@@ -73,7 +73,7 @@ function SearchDevicePage() {
         />
       )}
 
-{ShowEnterSerialNumberAlert && (
+      {ShowEnterSerialNumberAlert && (
         <Alert
           className="warning-alert"
           message="Please enter serial number..."
@@ -138,7 +138,7 @@ function SearchDevicePage() {
           </div>
         </>
       )}
-       <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-.counts-card{
-    
+.counts-card {
+
     display: flex;
     flex-direction: column;
     padding-top: 10px;
@@ -7,21 +7,24 @@
     color: rgb(254, 254, 254);
     cursor: pointer;
     font-size: 16px;
--webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
--moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
-transition: all 0.3s ease; /* Smooth transition for all properties */
-border-radius: 20px;
+    -webkit-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    -moz-box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    box-shadow: 4px 16px 24px -10px rgba(126, 126, 136, 1);
+    transition: all 0.3s ease;
+    border-radius: 20px;
 }
-.counts-card:hover{
-    transform: scale(1.1); 
+
+.counts-card:hover {
+    transform: scale(1.1);
 }
-.top-part{
+
+.top-part {
     flex: 1;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
-.bottom-part{
+
+.bottom-part {
     flex: 1;
     color: rgb(90, 90, 90);
     background-color: rgb(247, 246, 246);
@@ -30,41 +33,45 @@ border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-.devices-capacity{
+.devices-capacity {
     display: block;
     margin-top: 10px;
     margin-bottom: 25px;
 }
-.working-devices-count{
+
+.working-devices-count {
     margin-right: 25px;
 }
 
-.react-icons-working{
+.react-icons-working {
     font-size: 28px;
     color: green;
     opacity: 0.6;
 }
 
-.react-icons-reported{
+.react-icons-reported {
     font-size: 28px;
     color: red;
     opacity: 0.6;
 }
-.reported-devices-count{
+
+.reported-devices-count {
     display: inline-block;
 }
-.react-icons{
+
+.react-icons {
     font-size: 70px;
     color: rgb(255, 255, 255);
-}   
+}
+
 @media (max-width: 600px) {
-    .counts-card{
+    .counts-card {
         margin-top: 25px;
     }
 }
 
 @media (max-width: 900px) {
-    .counts-card{
-       margin-top: 25px;
+    .counts-card {
+        margin-top: 25px;
     }
 }

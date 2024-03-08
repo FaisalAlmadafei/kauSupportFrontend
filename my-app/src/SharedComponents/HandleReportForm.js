@@ -4,14 +4,14 @@ import "../SharedCSS/HandleReportForm.css";
 import { Spin } from 'antd';
 
 
-function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setshowReportHandledAlert , setshowNoActionTakenAlert }) {
+function HandleReportForm({ closeForm, reportID, setmyReports, myReports, setshowReportHandledAlert, setshowNoActionTakenAlert }) {
   const [actionTaken, setActionTaken] = useState("");
   const [ShowSpinner, setShowSpinner] = useState(false);
 
 
 
   async function addActionTaken() {
-    setShowSpinner(true) ; 
+    setShowSpinner(true);
     var requestOptions = {
       method: "PUT",
       redirect: "follow",
@@ -23,7 +23,7 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setsh
         requestOptions
       );
       if (response.ok) {
-        setShowSpinner(false) ; 
+        setShowSpinner(false);
         setshowReportHandledAlert(true);
         closeForm();
         const filteredReports = myReports.filter(
@@ -46,7 +46,7 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setsh
     if (actionTaken.length > 0) {
       addActionTaken();
     } else {
-      setshowNoActionTakenAlert(true) ;
+      setshowNoActionTakenAlert(true);
     }
   }
 
@@ -54,13 +54,13 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setsh
     <div>
       {" "}
 
-     
 
-     
+
+
       <div className="report-handle-form">
-     
-      {ShowSpinner &&(
-          <Spin className="handle-spin" size="large"/>
+
+        {ShowSpinner && (
+          <Spin className="handle-spin" size="large" />
         )}
 
         <div onClick={closeForm} className="close-icon">
@@ -70,7 +70,7 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports , setsh
           Please enter a brief description of the action taken:{" "}
         </h4>
         <textarea
-       
+
           required
           onChange={(e) => {
             setActionTaken(e.target.value);

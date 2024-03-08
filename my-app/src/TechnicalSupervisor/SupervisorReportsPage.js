@@ -102,7 +102,7 @@ function SupervisorReportsPage() {
         />
       )}
 
-{showNoActionTakenAlert && (
+      {showNoActionTakenAlert && (
         <Alert
           className="report-alert-warning"
           message="Please add action taken on this report"
@@ -113,43 +113,30 @@ function SupervisorReportsPage() {
           onClose={() => setshowNoActionTakenAlert(false)}
         />
       )}
-
-     
-
+      
       {ShowNoReports && (
         <>
-        <div className="no-reports-container">
-        <Result
-          className="no-reports-picture"
-          status="500"
-          title="No Reports found"
-          subTitle="There are no new reports yet..."
-          extra={
-            <Button
-              on
-              onClick={() => {
-                navigate("/Home");
-              }}
-              type="primary"
-            >
-              Back Home
-            </Button>
-          }
-        />
-        
-
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
+          <div className="no-reports-container">
+            <Result
+              className="no-reports-picture"
+              status="500"
+              title="No Reports found"
+              subTitle="There are no new reports yet..."
+              extra={
+                <Button
+                  on
+                  onClick={() => {
+                    navigate("/Home");
+                  }}
+                  type="primary"
+                >
+                  Back Home
+                </Button>
+              }
+            />
+          </div>
         </>
-       
+
       )}
       <div className="supervisor-reports-container">
         {filteredReports.map((Report) => (

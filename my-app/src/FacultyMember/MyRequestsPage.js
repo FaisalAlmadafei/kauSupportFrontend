@@ -25,7 +25,7 @@ function MyRequest() {
         redirect: "follow",
       };
 
-      try {  
+      try {
         const response = await fetch(
           `https://kausupportapi.azurewebsites.net/api/FacultyMember_/GetMyRequests?User_Id=${userID}`,
           requestOptions
@@ -35,7 +35,7 @@ function MyRequest() {
           const result = await response.json();
           setmyRequests(result);
         } else if (response.status === 400) {
-         setShowNoRequests(true)
+          setShowNoRequests(true)
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -54,46 +54,46 @@ function MyRequest() {
   return (
     <div>
 
-      
-        <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"}/>
-        
+
+      <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"} />
+
       {ShowNoRequests && (
         <>
-        <div className="no-reports-container">
-        <Result
-          className="no-reports-picture"
-          status="500"
-          title="No Requests found"
-          subTitle="Sorry, You have not requestd any service yet..."
-          extra={
-            <Button
-              on
-              onClick={() => {
-                navigate("/Home");
-              }}
-              type="primary"
-            >
-              Back Home
-            </Button>
-          }
-        />
+          <div className="no-reports-container">
+            <Result
+              className="no-reports-picture"
+              status="500"
+              title="No Requests found"
+              subTitle="Sorry, You have not requestd any service yet..."
+              extra={
+                <Button
+                  on
+                  onClick={() => {
+                    navigate("/Home");
+                  }}
+                  type="primary"
+                >
+                  Back Home
+                </Button>
+              }
+            />
 
-        </div>
-        
+          </div>
+
         </>
       )}
-        
-      
+
+
       <div
         onClick={() => {
           navigate("/Home");
         }}
         className="back-icon"
       >
-        <IoIosArrowBack  />
+        <IoIosArrowBack />
       </div>
-     
-      <div className="my-request-container"> 
+
+      <div className="my-request-container">
         {filteredRequests.map((Request) => (
           <MyRequestsCard
             requestID={Request.requestID}
@@ -103,7 +103,7 @@ function MyRequest() {
           />
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

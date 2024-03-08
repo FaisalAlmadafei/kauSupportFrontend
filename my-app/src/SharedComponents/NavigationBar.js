@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ServicesContext } from "../App";
 import logoImage from "../images/kauSupportLogo.png";
-import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa"; // FaBars for the menu icon
+import { FaRegUserCircle, FaBars, FaTimes } from "react-icons/fa";
 import { LoginContext } from "../App";
-function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
+function NavigationBar({ setSearch, placeholderValue, showSearchBar }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { services } = useContext(ServicesContext);
   const [isAvatarClicked, setisAvatarClicked] = useState(false);
@@ -27,17 +27,17 @@ function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  function handelLogout(){
-    localStorage.removeItem('isLoggedIn'); 
-    localStorage.removeItem('userID'); 
-    localStorage.removeItem('userRole'); 
-    setUserID("") ; 
-    setuserPass("") ; 
-    setUserRole("") ;
-    setIsLoggedIn(false) ;
+  function handelLogout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userID');
+    localStorage.removeItem('userRole');
+    setUserID("");
+    setuserPass("");
+    setUserRole("");
+    setIsLoggedIn(false);
 
 
-    navigate("/") ;
+    navigate("/");
 
   }
 
@@ -45,7 +45,7 @@ function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
     <div>
       <div className="fm-nav-bar">
         <div className="fm-nav-bar-container">
-          <div onClick={()=> {navigate("/Home")}}>
+          <div onClick={() => { navigate("/Home") }}>
             <img className="logo-image" src={logoImage} alt="" />
           </div>
 
@@ -64,36 +64,36 @@ function NavigationBar({ setSearch , placeholderValue ,showSearchBar}) {
             </div>
           </div>
           <div className="fm-nav-right">
-            {showSearchBar !== "No" ?(<>
-             <input
-              type="text"
-              className="fm-serach-bar"
-              placeholder={placeholderValue}
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            /></>) : (<></>)}
-         
-            <FaRegUserCircle onClick={()=>{setisAvatarClicked(true)}} className="react-icons-user-icon" /> 
+            {showSearchBar !== "No" ? (<>
+              <input
+                type="text"
+                className="fm-serach-bar"
+                placeholder={placeholderValue}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+              /></>) : (<></>)}
+
+            <FaRegUserCircle onClick={() => { setisAvatarClicked(true) }} className="react-icons-user-icon" />
 
 
-           
+
             {isAvatarClicked && (
-  <>
-    <div onClick={() => { setisAvatarClicked(false) }} className="list-close-icon">x</div>
-    <div className="avatar-list">
-      <ul>
-        
-        <li onClick={handelLogout}>
-         Logout
-        </li>
-       
-      </ul>
-    </div>
-  </>
-)}
+              <>
+                <div onClick={() => { setisAvatarClicked(false) }} className="list-close-icon">x</div>
+                <div className="avatar-list">
+                  <ul>
 
-           
+                    <li onClick={handelLogout}>
+                      Logout
+                    </li>
+
+                  </ul>
+                </div>
+              </>
+            )}
+
+
           </div>
         </div>
       </div>

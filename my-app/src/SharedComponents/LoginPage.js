@@ -8,7 +8,7 @@ import logoImage from "../images/kauSupportLogo.png";
 
 import { Alert, Space } from "antd";
 import { useNavigate } from "react-router-dom";
-// this is the login page
+
 function LoginPage() {
   const [
     userID,
@@ -133,7 +133,7 @@ function LoginPage() {
           </div>
         </div>
 
-        {/* Right part with image covering */}
+       
         <div className="right">
           <h1 className="project-title">KAU Support</h1>
           <img src={loginImage} alt="Covering Image" />
@@ -143,4 +143,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage; // Only one default export per file
+export default LoginPage; 

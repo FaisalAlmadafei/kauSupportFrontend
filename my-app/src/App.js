@@ -33,7 +33,7 @@ export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
 
-// This is my app file
+
 function App() {
   const [userID, setUserID] = useState(localStorage.getItem("userID") || "");
   const [userPass, setuserPass] = useState("");
@@ -52,26 +52,26 @@ function App() {
       "Faculty Member": [
         { serviceName: "Home", pageLink: "/Home" },
         { serviceName: "New Report", icon: GoReport, pageLink: "/LabsPage" },
-    {
-      serviceName: "Previous Reports",
-      icon: FaHistory,
-      pageLink: "/PreviousReportsPage",
-    },
-    {
-      serviceName: "Request a Service",
-      icon: MdMiscellaneousServices,
-      pageLink: "/NewServiceRequest",
-    },
-    {
-      serviceName: "My Requests",
-      icon: MdHistoryEdu,
-      pageLink: "/MyRequestsPage",
-    },
-    {
-      serviceName: "Devices Availability",
-      icon: TbDeviceDesktopCheck,
-      pageLink: "/DevicesAvailabilityPage",
-    },
+        {
+          serviceName: "Previous Reports",
+          icon: FaHistory,
+          pageLink: "/PreviousReportsPage",
+        },
+        {
+          serviceName: "Request a Service",
+          icon: MdMiscellaneousServices,
+          pageLink: "/NewServiceRequest",
+        },
+        {
+          serviceName: "My Requests",
+          icon: MdHistoryEdu,
+          pageLink: "/MyRequestsPage",
+        },
+        {
+          serviceName: "Devices Availability",
+          icon: TbDeviceDesktopCheck,
+          pageLink: "/DevicesAvailabilityPage",
+        },
       ],
       "Technical Member": [
         { serviceName: "Home", pageLink: "/Home" },
@@ -114,7 +114,7 @@ function App() {
           notification: "true",
           pageLink: "/SupervisorReportsPage",
         },
-    
+
         {
           serviceName: "Requests",
           icon: MdHistoryEdu,
@@ -146,7 +146,7 @@ function App() {
           pageLink: "/DevicesAvailabilityPage",
         },
       ],
-      // ...other roles
+
     };
     setServices(servicesByRole[userRole] || []);
     localStorage.setItem("isLoggedIn", isLoggedIn);

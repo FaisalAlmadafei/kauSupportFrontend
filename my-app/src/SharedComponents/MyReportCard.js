@@ -67,7 +67,7 @@ function MyReportCard({
       }
     } catch (error) {
       console.log("error", error);
-      //  alert("An error occurred. Please check your connection and try again.");
+
     }
   }
   function getDate(DateAndTime) {
@@ -105,8 +105,8 @@ function MyReportCard({
         if (response.ok) {
           setShowSpinner(false);
           setshowAssignedAlert(true);
-        
-         
+
+
           if (serviceType !== "Reports monitoring") {
             const filteredReports = myReports.filter(
               (report) => report.reportID !== reportID
@@ -204,7 +204,7 @@ function MyReportCard({
             </span>
           </div>
           {serviceType == "Reports monitoring" ||
-          serviceType == "Search device" ? (
+            serviceType == "Search device" ? (
             <>
               <div className="assigned-to-info">
                 <span>
@@ -226,7 +226,7 @@ function MyReportCard({
             <span>Repair Date: {repair_Date}</span>
           </div>
           {serviceType == "Supervisor reports" ||
-          serviceType == "Reports monitoring" ? (
+            serviceType == "Reports monitoring" ? (
             <>
               <div className="assign-part">
                 <button className="assign-button" onClick={assignReport}>
@@ -253,7 +253,7 @@ function MyReportCard({
           )}
 
           {serviceType == "Supervisor reports" ||
-          serviceType == "Technical member reports" ? (
+            serviceType == "Technical member reports" ? (
             <>
               <button
                 onClick={() => {
@@ -263,15 +263,15 @@ function MyReportCard({
               >
                 Handle Report
               </button>
-<br />
-                <button
-                 onClick={() => {
+              <br />
+              <button
+                onClick={() => {
                   setSuggestedSolutionButtonisClicked(true);
-                 }}
-                 className="suggested-button"
-                 >
-                  Suggested Solution
-                </button>
+                }}
+                className="suggested-button"
+              >
+                Suggested Solution
+              </button>
               {HandleButtonisClicked && (
                 <HandleReportForm
                   closeForm={closeForm}
@@ -282,7 +282,7 @@ function MyReportCard({
                   setshowNoActionTakenAlert={setshowNoActionTakenAlert}
                 />
               )}
-               {SuggestedSolutionButtonisClicked && (
+              {SuggestedSolutionButtonisClicked && (
                 <SuggestedSolution
                   closeForm={closeForm}
                   problemDescription={problemDescription}

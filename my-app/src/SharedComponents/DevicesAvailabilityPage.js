@@ -35,7 +35,7 @@ function DevicesAvailabilityPage() {
           const result = await response.json();
           console.log(result);
           setLabs(result);
-          setShowSpinner(false) ;
+          setShowSpinner(false);
         } else if (response.status === 400) {
         } else {
           alert("An error occurred. Please try again.");
@@ -68,7 +68,7 @@ function DevicesAvailabilityPage() {
         <IoIosArrowBack />
       </div>
       {ShowSpinner && <Spin className="spin" size="large" />}
-       
+
 
 
 

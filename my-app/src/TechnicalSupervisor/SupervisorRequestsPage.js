@@ -60,7 +60,7 @@ function SupervisorRequestsPage() {
   );
   return (
     <div>
-      <NavigationBar setSearch={setSearch} placeholderValue={"Search a request by ID"}/>
+      <NavigationBar setSearch={setSearch} placeholderValue={"Search a request by ID"} />
       <div
         onClick={() => {
           navigate("/Home");
@@ -104,7 +104,7 @@ function SupervisorRequestsPage() {
         />
       )}
 
-{showNoResponseAlert && (
+      {showNoResponseAlert && (
         <Alert
           className="report-alert-warning"
           message="Please add response on this request"
@@ -119,7 +119,7 @@ function SupervisorRequestsPage() {
 
       {ShowNoRequests && (
         <Result
-          
+
           className="no-reports"
           status="500"
           title="No Requests Found"
@@ -136,28 +136,26 @@ function SupervisorRequestsPage() {
             </Button>
           }
         />
-      
-
       )}
 
-<div className="my-request-container"> 
-      {filteredRequests.map((Request) => (
-        <MyRequestsCard
-          key={Request.requestID}
-          {...Request}
-          serviceType={ userRole.toLowerCase() == "supervisor"  ? "Supervisor Requests" : "Technical member requests"}
-          setmyRequests={setmyRequests}
-          myRequests={myRequests}
-          setshowAssignedAlert={setshowAssignedAlert}
-          setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
-          setshowRequestHandledAlert={setshowRequestHandledAlert}
-          setshowNoResponseAlert={setshowNoResponseAlert}       
-        />
-      ))}
+      <div className="my-request-container">
+        {filteredRequests.map((Request) => (
+          <MyRequestsCard
+            key={Request.requestID}
+            {...Request}
+            serviceType={userRole.toLowerCase() == "supervisor" ? "Supervisor Requests" : "Technical member requests"}
+            setmyRequests={setmyRequests}
+            myRequests={myRequests}
+            setshowAssignedAlert={setshowAssignedAlert}
+            setshowNoTeamMemberAlert={setshowNoTeamMemberAlert}
+            setshowRequestHandledAlert={setshowRequestHandledAlert}
+            setshowNoResponseAlert={setshowNoResponseAlert}
+          />
+        ))}
       </div>
 
-      <Footer/>
-     
+      <Footer />
+
     </div>
   );
 }

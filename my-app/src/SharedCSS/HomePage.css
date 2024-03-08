@@ -1,5 +1,5 @@
 @media (min-width: 769px) {
- 
+
   .navBar {
     position: fixed;
     top: 0;
@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .search-bar {
     margin-left: 1100px;
     top: 20px;
@@ -24,25 +25,27 @@
     padding-left: 10px;
     border: none;
   }
-  .search-bar::placeholder{
+
+  .search-bar::placeholder {
     text-align: center;
-  } 
-  
-  .card-Container{
-      display: grid;
-      grid-template-columns: repeat(3, 300px); /* 3 columns */
-      margin-top: 30px;
-      margin-bottom: 100px;
-      align-items: center;
-      justify-content: space-evenly;
-      width: 1400px;
-      height: 500px;
-      padding: 25px;
-      margin-left: 50px;
-      margin-right: 50px;
-      gap: 50px;   
+  }
+
+  .card-Container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    margin-top: 30px;
+    margin-bottom: 100px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 1400px;
+    height: 500px;
+    padding: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    gap: 50px;
   }
 }
+
 @media (max-width: 768px) {
   .navBar {
     position: fixed;
@@ -57,33 +60,37 @@
     border-bottom-right-radius: 2%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
   }
-  .search-bar{
+
+  .search-bar {
     position: absolute;
     top: 30px;
     width: 200px;
     height: 30px;
     border-radius: 23px;
   }
-  .search-bar::placeholder{
+
+  .search-bar::placeholder {
     text-align: center;
   }
-  .card-Container{
-      display: grid;
-      grid-template-columns: repeat(2, 300px); /* 3 columns */
-      margin-top: 90px;
-      margin-bottom: 250px;
-      align-items: center;
-      justify-content: space-evenly;
-      width: auto;
-      height: auto;
-      padding: 25px;
-      margin-left: 50px;
-      margin-right: 50px;
-      gap: 30px;   
+
+  .card-Container {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    margin-top: 90px;
+    margin-bottom: 250px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+    height: auto;
+    padding: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    gap: 30px;
   }
 }
+
 @media (max-width: 600px) {
   .navBar {
     position: fixed;
@@ -100,23 +107,26 @@
     justify-content: center;
     align-items: center;
   }
-.search-bar{
-  position: absolute;
-  top: 30px;
-  width: 100px;
-  height: 25px;
-  border-radius: 23px;
+
+  .search-bar {
+    position: absolute;
+    top: 30px;
+    width: 100px;
+    height: 25px;
+    border-radius: 23px;
+  }
+
+  .search-bar::placeholder {
+    text-align: center;
+  }
+
+  .card-Container {
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+    margin-top: 80px;
+  }
 }
 
-.search-bar::placeholder{
-  text-align: center;
-}
-  .card-Container{
-    display: grid;
-    grid-template-columns: repeat(1, 300px); /* 3 columns */
-    margin-top: 80px;
-   }
-}
 body {
   background-color: #f7f7f789;
 }
