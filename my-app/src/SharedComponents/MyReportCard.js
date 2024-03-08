@@ -263,7 +263,7 @@ function MyReportCard({
               >
                 Handle Report
               </button>
-
+<br />
                 <button
                  onClick={() => {
                   setSuggestedSolutionButtonisClicked(true);

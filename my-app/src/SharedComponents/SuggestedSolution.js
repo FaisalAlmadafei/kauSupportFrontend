@@ -4,7 +4,7 @@ function SuggestedSolution({
   closeForm,
   problemDescription,
 }) {
-  const [suggestionsArray, setsuggestionsArray] = useState("");
+  const [suggestionsArray, setsuggestionsArray] = useState([]);
   
 useEffect(() => {
   async function getSuggestedSolution() {
@@ -24,7 +24,7 @@ useEffect(() => {
         console.log(result);
 
         // Split the result string into an array of suggestions using the line breaks
-         setsuggestionsArray(result.split("/n").map((suggestion) => suggestion.trim()));
+         setsuggestionsArray(result.split(".").map((suggestion) => suggestion.trim()));
 
         // Set the suggestions array in the state
         
