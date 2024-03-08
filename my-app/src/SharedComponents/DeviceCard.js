@@ -17,8 +17,10 @@ function DeviceCard({
   arrivalDate,
   nextPeriodicDate,
   deviceLocatedLab,
-  setButtonisClicked,
+  setShowData,
   serviceType,
+  setSerialNumber,
+  setShowChart
 }) {
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
 
@@ -96,7 +98,7 @@ function DeviceCard({
       ) : serviceType === "searchDevice" ? (
         <>
           <div className="technical-role-device-card">
-            <div onClick={() => setButtonisClicked(true)} className="continer-close-icon">x</div>
+            <div onClick={() => {setShowData(false) ; setSerialNumber("") ; setShowChart(false)}} className="continer-close-icon">x</div>
             <Icon className="react-icons-devicess" />
             <br />
             <div className="flex-row">

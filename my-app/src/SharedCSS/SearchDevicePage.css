@@ -74,6 +74,21 @@
     border: 3px solid rgb(0, 208, 0);
 }
 
+.device-reports-chart-container {
+   
+    width: 550px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+  }
+  
+  .bar-chart {
+    display: inline-block;
+  
+    width: 100%;
+  }
+
 @media (max-width: 600px) {
     .result-container {
         margin-top: 150px;
@@ -116,4 +131,22 @@
         border: 3px solid rgb(0, 208, 0);
     }
 
+    .device-reports-chart-container{
+        position: relative;
+        width: 300px;
+    
+        display: inline-block;
+        flex: 1;
+    
+      }
+    
+      .bar-chart {
+        position: absolute;
+        display: inline-block;
+    
+        width: 100%;
+      }
+
+
+   
 }

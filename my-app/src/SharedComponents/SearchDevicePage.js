@@ -8,18 +8,24 @@ import { Alert } from "antd";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import Footer from "./Footer";
+import BarChart from "../TechnicalSupervisor/BarChart";
 
 function SearchDevicePage() {
   const [SerialNumber, setSerialNumber] = useState("");
   const [device, setdevice] = useState("");
   const [Reports, setReports] = useState([]);
-  const [ButtonisClicked, setButtonisClicked] = useState(true);
+  const [ShowData, setShowData] = useState(false);
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
-  const [ShowEnterSerialNumberAlert, setShowEnterSerialNumberAlert] = useState(false);
+  const [ShowEnterSerialNumberAlert, setShowEnterSerialNumberAlert] =
+    useState(false);
+  const [StatisticsChartData, setStatisticsChartData] = useState(null);
+  const [reportsTotalCount, setreportsTotalCount] = useState("");
+  const [ShowChart, setShowChart] = useState(false);
+
   const navigate = useNavigate();
+
   async function searchDevice() {
     if (SerialNumber.length > 0) {
-
       var requestOptions = {
         method: "GET",
         redirect: "follow",
@@ -36,7 +42,7 @@ function SearchDevicePage() {
           setdevice(result["device"]);
           setReports(result["reports"]);
 
-          setButtonisClicked(false);
+          setShowData(true);
         } else if (response.status === 400) {
           setShowWarningAlert(true);
         } else {
@@ -46,19 +52,61 @@ function SearchDevicePage() {
         console.log("error", error);
         alert("An error occurred. Please check your connection and try again.");
       }
-    }
-
-    else {
+      getDeviceReportsStatistics();
+    } else {
       setShowEnterSerialNumberAlert(true);
     }
+  }
 
+  async function getDeviceReportsStatistics() {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    try {
+      const response = await fetch(
+        `https://kausupportapi.azurewebsites.net/api/TechnicalSupervisor_/GetDeviceReportStatistics?Serial_Number=${SerialNumber}`,
+        requestOptions
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        setreportsTotalCount(result.reportsTotalCount);
+        setStatisticsChartData({
+          labels: result.details.map((type) => type.problemType),
+
+          datasets: [
+            {
+              label: "Number Of Reports",
+
+              data: result.details.map((type) => type.count),
+              backgroundColor: ["rgb(166, 152, 218)"],
+            },
+          ],
+        });
+        setShowChart(true);
+      } else if (response.status === 400) {
+        setShowChart(false) ;
+      } else {
+        alert("An error occurred. Please try again.");
+      }
+    } catch (error) {
+      console.log("error", error);
+      alert("An error occurred. Please check your connection and try again.");
+    }
   }
 
   return (
     <div>
       <NavigationBar showSearchBar={"No"} />
 
-      <div onClick={() => { navigate("/Home") }} className="back-icon">
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
         <IoIosArrowBack />
       </div>
       {ShowWarningAlert && (
@@ -85,7 +133,7 @@ function SearchDevicePage() {
         />
       )}
 
-      {ButtonisClicked == false ? (
+      {ShowData == true ? (
         <>
           <div className="result-container">
             <DeviceCard
@@ -96,9 +144,23 @@ function SearchDevicePage() {
               deviceLocatedLab={device.deviceLocatedLab}
               arrivalDate={device.arrivalDate}
               nextPeriodicDate={device.nextPeriodicDate}
-              setButtonisClicked={setButtonisClicked}
+              setShowData={setShowData}
               serviceType={"searchDevice"}
+              setSerialNumber={setSerialNumber}
+              setShowChart={setShowChart}
             />
+
+            {ShowChart && (
+              <div className="device-reports-chart-container">
+                {" "}
+                <BarChart
+                  className="bar-chart"
+                  ChartData={StatisticsChartData}
+                  reportsTotalCount={reportsTotalCount}
+                  showTotalNumber={"true"}
+                />
+              </div>
+            )}
             {Reports.map((Report) => (
               <MyReportCard
                 reportID={Report.reportID}

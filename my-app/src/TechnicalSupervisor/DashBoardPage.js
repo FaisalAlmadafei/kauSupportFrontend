@@ -89,7 +89,7 @@ function DashBoardPage() {
 
           datasets: [
             {
-              label: "Total Number Of Reports",
+              label: "Number Of Reports",
 
               data: result.details.map((type) => type.count),
               backgroundColor: ["rgb(166, 152, 218)"],
