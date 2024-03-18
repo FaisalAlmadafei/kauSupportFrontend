@@ -303,16 +303,16 @@ function MyReportCard({
             items={[
               {
                 title: "Pending",
-                description: <p>Report is pending, soon will be processed</p>,
+                description: <p className="steps-description"> Report is pending, soon will be processed</p>,
               },
               {
                 title: "In Progress",
-                description: <p>A Technical member is handling the report</p>,
+                description: <p  className="steps-description">A Technical member is handling the report</p>,
               },
               {
                 title: "Resolved",
                 description: (
-                  <p>Report is resolved, device is currently working</p>
+                  <p  className="steps-description">Report is resolved, device is currently working</p>
                 ),
               },
             ]}

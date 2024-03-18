@@ -463,6 +463,58 @@
     background-color: rgb(93, 184, 237);
 
   }
+  .custom-steps .ant-steps-item-icon {
+    background-color: rgb(145,
+        138,
+        254) !important;
+    border-color: white !important;
+    color: white;
+  }
+
+  .custom-steps .ant-steps-item-title,
+  .custom-steps .ant-steps-item-description {
+    color: rgb(0, 0, 0) !important;
+  }
+
+  .custom-steps .ant-steps-item-icon .ant-steps-icon {
+    color: rgb(0,
+        0,
+        0) !important;
+  }
+
+  .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+    background-color: rgb(145,
+        138,
+        254) !important;
+    border-color: rgb(255, 255, 255) !important;
+    border: solid 3px;
+  }
+
+  .custom-steps .ant-steps-item-process .ant-steps-item-icon {
+    background-color: rgb(145,
+        138,
+        254) !important;
+    border-color: rgb(255, 255, 255) !important;
+    border: solid 3px;
+  }
+
+  .custom-steps .ant-steps-item-wait .ant-steps-item-icon {
+    border-color: rgb(255, 255, 255) !important;
+    border: solid 3px;
+  }
+
+  .custom-steps .ant-steps-item-icon .ant-steps-icon {
+    color: white !important;
+  }
+
+  .custom-steps .ant-steps-item-tail::after {
+    background-color: rgb(0, 0, 0) !important;
+  }
+  .steps-description{
+    color: rgb(38, 38, 38);
+    font-size: 16px;
+  }
+
 
 
 }

@@ -28,7 +28,7 @@ function Footer() {
         </div>
         <div className="footer-middle-part">
           <img src={logoImage} alt="" className="logo-image-footer" />
-          <p>&copy; All Rights reserved King Abdulaziz University 2024  </p>
+          <p className="rights">&copy; All Rights reserved King Abdulaziz University 2024  </p>
 
 
 
