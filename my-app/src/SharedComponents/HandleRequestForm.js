@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Alert } from "antd";
 import "../SharedCSS/HandleRequestForm.css";
-import { Spin } from 'antd';
-
+import { Spin } from "antd";
 
 function HandleRequestForm({
   closeForm,
@@ -11,12 +10,11 @@ function HandleRequestForm({
   setmyRequests,
   myRequests,
   setshowRequestHandledAlert,
-  setshowNoResponseAlert
+  setshowNoResponseAlert,
 }) {
   const [Comment, setComment] = useState("");
   const [ShowSpinner, setShowSpinner] = useState(false);
   const [RequestStatus, setRequestStatus] = useState("");
-
 
   async function handleRequest() {
     setShowSpinner(true);
@@ -41,8 +39,6 @@ function HandleRequestForm({
         setmyRequests(filteredRequests);
         setRequestStatus("");
         setComment("");
-
-
       } else if (response.status === 400) {
         alert("Request Could not be handled ");
       } else {
@@ -55,54 +51,45 @@ function HandleRequestForm({
     }
   }
 
-
   function checkEmptyFields() {
     if (RequestStatus !== "" && Comment.length > 0) {
       handleRequest();
-
     } else {
       setshowNoResponseAlert(true);
-
     }
-
-
   }
 
   return (
     <div>
       {" "}
-
       <div className="request-handle-form">
-        {ShowSpinner && (
-          <Spin className="handle-request-spin" size="large" />
-        )}
+        {ShowSpinner && <Spin className="handle-request-spin" size="large" />}
 
         <div onClick={closeForm} className="close-icon">
           x
         </div>
         <h3>Request Status</h3>
         <div className="status-choice-part">
-          <label className="status-lable" >
-            Approved
-          </label>
+          <label className="status-lable">Approved</label>
           <input
             name="requestStatus"
             className="status-input"
             value="Approved"
             type="radio"
-            onChange={(e) => { setRequestStatus(e.target.value) }}
+            onChange={(e) => {
+              setRequestStatus(e.target.value);
+            }}
           />
-          <label className="status-lable" >
-            Rejected
-          </label>
+          <label className="status-lable">Rejected</label>
           <input
             name="requestStatus"
             className="status-input"
             value="Rejected"
             type="radio"
-            onChange={(e) => { setRequestStatus(e.target.value) }}
+            onChange={(e) => {
+              setRequestStatus(e.target.value);
+            }}
           />
-
         </div>
 
         <h4 className="handle-request-lable">

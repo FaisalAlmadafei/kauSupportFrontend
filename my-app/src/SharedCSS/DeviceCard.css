@@ -276,6 +276,15 @@ body {
     font-weight: bold;
     margin-top: 20px;
   }
+  .delete-device-card-inputs {
+    border: none;
+    background-color: #025c3e;
+    border-radius: 20px;
+    width: 120px;
+    height: 25px;
+    color: white;
+    text-align: center;
+  }
 }
 
 @media (max-width: 900px) {

@@ -28,24 +28,26 @@ function NavigationBar({ setSearch, placeholderValue, showSearchBar }) {
   };
 
   function handelLogout() {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('userID');
-    localStorage.removeItem('userRole');
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userID");
+    localStorage.removeItem("userRole");
     setUserID("");
     setuserPass("");
     setUserRole("");
     setIsLoggedIn(false);
 
-
     navigate("/");
-
   }
 
   return (
     <div>
       <div className="fm-nav-bar">
         <div className="fm-nav-bar-container">
-          <div onClick={() => { navigate("/Home") }}>
+          <div
+            onClick={() => {
+              navigate("/Home");
+            }}
+          >
             <img className="logo-image" src={logoImage} alt="" />
           </div>
 
@@ -64,36 +66,45 @@ function NavigationBar({ setSearch, placeholderValue, showSearchBar }) {
             </div>
           </div>
           <div className="fm-nav-right">
-            {showSearchBar !== "No" ? (<>
-              <input
-                type="text"
-                className="fm-serach-bar"
-                placeholder={placeholderValue}
-                onChange={(e) => {
-                  setSearch(e.target.value);
-                }}
-              /></>) : (<></>)}
+            {showSearchBar !== "No" ? (
+              <>
+                <input
+                  type="text"
+                  className="fm-serach-bar"
+                  placeholder={placeholderValue}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
+                />
+              </>
+            ) : (
+              <></>
+            )}
 
-            <FaRegUserCircle onClick={() => { setisAvatarClicked(true) }} className="react-icons-user-icon" />
-
-
+            <FaRegUserCircle
+              onClick={() => {
+                setisAvatarClicked(true);
+              }}
+              className="react-icons-user-icon"
+            />
 
             {isAvatarClicked && (
               <>
-                <div onClick={() => { setisAvatarClicked(false) }} className="list-close-icon">x</div>
+                <div
+                  onClick={() => {
+                    setisAvatarClicked(false);
+                  }}
+                  className="list-close-icon"
+                >
+                  x
+                </div>
                 <div className="avatar-list">
                   <ul>
-
-                    <li onClick={handelLogout}>
-                      Logout
-                    </li>
-
+                    <li onClick={handelLogout}>Logout</li>
                   </ul>
                 </div>
               </>
             )}
-
-
           </div>
         </div>
       </div>

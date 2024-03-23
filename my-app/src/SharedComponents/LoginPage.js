@@ -25,12 +25,9 @@ function LoginPage() {
   const [ShowEmptyFieldAlert, setShowEmptyFieldAlert] = useState(false);
 
   const navigate = useNavigate();
-  
-  
 
   async function handleLogin() {
-    
-    console.log("inside handel login") ;
+    console.log("inside handel login");
     var requestOptions = {
       method: "POST",
       redirect: "follow",
@@ -46,8 +43,7 @@ function LoginPage() {
         const result = await response.json();
         setUserRole(result.role);
         setIsLoggedIn(true);
-        navigate('/Home');
-
+        navigate("/Home");
       } else if (response.status === 400) {
         setShowAlert(true);
       } else {
@@ -59,12 +55,10 @@ function LoginPage() {
     }
   }
 
-  function checkUserData(){
-    if(userPass !== "" && userID !==""){
+  function checkUserData() {
+    if (userPass !== "" && userID !== "") {
       handleLogin();
-    }
-
-    else{
+    } else {
       setShowEmptyFieldAlert(true);
     }
   }
@@ -82,9 +76,9 @@ function LoginPage() {
           onClose={() => setShowAlert(false)}
         />
       )}
-        {ShowEmptyFieldAlert && (
+      {ShowEmptyFieldAlert && (
         <Alert
-        className="alert"
+          className="alert"
           message="Please add your userID and password"
           type="warning"
           showIcon
@@ -133,7 +127,6 @@ function LoginPage() {
           </div>
         </div>
 
-       
         <div className="right">
           <h1 className="project-title">KAU Support</h1>
           <img src={loginImage} alt="Covering Image" />
@@ -143,4 +136,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage; 
+export default LoginPage;

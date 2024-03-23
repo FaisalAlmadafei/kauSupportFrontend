@@ -43,8 +43,7 @@ function DeleteDevicePage() {
   }
 
   const filteredDevices = Devices.filter((device) =>
-    device.serialNumber.toLowerCase().includes(search.toLowerCase())
-  );
+    device.serialNumber.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div>
@@ -61,7 +60,6 @@ function DeleteDevicePage() {
         <IoIosArrowBack />
       </div>
       <div className="delete-devices-cards-container">
-
         {filteredDevices.map((device) => (
           <>
             <DeviceCard
@@ -74,7 +72,6 @@ function DeleteDevicePage() {
               nextPeriodicDate={device.nextPeriodicDate}
               serviceType={"edit-device"}
             />
-
           </>
         ))}
       </div>

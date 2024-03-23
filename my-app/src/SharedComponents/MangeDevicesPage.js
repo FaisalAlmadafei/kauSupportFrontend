@@ -9,7 +9,6 @@ import "../SharedCSS/MangeDevicesPage.css";
 import "../SharedCSS/Service.css";
 import Footer from "./Footer";
 
-
 function MangeDevicesPage() {
   const navigate = useNavigate();
   let services = [
@@ -25,11 +24,17 @@ function MangeDevicesPage() {
       pageLink: "/DeleteDevicePage",
     },
   ];
+  
   return (
     <>
       <FmNavigationBar showSearchBar={"No"} />
 
-      <div onClick={() => { navigate("/Home") }} className="back-icon">
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
         <IoIosArrowBack />
       </div>
       <div className="cards-Container">

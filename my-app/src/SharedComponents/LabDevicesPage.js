@@ -47,16 +47,12 @@ function LabDevicesPage() {
             );
 
             if (response.status === 400) {
-
               alert("Device is reported ... try again later");
             } else if (response.ok) {
-
-
               setShowSuccessAlert(true);
               setProblemType("");
               getLabDevices();
             } else {
-
               alert("An error occurred. Please try again.");
             }
           } catch (error) {
@@ -120,18 +116,17 @@ function LabDevicesPage() {
 
   return (
     <div>
-      <NavigationBar setSearch={setSearch} placeholderValue={"search for a device"} />
+      <NavigationBar
+        setSearch={setSearch}
+        placeholderValue={"search for a device"}
+      />
       <div
         onClick={() => {
           if (userRole.toLowerCase() == "faculty member") {
             navigate("/LabsPage");
-
-          }
-
-          else {
+          } else {
             navigate("/DevicesAvailabilityPage");
           }
-
         }}
         className="back-icon"
       >
@@ -285,8 +280,16 @@ function LabDevicesPage() {
               }
             }}
           >
-            <DeviceCard deviceNumber={Device.deviceNumber} type={Device.type} deviceStatus={Device.deviceStatus} serialNumber={Device.serialNumber} deviceLocatedLab={Device.deviceLocatedLab} arrivalDate={Device.arrivalDate} nextPeriodicDate={Device.nextPeriodicDate} serviceType={"newReport"} />
-
+            <DeviceCard
+              deviceNumber={Device.deviceNumber}
+              type={Device.type}
+              deviceStatus={Device.deviceStatus}
+              serialNumber={Device.serialNumber}
+              deviceLocatedLab={Device.deviceLocatedLab}
+              arrivalDate={Device.arrivalDate}
+              nextPeriodicDate={Device.nextPeriodicDate}
+              serviceType={"newReport"}
+            />
           </div>
         ))}
       </div>

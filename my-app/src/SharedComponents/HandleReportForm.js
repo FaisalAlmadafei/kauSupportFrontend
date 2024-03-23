@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Alert } from "antd";
 import "../SharedCSS/HandleReportForm.css";
-import { Spin } from 'antd';
+import { Spin } from "antd";
 
-
-function HandleReportForm({ closeForm, reportID, setmyReports, myReports, setshowReportHandledAlert, setshowNoActionTakenAlert }) {
+function HandleReportForm({
+  closeForm,
+  reportID,
+  setmyReports,
+  myReports,
+  setshowReportHandledAlert,
+  setshowNoActionTakenAlert,
+}) {
   const [actionTaken, setActionTaken] = useState("");
   const [ShowSpinner, setShowSpinner] = useState(false);
-
-
 
   async function addActionTaken() {
     setShowSpinner(true);
@@ -30,7 +34,6 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports, setsho
           (report) => report.reportID !== reportID
         );
         setmyReports(filteredReports);
-
       } else if (response.status === 400) {
         alert("Action Taked Could not be updated!");
       } else {
@@ -42,6 +45,7 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports, setsho
       alert("An error occurred. Please check your connection and try again.");
     }
   }
+  
   function checkEmptyFields() {
     if (actionTaken.length > 0) {
       addActionTaken();
@@ -53,15 +57,8 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports, setsho
   return (
     <div>
       {" "}
-
-
-
-
       <div className="report-handle-form">
-
-        {ShowSpinner && (
-          <Spin className="handle-spin" size="large" />
-        )}
+        {ShowSpinner && <Spin className="handle-spin" size="large" />}
 
         <div onClick={closeForm} className="close-icon">
           x
@@ -70,7 +67,6 @@ function HandleReportForm({ closeForm, reportID, setmyReports, myReports, setsho
           Please enter a brief description of the action taken:{" "}
         </h4>
         <textarea
-
           required
           onChange={(e) => {
             setActionTaken(e.target.value);

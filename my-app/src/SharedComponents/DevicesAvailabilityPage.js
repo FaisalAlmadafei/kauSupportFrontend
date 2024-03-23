@@ -11,9 +11,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import Footer from "./Footer";
 import "../SharedCSS/HomePage.css";
 function DevicesAvailabilityPage() {
+  
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
   const [ShowSpinner, setShowSpinner] = useState(false);
-
   const [Labs, setLabs] = useState([]);
   const navigate = useNavigate();
 
@@ -68,9 +68,6 @@ function DevicesAvailabilityPage() {
         <IoIosArrowBack />
       </div>
       {ShowSpinner && <Spin className="spin" size="large" />}
-
-
-
 
       <div className="card-Container">
         {filteredLabs.map((Lab) => (

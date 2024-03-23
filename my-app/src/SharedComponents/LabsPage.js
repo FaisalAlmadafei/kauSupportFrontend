@@ -11,7 +11,6 @@ import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
 import Footer from "./Footer";
 
-
 function LabsPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
   const [Labs, setLabs] = useState([]);
@@ -47,16 +46,23 @@ function LabsPage() {
   }, []);
 
   const [search, setSearch] = useState("");
-  const filteredLabs = Labs.filter(Lab => Lab.labNumber.toLowerCase().includes(search.toLowerCase()));
-
+  const filteredLabs = Labs.filter((Lab) =>
+    Lab.labNumber.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div>
-      <NavigationBar setSearch={setSearch} placeholderValue={"Search for a lab"} />
-      <div onClick={() => { navigate("/Home") }} className="back-icon">
+      <NavigationBar
+        setSearch={setSearch}
+        placeholderValue={"Search for a lab"}
+      />
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
         <IoIosArrowBack />
-
-
       </div>
       <div className="Labs-cards-container">
         <div className="card-Container">
@@ -64,16 +70,14 @@ function LabsPage() {
             <div
               key={Lab.labNumber}
               onClick={() => {
-                setLabNumber(Lab.labNumber)
+                setLabNumber(Lab.labNumber);
                 navigate("/LabDevicesPage");
               }}
             >
               <LabCard labNumber={Lab.labNumber} Icon={BsDoorOpen} />
             </div>
           ))}
-
         </div>
-
       </div>
       <Footer />
     </div>

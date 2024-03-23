@@ -17,8 +17,8 @@ function AddDevicePage() {
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   const [ShowEmptyFieldAlert, setShowEmptyFieldAlert] = useState(false);
   const [ShowNoCapacityAlert, setShowNoCapacityAlert] = useState(false);
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const default_Lab = "1";
 
   useEffect(() => {
@@ -42,8 +42,7 @@ function AddDevicePage() {
         setLabs(result);
       } else if (response.status === 400) {
         alert("An error occurred. Please try again.");
-      }
-      else {
+      } else {
         alert("An error occurred. Please try again.");
       }
     } catch (error) {
@@ -66,14 +65,9 @@ function AddDevicePage() {
 
       if (response.ok) {
         setShowSuccessAlert(true);
-
-
-
       } else if (response.status === 400) {
         setShowWarningAlert(true);
-      }
-
-      else if (response.status === 409) {
+      } else if (response.status === 409) {
         setShowNoCapacityAlert(true);
       } else {
         alert("An error occurred. Please try again.");
@@ -83,18 +77,28 @@ function AddDevicePage() {
       alert("An error occurred. Please check your connection and try again.");
     }
   }
+
   function checkEmptyFields() {
-    if ((LabNumber.length > 0) && (DeviceType.length > 0) && (SerialNumber.length > 0)) {
+    if (
+      LabNumber.length > 0 &&
+      DeviceType.length > 0 &&
+      SerialNumber.length > 0
+    ) {
       addDevice();
     } else {
       setShowEmptyFieldAlert(true);
     }
   }
+
   return (
     <div>
       <NavigationBar showSearchBar={"No"} />
-
-      <div onClick={() => { navigate("/MangeDevicesPage") }} className="back-icon">
+      <div
+        onClick={() => {
+          navigate("/MangeDevicesPage");
+        }}
+        className="back-icon"
+      >
         <IoIosArrowBack />
       </div>
       {ShowSuccessAlert && (
@@ -131,14 +135,23 @@ function AddDevicePage() {
       )}
       <div className="new-device-form">
         <div className="serial-number-section">
-          <label className="serial-number-section-label" >Enter Device Serial Number:</label>
-          <input onChange={(e) => { setSerialNumber(e.target.value) }} className="serial-number-section-input" type="text" />
+          <label className="serial-number-section-label">
+            Enter Device Serial Number:
+          </label>
+          <input
+            onChange={(e) => {
+              setSerialNumber(e.target.value);
+            }}
+            className="serial-number-section-input"
+            type="text"
+          />
         </div>
         <div className="device-type-section">
           <label className="device-section-label">Chose Device Type:</label>
           <Select
-
-            onChange={(value) => { setDeviceType(value) }}
+            onChange={(value) => {
+              setDeviceType(value);
+            }}
             style={{
               width: 140,
               height: 25,
@@ -153,8 +166,9 @@ function AddDevicePage() {
         <div className="Labs-section">
           <label className="lab-section-label">Chose Lab Number:</label>
           <Select
-
-            onChange={(value) => { setLabNumber(value) }}
+            onChange={(value) => {
+              setLabNumber(value);
+            }}
             style={{
               width: 140,
               height: 25,
@@ -180,7 +194,6 @@ function AddDevicePage() {
         )}
       </div>
       <Footer />
-
     </div>
   );
 }

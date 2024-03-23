@@ -7,8 +7,6 @@ import { BsProjector } from "react-icons/bs";
 import { useState } from "react";
 import { Alert } from "antd";
 
-
-
 function DeviceCard({
   deviceNumber,
   type,
@@ -20,11 +18,9 @@ function DeviceCard({
   setShowData,
   serviceType,
   setSerialNumber,
-  setShowChart
+  setShowChart,
 }) {
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
-
-
 
   function getIcon() {
     if (type.toLowerCase() == "pc") {
@@ -51,7 +47,6 @@ function DeviceCard({
   }
 
   async function deleteDevice() {
-
     if (window.confirm("Are you sure you want to delete this device?")) {
       var requestOptions = {
         method: "DELETE",
@@ -80,7 +75,6 @@ function DeviceCard({
     }
   }
 
-
   const Icon = getIcon();
 
   const arrival_Date = getDate(arrivalDate);
@@ -98,7 +92,16 @@ function DeviceCard({
       ) : serviceType === "searchDevice" ? (
         <>
           <div className="technical-role-device-card">
-            <div onClick={() => {setShowData(false) ; setSerialNumber("") ; setShowChart(false)}} className="continer-close-icon">x</div>
+            <div
+              onClick={() => {
+                setShowData(false);
+                setSerialNumber("");
+                setShowChart(false);
+              }}
+              className="continer-close-icon"
+            >
+              x
+            </div>
             <Icon className="react-icons-devicess" />
             <br />
             <div className="flex-row">
@@ -127,65 +130,94 @@ function DeviceCard({
               Arrival Date: {arrival_Date}
             </div>
 
-
             <div className="technical-role-flex-row">
               <div className="device-next-periodic-date">
-                Next Periodic Maintenance Date:  <br />{nextPeriodic_Date}
+                Next Periodic Maintenance Date: <br />
+                {nextPeriodic_Date}
               </div>
             </div>
           </div>
         </>
-      ) : (<>
-        <div className="technical-role-device-card">
-          <Icon className="react-icons-devicess" />
-          <br />
-          <div className="flex-row">
-            <div className="technical-role-serial-number">
-              Serial Number: <input className="delete-device-card-inputs" type="text" value={serialNumber} />
+      ) : (
+        <>
+          <div className="technical-role-device-card">
+            <Icon className="react-icons-devicess" />
+            <br />
+            <div className="flex-row">
+              <div className="technical-role-serial-number">
+                Serial Number:{" "}
+                <br />
+                <input
+                  className="delete-device-card-inputs"
+                  type="text"
+                  value={serialNumber}
+                />
+              </div>
+              <div className="technical-role-device-type">
+                Device Type:
+                <br />
+                <input
+                  className="delete-device-card-inputs"
+                  type="text"
+                  value={type}
+                />
+              </div>
             </div>
-            <div className="technical-role-device-type">
-              Device Type:<input className="delete-device-card-inputs" type="text" value={type} />
-            </div>
-          </div>
 
-          <br />
-          <div className="flex-row">
-            <div className="technical-role-lab-number">
-              Located Lab: <input className="delete-device-card-inputs" type="text" value={deviceLocatedLab} />
+            <br />
+            <div className="flex-row">
+              <div className="technical-role-lab-number">
+                Located Lab:{" "}
+                <input
+                  className="delete-device-card-inputs"
+                  type="text"
+                  value={deviceLocatedLab}
+                />
+              </div>
+              <div className="technical-role-device-number">
+                Device Number:{" "}
+                <input
+                  className="delete-device-card-inputs"
+                  type="text"
+                  value={deviceNumber}
+                />
+              </div>
             </div>
-            <div className="technical-role-device-number">
-              Device Number: <input className="delete-device-card-inputs" type="text" value={deviceNumber} />
-            </div>
-          </div>
 
-          <div className="technical-role-device-status">
-            Device Status: <br /><input className="delete-device-card-inputs" type="text" value={deviceStatus} />
-          </div>
-          <div className="device-arrival-date">
-            Arrival Date: {arrival_Date}
-          </div>
-
-
-          <div className="technical-role-flex-row">
-            <div className="device-next-periodic-date">
-              Next Periodic Maintenance Date: <br /> {nextPeriodic_Date}
-            </div>
-            <button onClick={deleteDevice} className="delete-button">Delete Device</button>
-            {ShowSuccessAlert && (
-              <Alert
-                className="delete-alert-success"
-                message="Device Deleted Successfully!"
-                description=""
-                type="success"
-                showIcon
-                closable
-                onClose={() => setShowSuccessAlert(false)}
+            <div className="technical-role-device-status">
+              Device Status: <br />
+              <input
+                className="delete-device-card-inputs"
+                type="text"
+                value={deviceStatus}
               />
-            )}
+            </div>
+            <div className="device-arrival-date">
+              Arrival Date: {arrival_Date}
+            </div>
+
+            <div className="technical-role-flex-row">
+              <div className="device-next-periodic-date">
+                Next Periodic Maintenance Date: <br /> {nextPeriodic_Date}
+              </div>
+              <button onClick={deleteDevice} className="delete-button">
+                Delete Device
+              </button>
+              {ShowSuccessAlert && (
+                <Alert
+                  className="delete-alert-success"
+                  message="Device Deleted Successfully!"
+                  description=""
+                  type="success"
+                  showIcon
+                  closable
+                  onClose={() => setShowSuccessAlert(false)}
+                />
+              )}
+            </div>
           </div>
-        </div></>)}
-
-
+        </>
+      )}
     </div>
   );
 }
