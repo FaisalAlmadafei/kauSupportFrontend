@@ -46,6 +46,7 @@ function App() {
 
   const [LabNumber, setLabNumber] = useState("0");
   const [services, setServices] = useState([]);
+  const [PreviousPage, setPreviousPage] = useState("");
 
   useEffect(() => {
     const servicesByRole = {
@@ -53,15 +54,16 @@ function App() {
         { serviceName: "Home", pageLink: "/Home" },
         { serviceName: "New Report", icon: GoReport, pageLink: "/LabsPage" },
         {
-          serviceName: "Previous Reports",
-          icon: FaHistory,
-          pageLink: "/PreviousReportsPage",
-        },
-        {
           serviceName: "Request a Service",
           icon: MdMiscellaneousServices,
           pageLink: "/NewServiceRequest",
         },
+        {
+          serviceName: "Previous Reports",
+          icon: FaHistory,
+          pageLink: "/PreviousReportsPage",
+        },
+       
         {
           serviceName: "My Requests",
           icon: MdHistoryEdu,
@@ -156,7 +158,7 @@ function App() {
 
   return (
     <div className="App">
-      <ServicesContext.Provider value={{ services }}>
+      <ServicesContext.Provider value={{ services , setPreviousPage ,PreviousPage }}>
         <NewReportContext.Provider value={{ LabNumber, setLabNumber }}>
           <LoginContext.Provider
             value={[

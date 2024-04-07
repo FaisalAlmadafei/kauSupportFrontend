@@ -175,23 +175,24 @@ function MyReportCard({
             <>
               <div onClick={checkReport} className="done-icon">
                 ✔
+               
               </div>
             </>
           ) : (
             <></>
           )}
-          <span className="my-report-id">Report ID: {reportID}</span>
-          <span className="my-report-date">Report Date: {Date}</span>
+          <span className="my-report-id"> <strong>Report ID:</strong> {reportID}</span>
+          <span className="my-report-date"> <strong>Report Date: </strong>{Date}</span>
 
           <div className="my-report-device-number">
-            <span>Device Number: {deviceNumber}</span>
+            <span><strong>Device Number: </strong>{deviceNumber}</span>
           </div>
 
           <div className="my-lab-number">
-            <span>LAB Number: {deviceLocatedLab}</span>
+            <span><strong>LAB Number:</strong> {deviceLocatedLab}</span>
           </div>
           <div className="my-problem-type">
-            <span>Problem Type: {problemType}</span>
+            <span><strong>Problem Type:</strong> {problemType}</span>
           </div>
           <div className="my-problem">
             <span>

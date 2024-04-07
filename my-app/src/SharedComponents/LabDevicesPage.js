@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "../SharedCSS/LabDevicesPage.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { NewReportContext } from "../App";
+import { NewReportContext ,ServicesContext } from "../App";
 import DeviceCard from "./DeviceCard";
 import { LoginContext } from "../App";
 import { Alert } from "antd";
@@ -14,6 +14,7 @@ import NavigationBar from "./NavigationBar";
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
+  const { PreviousPage ,setPreviousPage } = useContext(ServicesContext);
   const [Devices, setDevices] = useState([]);
   const [ProblemType, setProblemType] = useState("");
   const [isDeviceClicked, setisDeviceClicked] = useState(false);
@@ -122,10 +123,10 @@ function LabDevicesPage() {
       />
       <div
         onClick={() => {
-          if (userRole.toLowerCase() == "faculty member") {
-            navigate("/LabsPage");
-          } else {
+          if (PreviousPage == "DevicesAvailability") {
             navigate("/DevicesAvailabilityPage");
+          } else {
+            navigate("/LabsPage");
           }
         }}
         className="back-icon"

@@ -5,7 +5,7 @@ import "../SharedCSS/LabsPage.css";
 import { useNavigate } from "react-router-dom";
 import { BsDoorOpen } from "react-icons/bs";
 import { useContext } from "react";
-import { NewReportContext } from "../App";
+import { NewReportContext  ,ServicesContext} from "../App";
 import NavigationBar from "./NavigationBar";
 import { IoIosArrowBack } from "react-icons/io";
 import "../SharedCSS/HomePage.css";
@@ -13,11 +13,13 @@ import Footer from "./Footer";
 
 function LabsPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
+  const { PreviousPage ,setPreviousPage } = useContext(ServicesContext);
   const [Labs, setLabs] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function getLabs() {
+      setPreviousPage("LabsPage")
       var requestOptions = {
         method: "GET",
         redirect: "follow",

@@ -93,6 +93,8 @@
 
 .delete-device-card-inputs {
   border: none;
+  pointer-events: none;
+
   background-color: #025c3e;
   border-radius: 20px;
   width: 150px;
@@ -278,6 +280,7 @@ body {
   }
   .delete-device-card-inputs {
     border: none;
+    pointer-events: none;
     background-color: #025c3e;
     border-radius: 20px;
     width: 120px;
