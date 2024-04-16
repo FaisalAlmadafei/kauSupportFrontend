@@ -1,3 +1,11 @@
+.requestd-service-type{
+  margin-right: 10px;
+  color: white;
+}
+.requested-service-by{
+  color: white;
+}
+
 @media (min-width: 800px) {
   .my-request-card {
     margin-top: 50px;
@@ -23,10 +31,17 @@
 
   .my-request-id {
     display: block;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 25px;
   }
+  .requestd-service-type{
+    font-size: 18px;
+     }
+     .requested-service-by{
+       font-size: 18px;
+   
+     }
 
   .my-request-status-pending,
   .my-request-status-approved,
@@ -106,6 +121,14 @@
     margin-bottom: 25px;
 
   }
+  .requestd-service-type{
+    font-size: 16px;
+     }
+     .requested-service-by{
+       font-size: 16px;
+   
+     }
+
 
   .my-request-status-pending,
   .my-request-status-approved,

@@ -4,13 +4,15 @@ import { Select } from "antd";
 import { useState } from "react";
 import HandleRequestForm from "./HandleRequestForm";
 
-
 function MyRequestsCard({
   requestID,
   requestStatus,
   technicalSupportReply,
+  requestType,
   request,
   serviceType,
+  requestedByFirstName,
+  requestedByLastName,
   setmyRequests,
   myRequests,
   setshowAssignedAlert,
@@ -18,16 +20,14 @@ function MyRequestsCard({
   setshowRequestHandledAlert,
   setshowNoResponseAlert,
 }) {
-
   const [Team, setTeam] = useState([]);
   const [AssignedToId, setAssignedToId] = useState("");
   const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
-
+  
 
   function closeForm() {
     setHandleButtonisClicked(false);
   }
-
 
   if (serviceType == "Supervisor Requests") {
     getTeamMembers();
@@ -55,13 +55,11 @@ function MyRequestsCard({
       }
     } catch (error) {
       console.log("error", error);
-
     }
   }
 
   async function assignRequest() {
     if (AssignedToId !== "") {
-
       var requestOptions = {
         method: "PUT",
         redirect: "follow",
@@ -75,7 +73,6 @@ function MyRequestsCard({
 
         if (response.ok) {
           setshowAssignedAlert(true);
-
 
           const filteredRequests = myRequests.filter(
             (request) => request.requestID !== requestID
@@ -91,15 +88,10 @@ function MyRequestsCard({
         console.log("error", error);
         alert("An error occurred. Please check your connection and try again.");
       }
-
-    }
-    else {
+    } else {
       setshowNoTeamMemberAlert(true);
-
     }
-
   }
-
 
   function getClassName() {
     if (requestStatus.toLowerCase() === "pending") {
@@ -120,6 +112,25 @@ function MyRequestsCard({
         <br />
 
         <span className="my-request-id">Request ID: {requestID}</span>
+        <p className="requestd-service-type">
+          <strong>Request Type: </strong>
+          {requestType}
+        </p>
+        {serviceType == "Supervisor Requests" ||
+        serviceType == "Technical member requests" ? (
+          <>
+            <p className="requested-service-by"> 
+            
+              <strong>Requested By: </strong> {requestedByFirstName}{" "}
+              {requestedByLastName}
+            </p>
+          </>
+        ) : (
+          <></>
+        )}
+        <br />
+       
+
         <div style={{ fontSize: "18px" }}>Request</div>
         <div className="request-description-container">{request}</div>
         {technicalSupportReply != null ? (
@@ -136,7 +147,7 @@ function MyRequestsCard({
         {serviceType == "Supervisor Requests" ? (
           <>
             <div className="assign-part">
-              <button onClick={assignRequest} className="assign-button" >
+              <button onClick={assignRequest} className="assign-button">
                 Assign Request
               </button>
               <Select
@@ -154,31 +165,36 @@ function MyRequestsCard({
                 }))}
               />
             </div>
-
           </>
         ) : (
           <></>
         )}
 
-        {serviceType == "Supervisor Requests" || serviceType == "Technical member requests" ? (
+        {serviceType == "Supervisor Requests" ||
+        serviceType == "Technical member requests" ? (
           <>
             <button
               onClick={() => {
                 setHandleButtonisClicked(true);
               }}
-
               className="handle-button"
             >
               Handle Request
             </button>
             {HandleButtonisClicked && (
-              <HandleRequestForm closeForm={closeForm} requestID={requestID} setmyRequests={setmyRequests} myRequests={myRequests} setshowRequestHandledAlert={setshowRequestHandledAlert} setshowNoResponseAlert={setshowNoResponseAlert} />
+              <HandleRequestForm
+                closeForm={closeForm}
+                requestID={requestID}
+                setmyRequests={setmyRequests}
+                myRequests={myRequests}
+                setshowRequestHandledAlert={setshowRequestHandledAlert}
+                setshowNoResponseAlert={setshowNoResponseAlert}
+              />
             )}
           </>
         ) : (
           <></>
         )}
-
       </div>
     </div>
   );

@@ -96,10 +96,7 @@ function MyRequest() {
       <div className="my-request-container">
         {filteredRequests.map((Request) => (
           <MyRequestsCard
-            requestID={Request.requestID}
-            requestStatus={Request.requestStatus}
-            technicalSupportReply={Request.technicalSupportReply}
-            request={Request.request}
+          {...Request}
           />
         ))}
       </div>
