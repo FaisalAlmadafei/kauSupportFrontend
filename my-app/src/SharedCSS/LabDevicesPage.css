@@ -162,9 +162,9 @@
 
   .report-form {
     position: fixed;
-    width: 400px;
-    height: 500px;
-    margin-bottom: 55px;
+    width: auto;
+    height: auto;
+    margin-bottom: 550px;
     border-radius: 10%;
     background-color: red;
     z-index: 2;
@@ -178,7 +178,9 @@
     -webkit-backdrop-filter: blur(0px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
   }
 
   .problem-lable {
@@ -298,8 +300,8 @@
     background-color: red;
     z-index: 2;
     top: 150px;
-    left: 15px;
-    right: 15px;
+    left: 25px;
+    right: 25px;
     border-radius: 10%;
     background: rgba(23, 210, 97, 0.75);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

@@ -14,6 +14,9 @@ function NewServiceRequest() {
   const [ReqDescription, setReqDescription] = useState("");
   const [userID] = useContext(LoginContext);
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showChoseTypeAlert, setshowChoseTypeAlert] = useState(false);
+  const [showEnterDiscriptionAlert, setshowEnterDiscriptionAlert] =
+    useState(false);
   const navigate = useNavigate();
 
   async function addRequest() {
@@ -23,7 +26,7 @@ function NewServiceRequest() {
           method: "POST",
           redirect: "follow",
         };
-  
+
         try {
           const response = await fetch(
             `https://kausupportapi.azurewebsites.net/api/FacultyMember_/RequestService?Request_=${ReqDescription}&Requested_By=${userID}&Request_Type=${requestType}`,
@@ -34,32 +37,30 @@ function NewServiceRequest() {
           } else if (response.ok) {
             setShowSuccessAlert(true);
             setReqDescription("");
+            setrequestType("");
           } else {
             alert("An error occurred. Please try again.");
           }
         } catch (error) {
           console.log("error", error);
-          alert("An error occurred. Please check your connection and try again.");
+          alert(
+            "An error occurred. Please check your connection and try again."
+          );
         }
       } else {
-        alert("Please Enter request description ..");
+        setshowEnterDiscriptionAlert(true);
       }
-
+    } else {
+      setshowChoseTypeAlert(true);
     }
-    else{
-      alert("Please chose the requst type ..");
-
-    }
-   
   }
   function handelServiceChoice(e) {
     setrequestType(e.target.value);
   }
 
-
   return (
     <div>
-     <NavigationBar showSearchBar={"No"} />
+      <NavigationBar showSearchBar={"No"} />
       <div
         onClick={() => {
           navigate("/Home");
@@ -80,14 +81,35 @@ function NewServiceRequest() {
           onClose={() => setShowSuccessAlert(false)}
         />
       )}
+      {showChoseTypeAlert && (
+        <Alert
+          className="warning-alert"
+          message="Chose a Request Type"
+          description="Please chose the request type."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowChoseTypeAlert(false)}
+        />
+      )}
+
+      {showEnterDiscriptionAlert && (
+        <Alert
+          className="warning-alert"
+          message="Enter Required Description"
+          description="Please enter a description of your request. "
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowEnterDiscriptionAlert(false)}
+        />
+      )}
 
       <div>
         <div className="request-form">
-        <h3 style={{ color: "white" }}>
-            Chose request type:
-          </h3>
+          <h3 style={{ color: "white" }}>Chose request type:</h3>
           <label className="request-lable" htmlFor="problemType">
-          Software Installation
+            Software Installation
           </label>
           <input
             name="problemType"
@@ -95,46 +117,40 @@ function NewServiceRequest() {
             value="Software Installation"
             type="radio"
             onChange={handelServiceChoice}
-           
           />
           <label className="request-lable" htmlFor="problemType">
-         Software Licensing
-        </label>
-        <input
-          name="problemType"
-          className="request-type-input"
-          value="Software Licensing"
-          type="radio"
-          onChange={handelServiceChoice}
-         
-        />
-        
-         
-          
-         <label className="request-lable" htmlFor="problemType">
-        Unblock a website
-      </label>
-      <input
-        name="problemType"
-        className="request-type-input"
-        value="Unblock a website"
-        type="radio"
-        onChange={handelServiceChoice}
-       
-      />
-      <br />
-      <label className="request-lable" htmlFor="problemType">
-          Other
-        </label>
-        <input
-          name="problemType"
-          className="request-type-input"
-          value="Other"
-          type="radio"
-          onChange={handelServiceChoice}
-         
-        />
-         
+            Software Licensing
+          </label>
+          <input
+            name="problemType"
+            className="request-type-input"
+            value="Software Licensing"
+            type="radio"
+            onChange={handelServiceChoice}
+          />
+
+          <label className="request-lable" htmlFor="problemType">
+            Unblock a website
+          </label>
+          <input
+            name="problemType"
+            className="request-type-input"
+            value="Unblock a website"
+            type="radio"
+            onChange={handelServiceChoice}
+          />
+          <br />
+          <label className="request-lable" htmlFor="problemType">
+            Other
+          </label>
+          <input
+            name="problemType"
+            className="request-type-input"
+            value="Other"
+            type="radio"
+            onChange={handelServiceChoice}
+          />
+
           <h3 className="request-description" style={{ color: "white" }}>
             Please enter a brief description of the request
           </h3>

@@ -181,8 +181,10 @@ function MyReportCard({
           ) : (
             <></>
           )}
+         
           <span className="my-report-id"> <strong>Report ID:</strong> {reportID}</span>
           <span className="my-report-date"> <strong>Report Date: </strong>{Date}</span>
+       
 
           <div className="my-report-device-number">
             <span><strong>Device Number: </strong>{deviceNumber}</span>

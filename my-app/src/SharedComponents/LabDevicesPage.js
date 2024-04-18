@@ -24,6 +24,8 @@ function LabDevicesPage() {
   const [DeviceStatus, setDeviceStatus] = useState("");
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
+  const [showChoseTypeAlert, setshowChoseTypeAlert] = useState(false);
+  const [showEnterDiscriptionAlert, setshowEnterDiscriptionAlert] =useState(false) ;
   const [showNoDevices, setShowNoDevices] = useState(false);
   const [userID] = useContext(LoginContext);
   const [userRole, setUserRole] = useState(
@@ -71,10 +73,11 @@ function LabDevicesPage() {
           setShowWarningAlert(true);
         }
       } else {
-        alert("Please Enter problem description ..");
+        setshowEnterDiscriptionAlert(true);
+
       }
     } else {
-      alert("Please chose problem");
+      setshowChoseTypeAlert(true);
     }
   }
   async function getLabDevices() {
@@ -113,6 +116,12 @@ function LabDevicesPage() {
 
   function handelProblemChoice(e) {
     setProblemType(e.target.value);
+  }
+
+  function handelCloseForm(){
+    setProblemType("") ;
+    setisDeviceClicked(false);
+    
   }
 
   return (
@@ -175,10 +184,33 @@ function LabDevicesPage() {
           onClose={() => setShowWarningAlert(false)}
         />
       )}
+        {showChoseTypeAlert && (
+        <Alert
+          className="warning-alert"
+          message="Chose report type"
+          description="Please chose the report type."
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowChoseTypeAlert(false)}
+        />
+      )}
+
+      {showEnterDiscriptionAlert && (
+        <Alert
+          className="warning-alert"
+          message="Enter Required Description"
+          description="Please enter a description of your report. "
+          type="warning"
+          showIcon
+          closable
+          onClose={() => setshowEnterDiscriptionAlert(false)}
+        />
+      )}
 
       {isDeviceClicked && (
         <div className="report-form">
-          <div onClick={() => setisDeviceClicked(false)} className="x-icon">
+          <div onClick={handelCloseForm} className="x-icon">
             x
           </div>
           <h2 className="reported-device-number">
