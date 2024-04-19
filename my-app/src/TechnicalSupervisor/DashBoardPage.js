@@ -21,7 +21,6 @@ function DashBoardPage() {
   const [showNoTeamMemberAlert, setshowNoTeamMemberAlert] = useState(false);
   const [showReportHandledAlert, setshowReportHandledAlert] = useState(false);
   const [showNoActionTakenAlert, setshowNoActionTakenAlert] = useState(false);
-
   const navigate = useNavigate();
   const [Reports, setReports] = useState([]);
 

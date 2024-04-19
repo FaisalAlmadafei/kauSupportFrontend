@@ -21,6 +21,10 @@ function DeviceCard({
   setShowChart,
 }) {
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [userRole, setUserRole] = useState(
+    localStorage.getItem("userRole") || ""
+  );
+
 
   function getIcon() {
     if (type.toLowerCase() == "pc") {
@@ -88,6 +92,13 @@ function DeviceCard({
           <Icon className="react-icons-devices" />
           <br />
           <h3 className="device-number">Device {deviceNumber}</h3>
+          {userRole.toLowerCase() !=="faculty member" ? (<>
+            <h4 className="device-number">Serial Number <br /> {serialNumber}</h4>
+
+          
+          </>):(<></>)}
+
+
         </div>
       ) : serviceType === "searchDevice" ? (
         <>
@@ -121,6 +132,7 @@ function DeviceCard({
               <div className="technical-role-device-number">
                 Device Number: {deviceNumber}
               </div>
+              
             </div>
 
             <div className="technical-role-device-status">

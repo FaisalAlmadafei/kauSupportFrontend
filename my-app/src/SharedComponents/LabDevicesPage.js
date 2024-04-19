@@ -216,6 +216,7 @@ function LabDevicesPage() {
           <h2 className="reported-device-number">
             Devcie {ReportedDeviceNumber}
           </h2>
+
           <h4 className="chose-lable" style={{ color: "white" }}>
             Chose problem type:
           </h4>

@@ -142,7 +142,6 @@ function MyReportCard({
       );
 
       if (response.ok) {
-        alert("Report is checked!");
 
         const filteredReports = myReports.filter(
           (report) => report.reportID !== reportID
@@ -291,6 +290,7 @@ function MyReportCard({
                   problemDescription={problemDescription}
                 />
               )}
+              
 
             </>
           ) : (
