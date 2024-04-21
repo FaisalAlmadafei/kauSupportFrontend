@@ -84,8 +84,8 @@ function NewServiceRequest() {
       {showChoseTypeAlert && (
         <Alert
           className="warning-alert"
-          message="Chose a Request Type"
-          description="Please chose the request type."
+          message="Choose a Request Type"
+          description="Please choose the request type."
           type="warning"
           showIcon
           closable
@@ -107,7 +107,7 @@ function NewServiceRequest() {
 
       <div>
         <div className="request-form">
-          <h3 style={{ color: "white" }}>Chose request type:</h3>
+          <h3 style={{ color: "white" }}>Choose request type:</h3>
           <label className="request-lable" htmlFor="problemType">
             Software Installation
           </label>

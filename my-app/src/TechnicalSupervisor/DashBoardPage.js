@@ -212,7 +212,7 @@ function DashBoardPage() {
       {showNoTeamMemberAlert && (
         <Alert
           className="report-alert-warning"
-          message="Please chose a team member to assign report"
+          message="Please choose a team member to assign report"
           description="Please try again."
           type="warning"
           showIcon

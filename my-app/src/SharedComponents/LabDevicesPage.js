@@ -187,8 +187,8 @@ function LabDevicesPage() {
         {showChoseTypeAlert && (
         <Alert
           className="warning-alert"
-          message="Chose report type"
-          description="Please chose the report type."
+          message="Choose report type"
+          description="Please choose the report type."
           type="warning"
           showIcon
           closable
@@ -218,7 +218,7 @@ function LabDevicesPage() {
           </h2>
 
           <h4 className="chose-lable" style={{ color: "white" }}>
-            Chose problem type:
+            Choose problem type:
           </h4>
           <label className="problem-lable" htmlFor="problemType">
             Hardware
