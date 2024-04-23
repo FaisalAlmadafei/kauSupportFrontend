@@ -303,8 +303,8 @@
     background-color: red;
     z-index: 2;
     top: 150px;
-    left: 25px;
-    right: 25px;
+    left: 15px;
+    right: 15px;
     border-radius: 10%;
     background: rgba(23, 210, 97, 0.75);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -334,6 +334,7 @@
     right: 15px;
     font-size: 25px;
     cursor: pointer;
+    color: white;
   }
 
   .reported-device-number {
