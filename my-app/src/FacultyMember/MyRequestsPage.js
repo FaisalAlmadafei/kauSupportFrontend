@@ -10,8 +10,6 @@ import FmNavigationBar from "../SharedComponents/NavigationBar";
 import "../FacultyMemberCSS/MyRequest.css";
 import Footer from "../SharedComponents/Footer";
 
-
-
 function MyRequest() {
   const [userID] = useContext(LoginContext);
   const [myRequests, setmyRequests] = useState([]);
@@ -35,7 +33,7 @@ function MyRequest() {
           const result = await response.json();
           setmyRequests(result);
         } else if (response.status === 400) {
-          setShowNoRequests(true)
+          setShowNoRequests(true);
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -53,9 +51,10 @@ function MyRequest() {
 
   return (
     <div>
-
-
-      <FmNavigationBar setSearch={setSearch} placeholderValue={"search for a request by ID"} />
+      <FmNavigationBar
+        setSearch={setSearch}
+        placeholderValue={"search for a request by ID"}
+      />
 
       {ShowNoRequests && (
         <>
@@ -77,12 +76,9 @@ function MyRequest() {
                 </Button>
               }
             />
-
           </div>
-
         </>
       )}
-
 
       <div
         onClick={() => {
@@ -95,9 +91,7 @@ function MyRequest() {
 
       <div className="my-request-container">
         {filteredRequests.map((Request) => (
-          <MyRequestsCard
-          {...Request}
-          />
+          <MyRequestsCard {...Request} />
         ))}
       </div>
       <Footer />

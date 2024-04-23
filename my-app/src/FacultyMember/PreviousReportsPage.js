@@ -10,14 +10,11 @@ import { Button, Result } from "antd";
 import "../SharedCSS/MyReportCard.css";
 import Footer from "../SharedComponents/Footer";
 
-
-
 function PreviousReportsPage() {
   const [userID] = useContext(LoginContext);
   const [myReports, setmyReports] = useState([]);
   const [ShowNoReports, setShowNoReports] = useState(false);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     async function getMyReports() {
@@ -37,7 +34,6 @@ function PreviousReportsPage() {
           setmyReports(result);
         } else if (response.status === 400) {
           setShowNoReports(true);
-
         } else {
           alert("An error occurred. Please try again.");
         }
@@ -56,11 +52,17 @@ function PreviousReportsPage() {
 
   return (
     <div>
+      <NavigationBar
+        setSearch={setSearch}
+        placeholderValue={"search for a report by ID"}
+      />
 
-      <NavigationBar setSearch={setSearch} placeholderValue={"search for a report by ID"} />
-
-
-      <div onClick={() => { navigate("/Home") }} className="back-icon">
+      <div
+        onClick={() => {
+          navigate("/Home");
+        }}
+        className="back-icon"
+      >
         <IoIosArrowBack />
       </div>
 
@@ -84,14 +86,9 @@ function PreviousReportsPage() {
                 </Button>
               }
             />
-
           </div>
-
         </>
-
       )}
-
-
 
       {filteredReports.map((Report) => (
         <MyReportCard
@@ -105,11 +102,9 @@ function PreviousReportsPage() {
           repairDate={Report.repairDate}
           reportStatus={Report.reportStatus}
           problemType={Report.problemType}
-
         />
       ))}
       <Footer />
-
     </div>
   );
 }
