@@ -67,7 +67,7 @@ function LoginPage() {
     <div className="page-container">
       {showAlert && (
         <Alert
-          className="alert"
+          className="report-alert-warning"
           message="Error"
           description="UserID or password is incorrect!"
           type="error"
@@ -78,7 +78,7 @@ function LoginPage() {
       )}
       {ShowEmptyFieldAlert && (
         <Alert
-          className="alert"
+          className="warning-alert"
           message="Please add your userID and password"
           type="warning"
           showIcon
