@@ -86,7 +86,7 @@ function SupervisorReportsPage() {
           type="success"
           showIcon
           closable
-          onClose={() => setshowAssignedAlert(false)}
+          onClose={() => setshowReportHandledAlert(false)}
         />
       )}
 

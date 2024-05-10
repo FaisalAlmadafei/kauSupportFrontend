@@ -33,7 +33,6 @@ export const LoginContext = React.createContext();
 export const NewReportContext = React.createContext();
 export const ServicesContext = React.createContext();
 
-
 function App() {
   const [userID, setUserID] = useState(localStorage.getItem("userID") || "");
   const [userPass, setuserPass] = useState("");
@@ -63,7 +62,7 @@ function App() {
           icon: FaHistory,
           pageLink: "/PreviousReportsPage",
         },
-       
+
         {
           serviceName: "My Requests",
           icon: MdHistoryEdu,
@@ -108,7 +107,7 @@ function App() {
           pageLink: "/DevicesAvailabilityPage",
         },
       ],
-      "Supervisor": [
+      Supervisor: [
         { serviceName: "Home", pageLink: "/Home" },
         {
           serviceName: "Reports",
@@ -148,7 +147,6 @@ function App() {
           pageLink: "/DevicesAvailabilityPage",
         },
       ],
-
     };
     setServices(servicesByRole[userRole] || []);
     localStorage.setItem("isLoggedIn", isLoggedIn);
@@ -158,7 +156,9 @@ function App() {
 
   return (
     <div className="App">
-      <ServicesContext.Provider value={{ services , setPreviousPage ,PreviousPage }}>
+      <ServicesContext.Provider
+        value={{ services, setPreviousPage, PreviousPage }}
+      >
         <NewReportContext.Provider value={{ LabNumber, setLabNumber }}>
           <LoginContext.Provider
             value={[
@@ -205,19 +205,32 @@ function App() {
                   element={<DevicesAvailabilityPage />}
                 />
                 <Route path="/MyRequestsPage" element={<MyRequestsPage />} />
-                <Route path="/SearchDevicePage" element={<SearchDevicePage />} />
-                <Route path="/MangeDevicesPage" element={<MangeDevicesPage />} />
+                <Route
+                  path="/SearchDevicePage"
+                  element={<SearchDevicePage />}
+                />
+                <Route
+                  path="/MangeDevicesPage"
+                  element={<MangeDevicesPage />}
+                />
                 <Route path="/AddDevicePage" element={<AddDevicePage />} />
-                <Route path="/DeleteDevicePage" element={<DeleteDevicePage />} />
-                <Route path="/SupervisorReportsPage" element={<SupervisorReportsPage />} />
-                <Route path="/SupervisorRequestsPage" element={<SupervisorRequestsPage />} />
+                <Route
+                  path="/DeleteDevicePage"
+                  element={<DeleteDevicePage />}
+                />
+                <Route
+                  path="/SupervisorReportsPage"
+                  element={<SupervisorReportsPage />}
+                />
+                <Route
+                  path="/SupervisorRequestsPage"
+                  element={<SupervisorRequestsPage />}
+                />
                 <Route path="/DashBoardPage" element={<DashBoardPage />} />
-                <Route path="/TechnicalMemberReportsPage" element={<TechnicalMemberReportsPage />} />
-
-
-
-
-
+                <Route
+                  path="/TechnicalMemberReportsPage"
+                  element={<TechnicalMemberReportsPage />}
+                />
               </Routes>
             </Router>
           </LoginContext.Provider>
