@@ -89,7 +89,6 @@ function DashBoardPage() {
           datasets: [
             {
               label: "Number Of Reports",
-
               data: result.details.map((type) => type.count),
               backgroundColor: ["rgb(166, 152, 218)"],
             },
@@ -233,11 +232,9 @@ function DashBoardPage() {
         />
       )}
 
-
-
       <div className="charts-container">
         <div className="team-progress-chart-container">
-          \
+          
           {ProgressChartData !== null ? (
             <BarChart
               className="bar-chart"
@@ -249,7 +246,7 @@ function DashBoardPage() {
           )}
         </div>
         <div className="team-progress-chart-container">
-          \
+          
           {StatisticsChartData !== null ? (
             <BarChart
               className="bar-chart"
@@ -264,7 +261,7 @@ function DashBoardPage() {
       </div>
 
       <div className="pie-chart-container">
-        \
+        
         {DevicesStatisticsChartData !== null ? (
           <PieChart
             className="bar-chart"

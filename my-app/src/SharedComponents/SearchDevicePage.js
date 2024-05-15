@@ -87,7 +87,7 @@ function SearchDevicePage() {
         });
         setShowChart(true);
       } else if (response.status === 400) {
-        setShowChart(false) ;
+        setShowChart(false);
       } else {
         alert("An error occurred. Please try again.");
       }

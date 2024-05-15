@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { LoginContext } from "../App";
 
-function Service({ serviceName, notification, Icon, reportsNotifications, requestsNotifications }) {
-
-
-
-
-
-
-  let Notifications = serviceName === "Reports" ? reportsNotifications : requestsNotifications;;
+function Service({
+  serviceName,
+  notification,
+  Icon,
+  reportsNotifications,
+  requestsNotifications,
+}) {
+  let Notifications = serviceName === "Reports" ? reportsNotifications : requestsNotifications;
 
   return (
     <div>
@@ -21,7 +21,6 @@ function Service({ serviceName, notification, Icon, reportsNotifications, reques
           <Icon className="react-icons" />
           <br />
           <h3 className="service-name">{serviceName}</h3>
-
         </div>
       ) : (
         <div className="card">

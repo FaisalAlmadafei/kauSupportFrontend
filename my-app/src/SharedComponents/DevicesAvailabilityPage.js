@@ -11,15 +11,14 @@ import { IoIosArrowBack } from "react-icons/io";
 import Footer from "./Footer";
 import "../SharedCSS/HomePage.css";
 function DevicesAvailabilityPage() {
-  
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
-  const { PreviousPage ,setPreviousPage } = useContext(ServicesContext);
+  const { PreviousPage, setPreviousPage } = useContext(ServicesContext);
   const [ShowSpinner, setShowSpinner] = useState(false);
   const [Labs, setLabs] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setPreviousPage("DevicesAvailability")
+    setPreviousPage("DevicesAvailability");
     async function checkAvailability() {
       setShowSpinner(true);
       var requestOptions = {

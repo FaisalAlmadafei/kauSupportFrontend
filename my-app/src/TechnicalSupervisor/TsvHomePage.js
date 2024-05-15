@@ -60,7 +60,9 @@ function TsvHomePage() {
                   Icon={service.icon}
                 />
               </div>
-            ) : <></>
+            ) : (
+              <></>
+            )
           )}
         </div>
         <Footer />

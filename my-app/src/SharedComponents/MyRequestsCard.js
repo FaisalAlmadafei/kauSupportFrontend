@@ -23,7 +23,6 @@ function MyRequestsCard({
   const [Team, setTeam] = useState([]);
   const [AssignedToId, setAssignedToId] = useState("");
   const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
-  
 
   function closeForm() {
     setHandleButtonisClicked(false);
@@ -119,8 +118,7 @@ function MyRequestsCard({
         {serviceType == "Supervisor Requests" ||
         serviceType == "Technical member requests" ? (
           <>
-            <p className="requested-service-by"> 
-            
+            <p className="requested-service-by">
               <strong>Requested By: </strong> {requestedByFirstName}{" "}
               {requestedByLastName}
             </p>
@@ -129,7 +127,6 @@ function MyRequestsCard({
           <></>
         )}
         <br />
-       
 
         <div style={{ fontSize: "18px" }}>Request</div>
         <div className="request-description-container">{request}</div>
@@ -150,7 +147,7 @@ function MyRequestsCard({
               <button onClick={assignRequest} className="assign-button">
                 Assign Request
               </button>
-             
+
               <Select
                 style={{
                   width: 140,

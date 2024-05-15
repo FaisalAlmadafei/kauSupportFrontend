@@ -16,9 +16,7 @@ import { ServicesContext } from "../App";
 
 function FmHomePage() {
   const { services } = useContext(ServicesContext);
-
   const navigate = useNavigate();
-
   const [search, setSearch] = useState("");
 
   const filteredServices = services.filter((service) =>

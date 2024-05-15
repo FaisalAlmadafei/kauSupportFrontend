@@ -25,7 +25,6 @@ function DeviceCard({
     localStorage.getItem("userRole") || ""
   );
 
-
   function getIcon() {
     if (type.toLowerCase() == "pc") {
       return PiDesktopTowerLight;
@@ -92,13 +91,15 @@ function DeviceCard({
           <Icon className="react-icons-devices" />
           <br />
           <h3 className="device-number">Device {deviceNumber}</h3>
-          {userRole.toLowerCase() !=="faculty member" ? (<>
-            <h4 className="device-number">Serial Number <br /> {serialNumber}</h4>
-
-          
-          </>):(<></>)}
-
-
+          {userRole.toLowerCase() !== "faculty member" ? (
+            <>
+              <h4 className="device-number">
+                Serial Number <br /> {serialNumber}
+              </h4>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       ) : serviceType === "searchDevice" ? (
         <>
@@ -132,7 +133,6 @@ function DeviceCard({
               <div className="technical-role-device-number">
                 Device Number: {deviceNumber}
               </div>
-              
             </div>
 
             <div className="technical-role-device-status">
@@ -157,8 +157,7 @@ function DeviceCard({
             <br />
             <div className="flex-row">
               <div className="technical-role-serial-number">
-                Serial Number:{" "}
-                <br />
+                Serial Number: <br />
                 <input
                   className="delete-device-card-inputs"
                   type="text"

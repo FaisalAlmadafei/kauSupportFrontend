@@ -24,7 +24,7 @@ function MangeDevicesPage() {
       pageLink: "/DeleteDevicePage",
     },
   ];
-  
+
   return (
     <>
       <FmNavigationBar showSearchBar={"No"} />

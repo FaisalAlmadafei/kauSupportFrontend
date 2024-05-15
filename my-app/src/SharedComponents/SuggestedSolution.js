@@ -55,8 +55,8 @@ function SuggestedSolution({
         <div className="suggested-solution-description">
           {suggestionsArray && suggestionsArray.length > 0 ? (
             <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-              {suggestionsArray.map((suggestion, index) => (
-                <li key={index} style={{ marginBottom: '10px' }}>{`${suggestion}`}</li>
+              {suggestionsArray.map((suggestion) => (
+                <li  style={{ marginBottom: '10px' }}>{`${suggestion}`}</li>
               ))}
             </ul>
           ) : (

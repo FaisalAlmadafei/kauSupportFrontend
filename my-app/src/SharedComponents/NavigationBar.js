@@ -31,11 +31,10 @@ function NavigationBar({ setSearch, placeholderValue, showSearchBar }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userID");
     localStorage.removeItem("userRole");
-    setUserID("");
-    setuserPass("");
+    setUserID(""); // To make sure that the user doesn't log in again without entering login data
+    setuserPass(""); // To make sure that the user doesn't log in again without entering login data
     setUserRole("");
-    setIsLoggedIn(false);
-
+    setIsLoggedIn(false); // To make sure that the user doesn't log in again without entering login data
     navigate("/");
   }
 

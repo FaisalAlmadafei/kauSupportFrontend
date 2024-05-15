@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "../SharedCSS/LabDevicesPage.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { NewReportContext ,ServicesContext } from "../App";
+import { NewReportContext, ServicesContext } from "../App";
 import DeviceCard from "./DeviceCard";
 import { LoginContext } from "../App";
 import { Alert } from "antd";
@@ -14,7 +14,7 @@ import NavigationBar from "./NavigationBar";
 
 function LabDevicesPage() {
   const { LabNumber, setLabNumber } = useContext(NewReportContext);
-  const { PreviousPage ,setPreviousPage } = useContext(ServicesContext);
+  const { PreviousPage, setPreviousPage } = useContext(ServicesContext);
   const [Devices, setDevices] = useState([]);
   const [ProblemType, setProblemType] = useState("");
   const [isDeviceClicked, setisDeviceClicked] = useState(false);
@@ -25,7 +25,8 @@ function LabDevicesPage() {
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   const [showChoseTypeAlert, setshowChoseTypeAlert] = useState(false);
-  const [showEnterDiscriptionAlert, setshowEnterDiscriptionAlert] =useState(false) ;
+  const [showEnterDiscriptionAlert, setshowEnterDiscriptionAlert] =
+    useState(false);
   const [showNoDevices, setShowNoDevices] = useState(false);
   const [userID] = useContext(LoginContext);
   const [userRole, setUserRole] = useState(
@@ -74,7 +75,6 @@ function LabDevicesPage() {
         }
       } else {
         setshowEnterDiscriptionAlert(true);
-
       }
     } else {
       setshowChoseTypeAlert(true);
@@ -118,10 +118,9 @@ function LabDevicesPage() {
     setProblemType(e.target.value);
   }
 
-  function handelCloseForm(){
-    setProblemType("") ;
+  function handelCloseForm() {
+    setProblemType("");
     setisDeviceClicked(false);
-    
   }
 
   return (
@@ -184,7 +183,7 @@ function LabDevicesPage() {
           onClose={() => setShowWarningAlert(false)}
         />
       )}
-        {showChoseTypeAlert && (
+      {showChoseTypeAlert && (
         <Alert
           className="warning-alert"
           message="Choose report type"

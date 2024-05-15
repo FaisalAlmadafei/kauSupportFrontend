@@ -36,7 +36,10 @@ function MyReportCard({
   const [AssignedToId, setAssignedToId] = useState("");
   const [HandleButtonisClicked, setHandleButtonisClicked] = useState(false);
   const [ShowSpinner, setShowSpinner] = useState(false);
-  const [SuggestedSolutionButtonisClicked, setSuggestedSolutionButtonisClicked] = useState(false);
+  const [
+    SuggestedSolutionButtonisClicked,
+    setSuggestedSolutionButtonisClicked,
+  ] = useState(false);
   function closeForm() {
     setHandleButtonisClicked(false);
     setSuggestedSolutionButtonisClicked(false);
@@ -67,7 +70,6 @@ function MyReportCard({
       }
     } catch (error) {
       console.log("error", error);
-
     }
   }
   function getDate(DateAndTime) {
@@ -106,7 +108,6 @@ function MyReportCard({
           setShowSpinner(false);
           setshowAssignedAlert(true);
 
-
           if (serviceType !== "Reports monitoring") {
             const filteredReports = myReports.filter(
               (report) => report.reportID !== reportID
@@ -142,7 +143,6 @@ function MyReportCard({
       );
 
       if (response.ok) {
-
         const filteredReports = myReports.filter(
           (report) => report.reportID !== reportID
         );
@@ -174,26 +174,38 @@ function MyReportCard({
             <>
               <div onClick={checkReport} className="done-icon">
                 ✔
-               
               </div>
             </>
           ) : (
             <></>
           )}
-         
-          <span className="my-report-id"> <strong>Report ID:</strong> {reportID}</span>
-          <span className="my-report-date"> <strong>Report Date: </strong>{Date}</span>
-       
+
+          <span className="my-report-id">
+            {" "}
+            <strong>Report ID:</strong> {reportID}
+          </span>
+          <span className="my-report-date">
+            {" "}
+            <strong>Report Date: </strong>
+            {Date}
+          </span>
 
           <div className="my-report-device-number">
-            <span><strong>Device Number: </strong>{deviceNumber}</span>
+            <span>
+              <strong>Device Number: </strong>
+              {deviceNumber}
+            </span>
           </div>
 
           <div className="my-lab-number">
-            <span><strong>LAB Number:</strong> {deviceLocatedLab}</span>
+            <span>
+              <strong>LAB Number:</strong> {deviceLocatedLab}
+            </span>
           </div>
           <div className="my-problem-type">
-            <span><strong>Problem Type:</strong> {problemType}</span>
+            <span>
+              <strong>Problem Type:</strong> {problemType}
+            </span>
           </div>
           <div className="my-problem">
             <span>
@@ -206,7 +218,7 @@ function MyReportCard({
             </span>
           </div>
           {serviceType == "Reports monitoring" ||
-            serviceType == "Search device" ? (
+          serviceType == "Search device" ? (
             <>
               <div className="assigned-to-info">
                 <span>
@@ -228,7 +240,7 @@ function MyReportCard({
             <span>Repair Date: {repair_Date}</span>
           </div>
           {serviceType == "Supervisor reports" ||
-            serviceType == "Reports monitoring" ? (
+          serviceType == "Reports monitoring" ? (
             <>
               <div className="assign-part">
                 <button className="assign-button" onClick={assignReport}>
@@ -255,7 +267,7 @@ function MyReportCard({
           )}
 
           {serviceType == "Supervisor reports" ||
-            serviceType == "Technical member reports" ? (
+          serviceType == "Technical member reports" ? (
             <>
               <button
                 onClick={() => {
@@ -290,8 +302,6 @@ function MyReportCard({
                   problemDescription={problemDescription}
                 />
               )}
-              
-
             </>
           ) : (
             <></>
@@ -306,16 +316,27 @@ function MyReportCard({
             items={[
               {
                 title: "Pending",
-                description: <p className="steps-description"> Report is pending, soon will be processed</p>,
+                description: (
+                  <p className="steps-description">
+                    {" "}
+                    Report is pending, soon will be processed
+                  </p>
+                ),
               },
               {
                 title: "In Progress",
-                description: <p  className="steps-description">A Technical member is handling the report</p>,
+                description: (
+                  <p className="steps-description">
+                    A Technical member is handling the report
+                  </p>
+                ),
               },
               {
                 title: "Resolved",
                 description: (
-                  <p  className="steps-description">Report is resolved, device is currently working</p>
+                  <p className="steps-description">
+                    Report is resolved, device is currently working
+                  </p>
                 ),
               },
             ]}

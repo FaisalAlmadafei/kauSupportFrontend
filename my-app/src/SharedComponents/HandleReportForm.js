@@ -45,7 +45,7 @@ function HandleReportForm({
       alert("An error occurred. Please check your connection and try again.");
     }
   }
-  
+
   function checkEmptyFields() {
     if (actionTaken.length > 0) {
       addActionTaken();

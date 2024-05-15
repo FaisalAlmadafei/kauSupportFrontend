@@ -36,12 +36,8 @@ export const ServicesContext = React.createContext();
 function App() {
   const [userID, setUserID] = useState(localStorage.getItem("userID") || "");
   const [userPass, setuserPass] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem("isLoggedIn") === "true"
-  );
-  const [userRole, setUserRole] = useState(
-    localStorage.getItem("userRole") || ""
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
+  const [userRole, setUserRole] = useState( localStorage.getItem("userRole") || "" );
 
   const [LabNumber, setLabNumber] = useState("0");
   const [services, setServices] = useState([]);
@@ -148,10 +144,11 @@ function App() {
         },
       ],
     };
-    setServices(servicesByRole[userRole] || []);
+    
     localStorage.setItem("isLoggedIn", isLoggedIn);
     localStorage.setItem("userRole", userRole);
     localStorage.setItem("userID", userID);
+    setServices(servicesByRole[userRole] || []);
   }, [isLoggedIn, userRole, userID]);
 
   return (

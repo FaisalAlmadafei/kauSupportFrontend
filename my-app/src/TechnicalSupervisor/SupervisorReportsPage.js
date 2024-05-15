@@ -113,7 +113,7 @@ function SupervisorReportsPage() {
           onClose={() => setshowNoActionTakenAlert(false)}
         />
       )}
-      
+
       {ShowNoReports && (
         <>
           <div className="no-reports-container">
@@ -136,7 +136,6 @@ function SupervisorReportsPage() {
             />
           </div>
         </>
-
       )}
       <div className="supervisor-reports-container">
         {filteredReports.map((Report) => (

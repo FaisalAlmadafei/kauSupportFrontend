@@ -60,7 +60,10 @@ function SupervisorRequestsPage() {
   );
   return (
     <div>
-      <NavigationBar setSearch={setSearch} placeholderValue={"Search a request by ID"} />
+      <NavigationBar
+        setSearch={setSearch}
+        placeholderValue={"Search a request by ID"}
+      />
       <div
         onClick={() => {
           navigate("/Home");
@@ -116,10 +119,8 @@ function SupervisorRequestsPage() {
         />
       )}
 
-
       {ShowNoRequests && (
         <Result
-
           className="no-reports"
           status="500"
           title="No Requests Found"
@@ -143,7 +144,9 @@ function SupervisorRequestsPage() {
           <MyRequestsCard
             key={Request.requestID}
             {...Request}
-            serviceType={userRole.toLowerCase() == "supervisor" ? "Supervisor Requests" : "Technical member requests"}
+            serviceType={
+              userRole.toLowerCase() == "supervisor"   ? "Supervisor Requests": "Technical member requests"
+            }
             setmyRequests={setmyRequests}
             myRequests={myRequests}
             setshowAssignedAlert={setshowAssignedAlert}
@@ -155,7 +158,6 @@ function SupervisorRequestsPage() {
       </div>
 
       <Footer />
-
     </div>
   );
 }
