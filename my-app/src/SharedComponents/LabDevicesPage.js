@@ -25,6 +25,7 @@ function LabDevicesPage() {
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
   const [ShowWarningAlert, setShowWarningAlert] = useState(false);
   const [showChoseTypeAlert, setshowChoseTypeAlert] = useState(false);
+  const [disable, setdisable] = useState(false);
   const [showEnterDiscriptionAlert, setshowEnterDiscriptionAlert] =
     useState(false);
   const [showNoDevices, setShowNoDevices] = useState(false);
@@ -39,6 +40,7 @@ function LabDevicesPage() {
     if (ProblemType !== "") {
       if (ProblemDesription.length > 0) {
         if (DeviceStatus !== "reported") {
+          setdisable(true) ;
           var requestOptions = {
             method: "POST",
             redirect: "follow",
@@ -56,6 +58,8 @@ function LabDevicesPage() {
               setShowSuccessAlert(true);
               setProblemType("");
               getLabDevices();
+              setdisable(false) ;
+
             } else {
               alert("An error occurred. Please try again.");
             }
@@ -292,7 +296,7 @@ function LabDevicesPage() {
             className="report-input"
             onChange={(e) => setProblemDesription(e.target.value)}
           ></textarea>
-          <button onClick={addReport} className="form-button">
+          <button onClick={addReport} className="form-button" disabled={disable}>
             Report Device
           </button>
         </div>

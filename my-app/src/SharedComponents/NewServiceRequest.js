@@ -15,6 +15,7 @@ function NewServiceRequest() {
   const [userID] = useContext(LoginContext);
   const [ShowSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showChoseTypeAlert, setshowChoseTypeAlert] = useState(false);
+  const [disable, setdisable] = useState(false);
   const [showEnterDiscriptionAlert, setshowEnterDiscriptionAlert] =
     useState(false);
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function NewServiceRequest() {
   async function addRequest() {
     if (requestType !== "") {
       if (ReqDescription.length > 0) {
+        setdisable(true) ;
         var requestOptions = {
           method: "POST",
           redirect: "follow",
@@ -37,7 +39,8 @@ function NewServiceRequest() {
           } else if (response.ok) {
             setShowSuccessAlert(true);
             setReqDescription("");
-            setrequestType("");
+           
+            setdisable(false) ;
           } else {
             alert("An error occurred. Please try again.");
           }
@@ -163,7 +166,7 @@ function NewServiceRequest() {
             }}
           ></textarea>
           <br></br>
-          <button className="request-button" onClick={addRequest}>
+          <button className="request-button" onClick={addRequest} disabled={disable}>
             Send Request
           </button>
         </div>
